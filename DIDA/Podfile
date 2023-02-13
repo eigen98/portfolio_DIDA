@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DIDA' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DIDA
+
+  # Rx
+    pod 'RxSwift', '~> 6.5.0'
+    pod 'RxCocoa', '~> 6.5.0'
+    pod 'RxDataSources', '~> 5.0.0'
+
+  # UI
+    pod 'SnapKit', '~> 5.0.0'
+
+   # internal storage
+    pod 'KeychainSwift', '~> 20.0'
+
+  # Misc.
+    pod 'Kingfisher', '~> 7.0'
+
+    pod 'Moya', '~> 15.0'
+
+end
