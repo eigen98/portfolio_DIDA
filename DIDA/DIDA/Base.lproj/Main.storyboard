@@ -199,26 +199,30 @@
         <!--Home-->
         <scene sceneID="Dc1-hL-Bkz">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GRf-AY-uB3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GRf-AY-uB3" customClass="HomeViewController" customModule="DIDA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJS-B6-IzC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMw-R9-q5j">
-                                <rect key="frame" x="118.33333333333333" y="403.66666666666669" width="156.66666666666669" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="URG-et-haU">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dc1-RL-lDS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BMw-R9-q5j" firstAttribute="centerX" secondItem="dc1-RL-lDS" secondAttribute="centerX" id="0B0-cd-YIX"/>
-                            <constraint firstItem="BMw-R9-q5j" firstAttribute="centerY" secondItem="dc1-RL-lDS" secondAttribute="centerY" id="pQC-qB-KXE"/>
+                            <constraint firstAttribute="bottom" secondItem="URG-et-haU" secondAttribute="bottom" id="2Sg-us-ra7"/>
+                            <constraint firstItem="URG-et-haU" firstAttribute="leading" secondItem="dc1-RL-lDS" secondAttribute="leading" id="GAG-Jv-PIi"/>
+                            <constraint firstItem="URG-et-haU" firstAttribute="top" secondItem="TJS-B6-IzC" secondAttribute="top" id="Qod-mf-Kkf"/>
+                            <constraint firstItem="URG-et-haU" firstAttribute="trailing" secondItem="dc1-RL-lDS" secondAttribute="trailing" id="pWP-XH-sYS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="bFe-bu-f3J" userLabel="Home"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="mainpageTableView" destination="URG-et-haU" id="ONV-yd-jqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5b-qH-FIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
