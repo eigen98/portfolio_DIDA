@@ -14,6 +14,12 @@
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
 		EE110547299A900C00C5D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE110546299A900C00C5D370 /* Assets.xcassets */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
+		EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE154D8029A0A53900F9E941 /* MainPageViewController.swift */; };
+		EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE154D8129A0A53900F9E941 /* MainPageViewController.xib */; };
+		EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */; };
+		EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */; };
+		EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */; };
+		EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		EE110546299A900C00C5D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE110549299A900C00C5D370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE11054B299A900C00C5D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE154D8029A0A53900F9E941 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		EE154D8129A0A53900F9E941 /* MainPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageViewController.xib; sourceTree = "<group>"; };
+		EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemTableViewCell.swift; sourceTree = "<group>"; };
+		EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemTableViewCell.xib; sourceTree = "<group>"; };
+		EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +68,6 @@
 				00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */,
 				C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +92,7 @@
 		EE11053C299A900B00C5D370 /* DIDA */ = {
 			isa = PBXGroup;
 			children = (
+				EE154D7E29A0A4EC00F9E941 /* MainPage */,
 				EE11053D299A900B00C5D370 /* AppDelegate.swift */,
 				EE11053F299A900B00C5D370 /* SceneDelegate.swift */,
 				EE110541299A900B00C5D370 /* ViewController.swift */,
@@ -90,6 +102,35 @@
 				EE11054B299A900C00C5D370 /* Info.plist */,
 			);
 			path = DIDA;
+			sourceTree = "<group>";
+		};
+		EE154D7E29A0A4EC00F9E941 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				EE154D7F29A0A4F500F9E941 /* View */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		EE154D7F29A0A4F500F9E941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEFA9C7E29A0C37B0061D9D9 /* Cell */,
+				EE154D8029A0A53900F9E941 /* MainPageViewController.swift */,
+				EE154D8129A0A53900F9E941 /* MainPageViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEFA9C7E29A0C37B0061D9D9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */,
+				EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */,
+				EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */,
+				EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +193,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
+				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
+				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
+				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
+				EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
