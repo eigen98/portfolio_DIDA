@@ -21,6 +21,8 @@
 		C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342F29A0CD090023DA68 /* Pretendard-Thin.ttf */; };
 		C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136343029A0CD090023DA68 /* Pretendard-ExtraBold.ttf */; };
 		C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136343129A0CD090023DA68 /* Pretendard-Regular.ttf */; };
+		C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136343E29A0D6D30023DA68 /* BaseViewController.swift */; };
+		C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344029A0D6FB0023DA68 /* BaseViewModel.swift */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
 		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
 		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 		C136342F29A0CD090023DA68 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		C136343029A0CD090023DA68 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C136343129A0CD090023DA68 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		C136343E29A0D6D30023DA68 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C136344029A0D6FB0023DA68 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,7 @@
 		C13633FD29A0C5F80023DA68 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C136343D29A0D6C20023DA68 /* Base */,
 				C13633FE29A0C6110023DA68 /* Components */,
 				C136340329A0C6840023DA68 /* Fonts.swift */,
 				C136340529A0C68C0023DA68 /* Colors.swift */,
@@ -168,6 +173,15 @@
 				C136342F29A0CD090023DA68 /* Pretendard-Thin.ttf */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C136343D29A0D6C20023DA68 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C136343E29A0D6D30023DA68 /* BaseViewController.swift */,
+				C136344029A0D6FB0023DA68 /* BaseViewModel.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
@@ -343,11 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
 				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
 				C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
+				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +518,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -536,6 +553,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
