@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6219D77741E6067F82433184 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
+		C136340429A0C6840023DA68 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
+		C136340629A0C68C0023DA68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
+		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
 		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
 		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.debug.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.debug.xcconfig"; sourceTree = "<group>"; };
+		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +56,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C13633FA29A0C59F0023DA68 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C136340229A0C66D0023DA68 /* Main */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C13633FB29A0C5B70023DA68 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C136340129A0C6640023DA68 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C13633FC29A0C5C10023DA68 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C13633FF29A0C63B0023DA68 /* Request */,
+				C136340029A0C64D0023DA68 /* Response */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C13633FD29A0C5F80023DA68 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C13633FE29A0C6110023DA68 /* Components */,
+				C136340329A0C6840023DA68 /* Fonts.swift */,
+				C136340529A0C68C0023DA68 /* Colors.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C13633FE29A0C6110023DA68 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C13633FF29A0C63B0023DA68 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C136340029A0C64D0023DA68 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		C136340129A0C6640023DA68 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C136340229A0C66D0023DA68 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +156,16 @@
 		EE11053C299A900B00C5D370 /* DIDA */ = {
 			isa = PBXGroup;
 			children = (
+				C13633FA29A0C59F0023DA68 /* Presentation */,
+				C13633FB29A0C5B70023DA68 /* Domain */,
+				C13633FC29A0C5C10023DA68 /* Data */,
+				C13633FD29A0C5F80023DA68 /* Common */,
 				EE11053D299A900B00C5D370 /* AppDelegate.swift */,
 				EE11053F299A900B00C5D370 /* SceneDelegate.swift */,
 				EE110541299A900B00C5D370 /* ViewController.swift */,
 				EE110543299A900B00C5D370 /* Main.storyboard */,
 				EE110546299A900C00C5D370 /* Assets.xcassets */,
+				C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */,
 				EE110548299A900C00C5D370 /* LaunchScreen.storyboard */,
 				EE11054B299A900C00C5D370 /* Info.plist */,
 			);
@@ -153,6 +234,7 @@
 			files = (
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
+				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
+				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
