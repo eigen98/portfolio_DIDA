@@ -59,6 +59,7 @@ class HomeViewController: BaseViewController {
         mainpageTableView.register(UINib(nibName: "HotItemTableViewCell", bundle: nil), forCellReuseIdentifier: "HotItemTableViewCell") //Hot Item
         mainpageTableView.register(UINib(nibName: "SoldOutTableViewCell", bundle: nil), forCellReuseIdentifier: "SoldOutTableViewCell") //Sold Out
         mainpageTableView.register(UINib(nibName: "RecentNFTTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentNFTTableViewCell") //최신 NFT
+        mainpageTableView.register(UINib(nibName: "ActiveActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "ActiveActivityTableViewCell") //활발한 활동
         
         mainpageTableView.reloadData()
     }
@@ -71,7 +72,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,12 +80,22 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate{
         
         switch indexPath.row{
         case 0 :
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HotItemTableViewCell", for: indexPath) as! HotItemTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotItemTableViewCell", for: indexPath) as! HotItemTableViewCell
             return cell
             
         case 1:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "SoldOutTableViewCell", for: indexPath) as! SoldOutTableViewCell
+            return cell
+            
+        case 2:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentNFTTableViewCell", for: indexPath) as! RecentNFTTableViewCell
+            return cell
+            
+        case 3:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveActivityTableViewCell", for: indexPath) as! ActiveActivityTableViewCell
             return cell
             
             

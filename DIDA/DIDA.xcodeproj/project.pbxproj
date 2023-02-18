@@ -42,6 +42,8 @@
 		EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE154D8129A0A53900F9E941 /* MainPageViewController.xib */; };
 		EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */; };
 		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
+		EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */; };
+		EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */; };
 		EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */; };
 		EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */; };
 		EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */; };
@@ -88,6 +90,8 @@
 		EE154D8129A0A53900F9E941 /* MainPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageViewController.xib; sourceTree = "<group>"; };
 		EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTTableViewCell.swift; sourceTree = "<group>"; };
 		EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTTableViewCell.xib; sourceTree = "<group>"; };
+		EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveActivityTableViewCell.swift; sourceTree = "<group>"; };
+		EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveActivityTableViewCell.xib; sourceTree = "<group>"; };
 		EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemTableViewCell.swift; sourceTree = "<group>"; };
 		EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemTableViewCell.xib; sourceTree = "<group>"; };
 		EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -353,9 +357,19 @@
 			path = RecentNFT;
 			sourceTree = "<group>";
 		};
+		EE365C8829A11F3F00B53A6E /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */,
+				EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		EEFA9C7E29A0C37B0061D9D9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EE365C8829A11F3F00B53A6E /* Activity */,
 				EE365C8329A1168F00B53A6E /* RecentNFT */,
 				EE365C8229A1168500B53A6E /* SoldOut */,
 				EE365C8129A1167400B53A6E /* HotItem */,
@@ -434,6 +448,7 @@
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
+				EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */,
 				EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */,
 				C136343329A0CD090023DA68 /* Pretendard-Bold.ttf in Resources */,
 				C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */,
@@ -494,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */,
+				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
 				C136345529A0F6160023DA68 /* MainTabBarController.swift in Sources */,
