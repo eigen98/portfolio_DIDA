@@ -21,7 +21,10 @@ class MainPageViewController: UIViewController {
         
         mainpageTableView.delegate = self
         mainpageTableView.dataSource = self
+        
         mainpageTableView.register(UINib(nibName: "HotItemTableViewCell", bundle: nil), forCellReuseIdentifier: "HotItemTableViewCell") //로딩 셀
+        mainpageTableView.register(UINib(nibName: "SoldOutTableViewCell", bundle: nil), forCellReuseIdentifier: "SoldOutTableViewCell") //로딩 셀
+        
         
         mainpageTableView.reloadData()
     }
@@ -61,15 +64,29 @@ class MainPageViewController: UIViewController {
 extension MainPageViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HotItemTableViewCell", for: indexPath) as! HotItemTableViewCell
-        cell.selectionStyle = .none
         
-        return cell //UITableViewCell()
+        switch indexPath.row{
+        case 0 :
+            var cell = tableView.dequeueReusableCell(withIdentifier: "HotItemTableViewCell", for: indexPath) as! HotItemTableViewCell
+            return cell
+            
+        case 1:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SoldOutTableViewCell", for: indexPath) as! SoldOutTableViewCell
+            return cell
+            
+            
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotItemTableViewCell", for: indexPath) as! HotItemTableViewCell
+            return cell
+            
+        }
+       
     }
     
     

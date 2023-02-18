@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6219D77741E6067F82433184 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
+		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
+		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
 		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
 		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.debug.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.debug.xcconfig"; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
+		EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldOutTableViewCell.xib; sourceTree = "<group>"; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053D299A900B00C5D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE11053F299A900B00C5D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */,
 				EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */,
 				EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */,
+				EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */,
+				EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 			files = (
 				EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
+				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
 				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
@@ -256,6 +263,7 @@
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
+				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
 				EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
