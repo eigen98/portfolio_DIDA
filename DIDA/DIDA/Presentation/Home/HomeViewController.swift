@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//홈뷰
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var mainpageTableView: UITableView!
@@ -14,16 +14,11 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         navigationController?.isNavigationBarHidden = false
-       initNavigationBar()
         
-        mainpageTableView.delegate = self
-        mainpageTableView.dataSource = self
+        initNavigationBar() //네비게이션 바 설정
         
-        mainpageTableView.register(UINib(nibName: "HotItemTableViewCell", bundle: nil), forCellReuseIdentifier: "HotItemTableViewCell") //로딩 셀
-        mainpageTableView.register(UINib(nibName: "SoldOutTableViewCell", bundle: nil), forCellReuseIdentifier: "SoldOutTableViewCell") //로딩 셀
+        initTableView() //tableview 설정
         
-        
-        mainpageTableView.reloadData()
     }
     
     /*
@@ -53,6 +48,22 @@ class HomeViewController: BaseViewController {
     @objc func tapAlarmButton(){
         
     }
+    
+    /*
+     테이블 뷰 init
+     */
+    func initTableView(){
+        mainpageTableView.delegate = self
+        mainpageTableView.dataSource = self
+        
+        mainpageTableView.register(UINib(nibName: "HotItemTableViewCell", bundle: nil), forCellReuseIdentifier: "HotItemTableViewCell") //Hot Item
+        mainpageTableView.register(UINib(nibName: "SoldOutTableViewCell", bundle: nil), forCellReuseIdentifier: "SoldOutTableViewCell") //Sold Out
+        mainpageTableView.register(UINib(nibName: "RecentNFTTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentNFTTableViewCell") //최신 NFT
+        
+        mainpageTableView.reloadData()
+    }
+    
+    
 
 
 }
