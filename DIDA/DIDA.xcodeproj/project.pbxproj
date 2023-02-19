@@ -44,6 +44,15 @@
 		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
 		EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */; };
 		EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */; };
+		EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8E29A12ABB00B53A6E /* HotSellerTableViewCell.swift */; };
+		EE365C9129A12ABB00B53A6E /* HotSellerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8F29A12ABB00B53A6E /* HotSellerTableViewCell.xib */; };
+		EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */; };
+		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
+		EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */; };
+		EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FB029A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift */; };
+		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
+		EEC91FB629A1F1ED002AFB65 /* SellerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */; };
+		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
 		EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */; };
 		EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */; };
 		EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */; };
@@ -92,6 +101,15 @@
 		EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTTableViewCell.xib; sourceTree = "<group>"; };
 		EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveActivityTableViewCell.swift; sourceTree = "<group>"; };
 		EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveActivityTableViewCell.xib; sourceTree = "<group>"; };
+		EE365C8E29A12ABB00B53A6E /* HotSellerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSellerTableViewCell.swift; sourceTree = "<group>"; };
+		EE365C8F29A12ABB00B53A6E /* HotSellerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotSellerTableViewCell.xib; sourceTree = "<group>"; };
+		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabbar.swift; sourceTree = "<group>"; };
+		EEC91FB029A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarPageCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEFA9C7F29A0C39D0061D9D9 /* HotItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemTableViewCell.swift; sourceTree = "<group>"; };
 		EEFA9C8029A0C39D0061D9D9 /* HotItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemTableViewCell.xib; sourceTree = "<group>"; };
 		EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -366,9 +384,34 @@
 			path = Activity;
 			sourceTree = "<group>";
 		};
+		EE365C8D29A12A8D00B53A6E /* HotSeller */ = {
+			isa = PBXGroup;
+			children = (
+				EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */,
+				EE365C8E29A12ABB00B53A6E /* HotSellerTableViewCell.swift */,
+				EE365C8F29A12ABB00B53A6E /* HotSellerTableViewCell.xib */,
+				EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */,
+				EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */,
+			);
+			path = HotSeller;
+			sourceTree = "<group>";
+		};
+		EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */,
+				EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */,
+				EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */,
+				EEC91FB029A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift */,
+				EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */,
+			);
+			path = MainCustomTabbar;
+			sourceTree = "<group>";
+		};
 		EEFA9C7E29A0C37B0061D9D9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EE365C8D29A12A8D00B53A6E /* HotSeller */,
 				EE365C8829A11F3F00B53A6E /* Activity */,
 				EE365C8329A1168F00B53A6E /* RecentNFT */,
 				EE365C8229A1168500B53A6E /* SoldOut */,
@@ -439,12 +482,16 @@
 			files = (
 				EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */,
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
+				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
+				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
+				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
+				EE365C9129A12ABB00B53A6E /* HotSellerTableViewCell.xib in Resources */,
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
@@ -510,15 +557,19 @@
 			files = (
 				EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */,
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
+				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
 				C136345529A0F6160023DA68 /* MainTabBarController.swift in Sources */,
 				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
 				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
+				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
 				C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
+				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
+				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
 				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
@@ -529,6 +580,7 @@
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
 				EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */,
+				EEC91FB629A1F1ED002AFB65 /* SellerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

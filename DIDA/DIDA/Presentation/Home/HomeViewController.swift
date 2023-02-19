@@ -61,6 +61,8 @@ class HomeViewController: BaseViewController {
         mainpageTableView.register(UINib(nibName: "RecentNFTTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentNFTTableViewCell") //최신 NFT
         mainpageTableView.register(UINib(nibName: "ActiveActivityTableViewCell", bundle: nil), forCellReuseIdentifier: "ActiveActivityTableViewCell") //활발한 활동
         
+        mainpageTableView.register(UINib(nibName: "HotSellerTableViewCell", bundle: nil), forCellReuseIdentifier: "HotSellerTableViewCell")
+        
         mainpageTableView.reloadData()
     }
     
@@ -72,7 +74,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,15 +87,22 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate{
             
         case 1:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SoldOutTableViewCell", for: indexPath) as! SoldOutTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotSellerTableViewCell", for: indexPath) as! HotSellerTableViewCell
             return cell
             
         case 2:
             
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SoldOutTableViewCell", for: indexPath) as! SoldOutTableViewCell
+            return cell
+            
+       
+            
+        case 3:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentNFTTableViewCell", for: indexPath) as! RecentNFTTableViewCell
             return cell
             
-        case 3:
+        case 4:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveActivityTableViewCell", for: indexPath) as! ActiveActivityTableViewCell
             return cell
