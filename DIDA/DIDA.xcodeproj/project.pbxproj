@@ -38,8 +38,6 @@
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
 		EE110547299A900C00C5D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE110546299A900C00C5D370 /* Assets.xcassets */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
-		EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE154D8029A0A53900F9E941 /* MainPageViewController.swift */; };
-		EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE154D8129A0A53900F9E941 /* MainPageViewController.xib */; };
 		EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */; };
 		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
 		EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */; };
@@ -95,8 +93,6 @@
 		EE110546299A900C00C5D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE110549299A900C00C5D370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE11054B299A900C00C5D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE154D8029A0A53900F9E941 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		EE154D8129A0A53900F9E941 /* MainPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageViewController.xib; sourceTree = "<group>"; };
 		EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTTableViewCell.swift; sourceTree = "<group>"; };
 		EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTTableViewCell.xib; sourceTree = "<group>"; };
 		EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,7 +306,6 @@
 		EE11053C299A900B00C5D370 /* DIDA */ = {
 			isa = PBXGroup;
 			children = (
-				EE154D7E29A0A4EC00F9E941 /* MainPage */,
 				C13633FA29A0C59F0023DA68 /* Presentation */,
 				C13633FB29A0C5B70023DA68 /* Domain */,
 				C13633FC29A0C5C10023DA68 /* Data */,
@@ -327,23 +322,6 @@
 				C136340D29A0CCA40023DA68 /* Supporting Files */,
 			);
 			path = DIDA;
-			sourceTree = "<group>";
-		};
-		EE154D7E29A0A4EC00F9E941 /* MainPage */ = {
-			isa = PBXGroup;
-			children = (
-				EE154D7F29A0A4F500F9E941 /* View */,
-			);
-			path = MainPage;
-			sourceTree = "<group>";
-		};
-		EE154D7F29A0A4F500F9E941 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EE154D8029A0A53900F9E941 /* MainPageViewController.swift */,
-				EE154D8129A0A53900F9E941 /* MainPageViewController.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EE365C8129A1167400B53A6E /* HotItem */ = {
@@ -480,7 +458,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */,
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
@@ -555,7 +532,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */,
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
