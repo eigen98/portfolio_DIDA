@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//홈뷰의 TabbarCell 컨테이너 Cell입니다.
 class HotSellerTableViewCell: UITableViewCell, MainCustomTabbarDelegate {
     
 

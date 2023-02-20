@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//탭바 셀
 class MainTabbarCollectionViewCell: UICollectionViewCell {
     
     var label: UILabel = {

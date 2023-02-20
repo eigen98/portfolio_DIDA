@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//홈 뷰 TabbarCell의 유저 Cell입니다.
 class SellerCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {

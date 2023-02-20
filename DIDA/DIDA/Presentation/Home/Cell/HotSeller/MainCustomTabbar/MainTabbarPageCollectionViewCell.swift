@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//탭바 페이지 셀
 class MainTabbarPageCollectionViewCell: UICollectionViewCell {
 
     
