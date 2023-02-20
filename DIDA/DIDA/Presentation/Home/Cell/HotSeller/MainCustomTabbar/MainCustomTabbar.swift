@@ -12,7 +12,7 @@ import UIKit
 protocol MainCustomTabbarDelegate: AnyObject {
     func customMenuBar(scrollTo index: Int)
 }
-
+//상단 커스텀 탭바
 class MainCustomTabbar: UIView {
     
     weak var delegate: MainCustomTabbarDelegate?

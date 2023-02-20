@@ -39,6 +39,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="197-vN-j0p">
                                         <rect key="frame" x="2" y="2" width="44" height="44"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="cd7-2f-isj"/>
+                                            <constraint firstAttribute="width" constant="44" id="wFO-S9-1rF"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                 <integer key="value" value="2"/>
@@ -52,23 +56,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="197-vN-j0p" firstAttribute="top" secondItem="nEt-tJ-KMQ" secondAttribute="top" constant="2" id="A8n-vf-a6M"/>
-                                    <constraint firstItem="197-vN-j0p" firstAttribute="leading" secondItem="nEt-tJ-KMQ" secondAttribute="leading" constant="2" id="GCb-nA-Dl1"/>
-                                    <constraint firstAttribute="trailing" secondItem="197-vN-j0p" secondAttribute="trailing" constant="2" id="PgT-DQ-EmH"/>
+                                    <constraint firstItem="197-vN-j0p" firstAttribute="centerY" secondItem="nEt-tJ-KMQ" secondAttribute="centerY" id="AQv-za-WRa"/>
                                     <constraint firstAttribute="height" constant="48" id="rCh-Nd-MhR"/>
-                                    <constraint firstAttribute="bottom" secondItem="197-vN-j0p" secondAttribute="bottom" constant="2" id="uOc-lr-y7Y"/>
                                     <constraint firstAttribute="width" constant="48" id="ybb-ST-h5G"/>
+                                    <constraint firstItem="197-vN-j0p" firstAttribute="centerX" secondItem="nEt-tJ-KMQ" secondAttribute="centerX" id="zQX-e4-0dC"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="22"/>
+                                        <integer key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
