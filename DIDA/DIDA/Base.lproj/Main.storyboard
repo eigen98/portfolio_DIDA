@@ -44,7 +44,7 @@
                                     <segue destination="30x-N6-DEM" kind="embed" id="8Ux-LQ-alh"/>
                                 </connections>
                             </containerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="ICP-1L-ZVu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="ICP-1L-ZVu" userLabel="TabBar ImageView">
                                 <rect key="frame" x="0.0" y="751" width="393" height="101"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1e-QG-vu8" userLabel="TabBar View" customClass="TabBar" customModule="DIDA" customModuleProvider="target">
@@ -56,11 +56,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAg-Pq-qel" userLabel="Home View">
                                                 <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-iA-h11" userLabel="Home Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-iA-h11" userLabel="Home Button" customClass="TabBarItem" customModule="DIDA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="19" width="78.666666666666671" height="49"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="홈" image="home-5-line"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,11 +73,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcm-e5-Lrd" userLabel="Swap View">
                                                 <rect key="frame" x="78.666666666666657" y="0.0" width="78.666666666666657" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I23-PE-Osn" userLabel="Swap Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I23-PE-Osn" userLabel="Swap Button" customClass="TabBarItem" customModule="DIDA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="19" width="78.666666666666671" height="49"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="스왑" image="exchange-dollar-line"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +90,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-9q-etx">
                                                 <rect key="frame" x="157.33333333333334" y="0.0" width="78.333333333333343" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-gb-rjT">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-gb-rjT" customClass="TabBarItem" customModule="DIDA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="68"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="4" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="tabbar-plus"/>
@@ -109,11 +107,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-IF-E9z" userLabel="Community View">
                                                 <rect key="frame" x="235.66666666666666" y="0.0" width="78.666666666666657" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-Lw-zJF" userLabel="Community Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-Lw-zJF" userLabel="Community Button" customClass="TabBarItem" customModule="DIDA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="19" width="78.666666666666671" height="49"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="커뮤니티" image="question-answer-line"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,11 +124,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXg-sb-pTN" userLabel="MyPage View">
                                                 <rect key="frame" x="314.33333333333331" y="0.0" width="78.666666666666686" height="68"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-mb-N1j" userLabel="MyPage Button">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-mb-N1j" userLabel="MyPage Button" customClass="TabBarItem" customModule="DIDA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="19" width="78.666666666666671" height="49"/>
                                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="마이페이지" image="emotion-happy-line"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,6 +167,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JpC-Mx-Hd9"/>
+                    <connections>
+                        <outlet property="tabBarView" destination="C1e-QG-vu8" id="GFa-mY-fA8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZw-qK-2vb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,10 +314,6 @@
     </scenes>
     <resources>
         <image name="TabBar" width="389" height="101"/>
-        <image name="emotion-happy-line" width="24" height="24"/>
-        <image name="exchange-dollar-line" width="24" height="24"/>
-        <image name="home-5-line" width="24" height="24"/>
-        <image name="question-answer-line" width="24" height="24"/>
         <image name="tabbar-plus" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
