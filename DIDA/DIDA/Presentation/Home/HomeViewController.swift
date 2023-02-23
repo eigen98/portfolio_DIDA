@@ -29,7 +29,7 @@ class HomeViewController: BaseViewController {
         let titleLabelView = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 36))
         titleLabelView.numberOfLines = 1
         
-        titleLabelView.font = .systemFont(ofSize: 24, weight: .bold)
+        titleLabelView.font = Fonts.bold_24
         titleLabelView.text = "DIDA"
         var titleItem = UIBarButtonItem(customView: titleLabelView)
         titleLabelView.textColor = .white
