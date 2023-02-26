@@ -61,13 +61,16 @@
 		C188B32729AA5CE0008122EF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340929A0CA980023DA68 /* UIColor+Extension.swift */; };
 		C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32829AA61AA008122EF /* UIImage+Extension.swift */; };
 		C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32829AA61AA008122EF /* UIImage+Extension.swift */; };
+		C1956E9029AB785800018A93 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E8F29AB785800018A93 /* TextViewController.swift */; };
+		C1956E9229AB788B00018A93 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		C1956E9329AB788B00018A93 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE110546299A900C00C5D370 /* Assets.xcassets */; };
 		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
 		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
 		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
-		EE110547299A900C00C5D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE110546299A900C00C5D370 /* Assets.xcassets */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
 		EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */; };
 		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
@@ -144,6 +147,8 @@
 		C188B31F29AA5507008122EF /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
 		C188B32329AA5550008122EF /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		C188B32829AA61AA008122EF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C1956E8F29AB785800018A93 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		C1956E9129AB788B00018A93 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
@@ -355,6 +360,7 @@
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
 			isa = PBXGroup;
 			children = (
+				C1956E8E29AB75DA00018A93 /* Textview */,
 				C14389C429AB696D00138586 /* Profile */,
 				C188B32229AA5522008122EF /* Buttons */,
 				C188B31129AA5335008122EF /* ViewController.swift */,
@@ -375,6 +381,15 @@
 				C188B32329AA5550008122EF /* Buttons.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		C1956E8E29AB75DA00018A93 /* Textview */ = {
+			isa = PBXGroup;
+			children = (
+				C1956E8F29AB785800018A93 /* TextViewController.swift */,
+				C1956E9129AB788B00018A93 /* TextView.swift */,
+			);
+			path = Textview;
 			sourceTree = "<group>";
 		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
@@ -608,10 +623,10 @@
 			files = (
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
+				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
-				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
@@ -722,6 +737,7 @@
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
+				C1956E9329AB788B00018A93 /* TextView.swift in Sources */,
 				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
 				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
 				C14389C329AA811700138586 /* String+Extension.swift in Sources */,
@@ -731,6 +747,7 @@
 				C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */,
 				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
 				C188B32729AA5CE0008122EF /* UIColor+Extension.swift in Sources */,
+				C1956E9029AB785800018A93 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +766,7 @@
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
 				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
+				C1956E9229AB788B00018A93 /* TextView.swift in Sources */,
 				C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */,
 				C15158D129A2219000017147 /* TabBar.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
