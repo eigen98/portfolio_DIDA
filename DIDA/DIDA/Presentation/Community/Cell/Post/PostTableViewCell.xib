@@ -178,7 +178,7 @@
                             <constraint firstItem="hE5-IW-9F9" firstAttribute="top" secondItem="mAm-cj-bw7" secondAttribute="bottom" id="uyS-q7-iX1"/>
                         </constraints>
                     </view>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xbZ-Ba-2yP">
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xbZ-Ba-2yP" customClass="DynamicTableView" customModule="DIDA" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="329.33333333333331" width="404" height="244.66666666666669"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tableView>
@@ -197,7 +197,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="coinImageView" destination="HC9-L0-pam" id="DQ6-ma-8Fd"/>
-                <outlet property="commentTableView" destination="xbZ-Ba-2yP" id="4WZ-Hj-f41"/>
+                <outlet property="commentTableView" destination="xbZ-Ba-2yP" id="cBF-hr-XAK"/>
                 <outlet property="nameLabel" destination="A5y-OF-ibD" id="yha-iS-lLo"/>
                 <outlet property="nftImageView" destination="9e6-lE-sAE" id="em9-QV-U3E"/>
                 <outlet property="nftNameLabel" destination="BAq-6G-ddT" id="WrF-eb-9Fi"/>

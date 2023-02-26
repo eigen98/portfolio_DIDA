@@ -16,6 +16,7 @@
 		9784770929AB397B00950F40 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9784770729AB397B00950F40 /* PostTableViewCell.xib */; };
 		97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */; };
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
+		97BAE0FA29ABCF1D0001F60A /* PostCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0F929ABCF1D0001F60A /* PostCommentViewModel.swift */; };
 		C136340429A0C6840023DA68 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
 		C136340629A0C68C0023DA68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
@@ -37,8 +38,6 @@
 		C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344C29A0E0ED0023DA68 /* SwapViewController.swift */; };
 		C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344E29A0E10A0023DA68 /* CommunityViewController.swift */; };
 		C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136345029A0E1280023DA68 /* MyPageViewController.swift */; };
-		C15158D129A2219000017147 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D029A2219000017147 /* TabBar.swift */; };
-		C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D229A22E5F00017147 /* TabBarItem.swift */; };
 		C14389C229AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
 		C14389C329AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
 		C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C529AB69B100138586 /* ProfileViewController.swift */; };
@@ -114,6 +113,9 @@
 
 /* Begin PBXFileReference section */
 		00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.debug.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.debug.xcconfig"; sourceTree = "<group>"; };
+		4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.debug.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.debug.xcconfig"; sourceTree = "<group>"; };
+		81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.release.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.release.xcconfig"; sourceTree = "<group>"; };
 		978476FD29AB392F00950F40 /* NoisyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisyTableViewCell.swift; sourceTree = "<group>"; };
 		978476FE29AB392F00950F40 /* NoisyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoisyTableViewCell.xib; sourceTree = "<group>"; };
 		9784770229AB395400950F40 /* NFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -122,9 +124,7 @@
 		9784770729AB397B00950F40 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
-		4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.debug.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.debug.xcconfig"; sourceTree = "<group>"; };
-		81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.release.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.release.xcconfig"; sourceTree = "<group>"; };
+		97BAE0F929ABCF1D0001F60A /* PostCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentViewModel.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -269,6 +269,28 @@
 			path = CommentTableViewCell;
 			sourceTree = "<group>";
 		};
+		97BAE0F529ABCC890001F60A /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0F929ABCF1D0001F60A /* PostCommentViewModel.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		97BAE0F729ABCCBC0001F60A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		97BAE0F829ABCCCF0001F60A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +306,7 @@
 		C13633FB29A0C5B70023DA68 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C136340129A0C6640023DA68 /* Usecase */,
+				97BAE0F529ABCC890001F60A /* Usecase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -292,8 +314,8 @@
 		C13633FC29A0C5C10023DA68 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C13633FF29A0C63B0023DA68 /* Request */,
-				C136340029A0C64D0023DA68 /* Response */,
+				97BAE0F829ABCCCF0001F60A /* Request */,
+				97BAE0F729ABCCBC0001F60A /* Response */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -306,27 +328,6 @@
 				C136340529A0C68C0023DA68 /* Colors.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		C13633FF29A0C63B0023DA68 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		C136340029A0C64D0023DA68 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		C136340129A0C6640023DA68 /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Usecase;
 			sourceTree = "<group>";
 		};
 		C136340229A0C66D0023DA68 /* Main */ = {
@@ -820,6 +821,7 @@
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
 				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
+				97BAE0FA29ABCF1D0001F60A /* PostCommentViewModel.swift in Sources */,
 				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
 				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
