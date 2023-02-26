@@ -11,7 +11,7 @@ class CommentTableViewCell: UITableViewCell {
 
     static let identifier = "CommentTableViewCell"
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: Profile!
     @IBOutlet weak var commentOuterView: UIView!
     @IBOutlet weak var commentLabel: UILabel!
     
@@ -31,10 +31,10 @@ class CommentTableViewCell: UITableViewCell {
 extension CommentTableViewCell {
     private func configure() {
         //프로필 이미지 -> 나중에 컴포넌트로 변경
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+//        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        profileImageView.defaultImage()
         //바깥뷰
         commentOuterView.layer.cornerRadius = commentOuterView.frame.size.height / 2
-        
         //댓글
         commentLabel.font = Fonts.regular_14
     }

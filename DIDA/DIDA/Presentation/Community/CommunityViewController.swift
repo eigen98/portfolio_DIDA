@@ -90,7 +90,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         case CommunitySection.noisy.rawValue:
             return 240
         case CommunitySection.post.rawValue:
-            return 100
+            return UITableView.automaticDimension
         default:
             return 0
         }
