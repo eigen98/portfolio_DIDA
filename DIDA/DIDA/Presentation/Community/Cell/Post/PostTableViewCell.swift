@@ -34,5 +34,6 @@ final class PostTableViewCell: UITableViewCell {
 
 extension PostTableViewCell {
     private func configure() {
+        
     }
 }
