@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -263,21 +264,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommunityViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWc-0v-BbA" userLabel="CommunityViewController">
-                                <rect key="frame" x="97" y="403.66666666666669" width="199" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dtv-3y-U3O">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yj6-bZ-wDh">
+                                <rect key="frame" x="313" y="689" width="64" height="64"/>
+                                <color key="backgroundColor" name="brand_lemon"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="UO8-qo-bXN"/>
+                                    <constraint firstAttribute="height" constant="64" id="ZFf-Ac-Yfa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nha-qH-lTr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qWc-0v-BbA" firstAttribute="centerY" secondItem="nha-qH-lTr" secondAttribute="centerY" id="9YD-RZ-hzI"/>
-                            <constraint firstItem="qWc-0v-BbA" firstAttribute="centerX" secondItem="nha-qH-lTr" secondAttribute="centerX" id="gJh-UM-RW7"/>
+                            <constraint firstItem="Dtv-3y-U3O" firstAttribute="leading" secondItem="nha-qH-lTr" secondAttribute="leading" id="UhH-K7-Owb"/>
+                            <constraint firstItem="Dtv-3y-U3O" firstAttribute="top" secondItem="nha-qH-lTr" secondAttribute="top" id="VSs-OU-H11"/>
+                            <constraint firstItem="nha-qH-lTr" firstAttribute="bottom" secondItem="Dtv-3y-U3O" secondAttribute="bottom" id="nTg-d8-eDW"/>
+                            <constraint firstItem="nha-qH-lTr" firstAttribute="trailing" secondItem="Dtv-3y-U3O" secondAttribute="trailing" id="qZu-bo-OYc"/>
+                            <constraint firstItem="nha-qH-lTr" firstAttribute="trailing" secondItem="Yj6-bZ-wDh" secondAttribute="trailing" constant="16" id="tdG-iN-4et"/>
+                            <constraint firstItem="nha-qH-lTr" firstAttribute="bottom" secondItem="Yj6-bZ-wDh" secondAttribute="bottom" constant="16" id="y2Z-hU-UeS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Community" id="spQ-Re-CJU" userLabel="Community"/>
+                    <connections>
+                        <outlet property="communityTableView" destination="Dtv-3y-U3O" id="oPB-oM-q2h"/>
+                        <outlet property="writeButton" destination="Yj6-bZ-wDh" id="dRy-c6-Ts1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtV-cq-hUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,6 +332,9 @@
     <resources>
         <image name="TabBar" width="389" height="101"/>
         <image name="tabbar-plus" width="60" height="60"/>
+        <namedColor name="brand_lemon">
+            <color red="0.98431372549019602" green="0.97254901960784312" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
