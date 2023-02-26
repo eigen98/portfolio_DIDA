@@ -8,7 +8,7 @@
 import UIKit
 
 final class Colors {
-    static let background = UIColor.init(hex: "#000000")
+    static let background_black = UIColor.init(hex: "#000000")
     static let text_white = UIColor.init(hex: "#ffffff")
     static let text_notice = UIColor.init(hex: "#E8625B")
     static let brand_lemon = UIColor.init(hex: "#FBF89B")
@@ -24,4 +24,12 @@ final class Colors {
     static let brand_lemon_800 = UIColor.init(hex: "#FFCC22")
     static let brand_lemon_900 = UIColor.init(hex: "#FFB314")
     static let brand_lemon_1000 = UIColor.init(hex: "#FD8900")
+    static let surface_1 = UIColor.init(hex: "#252525")
+    static let surface_2 = UIColor.init(hex: "#2C2C2C")
+    static let surface_3 = UIColor.init(hex: "#333333")
+    static let surface_4 = UIColor.init(hex: "#383838")
+    static let surface_5 = UIColor.init(hex: "#414141")
+    static let surface_6 = UIColor.init(hex: "#595959")
+    
+    static let border_line = UIColor.init(hex: "#121212")
 }

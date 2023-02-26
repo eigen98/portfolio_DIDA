@@ -29,11 +29,38 @@
 		C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344C29A0E0ED0023DA68 /* SwapViewController.swift */; };
 		C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344E29A0E10A0023DA68 /* CommunityViewController.swift */; };
 		C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136345029A0E1280023DA68 /* MyPageViewController.swift */; };
-		C136345529A0F6160023DA68 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136345429A0F6160023DA68 /* MainTabBarController.swift */; };
-
+		C14389C229AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
+		C14389C329AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
+		C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C529AB69B100138586 /* ProfileViewController.swift */; };
+		C14389C829AB6EC500138586 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
+		C14389C929AB6EC500138586 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
+		C14389CA29AB6EC900138586 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C15158D129A2219000017147 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D029A2219000017147 /* TabBar.swift */; };
 		C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D229A22E5F00017147 /* TabBarItem.swift */; };
-
+		C15753DC29AA70960048E62C /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
+		C15753DD29AA70960048E62C /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342E29A0CD090023DA68 /* Pretendard-Black.ttf */; };
+		C15753DE29AA70960048E62C /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342A29A0CD090023DA68 /* Pretendard-Bold.ttf */; };
+		C15753DF29AA70960048E62C /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
+		C15753E029AA70960048E62C /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136343029A0CD090023DA68 /* Pretendard-ExtraBold.ttf */; };
+		C15753E129AA70960048E62C /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136343129A0CD090023DA68 /* Pretendard-Regular.ttf */; };
+		C15753E229AA70960048E62C /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342D29A0CD090023DA68 /* Pretendard-SemiBold.ttf */; };
+		C15753E329AA70960048E62C /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342F29A0CD090023DA68 /* Pretendard-Thin.ttf */; };
+		C15753E429AA70960048E62C /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342C29A0CD090023DA68 /* Pretendard-ExtraLight.ttf */; };
+		C16C48E629AA727B008CD62B /* Pods_DIDA_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30D29AA5335008122EF /* AppDelegate.swift */; };
+		C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30F29AA5335008122EF /* SceneDelegate.swift */; };
+		C188B31229AA5335008122EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B31129AA5335008122EF /* ViewController.swift */; };
+		C188B31529AA5335008122EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C188B31329AA5335008122EF /* Main.storyboard */; };
+		C188B31729AA5338008122EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C188B31629AA5338008122EF /* Assets.xcassets */; };
+		C188B31A29AA5338008122EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C188B31829AA5338008122EF /* LaunchScreen.storyboard */; };
+		C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B31F29AA5507008122EF /* ButtonsViewController.swift */; };
+		C188B32429AA5550008122EF /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
+		C188B32529AA5B01008122EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
+		C188B32629AA5B01008122EF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
+		C188B32729AA5CE0008122EF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340929A0CA980023DA68 /* UIColor+Extension.swift */; };
+		C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32829AA61AA008122EF /* UIImage+Extension.swift */; };
+		C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32829AA61AA008122EF /* UIImage+Extension.swift */; };
 		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
@@ -61,8 +88,25 @@
 		EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C16C48E829AA727B008CD62B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.debug.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.debug.xcconfig"; sourceTree = "<group>"; };
+		4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.debug.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.debug.xcconfig"; sourceTree = "<group>"; };
+		81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.release.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.release.xcconfig"; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -84,8 +128,22 @@
 		C136344C29A0E0ED0023DA68 /* SwapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapViewController.swift; sourceTree = "<group>"; };
 		C136344E29A0E10A0023DA68 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		C136345029A0E1280023DA68 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		C14389C129AA811700138586 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C14389C529AB69B100138586 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C14389C729AB6EC500138586 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C15158D029A2219000017147 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		C15158D229A22E5F00017147 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C188B30D29AA5335008122EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C188B30F29AA5335008122EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C188B31129AA5335008122EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C188B31429AA5335008122EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C188B31629AA5338008122EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C188B31929AA5338008122EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C188B31B29AA5338008122EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C188B31F29AA5507008122EF /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		C188B32329AA5550008122EF /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		C188B32829AA61AA008122EF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +176,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C188B30829AA5335008122EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C16C48E629AA727B008CD62B /* Pods_DIDA_UI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE110537299A900B00C5D370 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */,
+				4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,18 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				C136343D29A0D6C20023DA68 /* Base */,
-				C13633FE29A0C6110023DA68 /* Components */,
 				C136340329A0C6840023DA68 /* Fonts.swift */,
 				C136340529A0C68C0023DA68 /* Colors.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		C13633FE29A0C6110023DA68 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		C13633FF29A0C63B0023DA68 /* Request */ = {
@@ -220,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				C136340929A0CA980023DA68 /* UIColor+Extension.swift */,
+				C188B32829AA61AA008122EF /* UIImage+Extension.swift */,
+				C14389C129AA811700138586 /* String+Extension.swift */,
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -282,11 +343,47 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		C14389C429AB696D00138586 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C14389C529AB69B100138586 /* ProfileViewController.swift */,
+				C14389C729AB6EC500138586 /* Profile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C188B30C29AA5335008122EF /* DIDA-UI */ = {
+			isa = PBXGroup;
+			children = (
+				C14389C429AB696D00138586 /* Profile */,
+				C188B32229AA5522008122EF /* Buttons */,
+				C188B31129AA5335008122EF /* ViewController.swift */,
+				C188B30D29AA5335008122EF /* AppDelegate.swift */,
+				C188B30F29AA5335008122EF /* SceneDelegate.swift */,
+				C188B31329AA5335008122EF /* Main.storyboard */,
+				C188B31629AA5338008122EF /* Assets.xcassets */,
+				C188B31829AA5338008122EF /* LaunchScreen.storyboard */,
+				C188B31B29AA5338008122EF /* Info.plist */,
+			);
+			path = "DIDA-UI";
+			sourceTree = "<group>";
+		};
+		C188B32229AA5522008122EF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C188B31F29AA5507008122EF /* ButtonsViewController.swift */,
+				C188B32329AA5550008122EF /* Buttons.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				00C2EA4848C8C979389CE103 /* Pods-DIDA.debug.xcconfig */,
 				C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */,
+				54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */,
+				81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -295,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				EE11053C299A900B00C5D370 /* DIDA */,
+				C188B30C29AA5335008122EF /* DIDA-UI */,
 				EE11053B299A900B00C5D370 /* Products */,
 				D289DCB4F2E520AC2328E8D6 /* Pods */,
 				56E8AEA0F88F42B26CE316FB /* Frameworks */,
@@ -305,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				EE11053A299A900B00C5D370 /* DIDA.app */,
+				C188B30B29AA5335008122EF /* DIDA-UI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,9 +411,6 @@
 		EE11053C299A900B00C5D370 /* DIDA */ = {
 			isa = PBXGroup;
 			children = (
-
-				EE154D7E29A0A4EC00F9E941 /* MainPage */,
-
 				C13633FA29A0C59F0023DA68 /* Presentation */,
 				C13633FB29A0C5B70023DA68 /* Domain */,
 				C13633FC29A0C5C10023DA68 /* Data */,
@@ -410,6 +506,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C188B30A29AA5335008122EF /* DIDA-UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C188B31C29AA5338008122EF /* Build configuration list for PBXNativeTarget "DIDA-UI" */;
+			buildPhases = (
+				3CDD49774302D96F293FD091 /* [CP] Check Pods Manifest.lock */,
+				C188B30729AA5335008122EF /* Sources */,
+				C188B30829AA5335008122EF /* Frameworks */,
+				C188B30929AA5335008122EF /* Resources */,
+				050DA2EC0CED4DAACA7B011B /* [CP] Embed Pods Frameworks */,
+				C16C48E829AA727B008CD62B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DIDA-UI";
+			productName = "DIDA-UI";
+			productReference = C188B30B29AA5335008122EF /* DIDA-UI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EE110539299A900B00C5D370 /* DIDA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE11054E299A900C00C5D370 /* Build configuration list for PBXNativeTarget "DIDA" */;
@@ -439,6 +555,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					C188B30A29AA5335008122EF = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					EE110539299A900B00C5D370 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -458,19 +577,35 @@
 			projectRoot = "";
 			targets = (
 				EE110539299A900B00C5D370 /* DIDA */,
+				C188B30A29AA5335008122EF /* DIDA-UI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C188B30929AA5335008122EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15753DC29AA70960048E62C /* Pretendard-Medium.ttf in Resources */,
+				C188B31A29AA5338008122EF /* LaunchScreen.storyboard in Resources */,
+				C15753E229AA70960048E62C /* Pretendard-SemiBold.ttf in Resources */,
+				C15753E429AA70960048E62C /* Pretendard-ExtraLight.ttf in Resources */,
+				C188B31729AA5338008122EF /* Assets.xcassets in Resources */,
+				C188B31529AA5335008122EF /* Main.storyboard in Resources */,
+				C15753DE29AA70960048E62C /* Pretendard-Bold.ttf in Resources */,
+				C15753E129AA70960048E62C /* Pretendard-Regular.ttf in Resources */,
+				C15753DD29AA70960048E62C /* Pretendard-Black.ttf in Resources */,
+				C15753E329AA70960048E62C /* Pretendard-Thin.ttf in Resources */,
+				C15753DF29AA70960048E62C /* Pretendard-Light.ttf in Resources */,
+				C15753E029AA70960048E62C /* Pretendard-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE110538299A900B00C5D370 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-
-				EE154D8329A0A53900F9E941 /* MainPageViewController.xib in Resources */,
-
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
@@ -479,12 +614,7 @@
 				EE110547299A900C00C5D370 /* Assets.xcassets in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
-
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
-
-				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
-				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
-
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
 				EE365C9129A12ABB00B53A6E /* HotSellerTableViewCell.xib in Resources */,
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
@@ -504,6 +634,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		050DA2EC0CED4DAACA7B011B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDD49774302D96F293FD091 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DIDA-UI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A29A221824ABF6F3AF3DC70B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,17 +715,32 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C188B30729AA5335008122EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
+				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
+				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
+				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
+				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
+				C14389C329AA811700138586 /* String+Extension.swift in Sources */,
+				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
+				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
+				C188B31229AA5335008122EF /* ViewController.swift in Sources */,
+				C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */,
+				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
+				C188B32729AA5CE0008122EF /* UIColor+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE110536299A900B00C5D370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
-
-
-				EE154D8229A0A53900F9E941 /* MainPageViewController.swift in Sources */,
-
+				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
 				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
@@ -569,14 +753,12 @@
 				C15158D129A2219000017147 /* TabBar.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
+				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
 				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
+				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
-
 				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
-
-
-				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
-
+				C14389C229AA811700138586 /* String+Extension.swift in Sources */,
 				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
 				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
 				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
@@ -592,6 +774,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C188B31329AA5335008122EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C188B31429AA5335008122EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C188B31829AA5338008122EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C188B31929AA5338008122EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		EE110543299A900B00C5D370 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -611,6 +809,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C188B31D29AA5338008122EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DIDA-UI/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dida.DIDA.UI.DIDA-UI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C188B31E29AA5338008122EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DIDA-UI/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dida.DIDA.UI.DIDA-UI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		EE11054C299A900C00C5D370 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -798,6 +1064,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C188B31C29AA5338008122EF /* Build configuration list for PBXNativeTarget "DIDA-UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C188B31D29AA5338008122EF /* Debug */,
+				C188B31E29AA5338008122EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EE110535299A900B00C5D370 /* Build configuration list for PBXProject "DIDA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

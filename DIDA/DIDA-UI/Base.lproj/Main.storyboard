@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TVu-Yd-i5c">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="A10-3q-Gx3">
+            <objects>
+                <navigationController id="TVu-Yd-i5c" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SjD-4e-HIp">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4C9-kc-b1j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6F-Ba-BSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="-295"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIDA-UI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOI-HS-8Zc">
+                                <rect key="frame" x="165.66666666666666" y="103" width="62" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-L2-G30">
+                                <rect key="frame" x="20" y="143.33333333333331" width="353" height="674.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-fi-tO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="68.666666666666671"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-1W-ITH" userLabel="Buttons">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <segue destination="Jzb-nD-iIU" kind="show" id="gYT-AB-ovl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sB-eA-XIF" userLabel="Profile">
+                                                <rect key="frame" x="0.0" y="34.333333333333314" width="72.666666666666671" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Profile"/>
+                                                <connections>
+                                                    <segue destination="m3N-Eu-fbb" kind="show" id="Lil-5z-6eC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PYm-sO-Am9" firstAttribute="trailing" secondItem="nPJ-fi-tO2" secondAttribute="trailing" id="23V-fJ-td0"/>
+                                    <constraint firstItem="05h-uC-1Ue" firstAttribute="width" secondItem="nPJ-fi-tO2" secondAttribute="width" id="EGd-D5-Eid"/>
+                                    <constraint firstItem="05h-uC-1Ue" firstAttribute="height" secondItem="nPJ-fi-tO2" secondAttribute="height" id="UT9-Wy-eFZ"/>
+                                    <constraint firstItem="PYm-sO-Am9" firstAttribute="leading" secondItem="nPJ-fi-tO2" secondAttribute="leading" id="hZM-Co-9GD"/>
+                                    <constraint firstItem="nPJ-fi-tO2" firstAttribute="top" secondItem="05h-uC-1Ue" secondAttribute="top" id="sVf-qV-4he"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="05h-uC-1Ue"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="PYm-sO-Am9"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CB1-L2-G30" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0TW-pX-zYD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CB1-L2-G30" secondAttribute="trailing" constant="20" id="8Ol-71-Pyd"/>
+                            <constraint firstItem="nOI-HS-8Zc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bbd-W4-WsC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CB1-L2-G30" secondAttribute="bottom" id="Q90-XQ-bd2"/>
+                            <constraint firstItem="CB1-L2-G30" firstAttribute="top" secondItem="nOI-HS-8Zc" secondAttribute="bottom" constant="20" id="TP4-VM-sg8"/>
+                            <constraint firstItem="nOI-HS-8Zc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zEV-B3-EeD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9io-XW-sX7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="-295"/>
+        </scene>
+        <!--Buttons View Controller-->
+        <scene sceneID="rSH-SI-FO7">
+            <objects>
+                <viewController id="Jzb-nD-iIU" customClass="ButtonsViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wjS-dI-ZM2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zce-EL-hd3">
+                                <rect key="frame" x="20.000000000000004" y="122.99999999999999" width="36.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="147-dT-kbK">
+                                <rect key="frame" x="20" y="153.33333333333334" width="168" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLE-P6-78j" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="primary"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-cb-hZu" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="67" y="0.0" width="36" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="dark"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tas-rR-uca" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="0.0" width="60" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="custom"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITK-jh-GvR">
+                                <rect key="frame" x="20.000000000000004" y="207.33333333333334" width="46.333333333333343" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-Am-I9K">
+                                <rect key="frame" x="20" y="237.66666666666666" width="156" height="33.999999999999972"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Al-zH-zJC" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="square"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hao-oS-lgo" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="0.0" width="47" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="round"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P0-eH-MKj" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="0.0" width="44" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="circle"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK6-De-G3V">
+                                <rect key="frame" x="152.33333333333334" y="743.66666666666663" width="88.333333333333343" height="54.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="disabled"/>
+                                <connections>
+                                    <action selector="didTapDisabled:" destination="Jzb-nD-iIU" eventType="touchUpInside" id="cYq-tb-B97"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-x9-Hvd">
+                                <rect key="frame" x="20" y="291.66666666666669" width="48" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7O-cD-bgK" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="332" width="32" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h32"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN1-N2-zFz" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="57" y="332" width="32" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h36"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTD-ye-oX2" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="94" y="332" width="33" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h44"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPP-Hv-TWB" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="132" y="332" width="33" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h48"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOG-FS-a78" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="376" width="32" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h52"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-EV-Rgr" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="57" y="376" width="32" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="h56"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="23X-jM-gDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="bottom" secondItem="UK6-De-G3V" secondAttribute="bottom" constant="20" id="2EF-Q4-uJL"/>
+                            <constraint firstItem="YN1-N2-zFz" firstAttribute="leading" secondItem="z7O-cD-bgK" secondAttribute="trailing" constant="5" id="6CA-T3-ae9"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NWU-Am-I9K" secondAttribute="trailing" constant="20" id="B8J-a6-Bge"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="147-dT-kbK" secondAttribute="trailing" constant="20" id="E6z-ER-rVc"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cTD-ye-oX2" secondAttribute="trailing" symbolic="YES" id="F7l-y0-zSh"/>
+                            <constraint firstItem="YN1-N2-zFz" firstAttribute="centerY" secondItem="z7O-cD-bgK" secondAttribute="centerY" id="Hxc-CG-7vL"/>
+                            <constraint firstItem="0Wy-EV-Rgr" firstAttribute="leading" secondItem="hOG-FS-a78" secondAttribute="trailing" constant="5" id="LVg-M5-tV1"/>
+                            <constraint firstItem="Zce-EL-hd3" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="MQe-gN-6T5"/>
+                            <constraint firstItem="Zce-EL-hd3" firstAttribute="top" secondItem="23X-jM-gDX" secondAttribute="top" constant="20" id="PDa-pe-sKR"/>
+                            <constraint firstItem="cTD-ye-oX2" firstAttribute="leading" secondItem="YN1-N2-zFz" secondAttribute="trailing" constant="5" id="Se0-aP-GN2"/>
+                            <constraint firstItem="NWU-Am-I9K" firstAttribute="top" secondItem="ITK-jh-GvR" secondAttribute="bottom" constant="10" id="Sko-cK-ZMj"/>
+                            <constraint firstItem="sQq-x9-Hvd" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="W8l-2e-aKt"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sQq-x9-Hvd" secondAttribute="trailing" symbolic="YES" id="WeL-zR-Nj1"/>
+                            <constraint firstItem="UK6-De-G3V" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="152.33333333333334" id="X5H-Gn-Y2F"/>
+                            <constraint firstItem="lPP-Hv-TWB" firstAttribute="centerY" secondItem="cTD-ye-oX2" secondAttribute="centerY" id="XDl-Ad-BPV"/>
+                            <constraint firstItem="UK6-De-G3V" firstAttribute="centerX" secondItem="23X-jM-gDX" secondAttribute="centerX" id="Y9t-g6-Plr"/>
+                            <constraint firstItem="sQq-x9-Hvd" firstAttribute="top" secondItem="NWU-Am-I9K" secondAttribute="bottom" constant="20" id="aWK-a1-8m6"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zce-EL-hd3" secondAttribute="trailing" symbolic="YES" id="bQE-d8-a0j"/>
+                            <constraint firstItem="hOG-FS-a78" firstAttribute="top" secondItem="z7O-cD-bgK" secondAttribute="bottom" constant="10" id="cbT-Dn-CrJ"/>
+                            <constraint firstItem="z7O-cD-bgK" firstAttribute="top" secondItem="sQq-x9-Hvd" secondAttribute="bottom" constant="20" id="ddd-dV-Eoc"/>
+                            <constraint firstItem="lPP-Hv-TWB" firstAttribute="leading" secondItem="cTD-ye-oX2" secondAttribute="trailing" constant="5" id="g8n-S5-Aej"/>
+                            <constraint firstItem="cTD-ye-oX2" firstAttribute="centerY" secondItem="YN1-N2-zFz" secondAttribute="centerY" id="gD6-wa-dsn"/>
+                            <constraint firstItem="hOG-FS-a78" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="gvB-MV-k1d"/>
+                            <constraint firstItem="ITK-jh-GvR" firstAttribute="top" secondItem="147-dT-kbK" secondAttribute="bottom" constant="20" id="hpo-Ob-wM8"/>
+                            <constraint firstItem="NWU-Am-I9K" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="m6A-Ge-0df"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lPP-Hv-TWB" secondAttribute="trailing" symbolic="YES" id="pU6-h1-4iF"/>
+                            <constraint firstItem="ITK-jh-GvR" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="qV9-Eb-Kq6"/>
+                            <constraint firstItem="z7O-cD-bgK" firstAttribute="leading" secondItem="sQq-x9-Hvd" secondAttribute="leading" id="qzY-wP-NC2"/>
+                            <constraint firstItem="147-dT-kbK" firstAttribute="leading" secondItem="23X-jM-gDX" secondAttribute="leading" constant="20" id="rHj-Uj-GNX"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0Wy-EV-Rgr" secondAttribute="trailing" symbolic="YES" id="rOH-Qv-9sj"/>
+                            <constraint firstItem="23X-jM-gDX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ITK-jh-GvR" secondAttribute="trailing" symbolic="YES" id="rcL-Df-LCA"/>
+                            <constraint firstItem="147-dT-kbK" firstAttribute="top" secondItem="Zce-EL-hd3" secondAttribute="bottom" constant="10" id="wrd-lh-UwP"/>
+                            <constraint firstItem="0Wy-EV-Rgr" firstAttribute="centerY" secondItem="hOG-FS-a78" secondAttribute="centerY" id="z4M-yd-1jL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1gz-UN-Zfr"/>
+                    <connections>
+                        <outlet property="btnDisabled" destination="UK6-De-G3V" id="nIl-s7-AJL"/>
+                        <outlet property="btnH32" destination="z7O-cD-bgK" id="vl3-Ys-Akv"/>
+                        <outlet property="btnH36" destination="YN1-N2-zFz" id="y0R-qm-ltw"/>
+                        <outlet property="btnH44" destination="cTD-ye-oX2" id="UaF-Bp-PZu"/>
+                        <outlet property="btnH48" destination="lPP-Hv-TWB" id="bO2-dc-Pt9"/>
+                        <outlet property="btnH52" destination="hOG-FS-a78" id="duD-aY-9Rc"/>
+                        <outlet property="btnH56" destination="0Wy-EV-Rgr" id="q8H-B6-CjO"/>
+                        <outlet property="btnShape1" destination="6Al-zH-zJC" id="UjL-6g-Fn6"/>
+                        <outlet property="btnShape2" destination="Hao-oS-lgo" id="7AM-3C-KbA"/>
+                        <outlet property="btnShape3" destination="5P0-eH-MKj" id="NAD-ml-PEJ"/>
+                        <outlet property="btnStyle1" destination="kLE-P6-78j" id="UbZ-h6-dIW"/>
+                        <outlet property="btnStyle2" destination="dt5-cb-hZu" id="raa-gV-Pll"/>
+                        <outlet property="btnStyle3" destination="Tas-rR-uca" id="lgi-R6-EWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhD-RL-vZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="-295"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="eMG-tX-Icc">
+            <objects>
+                <viewController id="m3N-Eu-fbb" customClass="ProfileViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KSP-AX-fdK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5u-kp-oYo" customClass="Profile" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="203" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9Tb-6w-iXt"/>
+                                    <constraint firstAttribute="width" constant="200" id="Izj-Rb-sZM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faw-ze-Ez3" customClass="Profile" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="453" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Pkk-eX-mDh"/>
+                                    <constraint firstAttribute="width" constant="200" id="UE7-bh-6h5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FoX-f9-UYB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="faw-ze-Ez3" firstAttribute="centerX" secondItem="FoX-f9-UYB" secondAttribute="centerX" id="3dn-h1-7wB"/>
+                            <constraint firstItem="E5u-kp-oYo" firstAttribute="centerX" secondItem="FoX-f9-UYB" secondAttribute="centerX" id="JsS-QX-aJf"/>
+                            <constraint firstItem="faw-ze-Ez3" firstAttribute="top" secondItem="E5u-kp-oYo" secondAttribute="bottom" constant="50" id="bR0-kg-YfE"/>
+                            <constraint firstItem="E5u-kp-oYo" firstAttribute="top" secondItem="FoX-f9-UYB" secondAttribute="top" constant="100" id="duK-JL-cWD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yQg-6L-50K"/>
+                    <connections>
+                        <outlet property="borderProfileView" destination="faw-ze-Ez3" id="p5n-tm-8ck"/>
+                        <outlet property="profileView" destination="E5u-kp-oYo" id="XV4-ZV-eHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RsO-SJ-Q9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="449"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
