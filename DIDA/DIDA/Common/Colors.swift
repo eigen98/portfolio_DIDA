@@ -30,4 +30,6 @@ final class Colors {
     static let surface_4 = UIColor.init(hex: "#383838")
     static let surface_5 = UIColor.init(hex: "#414141")
     static let surface_6 = UIColor.init(hex: "#595959")
+    
+    static let border_line = UIColor.init(hex: "#121212")
 }

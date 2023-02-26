@@ -39,28 +39,50 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-fi-tO2">
-                                <rect key="frame" x="20" y="143.33333333333334" width="353" height="34.333333333333343"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-L2-G30">
+                                <rect key="frame" x="20" y="143.33333333333331" width="353" height="674.66666666666674"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-1W-ITH" userLabel="Buttons">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <connections>
-                                            <segue destination="Jzb-nD-iIU" kind="show" id="gYT-AB-ovl"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-fi-tO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="68.666666666666671"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-1W-ITH" userLabel="Buttons">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <segue destination="Jzb-nD-iIU" kind="show" id="gYT-AB-ovl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sB-eA-XIF" userLabel="Profile">
+                                                <rect key="frame" x="0.0" y="34.333333333333314" width="72.666666666666671" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Profile"/>
+                                                <connections>
+                                                    <segue destination="m3N-Eu-fbb" kind="show" id="Lil-5z-6eC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="PYm-sO-Am9" firstAttribute="trailing" secondItem="nPJ-fi-tO2" secondAttribute="trailing" id="23V-fJ-td0"/>
+                                    <constraint firstItem="05h-uC-1Ue" firstAttribute="width" secondItem="nPJ-fi-tO2" secondAttribute="width" id="EGd-D5-Eid"/>
+                                    <constraint firstItem="05h-uC-1Ue" firstAttribute="height" secondItem="nPJ-fi-tO2" secondAttribute="height" id="UT9-Wy-eFZ"/>
+                                    <constraint firstItem="PYm-sO-Am9" firstAttribute="leading" secondItem="nPJ-fi-tO2" secondAttribute="leading" id="hZM-Co-9GD"/>
+                                    <constraint firstItem="nPJ-fi-tO2" firstAttribute="top" secondItem="05h-uC-1Ue" secondAttribute="top" id="sVf-qV-4he"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="05h-uC-1Ue"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="PYm-sO-Am9"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nPJ-fi-tO2" secondAttribute="trailing" constant="20" id="ACV-dP-KOk"/>
+                            <constraint firstItem="CB1-L2-G30" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0TW-pX-zYD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CB1-L2-G30" secondAttribute="trailing" constant="20" id="8Ol-71-Pyd"/>
                             <constraint firstItem="nOI-HS-8Zc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bbd-W4-WsC"/>
-                            <constraint firstItem="nPJ-fi-tO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FkX-dO-gYE"/>
-                            <constraint firstItem="nPJ-fi-tO2" firstAttribute="top" secondItem="nOI-HS-8Zc" secondAttribute="bottom" constant="20" id="fMV-i5-DXi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nPJ-fi-tO2" secondAttribute="bottom" constant="20" id="y5b-fQ-jqN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CB1-L2-G30" secondAttribute="bottom" id="Q90-XQ-bd2"/>
+                            <constraint firstItem="CB1-L2-G30" firstAttribute="top" secondItem="nOI-HS-8Zc" secondAttribute="bottom" constant="20" id="TP4-VM-sg8"/>
                             <constraint firstItem="nOI-HS-8Zc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zEV-B3-EeD"/>
                         </constraints>
                     </view>
@@ -73,7 +95,6 @@
         <!--Buttons View Controller-->
         <scene sceneID="rSH-SI-FO7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vhD-RL-vZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Jzb-nD-iIU" customClass="ButtonsViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjS-dI-ZM2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -86,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="147-dT-kbK">
-                                <rect key="frame" x="20" y="153.33333333333334" width="157" height="34"/>
+                                <rect key="frame" x="20" y="153.33333333333334" width="168" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLE-P6-78j" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="34"/>
@@ -99,9 +120,9 @@
                                         <state key="normal" title="dark"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tas-rR-uca" customClass="Buttons" customModule="DIDA_UI" customModuleProvider="target">
-                                        <rect key="frame" x="108" y="0.0" width="49" height="34"/>
+                                        <rect key="frame" x="108" y="0.0" width="60" height="34"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="dialog"/>
+                                        <state key="normal" title="custom"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -231,8 +252,53 @@
                         <outlet property="btnStyle3" destination="Tas-rR-uca" id="lgi-R6-EWZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhD-RL-vZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="811" y="-295"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="eMG-tX-Icc">
+            <objects>
+                <viewController id="m3N-Eu-fbb" customClass="ProfileViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KSP-AX-fdK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5u-kp-oYo" customClass="Profile" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="203" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9Tb-6w-iXt"/>
+                                    <constraint firstAttribute="width" constant="200" id="Izj-Rb-sZM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faw-ze-Ez3" customClass="Profile" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="453" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Pkk-eX-mDh"/>
+                                    <constraint firstAttribute="width" constant="200" id="UE7-bh-6h5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FoX-f9-UYB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="faw-ze-Ez3" firstAttribute="centerX" secondItem="FoX-f9-UYB" secondAttribute="centerX" id="3dn-h1-7wB"/>
+                            <constraint firstItem="E5u-kp-oYo" firstAttribute="centerX" secondItem="FoX-f9-UYB" secondAttribute="centerX" id="JsS-QX-aJf"/>
+                            <constraint firstItem="faw-ze-Ez3" firstAttribute="top" secondItem="E5u-kp-oYo" secondAttribute="bottom" constant="50" id="bR0-kg-YfE"/>
+                            <constraint firstItem="E5u-kp-oYo" firstAttribute="top" secondItem="FoX-f9-UYB" secondAttribute="top" constant="100" id="duK-JL-cWD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yQg-6L-50K"/>
+                    <connections>
+                        <outlet property="borderProfileView" destination="faw-ze-Ez3" id="p5n-tm-8ck"/>
+                        <outlet property="profileView" destination="E5u-kp-oYo" id="XV4-ZV-eHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RsO-SJ-Q9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="449"/>
         </scene>
     </scenes>
     <resources>

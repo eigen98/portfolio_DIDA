@@ -31,6 +31,10 @@
 		C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136345029A0E1280023DA68 /* MyPageViewController.swift */; };
 		C14389C229AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
 		C14389C329AA811700138586 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C129AA811700138586 /* String+Extension.swift */; };
+		C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C529AB69B100138586 /* ProfileViewController.swift */; };
+		C14389C829AB6EC500138586 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
+		C14389C929AB6EC500138586 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
+		C14389CA29AB6EC900138586 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C15158D129A2219000017147 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D029A2219000017147 /* TabBar.swift */; };
 		C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D229A22E5F00017147 /* TabBarItem.swift */; };
 		C15753DC29AA70960048E62C /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
@@ -125,6 +129,8 @@
 		C136344E29A0E10A0023DA68 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		C136345029A0E1280023DA68 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		C14389C129AA811700138586 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C14389C529AB69B100138586 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C14389C729AB6EC500138586 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C15158D029A2219000017147 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		C15158D229A22E5F00017147 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,9 +343,19 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		C14389C429AB696D00138586 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C14389C529AB69B100138586 /* ProfileViewController.swift */,
+				C14389C729AB6EC500138586 /* Profile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
 			isa = PBXGroup;
 			children = (
+				C14389C429AB696D00138586 /* Profile */,
 				C188B32229AA5522008122EF /* Buttons */,
 				C188B31129AA5335008122EF /* ViewController.swift */,
 				C188B30D29AA5335008122EF /* AppDelegate.swift */,
@@ -704,11 +720,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
+				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
 				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
 				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
 				C14389C329AA811700138586 /* String+Extension.swift in Sources */,
 				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
+				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
 				C188B31229AA5335008122EF /* ViewController.swift in Sources */,
 				C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */,
 				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
@@ -722,6 +740,7 @@
 			files = (
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
+				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
 				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
@@ -734,6 +753,7 @@
 				C15158D129A2219000017147 /* TabBar.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
+				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
 				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
 				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
