@@ -65,6 +65,9 @@
 		C1956E9229AB788B00018A93 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
 		C1956E9329AB788B00018A93 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
 		C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE110546299A900C00C5D370 /* Assets.xcassets */; };
+		C1956E9B29AC773100018A93 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9A29AC773100018A93 /* TextField.swift */; };
+		C1956E9C29AC773100018A93 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9A29AC773100018A93 /* TextField.swift */; };
+		C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */; };
 		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
@@ -149,6 +152,8 @@
 		C188B32829AA61AA008122EF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C1956E8F29AB785800018A93 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		C1956E9129AB788B00018A93 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		C1956E9A29AC773100018A93 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
@@ -360,7 +365,8 @@
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
 			isa = PBXGroup;
 			children = (
-				C1956E8E29AB75DA00018A93 /* Textview */,
+				C1956E9929AC772100018A93 /* TextField */,
+				C1956E8E29AB75DA00018A93 /* TextView */,
 				C14389C429AB696D00138586 /* Profile */,
 				C188B32229AA5522008122EF /* Buttons */,
 				C188B31129AA5335008122EF /* ViewController.swift */,
@@ -383,13 +389,22 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		C1956E8E29AB75DA00018A93 /* Textview */ = {
+		C1956E8E29AB75DA00018A93 /* TextView */ = {
 			isa = PBXGroup;
 			children = (
 				C1956E8F29AB785800018A93 /* TextViewController.swift */,
 				C1956E9129AB788B00018A93 /* TextView.swift */,
 			);
-			path = Textview;
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		C1956E9929AC772100018A93 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				C1956E9A29AC773100018A93 /* TextField.swift */,
+				C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
@@ -734,9 +749,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */,
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
+				C1956E9C29AC773100018A93 /* TextField.swift in Sources */,
 				C1956E9329AB788B00018A93 /* TextView.swift in Sources */,
 				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
 				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
@@ -774,6 +791,7 @@
 				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
 				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
 				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
+				C1956E9B29AC773100018A93 /* TextField.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
 				C14389C229AA811700138586 /* String+Extension.swift in Sources */,

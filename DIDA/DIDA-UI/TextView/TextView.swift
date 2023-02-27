@@ -102,14 +102,16 @@ extension TextView: TextViewDelegate {
     func didChangeSuccessStatus() {
         let successImage = UIImage(named: "Check")?.withTintColor(Colors.text_notice_green ?? .green)
         let imageView = UIImageView.init(image: successImage)
-        imageView.frame = .init(x: self.frame.width-18-24, y: 15, width: 24, height: 24)
+        imageView.frame = .init(x: self.frame.width-16-24, y: 15, width: 24, height: 24)
         self.addSubview(imageView)
+        self.textContainerInset = .init(top: 18, left: 16, bottom: 18, right: 44)
     }
     
     func didChangeErrorStatus() {
         let successImage = UIImage(named: "close")?.withTintColor(Colors.text_notice_red ?? .red)
         let imageView = UIImageView.init(image: successImage)
-        imageView.frame = .init(x: self.frame.width-18-24, y: 15, width: 24, height: 24)
+        imageView.frame = .init(x: self.frame.width-16-24, y: 15, width: 24, height: 24)
         self.addSubview(imageView)
+        self.textContainerInset = .init(top: 18, left: 16, bottom: 18, right: 44)
     }
 }
