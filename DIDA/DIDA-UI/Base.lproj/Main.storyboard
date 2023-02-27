@@ -43,7 +43,7 @@
                                 <rect key="frame" x="20" y="143.33333333333331" width="353" height="674.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-fi-tO2">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="68.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="137.33333333333334"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-1W-ITH" userLabel="Buttons">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
@@ -59,6 +59,22 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Profile"/>
                                                 <connections>
                                                     <segue destination="m3N-Eu-fbb" kind="show" id="Lil-5z-6eC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpT-ac-eYw">
+                                                <rect key="frame" x="0.0" y="68.666666666666657" width="92.666666666666671" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TextView"/>
+                                                <connections>
+                                                    <segue destination="g9B-li-0FB" kind="show" id="QRR-JJ-Xie"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrS-6w-cN3" userLabel="TextField">
+                                                <rect key="frame" x="0.0" y="103" width="92.333333333333329" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="TextField"/>
+                                                <connections>
+                                                    <segue destination="ZRF-Un-GZ5" kind="show" id="RpS-IE-RcJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -298,7 +314,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsO-SJ-Q9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="449"/>
+            <point key="canvasLocation" x="1527" y="-295"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="ybB-Zd-Ai9">
+            <objects>
+                <viewController id="g9B-li-0FB" customClass="TextViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x15-Ig-US2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdr-D3-wNh" customClass="TextView" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="123" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Cdm-nI-Wlj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGz-hf-frI" userLabel="Success Text View" customClass="TextView" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="195" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="85P-yQ-CzB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-b5-7iD" userLabel="Error Text View" customClass="TextView" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="267" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="3TI-IL-iPp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gag-wV-mYr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QGz-hf-frI" firstAttribute="trailing" secondItem="jdr-D3-wNh" secondAttribute="trailing" id="1nh-NA-RcP"/>
+                            <constraint firstItem="Rqa-b5-7iD" firstAttribute="leading" secondItem="jdr-D3-wNh" secondAttribute="leading" id="6em-X7-o4d"/>
+                            <constraint firstItem="jdr-D3-wNh" firstAttribute="leading" secondItem="Gag-wV-mYr" secondAttribute="leading" constant="20" id="9ml-Uf-Uhu"/>
+                            <constraint firstItem="Rqa-b5-7iD" firstAttribute="trailing" secondItem="jdr-D3-wNh" secondAttribute="trailing" id="Dab-wT-10K"/>
+                            <constraint firstItem="jdr-D3-wNh" firstAttribute="top" secondItem="Gag-wV-mYr" secondAttribute="top" constant="20" id="L6l-fd-xfX"/>
+                            <constraint firstItem="Gag-wV-mYr" firstAttribute="trailing" secondItem="jdr-D3-wNh" secondAttribute="trailing" constant="20" id="U01-H9-A1U"/>
+                            <constraint firstItem="QGz-hf-frI" firstAttribute="top" secondItem="jdr-D3-wNh" secondAttribute="bottom" constant="20" id="atM-d4-g15"/>
+                            <constraint firstItem="Rqa-b5-7iD" firstAttribute="top" secondItem="QGz-hf-frI" secondAttribute="bottom" constant="20" id="h4a-Gc-urs"/>
+                            <constraint firstItem="QGz-hf-frI" firstAttribute="leading" secondItem="jdr-D3-wNh" secondAttribute="leading" id="iLw-sM-mBI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="S9r-H8-Zgg"/>
+                    <connections>
+                        <outlet property="errorTextView" destination="Rqa-b5-7iD" id="ULO-bg-rBk"/>
+                        <outlet property="succesTextView" destination="QGz-hf-frI" id="Kf8-rs-Vch"/>
+                        <outlet property="textView" destination="jdr-D3-wNh" id="A2w-GG-r89"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIg-LH-0g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="-295"/>
+        </scene>
+        <!--Text Field View Controller-->
+        <scene sceneID="ipD-eE-cwU">
+            <objects>
+                <viewController id="ZRF-Un-GZ5" customClass="TextFieldViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJG-fQ-pJx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-yK-xtB" userLabel="Text Field1" customClass="TextField" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="123" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="DOv-c4-D7g"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkT-Lt-uzc" userLabel="Text Field2" customClass="TextField" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="195" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="peC-k2-iDV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-bq-3qx" customClass="FullTextField" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="267" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="nu5-uB-AlG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NAa-pX-ejb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="AkT-Lt-uzc" secondAttribute="trailing" constant="20" id="O98-Ts-vqj"/>
+                            <constraint firstItem="AkT-Lt-uzc" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="RxG-Rk-nkN"/>
+                            <constraint firstItem="1qB-bq-3qx" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="UZ6-P7-3ns"/>
+                            <constraint firstItem="1qB-bq-3qx" firstAttribute="top" secondItem="AkT-Lt-uzc" secondAttribute="bottom" constant="20" id="ZF3-gl-LeU"/>
+                            <constraint firstItem="8dV-yK-xtB" firstAttribute="top" secondItem="NAa-pX-ejb" secondAttribute="top" constant="20" id="eNV-FB-cBn"/>
+                            <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="8dV-yK-xtB" secondAttribute="trailing" constant="20" id="edd-v5-VCb"/>
+                            <constraint firstItem="AkT-Lt-uzc" firstAttribute="top" secondItem="8dV-yK-xtB" secondAttribute="bottom" constant="20" id="i3I-DD-rts"/>
+                            <constraint firstItem="8dV-yK-xtB" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="knd-t5-CEG"/>
+                            <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="1qB-bq-3qx" secondAttribute="trailing" constant="20" id="pal-6B-qTZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="f3N-g6-B9R"/>
+                    <connections>
+                        <outlet property="fullTextfield" destination="1qB-bq-3qx" id="bKB-pn-1Wl"/>
+                        <outlet property="textfield1" destination="8dV-yK-xtB" id="iPq-fM-raE"/>
+                        <outlet property="textfield2" destination="AkT-Lt-uzc" id="FGJ-ib-xbF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHM-Vd-wwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964" y="-295"/>
         </scene>
     </scenes>
     <resources>
