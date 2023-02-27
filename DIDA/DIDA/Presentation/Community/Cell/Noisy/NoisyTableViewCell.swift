@@ -12,7 +12,8 @@ import RxCocoa
 final class NoisyTableViewCell: UITableViewCell {
 
     static let identifier = "NoisyTableViewCell"
-    var dummy = BehaviorRelay<[String]>(value: ["","","","","","","","","","","","","",""])
+    
+    let viewModel = NoisyViewModel()
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var infoLabel: UILabel!
@@ -22,24 +23,23 @@ final class NoisyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         configure()
-        bind()
+        bindViewModel()
+        
+        viewModel.fetchNoisyNFT()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
-
 }
 
 extension NoisyTableViewCell {
     
-    //뷰모델 만든뒤에 바꿔야할듯. 일단 임시로 따로 만듦.
-    private func bind() {
-        dummy
+    private func bindViewModel() {
+        viewModel.noisyNFT
             .asDriver(onErrorJustReturn: [])
             .drive(nftCollectionView.rx.items(cellIdentifier: NFTCollectionViewCell.identifier, cellType: NFTCollectionViewCell.self)) { [weak self] item, element, cell in
-                //임시
                 
             }
             .disposed(by: disposeBag)
