@@ -393,20 +393,31 @@
                                     <constraint firstAttribute="height" constant="52" id="peC-k2-iDV"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-bq-3qx" customClass="FullTextField" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="20" y="267" width="353" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="nu5-uB-AlG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NAa-pX-ejb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="AkT-Lt-uzc" secondAttribute="trailing" constant="20" id="O98-Ts-vqj"/>
                             <constraint firstItem="AkT-Lt-uzc" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="RxG-Rk-nkN"/>
+                            <constraint firstItem="1qB-bq-3qx" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="UZ6-P7-3ns"/>
+                            <constraint firstItem="1qB-bq-3qx" firstAttribute="top" secondItem="AkT-Lt-uzc" secondAttribute="bottom" constant="20" id="ZF3-gl-LeU"/>
                             <constraint firstItem="8dV-yK-xtB" firstAttribute="top" secondItem="NAa-pX-ejb" secondAttribute="top" constant="20" id="eNV-FB-cBn"/>
                             <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="8dV-yK-xtB" secondAttribute="trailing" constant="20" id="edd-v5-VCb"/>
                             <constraint firstItem="AkT-Lt-uzc" firstAttribute="top" secondItem="8dV-yK-xtB" secondAttribute="bottom" constant="20" id="i3I-DD-rts"/>
                             <constraint firstItem="8dV-yK-xtB" firstAttribute="leading" secondItem="NAa-pX-ejb" secondAttribute="leading" constant="20" id="knd-t5-CEG"/>
+                            <constraint firstItem="NAa-pX-ejb" firstAttribute="trailing" secondItem="1qB-bq-3qx" secondAttribute="trailing" constant="20" id="pal-6B-qTZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f3N-g6-B9R"/>
                     <connections>
+                        <outlet property="fullTextfield" destination="1qB-bq-3qx" id="bKB-pn-1Wl"/>
                         <outlet property="textfield1" destination="8dV-yK-xtB" id="iPq-fM-raE"/>
                         <outlet property="textfield2" destination="AkT-Lt-uzc" id="FGJ-ib-xbF"/>
                     </connections>

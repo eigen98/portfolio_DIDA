@@ -11,11 +11,15 @@ class TextFieldViewController: UIViewController {
     @IBOutlet weak var textfield1: TextField!
     @IBOutlet weak var textfield2: TextField!
     
+    @IBOutlet weak var fullTextfield: FullTextField!
+    
     let timeLabel = UILabel()
     var interval = 300 // 5분
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = Colors.background_black
         setTextField1()
         setTextField2()
     }

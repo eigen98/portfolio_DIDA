@@ -68,6 +68,8 @@
 		C1956E9B29AC773100018A93 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9A29AC773100018A93 /* TextField.swift */; };
 		C1956E9C29AC773100018A93 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9A29AC773100018A93 /* TextField.swift */; };
 		C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */; };
+		C1956EA229AC8B6D00018A93 /* FullTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA129AC8B6D00018A93 /* FullTextField.swift */; };
+		C1956EA329AC8B6D00018A93 /* FullTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA129AC8B6D00018A93 /* FullTextField.swift */; };
 		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
@@ -154,6 +156,7 @@
 		C1956E9129AB788B00018A93 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		C1956E9A29AC773100018A93 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		C1956EA129AC8B6D00018A93 /* FullTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTextField.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 			children = (
 				C1956E9A29AC773100018A93 /* TextField.swift */,
 				C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */,
+				C1956EA129AC8B6D00018A93 /* FullTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -765,6 +769,7 @@
 				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
 				C188B32729AA5CE0008122EF /* UIColor+Extension.swift in Sources */,
 				C1956E9029AB785800018A93 /* TextViewController.swift in Sources */,
+				C1956EA329AC8B6D00018A93 /* FullTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +804,7 @@
 				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
 				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
 				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,
+				C1956EA229AC8B6D00018A93 /* FullTextField.swift in Sources */,
 				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
