@@ -120,7 +120,7 @@ extension CommunityViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: NoisyTableViewCell.identifier, for: indexPath) as? NoisyTableViewCell else { return UITableViewCell() }
                 
                 return cell
-            case .postItem(userName: let userName, title: let title, content: let content, cardName: let cardName, price: let price, commentList: _ ):
+            case .postItem(userName: let userName, title: let title, content: let content, cardName: let cardName, price: let price, commentList: let commentList):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
                 
                 cell.nameLabel.text = userName
@@ -129,6 +129,12 @@ extension CommunityViewController {
                 cell.nftNameLabel.text = cardName
                 cell.priceLabel.text = price
                 
+                //MARK: - 이렇게 해도 되는지
+                if commentList.count >= 3 {
+                    cell.viewModel.fetchComment(Array(commentList[0...2]))
+                } else {
+                    cell.viewModel.fetchComment(commentList)
+                }
                 return cell
             }
         })

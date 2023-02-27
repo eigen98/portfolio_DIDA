@@ -26,6 +26,8 @@ final class DynamicTableView: UITableView {
 final class PostTableViewCell: UITableViewCell {
 
     static let identifier = "PostTableViewCell"
+    let viewModel = PostViewModel()
+    let disposeBag = DisposeBag()
     
     @IBOutlet weak var profileImageView: Profile!
     @IBOutlet weak var nameLabel: UILabel!
@@ -41,16 +43,40 @@ final class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         configure()
+        bindViewModel()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
-
 }
 
 extension PostTableViewCell {
+    
+    private func bindViewModel() {
+
+        viewModel.comments
+            .asDriver(onErrorJustReturn: [])
+            .drive(commentTableView.rx.items(cellIdentifier: CommentTableViewCell.identifier, cellType: CommentTableViewCell.self)) { [unowned self] row, element, cell in
+                if self.viewModel.getCommentCount() >= 3 {
+                    if row == 2 {
+                        cell.commentOuterView.backgroundColor = Colors.background_black
+                        cell.commentLabel.textColor = .darkGray //#939393추가해야함
+                        cell.commentLabel.text = "댓글 모두 보기"
+                        cell.profileImageView.isHidden = true
+                    } else {
+                        cell.commentLabel.text = element.content
+                    }
+                } else {
+                    cell.commentLabel.text = element.content
+    //                cell.profileImageView =
+                }
+            }
+            .disposed(by: disposeBag)
+    }
+    
     private func configure() {
         //프로필
         profileImageView.defaultImage()
@@ -70,24 +96,11 @@ extension PostTableViewCell {
         
         //CommentTableView
         commentTableView.delegate = self
-        commentTableView.dataSource = self
         commentTableView.register(UINib(nibName: CommentTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CommentTableViewCell.identifier)
     }
 }
 
-extension PostTableViewCell: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //MARK: - 데이터가 2개보다 많으면 3, 2개보다 적으면 개수만큼
-        return 3
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //MARK: - 뷰모델 데이터 개수 확인해서 2개보다 많은 경우랑 아닌 경우 분기처리해야할듯
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
-        
-        cell.commentLabel.text = "12312321312312312321312312312"
-        
-        return cell
-    }
+extension PostTableViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

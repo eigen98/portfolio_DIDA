@@ -70,7 +70,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLm-1M-cLI">
-                                        <rect key="frame" x="0.0" y="149.33333333333334" width="404" height="1"/>
+                                        <rect key="frame" x="16" y="149.33333333333334" width="372" height="1"/>
                                         <color key="backgroundColor" name="text_white"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="SPI-jT-j0z"/>
@@ -80,14 +80,14 @@
                                 <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="uca-qc-2Qy" firstAttribute="leading" secondItem="hE5-IW-9F9" secondAttribute="leading" constant="16" id="7fu-tB-RZ6"/>
-                                    <constraint firstAttribute="trailing" secondItem="NLm-1M-cLI" secondAttribute="trailing" id="C3R-eo-eXM"/>
+                                    <constraint firstAttribute="trailing" secondItem="NLm-1M-cLI" secondAttribute="trailing" constant="16" id="C3R-eo-eXM"/>
                                     <constraint firstAttribute="trailing" secondItem="HE4-OZ-aef" secondAttribute="trailing" constant="16" id="EK0-8t-TAY"/>
                                     <constraint firstItem="HE4-OZ-aef" firstAttribute="top" secondItem="uca-qc-2Qy" secondAttribute="bottom" constant="8" id="U7k-SZ-5wI"/>
                                     <constraint firstItem="uca-qc-2Qy" firstAttribute="top" secondItem="hE5-IW-9F9" secondAttribute="top" constant="10" id="WYY-7E-5NE"/>
                                     <constraint firstItem="HE4-OZ-aef" firstAttribute="leading" secondItem="hE5-IW-9F9" secondAttribute="leading" constant="16" id="c0d-9k-6io"/>
                                     <constraint firstItem="NLm-1M-cLI" firstAttribute="top" secondItem="HE4-OZ-aef" secondAttribute="bottom" constant="30" id="eHW-vE-ffC"/>
                                     <constraint firstAttribute="bottom" secondItem="NLm-1M-cLI" secondAttribute="bottom" id="fCS-2O-TW6"/>
-                                    <constraint firstItem="NLm-1M-cLI" firstAttribute="leading" secondItem="hE5-IW-9F9" secondAttribute="leading" id="oGj-h7-0OB"/>
+                                    <constraint firstItem="NLm-1M-cLI" firstAttribute="leading" secondItem="hE5-IW-9F9" secondAttribute="leading" constant="16" id="oGj-h7-0OB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idM-FM-wDG">

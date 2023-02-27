@@ -17,21 +17,20 @@ class CommentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         configure()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 }
 
 extension CommentTableViewCell {
     private func configure() {
-        //프로필 이미지 -> 나중에 컴포넌트로 변경
-//        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        //프로필
         profileImageView.defaultImage()
         //바깥뷰
         commentOuterView.layer.cornerRadius = commentOuterView.frame.size.height / 2

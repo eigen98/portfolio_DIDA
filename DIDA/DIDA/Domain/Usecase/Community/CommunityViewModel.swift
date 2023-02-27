@@ -23,7 +23,7 @@ struct TestPosts {
     let commentList: [TestComment]?
 }
 struct TestComment {
-    let userName: String?
+    let userProfile: String?
     let content: String?
 }
 
@@ -64,8 +64,8 @@ final class CommunityViewModel: BaseViewModel {
    
     func fetchData() {
         noisyData.accept([SectionItem.noisyItem(test: "")])
-        postsData.accept([SectionItem.postItem(userName: "두리", title: "hi", content: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello", cardName: "duri", price: "11", commentList: [TestComment(userName: "ㅎㅎ", content: "굳굳"),TestComment(userName: "gsad", content: "ㅇㅇㅇㅇㅇㅇㅇ"),TestComment(userName: "heehee", content: "")]),
-                          SectionItem.postItem(userName: "정민", title: "bye", content: "dsfdfdsfdsfdsfsdafadsfasdfasfsda", cardName: "오우", price: "123233444444", commentList: [TestComment(userName: "dsfa", content: "")]),
+        postsData.accept([SectionItem.postItem(userName: "두리", title: "hi", content: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello", cardName: "duri", price: "11", commentList: [TestComment(userProfile: "ㅎㅎ", content: "굳굳"),TestComment(userProfile: "gsad", content: "ㅇㅇㅇㅇㅇㅇㅇ"),TestComment(userProfile: "heehee", content: "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ")]),
+                          SectionItem.postItem(userName: "정민", title: "bye", content: "dsfdfdsfdsfdsfsdafadsfasdfasfsda", cardName: "오우", price: "123233444444", commentList: [TestComment(userProfile: "dsfa", content: "나나나난")]),
                           SectionItem.postItem(userName: "희철", title: "ddd", content: "ddd", cardName: "ccc", price: "09132912", commentList: [])])
     }
     
