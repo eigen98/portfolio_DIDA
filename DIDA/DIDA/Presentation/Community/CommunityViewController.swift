@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 enum CommunitySection: Int, CaseIterable {
     case noisy
@@ -26,50 +29,41 @@ final class CommunityViewController: BaseViewController {
     @IBOutlet weak var communityTableView: UITableView!
     @IBOutlet weak var writeButton: UIButton!
     
+    let viewModel = CommunityViewModel()
+    var dataSource: RxTableViewSectionedReloadDataSource<CommunitySectionModel>!
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+        configureDatasource()
+        bindViewModel()
+
+        viewModel.fetchData()
     }
     
     override func bindViewModel() {
+        super.bindViewModel()
+        
+        Observable.combineLatest(viewModel.noisyData, viewModel.postsData)
+            .map { (noisyData, postData) -> [CommunitySectionModel] in
+                let noisySection = CommunitySectionModel.noisySection(items: noisyData)
+                let postSection = CommunitySectionModel.postSection(items: postData)
+                return [noisySection, postSection]
+            }
+            .asDriver(onErrorJustReturn: [])
+            .drive(communityTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+            
     }
     override func bindEvent() {
+        
     }
 }
 
-//MARK: - RxDataSource로 바꿔야함.
-extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return CommunitySection.allCases.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case CommunitySection.noisy.rawValue:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: NoisyTableViewCell.identifier, for: indexPath) as? NoisyTableViewCell else { return UITableViewCell() }
-            return cell
-        case CommunitySection.post.rawValue:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+extension CommunityViewController: UITableViewDelegate {
 
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case CommunitySection.noisy.rawValue:
-            return 1
-        case CommunitySection.post.rawValue:
-            return 5
-        default:
-            return 1
-        }
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case CommunitySection.noisy.rawValue:
@@ -112,12 +106,31 @@ extension CommunityViewController {
     
     private func configure() {
         communityTableView.delegate = self
-        communityTableView.dataSource = self
-        
         communityTableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostTableViewCell.identifier)
         communityTableView.register(UINib(nibName: NoisyTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NoisyTableViewCell.identifier)
         
         //버튼
         writeButton.layer.cornerRadius = writeButton.frame.size.width / 2
+    }
+    
+    private func configureDatasource() {
+        dataSource = RxTableViewSectionedReloadDataSource<CommunitySectionModel>(configureCell: { dataSource, tableView, indexPath, item in
+            switch dataSource[indexPath] {
+            case .noisyItem(test: _):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: NoisyTableViewCell.identifier, for: indexPath) as? NoisyTableViewCell else { return UITableViewCell() }
+                
+                return cell
+            case .postItem(userName: let userName, title: let title, content: let content, cardName: let cardName, price: let price, commentList: _ ):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+                
+                cell.nameLabel.text = userName
+                cell.postTitleLabel.text = title
+                cell.postBodyLabel.text = content
+                cell.nftNameLabel.text = cardName
+                cell.priceLabel.text = price
+                
+                return cell
+            }
+        })
     }
 }

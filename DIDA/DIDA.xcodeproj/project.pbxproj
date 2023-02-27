@@ -18,6 +18,7 @@
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
 		97BAE0FE29AC6D1D0001F60A /* NoisyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */; };
+		97BAE10129AC75B30001F60A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE10029AC75B30001F60A /* PostViewModel.swift */; };
 		C136340429A0C6840023DA68 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
 		C136340629A0C68C0023DA68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
@@ -127,6 +128,7 @@
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisyViewModel.swift; sourceTree = "<group>"; };
+		97BAE10029AC75B30001F60A /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -274,8 +276,7 @@
 		97BAE0F529ABCC890001F60A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
-				97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */,
+				97BAE0FF29AC759B0001F60A /* Community */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -292,6 +293,16 @@
 			children = (
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		97BAE0FF29AC759B0001F60A /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
+				97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */,
+				97BAE10029AC75B30001F60A /* PostViewModel.swift */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
@@ -850,6 +861,7 @@
 				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
 				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
 				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,
+				97BAE10129AC75B30001F60A /* PostViewModel.swift in Sources */,
 				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
