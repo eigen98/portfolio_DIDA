@@ -43,7 +43,7 @@
                                 <rect key="frame" x="20" y="143.33333333333331" width="353" height="674.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-fi-tO2">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="206"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="240.33333333333334"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-1W-ITH" userLabel="Buttons">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
@@ -91,6 +91,14 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="TableViewCell"/>
                                                 <connections>
                                                     <segue destination="Awb-Pl-VDA" kind="show" id="WFn-FV-ZJ1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajc-NA-L6t" userLabel="SnackBar">
+                                                <rect key="frame" x="0.0" y="205.99999999999997" width="96.666666666666671" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="SnackBar"/>
+                                                <connections>
+                                                    <segue destination="eNR-sI-LMc" kind="show" id="PxM-cf-2lQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -386,6 +394,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIg-LH-0g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2225" y="-295"/>
+        </scene>
+        <!--Snack Bar View Controller-->
+        <scene sceneID="1vb-VD-EpN">
+            <objects>
+                <viewController id="eNR-sI-LMc" customClass="SnackBarViewController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qUU-Hl-UX4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQo-5W-wBT">
+                                <rect key="frame" x="124.66666666666669" y="123" width="144" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="showSnackBar1"/>
+                                <connections>
+                                    <action selector="didTapShowSnackBar1" destination="eNR-sI-LMc" eventType="touchUpInside" id="mbX-5c-dBx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-4F-9gW" userLabel="showSnackBar2">
+                                <rect key="frame" x="123.33333333333333" y="178" width="146.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="showSnackBar2"/>
+                                <connections>
+                                    <action selector="didTapShowSnackBar2" destination="eNR-sI-LMc" eventType="touchUpInside" id="chh-9d-Wkt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gxt-HU-5SN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NQo-5W-wBT" firstAttribute="top" secondItem="gxt-HU-5SN" secondAttribute="top" constant="20" id="4do-TB-v8M"/>
+                            <constraint firstItem="QbG-4F-9gW" firstAttribute="centerX" secondItem="NQo-5W-wBT" secondAttribute="centerX" id="FPu-Pk-mtw"/>
+                            <constraint firstItem="NQo-5W-wBT" firstAttribute="centerX" secondItem="gxt-HU-5SN" secondAttribute="centerX" id="Lql-HA-Stb"/>
+                            <constraint firstItem="QbG-4F-9gW" firstAttribute="top" secondItem="NQo-5W-wBT" secondAttribute="bottom" constant="20" id="TDk-EH-0pb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WTv-R1-V2R"/>
+                    <connections>
+                        <outlet property="showSnackBarButton1" destination="NQo-5W-wBT" id="4CL-Av-3me"/>
+                        <outlet property="showSnackBarButton2" destination="QbG-4F-9gW" id="7sP-YL-5zh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmK-nw-LVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="427"/>
         </scene>
         <!--Text Field View Controller-->
         <scene sceneID="ipD-eE-cwU">
