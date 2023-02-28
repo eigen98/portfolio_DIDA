@@ -9,6 +9,7 @@ import UIKit
 
 final class Colors {
     static let background_black = UIColor.init(hex: "#000000")
+    static let background_dim = UIColor.init(hex: "#000000", alpha: 0.8)
     static let text_white = UIColor.init(hex: "#ffffff")
     static let text_notice_red = UIColor.init(hex: "#E8625B")
     static let text_notice_green = UIColor.init(hex: "#7ED29B")
