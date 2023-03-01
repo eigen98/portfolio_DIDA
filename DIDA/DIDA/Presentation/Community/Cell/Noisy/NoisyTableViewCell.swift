@@ -13,9 +13,6 @@ final class NoisyTableViewCell: UITableViewCell {
 
     static let identifier = "NoisyTableViewCell"
     
-    let viewModel = NoisyViewModel()
-    let disposeBag = DisposeBag()
-    
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var nftCollectionView: UICollectionView!
     
@@ -23,9 +20,6 @@ final class NoisyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         configure()
-        bindViewModel()
-        
-        viewModel.fetchNoisyNFT()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,15 +29,6 @@ final class NoisyTableViewCell: UITableViewCell {
 }
 
 extension NoisyTableViewCell {
-    
-    private func bindViewModel() {
-        viewModel.noisyNFT
-            .asDriver(onErrorJustReturn: [])
-            .drive(nftCollectionView.rx.items(cellIdentifier: NFTCollectionViewCell.identifier, cellType: NFTCollectionViewCell.self)) { [weak self] item, element, cell in
-                
-            }
-            .disposed(by: disposeBag)
-    }
     
     private func configure() {
         infoLabel.font = Fonts.regular_14

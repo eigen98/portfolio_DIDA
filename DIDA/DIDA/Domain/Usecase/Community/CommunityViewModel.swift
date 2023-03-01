@@ -12,7 +12,7 @@ import RxDataSources
 
 //MARK: - 임시 모델
 struct TestNoisyData {
-    let test: String?
+    let test: [UIColor]?
 }
 struct TestPosts {
     let userName: String?
@@ -29,7 +29,7 @@ struct TestComment {
 
 //RxDataSource
 enum SectionItem {
-    case noisyItem(test: String)
+    case noisyItem(test: [UIColor])
     case postItem(userName: String, title: String, content: String, cardName: String, price: String, commentList: [TestComment])
 }
 enum CommunitySectionModel: SectionModelType {
@@ -59,12 +59,24 @@ enum CommunitySectionModel: SectionModelType {
 
 final class CommunityViewModel: BaseViewModel {
     
+    struct Input {
+        
+    }
+    struct Output {
+        
+    }
+    override func bind() {
+        
+    }
+    
     var noisyData = BehaviorRelay<[SectionItem]>(value: [])
     var postsData = BehaviorRelay<[SectionItem]>(value: [])
-   
+    
     func fetchData() {
-        noisyData.accept([SectionItem.noisyItem(test: "")])
+        noisyData.accept([SectionItem.noisyItem(test: [Colors.text_notice!,Colors.brand_ivory!,Colors.brand_ivory!,Colors.brand_lemon_1000!,Colors.brand_ivory!,Colors.brand_lemon_1000!,Colors.text_notice!,Colors.brand_ivory!,Colors.brand_lemon_1000!])])
         postsData.accept([SectionItem.postItem(userName: "두리", title: "hi", content: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello", cardName: "duri", price: "11", commentList: [TestComment(userProfile: "ㅎㅎ", content: "굳굳"),TestComment(userProfile: "gsad", content: "ㅇㅇㅇㅇㅇㅇㅇ"),TestComment(userProfile: "heehee", content: "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ")]),
+                          SectionItem.postItem(userName: "정민", title: "bye", content: "dsfdfdsfdsfdsfsdafadsfasdfasfsda", cardName: "오우", price: "123233444444", commentList: [TestComment(userProfile: "dsfa", content: "나나나난")]),
+                          SectionItem.postItem(userName: "희철", title: "ddd", content: "ddd", cardName: "ccc", price: "09132912", commentList: []),SectionItem.postItem(userName: "두리", title: "hi", content: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello", cardName: "duri", price: "11", commentList: [TestComment(userProfile: "ㅎㅎ", content: "굳굳"),TestComment(userProfile: "gsad", content: "ㅇㅇㅇㅇㅇㅇㅇ"),TestComment(userProfile: "heehee", content: "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ")]),
                           SectionItem.postItem(userName: "정민", title: "bye", content: "dsfdfdsfdsfdsfsdafadsfasdfasfsda", cardName: "오우", price: "123233444444", commentList: [TestComment(userProfile: "dsfa", content: "나나나난")]),
                           SectionItem.postItem(userName: "희철", title: "ddd", content: "ddd", cardName: "ccc", price: "09132912", commentList: [])])
     }

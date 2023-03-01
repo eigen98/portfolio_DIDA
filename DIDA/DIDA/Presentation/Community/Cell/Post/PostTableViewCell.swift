@@ -26,8 +26,6 @@ final class DynamicTableView: UITableView {
 final class PostTableViewCell: UITableViewCell {
 
     static let identifier = "PostTableViewCell"
-    let viewModel = PostViewModel()
-    let disposeBag = DisposeBag()
     
     @IBOutlet weak var profileImageView: Profile!
     @IBOutlet weak var nameLabel: UILabel!
@@ -43,8 +41,6 @@ final class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         configure()
-        bindViewModel()
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,27 +51,6 @@ final class PostTableViewCell: UITableViewCell {
 
 extension PostTableViewCell {
     
-    private func bindViewModel() {
-
-        viewModel.comments
-            .asDriver(onErrorJustReturn: [])
-            .drive(commentTableView.rx.items(cellIdentifier: CommentTableViewCell.identifier, cellType: CommentTableViewCell.self)) { [unowned self] row, element, cell in
-                if self.viewModel.getCommentCount() >= 3 {
-                    if row == 2 {
-                        cell.commentOuterView.backgroundColor = Colors.background_black
-                        cell.commentLabel.textColor = .darkGray //#939393추가해야함
-                        cell.commentLabel.text = "댓글 모두 보기"
-                        cell.profileImageView.isHidden = true
-                    } else {
-                        cell.commentLabel.text = element.content
-                    }
-                } else {
-                    cell.commentLabel.text = element.content
-    //                cell.profileImageView =
-                }
-            }
-            .disposed(by: disposeBag)
-    }
     
     private func configure() {
         //프로필
