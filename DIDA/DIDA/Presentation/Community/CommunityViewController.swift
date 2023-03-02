@@ -137,13 +137,9 @@ extension CommunityViewController {
                 Observable.just(commentList)
                     .bind(to: cell.commentTableView.rx.items(cellIdentifier: CommentTableViewCell.identifier, cellType: CommentTableViewCell.self)) { row, element, commentCell in
                         if row == 2 {
-                            commentCell.commentOuterView.backgroundColor = Colors.background_black
-                            commentCell.profileImageView.isHidden = true
-                            commentCell.commentLabel.text = "댓글모두보기"
+                            commentCell.settingCell(.moreCell, "댓글 모두 보기")
                         } else {
-                            commentCell.commentLabel.text = element.content
-                            commentCell.profileImageView.isHidden = false
-                            commentCell.commentOuterView.backgroundColor = Colors.surface_1
+                            commentCell.settingCell(.CommentCell, element.content ?? "")
                         }
                     }
                     .disposed(by: disposeBag)
