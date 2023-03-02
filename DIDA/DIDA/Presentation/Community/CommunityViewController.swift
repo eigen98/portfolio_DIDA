@@ -119,18 +119,18 @@ extension CommunityViewController {
     private func configureDatasource() {
         dataSource = RxTableViewSectionedReloadDataSource<CommunitySectionModel>(configureCell: { [unowned self] dataSource, tableView, indexPath, item in
             switch dataSource[indexPath] {
-            case .noisyItem(test: let testColor):
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: NoisyTableViewCell.identifier, for: indexPath) as? NoisyTableViewCell else { return UITableViewCell() }
+            case .noisyItem(let data) :
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: NoisyTableViewCell.identifier, for: indexPath) as? NoisyTableViewCell, let testColors = data.test else { return UITableViewCell() }
                 cell.nftCollectionView.dataSource = nil
-
-                Observable.just(testColor)
+                
+                Observable.just(testColors)
                     .bind(to: cell.nftCollectionView.rx.items(cellIdentifier: NFTCollectionViewCell.identifier, cellType: NFTCollectionViewCell.self)) { item, element, nftCell in
-                        nftCell.nftImageView.backgroundColor = testColor[item]
+                        nftCell.nftImageView.backgroundColor = testColors[item]
                     }
                     .disposed(by: disposeBag)
                 return cell
-            case .postItem(userName: let userName, title: let title, content: let content, cardName: let cardName, price: let price, commentList: let commentList):
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+            case .postItem(let data):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell, let userName = data.userName, let title = data.title, let content = data.content, let cardName = data.cardName, let price = data.price, let commentList = data.commentList else { return UITableViewCell() }
                 cell.commentTableView.dataSource = nil
                 
                 cell.nameLabel.text = userName
