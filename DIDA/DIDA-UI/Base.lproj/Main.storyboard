@@ -515,20 +515,49 @@
                                     <constraint firstAttribute="height" constant="34" id="Dr3-08-Dsv"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecv-hX-y2R" customClass="ScrollableTabBar" customModule="DIDA_UI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="228" width="393" height="29"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="sW6-9f-fve"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-uB-Dab">
+                                <rect key="frame" x="20" y="357" width="194.33333333333334" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="go to 1 index (tabBar1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-Qc-UGJ">
+                                <rect key="frame" x="20" y="412" width="199.33333333333334" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="go to 2 index (tabBar2)"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xym-hB-xGK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VcX-T2-jua" firstAttribute="top" secondItem="Xym-hB-xGK" secondAttribute="top" constant="20" id="3bp-iT-rnF"/>
                             <constraint firstItem="VcX-T2-jua" firstAttribute="centerX" secondItem="Xym-hB-xGK" secondAttribute="centerX" id="9QY-AZ-Xt1"/>
+                            <constraint firstItem="X8Z-Qc-UGJ" firstAttribute="top" secondItem="N3B-uB-Dab" secondAttribute="bottom" constant="20" id="RTk-uV-TBE"/>
                             <constraint firstItem="Xym-hB-xGK" firstAttribute="trailing" secondItem="lJR-ET-2Fj" secondAttribute="trailing" id="T5J-kp-bd9"/>
+                            <constraint firstItem="Ecv-hX-y2R" firstAttribute="top" secondItem="lJR-ET-2Fj" secondAttribute="bottom" constant="20" id="Wkn-09-sDi"/>
                             <constraint firstItem="lJR-ET-2Fj" firstAttribute="top" secondItem="VcX-T2-jua" secondAttribute="bottom" constant="30" id="bfP-3Z-UFr"/>
+                            <constraint firstItem="X8Z-Qc-UGJ" firstAttribute="leading" secondItem="Xym-hB-xGK" secondAttribute="leading" constant="20" id="cSs-Md-CD4"/>
+                            <constraint firstItem="Ecv-hX-y2R" firstAttribute="trailing" secondItem="Xym-hB-xGK" secondAttribute="trailing" id="gWD-kd-cgl"/>
+                            <constraint firstItem="N3B-uB-Dab" firstAttribute="leading" secondItem="Xym-hB-xGK" secondAttribute="leading" constant="20" id="huv-Jn-REF"/>
+                            <constraint firstItem="Xym-hB-xGK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X8Z-Qc-UGJ" secondAttribute="trailing" constant="20" id="m85-wx-KYM"/>
                             <constraint firstItem="lJR-ET-2Fj" firstAttribute="leading" secondItem="Xym-hB-xGK" secondAttribute="leading" id="oQX-te-Jec"/>
+                            <constraint firstItem="Xym-hB-xGK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N3B-uB-Dab" secondAttribute="trailing" constant="20" id="uaH-z1-7AY"/>
+                            <constraint firstItem="Ecv-hX-y2R" firstAttribute="leading" secondItem="Xym-hB-xGK" secondAttribute="leading" id="vNp-03-kgA"/>
+                            <constraint firstItem="N3B-uB-Dab" firstAttribute="top" secondItem="Ecv-hX-y2R" secondAttribute="bottom" constant="100" id="ySp-5Y-CC0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="haK-vr-38H"/>
                     <connections>
+                        <outlet property="button1" destination="N3B-uB-Dab" id="zA1-46-nbt"/>
+                        <outlet property="button2" destination="X8Z-Qc-UGJ" id="d5b-bR-xfq"/>
                         <outlet property="tabBar" destination="lJR-ET-2Fj" id="FCg-d7-3Mh"/>
+                        <outlet property="tabBar2" destination="Ecv-hX-y2R" id="JPR-S6-lWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSW-Yh-Dlh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

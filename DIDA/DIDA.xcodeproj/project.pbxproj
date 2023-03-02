@@ -83,6 +83,10 @@
 		C1956ECD29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */; };
 		C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */; };
 		C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */; };
+		C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
+		C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
+		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
+		C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
 		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
@@ -178,6 +182,8 @@
 		C1956EC929ACDD5000018A93 /* SnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarActionItem.swift; sourceTree = "<group>"; };
 		C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
+		C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +446,8 @@
 			children = (
 				C1956EA529AC8E4F00018A93 /* TabBarController.swift */,
 				C1956EA729AC8E5800018A93 /* TabBar.swift */,
+				C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */,
+				C1C8022429B1159900221FB9 /* TabBarButton.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -811,6 +819,7 @@
 				C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */,
 				C1956EBD29ACD3FB00018A93 /* TableViewController.swift in Sources */,
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
+				C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */,
 				C1956EA929AC8E5800018A93 /* TabBar.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
 				C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
@@ -822,6 +831,7 @@
 				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
 				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
 				C14389C329AA811700138586 /* String+Extension.swift in Sources */,
+				C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C1956EC129ACD4EB00018A93 /* TableViewCell.swift in Sources */,
 				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
 				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
@@ -840,6 +850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
+				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
 				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
@@ -867,6 +878,7 @@
 				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
 				C14389C229AA811700138586 /* String+Extension.swift in Sources */,
 				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
+				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
 				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
 				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
 				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,

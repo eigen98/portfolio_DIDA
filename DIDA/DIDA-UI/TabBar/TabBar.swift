@@ -12,8 +12,13 @@ protocol TabBarDelegate: AnyObject {
 }
 
 protocol TabBarInterface {
+    var delegate: TabBarDelegate? { get set }
+    
     var selectedIndex: Int? { get set }
     var tabItems: [String] { get set }
+    var width: CGFloat { get set }
+    
+    func moveTabItem(at selected : Int)
 }
 
 class TabBar: UIView, TabBarInterface {
@@ -27,6 +32,8 @@ class TabBar: UIView, TabBarInterface {
             setTabBarItems(items: newVal)
         }
     }
+    
+    var width: CGFloat = 120
     
     let tabbarView: UISegmentedControl = {
         let segment = UISegmentedControl()
@@ -89,7 +96,7 @@ class TabBar: UIView, TabBarInterface {
         indicator.snp.makeConstraints { make in
             make.height.equalTo(3)
             make.bottom.equalToSuperview()
-            make.width.equalTo(120)
+            make.width.equalTo(self.width)
             make.leading.equalTo(self.tabbarView.snp.leading)
         }
         
@@ -100,6 +107,11 @@ class TabBar: UIView, TabBarInterface {
         }
         
         self.tabbarView.addTarget(self, action: #selector(didChangePosition), for: .valueChanged)
+    }
+    
+    public func moveTabItem(at selected : Int) {
+        self.tabbarView.selectedSegmentIndex = selected
+        self.didChangePosition()
     }
     
     @objc func didChangePosition() {
