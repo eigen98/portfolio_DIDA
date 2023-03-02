@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Pretendard-Bold.otf</string>
 		<string>Pretendard-Black.ttf</string>
-		<string>Pretendard-Blod.ttf</string>
 		<string>Pretendard-ExtraBlod.ttf</string>
 		<string>Pretendard-ExtraLight.ttf</string>
 		<string>Pretendard-Light.ttf</string>
