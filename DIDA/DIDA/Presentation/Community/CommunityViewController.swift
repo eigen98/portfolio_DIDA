@@ -49,17 +49,12 @@ final class CommunityViewController: BaseViewController {
         super.bindViewModel()
         
         //시끌벅적 게시판, 최신게시물 세팅
-        Observable.combineLatest(communityViewModel.noisyData, communityViewModel.postsData)
-            .map { (noisyData, postData) -> [CommunitySectionModel] in
-                let noisySection = CommunitySectionModel.noisySection(items: noisyData)
-                let postSection = CommunitySectionModel.postSection(items: postData)
-                return [noisySection, postSection]
-            }
-            .asDriver(onErrorJustReturn: [])
+        communityViewModel.output?.communityData
             .drive(communityTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
     }
+    
     override func bindEvent() {
         
     }

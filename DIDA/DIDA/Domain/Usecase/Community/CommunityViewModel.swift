@@ -60,17 +60,34 @@ enum CommunitySectionModel: SectionModelType {
 final class CommunityViewModel: BaseViewModel {
     
     struct Input {
-        
+        let noisyData: BehaviorRelay<[SectionItem]>
+        let postsData: BehaviorRelay<[SectionItem]>
     }
     struct Output {
-        
-    }
-    override func bind() {
-        
+        let communityData: Driver<[CommunitySectionModel]>
     }
     
     var noisyData = BehaviorRelay<[SectionItem]>(value: [])
     var postsData = BehaviorRelay<[SectionItem]>(value: [])
+    
+    var input: Input?
+    var output: Output?
+    
+    override func bind() {
+        super.bind()
+        
+        let noisyData = noisyData
+        let postsData = postsData
+        let communityData = Observable.combineLatest(noisyData, postsData)
+                            .map { (noisyData, postData) -> [CommunitySectionModel] in
+                                let noisySection = CommunitySectionModel.noisySection(items: noisyData)
+                                let postSection = CommunitySectionModel.postSection(items: postData)
+                                return [noisySection, postSection]
+                            }
+                            .asDriver(onErrorJustReturn: [])
+        input = Input(noisyData: noisyData, postsData: postsData)
+        output = Output(communityData: communityData)
+    }
     
     func fetchData() {
 
