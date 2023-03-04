@@ -224,6 +224,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9721E78A29B314FC007EA625 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		9721E78B29B31510007EA625 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				978476FA29AB38FC00950F40 /* Cell */,
+				C136344E29A0E10A0023DA68 /* CommunityViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		978476FA29AB38FC00950F40 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,8 +423,8 @@
 		C136344829A0E0340023DA68 /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				978476FA29AB38FC00950F40 /* Cell */,
-				C136344E29A0E10A0023DA68 /* CommunityViewController.swift */,
+				9721E78B29B31510007EA625 /* Main */,
+				9721E78A29B314FC007EA625 /* PostDetail */,
 			);
 			path = Community;
 			sourceTree = "<group>";
