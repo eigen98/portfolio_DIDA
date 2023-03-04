@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,7 @@
 		97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */; };
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
-		97BAE0FE29AC6D1D0001F60A /* NoisyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */; };
-		97BAE10129AC75B30001F60A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE10029AC75B30001F60A /* PostViewModel.swift */; };
+		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
 		C136340429A0C6840023DA68 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
 		C136340629A0C68C0023DA68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
@@ -127,8 +126,7 @@
 		97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
-		97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisyViewModel.swift; sourceTree = "<group>"; };
-		97BAE10029AC75B30001F60A /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -299,8 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
-				97BAE0FD29AC6D1D0001F60A /* NoisyViewModel.swift */,
-				97BAE10029AC75B30001F60A /* PostViewModel.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -320,6 +316,7 @@
 		C13633FB29A0C5B70023DA68 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				97BAE12429B11F190001F60A /* Repository.swift */,
 				97BAE0F529ABCC890001F60A /* Usecase */,
 			);
 			path = Domain;
@@ -645,7 +642,7 @@
 				};
 			};
 			buildConfigurationList = EE110535299A900B00C5D370 /* Build configuration list for PBXProject "DIDA" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -829,6 +826,7 @@
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
+				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
@@ -836,7 +834,6 @@
 				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
 				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
-				97BAE0FE29AC6D1D0001F60A /* NoisyViewModel.swift in Sources */,
 				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
 				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
@@ -861,7 +858,6 @@
 				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
 				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
 				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,
-				97BAE10129AC75B30001F60A /* PostViewModel.swift in Sources */,
 				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
