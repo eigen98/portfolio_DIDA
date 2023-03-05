@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  LineTabBarController.swift
 //  DIDA-UI
 //
 //  Created by 김두리 on 2023/02/27.
@@ -7,9 +7,16 @@
 
 import UIKit
 
-class TabBarController: UIViewController {
+class LineTabBarController: UIViewController {
     
-    @IBOutlet weak var tabBar: TabBar!
+    @IBOutlet weak var tabBar: LineTabBar!
+    @IBOutlet weak var tabBar2: ScrollableTabBar! {
+        didSet {
+            tabBar2.width = 102
+        }
+    }
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +31,7 @@ class TabBarController: UIViewController {
     }
 }
 
-extension TabBarController: TabBarDelegate {
+extension LineTabBarController: LineTabBarDelegate {
     func didTapTabBarItem(selectedIndex: Int) {
         print("selectedIndex: \(selectedIndex)")
     }

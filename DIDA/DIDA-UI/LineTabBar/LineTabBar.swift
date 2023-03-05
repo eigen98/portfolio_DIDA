@@ -7,18 +7,20 @@
 
 import UIKit
 
-protocol TabBarDelegate: AnyObject {
+protocol LineTabBarDelegate: AnyObject {
     func didTapTabBarItem(selectedIndex: Int)
 }
 
-protocol TabBarInterface {
+protocol LineTabBarInterface {
+    var delegate: LineTabBarDelegate? { get set }
+    
     var selectedIndex: Int? { get set }
     var tabItems: [String] { get set }
 }
 
-class TabBar: UIView, TabBarInterface {
+class LineTabBar: UIView, LineTabBarInterface {
     
-    weak var delegate: TabBarDelegate?
+    weak var delegate: LineTabBarDelegate?
     
     var selectedIndex: Int?
     

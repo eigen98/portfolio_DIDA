@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE110539299A900B00C5D370"
-               BuildableName = "DIDA.app"
-               BlueprintName = "DIDA"
+               BlueprintIdentifier = "C188B30A29AA5335008122EF"
+               BuildableName = "DIDA-UI.app"
+               BlueprintName = "DIDA-UI"
                ReferencedContainer = "container:DIDA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EE110539299A900B00C5D370"
-            BuildableName = "DIDA.app"
-            BlueprintName = "DIDA"
+            BlueprintIdentifier = "C188B30A29AA5335008122EF"
+            BuildableName = "DIDA-UI.app"
+            BlueprintName = "DIDA-UI"
             ReferencedContainer = "container:DIDA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EE110539299A900B00C5D370"
-            BuildableName = "DIDA.app"
-            BlueprintName = "DIDA"
+            BlueprintIdentifier = "C188B30A29AA5335008122EF"
+            BuildableName = "DIDA-UI.app"
+            BlueprintName = "DIDA-UI"
             ReferencedContainer = "container:DIDA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

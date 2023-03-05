@@ -494,10 +494,10 @@
             </objects>
             <point key="canvasLocation" x="2964" y="-295"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Line Tab Bar Controller-->
         <scene sceneID="IKR-Qc-Vzv">
             <objects>
-                <viewController id="KaX-DD-3I6" customClass="TabBarController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KaX-DD-3I6" customClass="LineTabBarController" customModule="DIDA_UI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xPX-ud-KmF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,7 +508,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-ET-2Fj" customClass="TabBar" customModule="DIDA_UI" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-ET-2Fj" customClass="LineTabBar" customModule="DIDA_UI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="174" width="393" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
