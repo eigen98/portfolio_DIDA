@@ -1,19 +1,20 @@
 //
-//  HotItemTableViewCell.swift
+//  HotItemSectionCollectionViewCell.swift
 //  DIDA
 //
-//  Created by JeongMin Ko on 2023/02/18.
+//  Created by JeongMin Ko on 2023/03/06.
 //
 
 import UIKit
 
-class HotItemTableViewCell: UITableViewCell {
+class HotItemSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        // Initialization code
+        
         hotItemCollectionView.delegate = self
         hotItemCollectionView.dataSource = self
         
@@ -32,17 +33,10 @@ class HotItemTableViewCell: UITableViewCell {
        
         
         hotItemCollectionView.reloadData()
-        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
-extension HotItemTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
+extension HotItemSectionCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
