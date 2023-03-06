@@ -23,14 +23,12 @@ class HotItemSectionCollectionViewCell: UICollectionViewCell {
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize(width: 266, height: 222)
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 32, right: 0)
         layout.scrollDirection = .horizontal
         hotItemCollectionView.collectionViewLayout = layout
         
         
         hotItemCollectionView.register(UINib(nibName: "HotItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HotItemCollectionViewCell")
-        
-       
         
         hotItemCollectionView.reloadData()
     }

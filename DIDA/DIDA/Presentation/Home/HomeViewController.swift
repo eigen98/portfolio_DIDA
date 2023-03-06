@@ -7,22 +7,6 @@
 
 import UIKit
 
-// Section
-class HomeSection : Hashable {
-    let id: String
-
-    init(id: String) {
-        self.id = id
-    }
-    
-    static func == (lhs: HomeSection, rhs: HomeSection) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
 
 // Item
 enum HomeSectionItem : Hashable {
@@ -37,7 +21,7 @@ enum HomeSectionItem : Hashable {
 class HomeViewController: BaseViewController {
     
     // 홈에서 사용할 Section과 Item을 명시하여 UICollectionViewDiffableDataSource를 typealias로 생성
-    typealias HomeDataSource = UICollectionViewDiffableDataSource<HomeSection, HomeSectionItem>
+    typealias HomeDataSource = UICollectionViewDiffableDataSource<Int, HomeSectionItem>
     
     @IBOutlet weak var mainpageCollectionView: UICollectionView!
     
@@ -52,8 +36,6 @@ class HomeViewController: BaseViewController {
         navigationController?.isNavigationBarHidden = false
         
         //initNavigationBar() //네비게이션 바 설정
-        
-        //initTableView() //tableview 설정
         
         initCollectionView()
     }
@@ -88,13 +70,22 @@ class HomeViewController: BaseViewController {
     
     // 컬렉션뷰 초기화
     func initCollectionView(){
-  
+        
+        self.view.backgroundColor = .black
+        // mainpageCollectionView 등록
         configureDataSource()
         initSnapshot()
-        
+       
+        //HotItem Cell
         mainpageCollectionView.register(UINib(nibName: HotItemSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier)
         
-        mainpageCollectionView.register(UINib(nibName: "HotSellerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HotSellerCollectionViewCell")
+        //CustomTabbar Cell (Sticky Header)
+        mainpageCollectionView.register(TabbarSectionCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TabbarSectionCollectionViewCell.reuseIdentifier)
+       
+        //HotSeller Cell
+        mainpageCollectionView.register(UINib(nibName: HotSellerSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier)
+        
+        
         mainpageCollectionView.register(UINib(nibName: "SoldOutCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SoldOutCollectionViewCell")
         mainpageCollectionView.register(UINib(nibName: "RecentNFTCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentNFTCollectionViewCell")
         mainpageCollectionView.register(UINib(nibName: "ActiveActivityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ActiveActivityCollectionViewCell")
@@ -105,10 +96,12 @@ class HomeViewController: BaseViewController {
     }
     // snapshot 생성
     private func initSnapshot(){
-        var snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeSectionItem>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionItem>()
         // snapshot에 data 추가
-        snapshot.appendSections([HomeSection(id: "")])
-        snapshot.appendItems([.hotItem])
+        snapshot.appendSections([0,1,2,3,4])
+        snapshot.appendItems([.hotItem],toSection: 0)
+        snapshot.appendItems([.hotSeller],toSection: 1)
+        
         // snapshot 반영
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -120,29 +113,43 @@ class HomeViewController: BaseViewController {
             //cell 구성
             switch item {
             case .hotItem:
-                let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotItemSectionCollectionViewCell" , for: indexPath)
+                let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotItemSectionCollectionViewCell
+                return cell
+
+            case .hotSeller:
+                let cell: HotSellerSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier , for: indexPath)
+                as! HotSellerSectionCollectionViewCell
                 return cell
                 
             default :
-                let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotItemSectionCollectionViewCell" , for: indexPath)
-                as! HotItemSectionCollectionViewCell
+                let cell: TabbarSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TabbarSectionCollectionViewCell.reuseIdentifier , for: indexPath)
+                as! TabbarSectionCollectionViewCell
                 return cell
            
             }
         })
         
+        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+                if kind == UICollectionView.elementKindSectionHeader {
+                    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TabbarSectionCollectionViewCell.reuseIdentifier, for: indexPath) as! TabbarSectionCollectionViewCell
+                    header.backgroundColor = .yellow // TODO: 커스텀 탭바 완료 후 적용
+    
+                    return header
+                } else {
+                    return nil
+                }
+            }
     }
+    
     
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             switch sectionIndex {
             case 0:
                 return self.createHotItemSection()
-//            case 1:
-//                return self.createHotSellerSection()
-//            case 2:
-//                return self.createSoldOutSection()
+            case 1:
+                return self.createHotSellerSection()
 //            case 3:
 //                return self.createRecentNFTSection()
 //            case 4:
@@ -151,6 +158,10 @@ class HomeViewController: BaseViewController {
                 return self.createHotItemSection()
             }
         }
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+            config.interSectionSpacing = 0
+            layout.configuration = config
         return layout
     }
     
@@ -162,15 +173,87 @@ class HomeViewController: BaseViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+ 
+        section.interGroupSpacing = 0
+        section.orthogonalScrollingBehavior = .groupPaging
+        return section
+    }
+    
+    
+    //HotSeller Section
+    private func createHotSellerSection() -> NSCollectionLayoutSection {
+        // 아이템이나 그룹의 크기를 정의하는 객체
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
         
+        section.interGroupSpacing = 0
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        // Sticky Header View 설정
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        header.pinToVisibleBounds = true // Sticky Header View 설정
+        section.boundarySupplementaryItems = [header]
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
 
+
+        section.interGroupSpacing = 0
+        section.orthogonalScrollingBehavior = .groupPaging
+        return section
+        
+    }
+
+    //SoldOut Section
+    private func createSoldOutSection() -> NSCollectionLayoutSection {
+        // 아이템이나 그룹의 크기를 정의하는 객체
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        
         section.interGroupSpacing = 20
         section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
 
-    
 
+    //RecentNFT Section
+    private func createRecentNFTSection() -> NSCollectionLayoutSection {
+        // 아이템이나 그룹의 크기를 정의하는 객체
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        
+        section.interGroupSpacing = 20
+        section.orthogonalScrollingBehavior = .groupPaging
+        return section
+    }
+    
+    //Activity Section
+    private func createActivitySection() -> NSCollectionLayoutSection {
+        // 아이템이나 그룹의 크기를 정의하는 객체
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        
+        section.interGroupSpacing = 20
+        section.orthogonalScrollingBehavior = .groupPaging
+        return section
+    }
+    
 
 }
 
