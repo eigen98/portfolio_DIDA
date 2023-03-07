@@ -41,18 +41,15 @@ final class CommunityViewController: BaseViewController {
         configureDatasource()
         bindViewModel()
 
-        //커뮤니티
         communityViewModel.fetchData()
     }
     
     override func bindViewModel() {
         super.bindViewModel()
         
-        //시끌벅적 게시판, 최신게시물 세팅
         communityViewModel.output?.communityData
             .drive(communityTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-
     }
     
     override func bindEvent() {

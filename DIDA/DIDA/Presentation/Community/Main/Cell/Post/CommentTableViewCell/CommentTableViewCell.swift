@@ -52,7 +52,7 @@ extension CommentTableViewCell {
         case .moreCell:
             commentOuterView.backgroundColor = Colors.background_black
             profileImageView.isHidden = true
-            commentLabel.textColor = .darkGray //MARK: #939393
+            commentLabel.textColor = UIColor(hex: "939393")
         }
         commentLabel.text = text
     }
