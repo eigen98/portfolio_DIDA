@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6219D77741E6067F82433184 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
 		978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978476FD29AB392F00950F40 /* NoisyTableViewCell.swift */; };
 		9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 978476FE29AB392F00950F40 /* NoisyTableViewCell.xib */; };
 		9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784770229AB395400950F40 /* NFTCollectionViewCell.swift */; };
@@ -18,8 +17,6 @@
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
 		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
-		C136340429A0C6840023DA68 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340329A0C6840023DA68 /* Fonts.swift */; };
-		C136340629A0C68C0023DA68 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340529A0C68C0023DA68 /* Colors.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136340929A0CA980023DA68 /* UIColor+Extension.swift */; };
 		C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
