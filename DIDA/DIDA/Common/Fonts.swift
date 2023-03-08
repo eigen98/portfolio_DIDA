@@ -24,4 +24,7 @@ final class Fonts {
     static let regular_14 = UIFont.init(name: "Pretendard-Regular", size: 14)
     static let regular_12 = UIFont.init(name: "Pretendard-Regular", size: 12)
     static let regular_10 = UIFont.init(name: "Pretendard-Regular", size: 10)
+    
+    static let medium_14 = UIFont.init(name: "Pretendard-Medium", size: 14)
+    static let medium_16 = UIFont.init(name: "Pretendard-Medium", size: 16)
 }
