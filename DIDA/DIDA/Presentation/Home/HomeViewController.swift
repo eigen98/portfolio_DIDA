@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxDataSources
 
 
 // Item
@@ -13,6 +14,7 @@ enum HomeSectionItem : Hashable {
     case hotItem
     case stickyTabbar
     case hotSeller
+    case soldOut
     case recentNFT
     case activity
     
@@ -85,8 +87,9 @@ class HomeViewController: BaseViewController {
         //HotSeller Cell
         mainpageCollectionView.register(UINib(nibName: HotSellerSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier)
         
+        //Sold Out Cell
+        mainpageCollectionView.register(UINib(nibName: SoldOutSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: SoldOutSectionCollectionViewCell.reuseIdentifier)
         
-        mainpageCollectionView.register(UINib(nibName: "SoldOutCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SoldOutCollectionViewCell")
         mainpageCollectionView.register(UINib(nibName: "RecentNFTCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentNFTCollectionViewCell")
         mainpageCollectionView.register(UINib(nibName: "ActiveActivityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ActiveActivityCollectionViewCell")
         
@@ -101,7 +104,11 @@ class HomeViewController: BaseViewController {
         snapshot.appendSections([0,1,2,3,4])
         snapshot.appendItems([.hotItem],toSection: 0)
         snapshot.appendItems([.hotSeller],toSection: 1)
+        snapshot.appendItems([.soldOut],toSection: 1)
         
+        // Create and add group to snapshot
+        
+       
         // snapshot 반영
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -120,6 +127,11 @@ class HomeViewController: BaseViewController {
             case .hotSeller:
                 let cell: HotSellerSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotSellerSectionCollectionViewCell
+                return cell
+                
+            case .soldOut:
+                let cell: SoldOutSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SoldOutSectionCollectionViewCell.reuseIdentifier , for: indexPath)
+                as! SoldOutSectionCollectionViewCell
                 return cell
                 
             default :
@@ -150,8 +162,8 @@ class HomeViewController: BaseViewController {
                 return self.createHotItemSection()
             case 1:
                 return self.createHotSellerSection()
-//            case 3:
-//                return self.createRecentNFTSection()
+            case 2:
+                return self.createSoldOutSection()
 //            case 4:
 //                return self.createActiveActivitySection()
             default:
@@ -164,7 +176,7 @@ class HomeViewController: BaseViewController {
             layout.configuration = config
         return layout
     }
-    
+    //Hot Item Section
     private func createHotItemSection() -> NSCollectionLayoutSection {
         // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -185,9 +197,20 @@ class HomeViewController: BaseViewController {
         // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        
+        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244)) //244
+        let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        
+        let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(529))
+        let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        
+        // Create an array of groups
+        let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(2.0))
+        let groups = [sellerGroup, soldoutGroup] // create three groups for demonstration purposes
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: nestedGroupSize, subitems: groups)
+        // 여러개의 그룹인 경우
+        //let section = NSCollectionLayoutSection(group: NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: groups))
+        let section = NSCollectionLayoutSection(group: group) // 하나의 그룹인 경우
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
         
         section.interGroupSpacing = 0
@@ -200,7 +223,6 @@ class HomeViewController: BaseViewController {
         section.boundarySupplementaryItems = [header]
         
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-
 
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging

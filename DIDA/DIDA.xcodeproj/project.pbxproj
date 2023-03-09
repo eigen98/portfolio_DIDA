@@ -104,6 +104,8 @@
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
 		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
 		EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */; };
+		EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */; };
+		EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */; };
 		EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48694C29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift */; };
 		EE48694F29B58927005CEF31 /* HotSellerSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE48694D29B58927005CEF31 /* HotSellerSectionCollectionViewCell.xib */; };
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
@@ -213,6 +215,8 @@
 		EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTTableViewCell.xib; sourceTree = "<group>"; };
 		EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveActivityTableViewCell.swift; sourceTree = "<group>"; };
 		EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveActivityTableViewCell.xib; sourceTree = "<group>"; };
+		EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldOutSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE48694C29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSellerSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE48694D29B58927005CEF31 /* HotSellerSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotSellerSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -555,6 +559,8 @@
 			children = (
 				EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */,
 				EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */,
+				EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */,
+				EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */,
 			);
 			path = SoldOut;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
+				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
@@ -905,6 +912,7 @@
 				C1C8022D29B48BA100221FB9 /* MainViewController.swift in Sources */,
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
+				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C1C8024B29B48C3400221FB9 /* TableViewCell.swift in Sources */,
 				C1C8024A29B48C2E00221FB9 /* SnackBar.swift in Sources */,
