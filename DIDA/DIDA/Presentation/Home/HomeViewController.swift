@@ -34,7 +34,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = .black
         navigationController?.isNavigationBarHidden = false
         
         //initNavigationBar() //네비게이션 바 설정
@@ -73,7 +73,7 @@ class HomeViewController: BaseViewController {
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-        self.view.backgroundColor = .black
+        self.mainpageCollectionView.backgroundColor = .black
         // mainpageCollectionView 등록
         configureDataSource()
         initSnapshot()
@@ -90,8 +90,11 @@ class HomeViewController: BaseViewController {
         //Sold Out Cell
         mainpageCollectionView.register(UINib(nibName: SoldOutSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: SoldOutSectionCollectionViewCell.reuseIdentifier)
         
-        mainpageCollectionView.register(UINib(nibName: "RecentNFTCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentNFTCollectionViewCell")
-        mainpageCollectionView.register(UINib(nibName: "ActiveActivityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ActiveActivityCollectionViewCell")
+        //최신 NFT Cell
+        mainpageCollectionView.register(UINib(nibName: RecentNFTSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: RecentNFTSectionCollectionViewCell.reuseIdentifier)
+        
+        //활발한 활동 Cell
+        mainpageCollectionView.register(UINib(nibName: ActivitySectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: ActivitySectionCollectionViewCell.reuseIdentifier)
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
         mainpageCollectionView.reloadData()
@@ -101,14 +104,10 @@ class HomeViewController: BaseViewController {
     private func initSnapshot(){
         var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionItem>()
         // snapshot에 data 추가
-        snapshot.appendSections([0,1,2,3,4])
+        snapshot.appendSections([0,1])
         snapshot.appendItems([.hotItem],toSection: 0)
-        snapshot.appendItems([.hotSeller],toSection: 1)
-        snapshot.appendItems([.soldOut],toSection: 1)
+        snapshot.appendItems([.hotSeller, .soldOut, .recentNFT, .activity],toSection: 1)
         
-        // Create and add group to snapshot
-        
-       
         // snapshot 반영
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -133,6 +132,17 @@ class HomeViewController: BaseViewController {
                 let cell: SoldOutSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SoldOutSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! SoldOutSectionCollectionViewCell
                 return cell
+                
+            case .recentNFT:
+                let cell: RecentNFTSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentNFTSectionCollectionViewCell.reuseIdentifier , for: indexPath)
+                as! RecentNFTSectionCollectionViewCell
+                return cell
+            
+            case .activity:
+                let cell: ActivitySectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivitySectionCollectionViewCell.reuseIdentifier , for: indexPath)
+                as! ActivitySectionCollectionViewCell
+                return cell
+            
                 
             default :
                 let cell: TabbarSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TabbarSectionCollectionViewCell.reuseIdentifier , for: indexPath)
@@ -162,10 +172,7 @@ class HomeViewController: BaseViewController {
                 return self.createHotItemSection()
             case 1:
                 return self.createHotSellerSection()
-            case 2:
-                return self.createSoldOutSection()
-//            case 4:
-//                return self.createActiveActivitySection()
+  
             default:
                 return self.createHotItemSection()
             }
@@ -192,89 +199,74 @@ class HomeViewController: BaseViewController {
     }
     
     
-    //HotSeller Section
+    //탭바 Section
     private func createHotSellerSection() -> NSCollectionLayoutSection {
-        // 아이템이나 그룹의 크기를 정의하는 객체
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        
-        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244)) //244
-        let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        
-        let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(529))
-        let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        
+ 
         // Create an array of groups
-        let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(2.0))
-        let groups = [sellerGroup, soldoutGroup] // create three groups for demonstration purposes
+        let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(3.0))
+        let groups = createGroupsOfTabbarSection()
+        
         let group = NSCollectionLayoutGroup.vertical(layoutSize: nestedGroupSize, subitems: groups)
-        // 여러개의 그룹인 경우
-        //let section = NSCollectionLayoutSection(group: NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: groups))
-        let section = NSCollectionLayoutSection(group: group) // 하나의 그룹인 경우
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+       
+        let section = NSCollectionLayoutSection(group: group)
+        //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging
         
+        var header = createHeader()
+        
+        section.boundarySupplementaryItems = [header]
+        
+        //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        section.interGroupSpacing = 0
+        section.orthogonalScrollingBehavior = .groupPaging
+        return section
+        
+    }
+    
+    /*
+     Sticky Header 설정
+     */
+    private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem{
         // Sticky Header View 설정
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         header.pinToVisibleBounds = true // Sticky Header View 설정
-        section.boundarySupplementaryItems = [header]
-        
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-
-        section.interGroupSpacing = 0
-        section.orthogonalScrollingBehavior = .groupPaging
-        return section
-        
-    }
-
-    //SoldOut Section
-    private func createSoldOutSection() -> NSCollectionLayoutSection {
-        // 아이템이나 그룹의 크기를 정의하는 객체
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-        
-        section.interGroupSpacing = 20
-        section.orthogonalScrollingBehavior = .groupPaging
-        return section
-    }
-
-
-    //RecentNFT Section
-    private func createRecentNFTSection() -> NSCollectionLayoutSection {
-        // 아이템이나 그룹의 크기를 정의하는 객체
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-        
-        section.interGroupSpacing = 20
-        section.orthogonalScrollingBehavior = .groupPaging
-        return section
+        return header
     }
     
-    //Activity Section
-    private func createActivitySection() -> NSCollectionLayoutSection {
+    /*
+     탭바 섹션의 각 그룹 생성
+     */
+    private func createGroupsOfTabbarSection() -> [NSCollectionLayoutGroup] {
         // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(29))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        section.interGroupSpacing = 20
-        section.orthogonalScrollingBehavior = .groupPaging
-        return section
+        //HOTSeller 그룹
+        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244)) //244
+        let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        
+        //SOLDOUT 그룹
+        let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(529))
+        let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        
+        //최신 NFT 그룹
+        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(740))
+        let recentNFTGroup = NSCollectionLayoutGroup.vertical(layoutSize: recentNFTGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        
+        //활발한 활동 그룹
+        let activityGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(491))
+        let activityGroup = NSCollectionLayoutGroup.vertical(layoutSize: activityGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let groups = [sellerGroup, soldoutGroup, recentNFTGroup, activityGroup]
+        
+        return groups
     }
+    
     
 
 }

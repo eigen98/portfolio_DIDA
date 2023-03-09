@@ -70,8 +70,6 @@
 		C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */; };
 		C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC91FB029A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift */; };
 		C1C8023329B48BB700221FB9 /* ActiveActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */; };
-		C1C8023429B48BBE00221FB9 /* RecentNFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */; };
-		C1C8023529B48BE700221FB9 /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
 		C1C8023629B48BEA00221FB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344A29A0E0640023DA68 /* HomeViewController.swift */; };
 		C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */; };
 		C1C8023929B48BF300221FB9 /* SwapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344C29A0E0ED0023DA68 /* SwapViewController.swift */; };
@@ -98,11 +96,12 @@
 		C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C1C8025229B48D1200221FB9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
-		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
-		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
-		EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */; };
+		EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */; };
+		EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */; };
+		EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */; };
+		EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */; };
 		EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */; };
 		EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */; };
 		EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */; };
@@ -201,8 +200,6 @@
 		C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutTableViewCell.swift; sourceTree = "<group>"; };
-		EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldOutTableViewCell.xib; sourceTree = "<group>"; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053D299A900B00C5D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE11053F299A900B00C5D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,8 +208,10 @@
 		EE110546299A900C00C5D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE110549299A900C00C5D370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE11054B299A900C00C5D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTTableViewCell.swift; sourceTree = "<group>"; };
-		EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTTableViewCell.xib; sourceTree = "<group>"; };
+		EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTSectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitySectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveActivityTableViewCell.swift; sourceTree = "<group>"; };
 		EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveActivityTableViewCell.xib; sourceTree = "<group>"; };
 		EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -557,8 +556,6 @@
 		EE365C8229A1168500B53A6E /* SoldOut */ = {
 			isa = PBXGroup;
 			children = (
-				EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */,
-				EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */,
 				EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */,
 				EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */,
 			);
@@ -568,8 +565,8 @@
 		EE365C8329A1168F00B53A6E /* RecentNFT */ = {
 			isa = PBXGroup;
 			children = (
-				EE365C8429A116D000B53A6E /* RecentNFTTableViewCell.swift */,
-				EE365C8529A116D000B53A6E /* RecentNFTTableViewCell.xib */,
+				EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */,
+				EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */,
 			);
 			path = RecentNFT;
 			sourceTree = "<group>";
@@ -579,6 +576,8 @@
 			children = (
 				EE365C8929A11F6800B53A6E /* ActiveActivityTableViewCell.swift */,
 				EE365C8A29A11F6800B53A6E /* ActiveActivityTableViewCell.xib */,
+				EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */,
+				EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -739,21 +738,21 @@
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
-				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
 				C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */,
+				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				EECD7EFD29B56D8E0067961B /* TabbarSectionCollectionViewCell.xib in Resources */,
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
 				EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */,
-				EE365C8729A116D000B53A6E /* RecentNFTTableViewCell.xib in Resources */,
 				C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */,
 				C1956EC229ACD4EB00018A93 /* TableViewCell.xib in Resources */,
+				EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */,
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 				C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */,
@@ -884,16 +883,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECD7EFC29B56D8E0067961B /* TabbarSectionCollectionViewCell.swift in Sources */,
-				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
-				C1C8023429B48BBE00221FB9 /* RecentNFTTableViewCell.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
-				C1C8023529B48BE700221FB9 /* SoldOutTableViewCell.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
 				C1C8024329B48C1400221FB9 /* ViewController.swift in Sources */,
@@ -907,6 +903,7 @@
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C1C8023329B48BB700221FB9 /* ActiveActivityTableViewCell.swift in Sources */,
+				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
 				C1C8022D29B48BA100221FB9 /* MainViewController.swift in Sources */,
@@ -922,6 +919,7 @@
 				C1C8024929B48C2E00221FB9 /* SnackBarActionItem.swift in Sources */,
 				EECD7EF529B562C60067961B /* HotItemSectionCollectionViewCell.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,
+				EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */,
 				C1C8025229B48D1200221FB9 /* Profile.swift in Sources */,
 				EECD7EF829B565EF0067961B /* UICollectionReusableView+Extension.swift in Sources */,
 				C1C8022F29B48BB200221FB9 /* SellerCollectionViewCell.swift in Sources */,
