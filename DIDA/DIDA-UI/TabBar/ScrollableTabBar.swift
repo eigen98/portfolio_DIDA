@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollableTabBar: UIView, TabBarInterface {
+class ScrollableTabBar: UIView, LineTabBarInterface {
     
     var selectedIndex: Int?
     
@@ -23,7 +23,7 @@ class ScrollableTabBar: UIView, TabBarInterface {
         }
     }
     
-    weak var delegate: TabBarDelegate?
+    weak var delegate: LineTabBarDelegate?
     
     let scrollView = UIScrollView()
     
@@ -115,14 +115,27 @@ class ScrollableTabBar: UIView, TabBarInterface {
         
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let `self` = self else { return }
-            self.indicator.snp.updateConstraints { make in
-                make.leading.equalTo(self.scrollView.snp.leading).offset(distance)
-            }
-            if (index == 0) {
+            
+            if (distance < self.scrollView.frame.width) {
                 self.scrollView.setContentOffset(.init(x: 0, y: 0), animated: true)
-            } else if (index == self.tabItems.count) {
-                self.scrollView.setContentOffset(.init(x: self.scrollView.contentSize.width, y: 0), animated: true)
+                
+                self.indicator.snp.updateConstraints { make in
+                    make.leading.equalTo(self.scrollView.snp.leading).offset(distance)
+                }
+            } else {
+                if (button.tag == self.stackView.subviews.count-1) {
+                    self.indicator.snp.updateConstraints { make in
+                        make.leading.equalTo(self.scrollView.snp.leading).offset(self.scrollView.frame.minX-self.width)
+                    }
+                } else {
+                    self.indicator.snp.updateConstraints { make in
+                        make.leading.equalTo(self.scrollView.snp.leading).offset(distance-self.width)
+                    }
+                }
+                
+                self.scrollView.contentOffset.x = self.width
             }
+            
             self.layoutIfNeeded()
         }
         
@@ -143,13 +156,13 @@ class ScrollableTabBar: UIView, TabBarInterface {
         
         self.stackView.layoutIfNeeded()
         
+        if let button = self.stackView.subviews.first as? UIButton {
+            self.didChangePosition(button)
+        }
+        
         self.indicator.snp.updateConstraints { make in
             make.leading.equalTo(self.scrollView.snp.leading)
             make.width.equalTo(self.width)
-        }
-        
-        if let button = self.stackView.subviews.first as? UIButton {
-            self.didChangePosition(button)
         }
     }
     

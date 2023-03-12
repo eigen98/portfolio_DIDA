@@ -7,23 +7,20 @@
 
 import UIKit
 
-protocol TabBarDelegate: AnyObject {
+protocol LineTabBarDelegate: AnyObject {
     func didTapTabBarItem(selectedIndex: Int)
 }
 
-protocol TabBarInterface {
-    var delegate: TabBarDelegate? { get set }
+protocol LineTabBarInterface {
+    var delegate: LineTabBarDelegate? { get set }
     
     var selectedIndex: Int? { get set }
     var tabItems: [String] { get set }
-    var width: CGFloat { get set }
-    
-    func moveTabItem(at selected : Int)
 }
 
-class TabBar: UIView, TabBarInterface {
+class LineTabBar: UIView, LineTabBarInterface {
     
-    weak var delegate: TabBarDelegate?
+    weak var delegate: LineTabBarDelegate?
     
     var selectedIndex: Int?
     
@@ -32,8 +29,6 @@ class TabBar: UIView, TabBarInterface {
             setTabBarItems(items: newVal)
         }
     }
-    
-    var width: CGFloat = 120
     
     let tabbarView: UISegmentedControl = {
         let segment = UISegmentedControl()
@@ -96,7 +91,7 @@ class TabBar: UIView, TabBarInterface {
         indicator.snp.makeConstraints { make in
             make.height.equalTo(3)
             make.bottom.equalToSuperview()
-            make.width.equalTo(self.width)
+            make.width.equalTo(120)
             make.leading.equalTo(self.tabbarView.snp.leading)
         }
         
@@ -107,11 +102,6 @@ class TabBar: UIView, TabBarInterface {
         }
         
         self.tabbarView.addTarget(self, action: #selector(didChangePosition), for: .valueChanged)
-    }
-    
-    public func moveTabItem(at selected : Int) {
-        self.tabbarView.selectedSegmentIndex = selected
-        self.didChangePosition()
     }
     
     @objc func didChangePosition() {

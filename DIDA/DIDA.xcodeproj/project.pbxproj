@@ -68,9 +68,9 @@
 		C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */; };
 		C1956EA229AC8B6D00018A93 /* FullTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA129AC8B6D00018A93 /* FullTextField.swift */; };
 		C1956EA329AC8B6D00018A93 /* FullTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA129AC8B6D00018A93 /* FullTextField.swift */; };
-		C1956EA629AC8E4F00018A93 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA529AC8E4F00018A93 /* TabBarController.swift */; };
-		C1956EA829AC8E5800018A93 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* TabBar.swift */; };
-		C1956EA929AC8E5800018A93 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* TabBar.swift */; };
+		C1956EA629AC8E4F00018A93 /* LineTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA529AC8E4F00018A93 /* LineTabBarController.swift */; };
+		C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* LineTabBar.swift */; };
+		C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* LineTabBar.swift */; };
 		C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */; };
 		C1956EB729ACD0F300018A93 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */; };
 		C1956EBD29ACD3FB00018A93 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EBC29ACD3FB00018A93 /* TableViewController.swift */; };
@@ -173,8 +173,8 @@
 		C1956E9A29AC773100018A93 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		C1956EA129AC8B6D00018A93 /* FullTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTextField.swift; sourceTree = "<group>"; };
-		C1956EA529AC8E4F00018A93 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		C1956EA729AC8E5800018A93 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		C1956EA529AC8E4F00018A93 /* LineTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTabBarController.swift; sourceTree = "<group>"; };
+		C1956EA729AC8E5800018A93 /* LineTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTabBar.swift; sourceTree = "<group>"; };
 		C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		C1956EBC29ACD3FB00018A93 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C1956EBE29ACD4EB00018A93 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -444,8 +444,8 @@
 		C1956EA429AC8E4400018A93 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				C1956EA529AC8E4F00018A93 /* TabBarController.swift */,
-				C1956EA729AC8E5800018A93 /* TabBar.swift */,
+				C1956EA529AC8E4F00018A93 /* LineTabBarController.swift */,
+				C1956EA729AC8E5800018A93 /* LineTabBar.swift */,
 				C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */,
 				C1C8022429B1159900221FB9 /* TabBarButton.swift */,
 			);
@@ -820,10 +820,10 @@
 				C1956EBD29ACD3FB00018A93 /* TableViewController.swift in Sources */,
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
 				C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */,
-				C1956EA929AC8E5800018A93 /* TabBar.swift in Sources */,
+				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
 				C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
-				C1956EA629AC8E4F00018A93 /* TabBarController.swift in Sources */,
+				C1956EA629AC8E4F00018A93 /* LineTabBarController.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
 				C1956E9C29AC773100018A93 /* TextField.swift in Sources */,
 				C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */,
@@ -860,7 +860,7 @@
 				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
 				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
 				C1956ECA29ACDD5000018A93 /* SnackBar.swift in Sources */,
-				C1956EA829AC8E5800018A93 /* TabBar.swift in Sources */,
+				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
 				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
 				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
