@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -203,24 +204,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="URG-et-haU">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gEw-Ud-RRY">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h13-ha-iOU">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5CD-dZ-eHP">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YxE-j9-QKe">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dc1-RL-lDS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="URG-et-haU" secondAttribute="bottom" id="2Sg-us-ra7"/>
-                            <constraint firstItem="URG-et-haU" firstAttribute="leading" secondItem="dc1-RL-lDS" secondAttribute="leading" id="GAG-Jv-PIi"/>
-                            <constraint firstItem="URG-et-haU" firstAttribute="top" secondItem="TJS-B6-IzC" secondAttribute="top" id="Qod-mf-Kkf"/>
-                            <constraint firstItem="URG-et-haU" firstAttribute="trailing" secondItem="dc1-RL-lDS" secondAttribute="trailing" id="pWP-XH-sYS"/>
+                            <constraint firstItem="dc1-RL-lDS" firstAttribute="bottom" secondItem="gEw-Ud-RRY" secondAttribute="bottom" id="5uQ-J6-eXc"/>
+                            <constraint firstItem="gEw-Ud-RRY" firstAttribute="top" secondItem="dc1-RL-lDS" secondAttribute="top" id="C7W-63-QfD"/>
+                            <constraint firstItem="dc1-RL-lDS" firstAttribute="trailing" secondItem="gEw-Ud-RRY" secondAttribute="trailing" id="IZd-dF-7tR"/>
+                            <constraint firstItem="gEw-Ud-RRY" firstAttribute="leading" secondItem="dc1-RL-lDS" secondAttribute="leading" id="JVi-7m-kuP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="bFe-bu-f3J" userLabel="Home"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="mainpageTableView" destination="URG-et-haU" id="ONV-yd-jqL"/>
+                        <outlet property="mainpageCollectionView" destination="gEw-Ud-RRY" id="uUh-tm-3dM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5b-qH-FIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
