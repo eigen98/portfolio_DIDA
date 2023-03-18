@@ -23,11 +23,17 @@ class LineTabBarController: UIViewController {
         
         self.view.backgroundColor = Colors.background_black
         setTabBar()
+        setTabBar2()
     }
     
     func setTabBar() {
         self.tabBar.tabItems = ["좋아요한 NFT", "my NFT"]
         self.tabBar.delegate = self
+    }
+    
+    func setTabBar2() {
+        self.tabBar2.tabItems = ["Hot Seller", "Sold out", "최신 NFT", "활동"]
+        self.tabBar2.delegate = self
     }
 }
 
