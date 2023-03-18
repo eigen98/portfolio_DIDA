@@ -48,6 +48,7 @@
 		C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9D29AC777C00018A93 /* TextFieldViewController.swift */; };
 		C1956EA329AC8B6D00018A93 /* FullTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA129AC8B6D00018A93 /* FullTextField.swift */; };
 		C1956EA629AC8E4F00018A93 /* LineTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA529AC8E4F00018A93 /* LineTabBarController.swift */; };
+		C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* LineTabBar.swift */; };
 		C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EA729AC8E5800018A93 /* LineTabBar.swift */; };
 		C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */; };
 		C1956EB729ACD0F300018A93 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */; };
@@ -58,6 +59,15 @@
 		C1956ECB29ACDD5000018A93 /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956EC929ACDD5000018A93 /* SnackBar.swift */; };
 		C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */; };
 		C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */; };
+		C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
+		C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
+		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
+		C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
+		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
+		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
+		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
+		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
+		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
 		C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -198,6 +208,8 @@
 		C1956EC929ACDD5000018A93 /* SnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarActionItem.swift; sourceTree = "<group>"; };
 		C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
+		C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,6 +478,8 @@
 			children = (
 				C1956EA529AC8E4F00018A93 /* LineTabBarController.swift */,
 				C1956EA729AC8E5800018A93 /* LineTabBar.swift */,
+				C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */,
+				C1C8022429B1159900221FB9 /* TabBarButton.swift */,
 			);
 			path = LineTabBar;
 			sourceTree = "<group>";
@@ -852,6 +866,7 @@
 				C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */,
 				C1956EBD29ACD3FB00018A93 /* TableViewController.swift in Sources */,
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
+				C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C1C8022629B1159900221FB9 /* (null) in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
@@ -865,6 +880,7 @@
 				C188B32529AA5B01008122EF /* Colors.swift in Sources */,
 				C188B32A29AA61AC008122EF /* UIImage+Extension.swift in Sources */,
 				C14389C329AA811700138586 /* String+Extension.swift in Sources */,
+				C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C1956EC129ACD4EB00018A93 /* TableViewCell.swift in Sources */,
 				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
 				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
@@ -882,6 +898,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
+				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
+				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
+				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
+				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
+				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
+				C1956ECD29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
+				C1956EC029ACD4EB00018A93 /* TableViewCell.swift in Sources */,
+				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
+				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
+				C1956ECA29ACDD5000018A93 /* SnackBar.swift in Sources */,
+				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
+				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
+				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
+				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
+				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
+				C1956E9229AB788B00018A93 /* TextView.swift in Sources */,
+				C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */,
+				C15158D129A2219000017147 /* TabBar.swift in Sources */,
+				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
+				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
+				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
+				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
+				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
+				C1956E9B29AC773100018A93 /* TextField.swift in Sources */,
+				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
+				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
+				C14389C229AA811700138586 /* String+Extension.swift in Sources */,
+				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
+				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
+				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
+				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
+				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,
+				C1956EA229AC8B6D00018A93 /* FullTextField.swift in Sources */,
+				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
+				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
+				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
+				EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */,
+				EEC91FB629A1F1ED002AFB65 /* SellerCollectionViewCell.swift in Sources */,
 				EECD7EFC29B56D8E0067961B /* TabbarSectionCollectionViewCell.swift in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
