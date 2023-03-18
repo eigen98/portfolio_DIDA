@@ -1,19 +1,20 @@
 //
-//  HotItemTableViewCell.swift
+//  HotItemSectionCollectionViewCell.swift
 //  DIDA
 //
-//  Created by JeongMin Ko on 2023/02/18.
+//  Created by JeongMin Ko on 2023/03/06.
 //
 
 import UIKit
 
-class HotItemTableViewCell: UITableViewCell {
+class HotItemSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        // Initialization code
+        
         hotItemCollectionView.delegate = self
         hotItemCollectionView.dataSource = self
         
@@ -22,27 +23,18 @@ class HotItemTableViewCell: UITableViewCell {
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize(width: 266, height: 222)
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 32, right: 0)
         layout.scrollDirection = .horizontal
         hotItemCollectionView.collectionViewLayout = layout
         
         
         hotItemCollectionView.register(UINib(nibName: "HotItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HotItemCollectionViewCell")
         
-       
-        
         hotItemCollectionView.reloadData()
-        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
-extension HotItemTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
+extension HotItemSectionCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
