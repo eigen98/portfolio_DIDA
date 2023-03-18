@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978476FD29AB392F00950F40 /* NoisyTableViewCell.swift */; };
+		9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 978476FE29AB392F00950F40 /* NoisyTableViewCell.xib */; };
+		9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784770229AB395400950F40 /* NFTCollectionViewCell.swift */; };
+		9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9784770329AB395400950F40 /* NFTCollectionViewCell.xib */; };
+		9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9784770629AB397B00950F40 /* PostTableViewCell.swift */; };
+		9784770929AB397B00950F40 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9784770729AB397B00950F40 /* PostTableViewCell.xib */; };
+		97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */; };
+		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
+		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
+		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
 		C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
@@ -158,6 +168,16 @@
 		4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EEF637E7147C3DE2D5676B /* Pods-DIDA-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.debug.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.debug.xcconfig"; sourceTree = "<group>"; };
 		81D4F002083530D9F94FCC05 /* Pods-DIDA-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA-UI.release.xcconfig"; path = "Target Support Files/Pods-DIDA-UI/Pods-DIDA-UI.release.xcconfig"; sourceTree = "<group>"; };
+		978476FD29AB392F00950F40 /* NoisyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisyTableViewCell.swift; sourceTree = "<group>"; };
+		978476FE29AB392F00950F40 /* NoisyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoisyTableViewCell.xib; sourceTree = "<group>"; };
+		9784770229AB395400950F40 /* NFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewCell.swift; sourceTree = "<group>"; };
+		9784770329AB395400950F40 /* NFTCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTCollectionViewCell.xib; sourceTree = "<group>"; };
+		9784770629AB397B00950F40 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		9784770729AB397B00950F40 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
+		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -275,6 +295,99 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9721E78A29B314FC007EA625 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		9721E78B29B31510007EA625 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				978476FA29AB38FC00950F40 /* Cell */,
+				C136344E29A0E10A0023DA68 /* CommunityViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		978476FA29AB38FC00950F40 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				978476FC29AB391200950F40 /* Post */,
+				978476FB29AB390500950F40 /* Noisy */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		978476FB29AB390500950F40 /* Noisy */ = {
+			isa = PBXGroup;
+			children = (
+				9784770129AB393700950F40 /* NFT */,
+				978476FD29AB392F00950F40 /* NoisyTableViewCell.swift */,
+				978476FE29AB392F00950F40 /* NoisyTableViewCell.xib */,
+			);
+			path = Noisy;
+			sourceTree = "<group>";
+		};
+		978476FC29AB391200950F40 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0EB29AB941E0001F60A /* CommentTableViewCell */,
+				9784770629AB397B00950F40 /* PostTableViewCell.swift */,
+				9784770729AB397B00950F40 /* PostTableViewCell.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		9784770129AB393700950F40 /* NFT */ = {
+			isa = PBXGroup;
+			children = (
+				9784770229AB395400950F40 /* NFTCollectionViewCell.swift */,
+				9784770329AB395400950F40 /* NFTCollectionViewCell.xib */,
+			);
+			path = NFT;
+			sourceTree = "<group>";
+		};
+		97BAE0EB29AB941E0001F60A /* CommentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0EC29AB94350001F60A /* CommentTableViewCell.swift */,
+				97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */,
+			);
+			path = CommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		97BAE0F529ABCC890001F60A /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0FF29AC759B0001F60A /* Community */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		97BAE0F729ABCCBC0001F60A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		97BAE0F829ABCCCF0001F60A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		97BAE0FF29AC759B0001F60A /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +403,8 @@
 		C13633FB29A0C5B70023DA68 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C136340129A0C6640023DA68 /* Usecase */,
+				97BAE12429B11F190001F60A /* Repository.swift */,
+				97BAE0F529ABCC890001F60A /* Usecase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -298,8 +412,8 @@
 		C13633FC29A0C5C10023DA68 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C13633FF29A0C63B0023DA68 /* Request */,
-				C136340029A0C64D0023DA68 /* Response */,
+				97BAE0F829ABCCCF0001F60A /* Request */,
+				97BAE0F729ABCCBC0001F60A /* Response */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -312,27 +426,6 @@
 				C136340529A0C68C0023DA68 /* Colors.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		C13633FF29A0C63B0023DA68 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		C136340029A0C64D0023DA68 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		C136340129A0C6640023DA68 /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Usecase;
 			sourceTree = "<group>";
 		};
 		C136340229A0C66D0023DA68 /* Main */ = {
@@ -402,7 +495,8 @@
 		C136344829A0E0340023DA68 /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				C136344E29A0E10A0023DA68 /* CommunityViewController.swift */,
+				9721E78B29B31510007EA625 /* Main */,
+				9721E78A29B314FC007EA625 /* PostDetail */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -752,10 +846,17 @@
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
+				9784770929AB397B00950F40 /* PostTableViewCell.xib in Resources */,
+				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
+				9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */,
+				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
+				97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */,
+				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
+				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
 				C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */,
 				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
@@ -769,6 +870,7 @@
 				EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */,
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
+				9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */,
 				C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */,
 				C136343529A0CD090023DA68 /* Pretendard-ExtraLight.ttf in Resources */,
 				C136343729A0CD090023DA68 /* Pretendard-Black.ttf in Resources */,
@@ -898,6 +1000,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
+				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
+				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
+				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
+				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
 				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
@@ -921,9 +1028,15 @@
 				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
 				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
 				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
+				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
+				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
+				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
+				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
+				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
 				C1956E9B29AC773100018A93 /* TextField.swift in Sources */,
 				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
+				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
 				C14389C229AA811700138586 /* String+Extension.swift in Sources */,
 				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
@@ -1208,10 +1321,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 3C6U386B4C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1228,6 +1342,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dida.DIDA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1247,7 +1362,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 3C6U386B4C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
