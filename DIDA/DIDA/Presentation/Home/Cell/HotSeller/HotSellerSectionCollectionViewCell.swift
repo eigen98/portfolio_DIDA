@@ -9,82 +9,70 @@ import UIKit
 
 class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
+    
+    var hotSellers = [HotSellerEntity]()
     @IBOutlet weak var containerView: UIView!
     
-    //MARK: Outltes
-    var pageCollectionView: UICollectionView = {
-        let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 200, height: 100), collectionViewLayout: collectionViewLayout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        // 왼쪽 정렬
+    private let cellIdentifier = "SellerCollectionViewCell"
+    
+    lazy var pageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize(width: 126, height: 174)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
-             
-
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .black
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.isScrollEnabled = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         return collectionView
     }()
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setupPageCollectionView()
     }
     
-    //MARK: Setup view
-    func setupPageCollectionView(){
-        pageCollectionView.delegate = self
-        pageCollectionView.dataSource = self
-        pageCollectionView.backgroundColor = .black
-        pageCollectionView.showsHorizontalScrollIndicator = false
-       
-        pageCollectionView.register(UINib(nibName: "SellerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SellerCollectionViewCell")
-        pageCollectionView.isScrollEnabled = true
-       
-        self.containerView.addSubview(pageCollectionView)
-        pageCollectionView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor).isActive = true
-        pageCollectionView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor).isActive = true
-        pageCollectionView.topAnchor.constraint(equalTo: self.containerView.topAnchor).isActive = true
-        pageCollectionView.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor, constant: -40).isActive = true
-       
+    private func setupPageCollectionView() {
+        containerView.addSubview(pageCollectionView)
+        
+        NSLayoutConstraint.activate([
+            pageCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            pageCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            pageCollectionView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            pageCollectionView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -40)
+        ])
+        
         pageCollectionView.reloadData()
     }
 }
 
-    
-    
-   
-
-
-
-
-
-
-
-//MARK:- UICollectionViewDelegateFlowLayout
-extension HotSellerSectionCollectionViewCell: UICollectionViewDelegateFlowLayout , UICollectionViewDataSource{
+// MARK: - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+extension HotSellerSectionCollectionViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return hotSellers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SellerCollectionViewCell", for: indexPath) as! SellerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! SellerCollectionViewCell
+        let item = hotSellers[indexPath.row]
+        cell.configure(seller: item)
         return cell
     }
-   
-
-    
-    
-  
 }
+
+
+
+
