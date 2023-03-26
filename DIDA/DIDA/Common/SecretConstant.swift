@@ -6,3 +6,8 @@
 //
 
 import Foundation
+class SecretConstant{
+    static let baseURL = "https://service-dida.shop"
+   
+    
+}
