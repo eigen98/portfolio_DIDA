@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+final class RepositoryProvider {
+    // singleton repositories
+   
+    static var homeRepo:HomeRepository? = nil
+    
+    static func getHomeRepository() -> HomeRepository {
+        if self.homeRepo == nil {
+            self.homeRepo = HomeRepositoryImpl(apiClient: APIClient() )
+        }
+        return self.homeRepo!
+    }
+    
+}
