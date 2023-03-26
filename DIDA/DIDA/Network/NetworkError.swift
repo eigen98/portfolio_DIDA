@@ -6,3 +6,7 @@
 //
 
 import Foundation
+struct NetworkError: Error {
+    let statusCode: Int
+    let message: String
+}
