@@ -6,3 +6,12 @@
 //
 
 import Foundation
+struct RecentCardResponse: Codable{
+    var cardId : Int
+    var cardName : String
+    var userName : String
+    var imgUrl : String
+    var price : String
+    var liked : Bool
+    
+}

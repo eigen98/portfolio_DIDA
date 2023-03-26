@@ -6,3 +6,10 @@
 //
 
 import Foundation
+struct HotItemResponse : Codable{
+    var cardId : Int
+    var imgUrl : String
+    var name : String
+    var price : String
+    var count : String
+}

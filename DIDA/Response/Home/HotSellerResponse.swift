@@ -6,3 +6,9 @@
 //
 
 import Foundation
+struct HotSellerResponse :Codable {
+    var userId: Int
+    var name: String
+    var imgUrl: String
+    var profileUrl: String
+}
