@@ -441,6 +441,14 @@
                 <constraint firstItem="t9w-32-qse" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="seh-Xc-7Qk"/>
             </constraints>
             <size key="customSize" width="375" height="784"/>
+            <connections>
+                <outlet property="firstItemImageView" destination="NDk-Cm-8UJ" id="MG3-tT-cyp"/>
+                <outlet property="firstItemsContainerView" destination="1Tv-Ge-Z8v" id="U4G-Sp-afa"/>
+                <outlet property="fourthItemImageView" destination="nCI-Id-8Vq" id="5WR-LN-lul"/>
+                <outlet property="secondItemImageView" destination="fwY-uL-NeQ" id="EVu-5B-db5"/>
+                <outlet property="secondItemsContainerView" destination="mEK-BD-7hv" id="knG-Sd-UVS"/>
+                <outlet property="thirdItemImageView" destination="cFc-1Q-boS" id="NaJ-Kk-KlB"/>
+            </connections>
             <point key="canvasLocation" x="394.6564885496183" y="90.845070422535215"/>
         </collectionViewCell>
     </objects>
