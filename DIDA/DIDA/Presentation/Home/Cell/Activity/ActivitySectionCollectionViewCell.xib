@@ -60,18 +60,18 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-Id-eqb">
-                                        <rect key="frame" x="94" y="18" width="146" height="24"/>
+                                        <rect key="frame" x="94.000000000000014" y="18" width="138.33333333333337" height="24"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFg-sp-VaY">
-                                        <rect key="frame" x="94" y="47" width="42.333333333333343" height="17"/>
+                                        <rect key="frame" x="94" y="47" width="44" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00i-ZY-a3Z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00i-ZY-a3Z" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
                                         <rect key="frame" x="255" y="30" width="76" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="UEZ-bq-0CS"/>
@@ -79,7 +79,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="팔로우"/>
+                                        <state key="normal" title="팔로우">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="16"/>
@@ -122,18 +124,18 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78P-gf-YlQ">
-                                        <rect key="frame" x="94" y="18" width="146" height="24"/>
+                                        <rect key="frame" x="94.000000000000014" y="18" width="138.33333333333337" height="24"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7K-km-DsG">
-                                        <rect key="frame" x="94" y="47" width="42.333333333333343" height="17"/>
+                                        <rect key="frame" x="94" y="47" width="44" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXC-y0-GV0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXC-y0-GV0" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
                                         <rect key="frame" x="255" y="30" width="76" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="76" id="2q9-0e-vGo"/>
@@ -141,7 +143,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="팔로우"/>
+                                        <state key="normal" title="팔로우">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="16"/>
@@ -184,18 +188,18 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olm-Nt-Jfm">
-                                        <rect key="frame" x="94" y="18" width="146" height="24"/>
+                                        <rect key="frame" x="94.000000000000014" y="18" width="138.33333333333337" height="24"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slW-Qe-WKA">
-                                        <rect key="frame" x="94" y="47" width="42.333333333333343" height="17"/>
+                                        <rect key="frame" x="94" y="47" width="44" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbW-rO-ua2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbW-rO-ua2" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
                                         <rect key="frame" x="255" y="30" width="76" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4Kp-2b-Hes"/>
@@ -203,7 +207,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="팔로우"/>
+                                        <state key="normal" title="팔로우">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="16"/>
@@ -277,6 +283,23 @@
                 <constraint firstItem="CIL-01-8d8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uzR-ld-S7B"/>
             </constraints>
             <size key="customSize" width="385" height="553"/>
+            <connections>
+                <outlet property="firstFollowButton" destination="00i-ZY-a3Z" id="WfD-jC-EOs"/>
+                <outlet property="firstItemContainerView" destination="dAJ-4q-GSJ" id="lfT-on-7fo"/>
+                <outlet property="firstItemCountLabel" destination="vFg-sp-VaY" id="91a-jj-STm"/>
+                <outlet property="firstItemImageView" destination="HCp-wP-ygF" id="lZr-On-WFn"/>
+                <outlet property="firstItemNameLabel" destination="3NG-Id-eqb" id="3Zm-IE-pED"/>
+                <outlet property="secondFollowButton" destination="XbW-rO-ua2" id="B0V-nx-bzx"/>
+                <outlet property="secondItemContainerView" destination="xZd-DV-VYx" id="jzc-gT-f52"/>
+                <outlet property="secondItemCountLabel" destination="slW-Qe-WKA" id="MRL-3B-85b"/>
+                <outlet property="secondItemImageView" destination="zXh-k0-OMk" id="Fad-zI-aO0"/>
+                <outlet property="secondItemNameLabel" destination="Olm-Nt-Jfm" id="C44-aH-26b"/>
+                <outlet property="thirdFollowButton" destination="bXC-y0-GV0" id="p9L-0i-OPO"/>
+                <outlet property="thirdItemContainerView" destination="CpX-uj-UuM" id="5fZ-Ji-A4h"/>
+                <outlet property="thirdItemCountLabel" destination="t7K-km-DsG" id="8f1-bP-kii"/>
+                <outlet property="thirdItemImageView" destination="1IL-cJ-wUl" id="Z5q-WP-XBL"/>
+                <outlet property="thirdItemNameLabel" destination="78P-gf-YlQ" id="Qjw-fp-g60"/>
+            </connections>
             <point key="canvasLocation" x="409.92366412213738" y="196.12676056338029"/>
         </collectionViewCell>
     </objects>

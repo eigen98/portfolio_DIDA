@@ -21,7 +21,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-iI-k8u">
                         <rect key="frame" x="0.0" y="0.0" width="266" height="222"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zc-ND-DQv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zc-ND-DQv">
                                 <rect key="frame" x="0.0" y="0.0" width="266" height="222"/>
                                 <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -81,8 +81,8 @@
                                             <constraint firstAttribute="height" constant="16" id="oJc-iO-RTN"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saz-zk-Tmd">
-                                        <rect key="frame" x="32" y="7.6666666666666714" width="30.666666666666671" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saz-zk-Tmd">
+                                        <rect key="frame" x="32" y="7.6666666666666714" width="30" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -94,6 +94,7 @@
                                     <constraint firstItem="kAW-aP-lBq" firstAttribute="centerY" secondItem="DYn-fN-jLC" secondAttribute="centerY" id="Alg-rR-bbc"/>
                                     <constraint firstAttribute="width" constant="70" id="RyS-dp-6Z9"/>
                                     <constraint firstItem="kAW-aP-lBq" firstAttribute="leading" secondItem="DYn-fN-jLC" secondAttribute="leading" constant="8" id="f1Q-WG-WbF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Saz-zk-Tmd" secondAttribute="trailing" constant="8" id="kUj-EC-n0Z"/>
                                     <constraint firstItem="Saz-zk-Tmd" firstAttribute="leading" secondItem="kAW-aP-lBq" secondAttribute="trailing" constant="8" id="l5a-fM-wdi"/>
                                     <constraint firstAttribute="height" constant="32" id="unZ-VP-PWa"/>
                                 </constraints>
@@ -135,8 +136,12 @@
             <size key="customSize" width="266" height="222"/>
             <connections>
                 <outlet property="containerView" destination="AuP-iI-k8u" id="BOO-kY-77d"/>
+                <outlet property="heartContainerView" destination="DYn-fN-jLC" id="nIS-SH-88T"/>
+                <outlet property="heartCountLabel" destination="Saz-zk-Tmd" id="wCS-L1-Ga9"/>
+                <outlet property="heartImageView" destination="kAW-aP-lBq" id="3f5-NY-THf"/>
                 <outlet property="imageView" destination="6Zc-ND-DQv" id="A7y-Z7-Wg8"/>
                 <outlet property="nftNameLabel" destination="IvI-Mm-MCm" id="RdR-K4-wUn"/>
+                <outlet property="priceLabel" destination="qYd-PX-zL9" id="VwV-x3-cWu"/>
             </connections>
             <point key="canvasLocation" x="238.1679389312977" y="83.098591549295776"/>
         </collectionViewCell>

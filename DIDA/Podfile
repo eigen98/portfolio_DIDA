@@ -21,8 +21,7 @@ target 'DIDA' do
 
   # Misc.
     pod 'Kingfisher', '~> 7.0'
-
-    pod 'Moya', '~> 15.0'
+    pod 'Moya/RxSwift'
 
   # kakao
     pod 'KakaoSDKUser'

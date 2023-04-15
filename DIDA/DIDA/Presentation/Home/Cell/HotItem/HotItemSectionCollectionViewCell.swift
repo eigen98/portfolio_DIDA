@@ -6,20 +6,27 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HotItemSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     
+    var hotItems = [HotItemEntity]()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
+        configureCollectionView()
+    }
+
+    
+}
+
+extension HotItemSectionCollectionViewCell {
+    private func configureCollectionView() {
         hotItemCollectionView.delegate = self
         hotItemCollectionView.dataSource = self
         
-//        // 왼쪽 정렬
-        let layout = UICollectionViewFlowLayout()
+        let layout = LeftAlignedCollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize(width: 266, height: 222)
@@ -27,21 +34,24 @@ class HotItemSectionCollectionViewCell: UICollectionViewCell {
         layout.scrollDirection = .horizontal
         hotItemCollectionView.collectionViewLayout = layout
         
-        
         hotItemCollectionView.register(UINib(nibName: "HotItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HotItemCollectionViewCell")
         
         hotItemCollectionView.reloadData()
     }
 
 }
+
 extension HotItemSectionCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return hotItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotItemCollectionViewCell", for: indexPath) as! HotItemCollectionViewCell
         
+        let item = self.hotItems[indexPath.row]
+        cell.configure(item: item)
+      
         return cell
     }
     
