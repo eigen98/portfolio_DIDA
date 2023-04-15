@@ -17,10 +17,10 @@ protocol LoginHomeViewModelInput {
 class LoginHomeViewModel: BaseViewModel {
     
     let disposeBag = DisposeBag()
-    let userSessionRepository: UserSessionInterface
+    let userSessionRepository: UserRepository
     
     override init() {
-        self.userSessionRepository = UserSession()
+        self.userSessionRepository = UserRepositoryImpl()
     }
     
     override func bind() {

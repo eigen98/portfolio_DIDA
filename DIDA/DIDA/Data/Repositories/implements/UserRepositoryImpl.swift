@@ -1,5 +1,5 @@
 //
-//  UserRepository.swift
+//  UserRepositoryImpl.swift
 //  DIDA
 //
 //  Created by 김두리 on 2023/04/15.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserReposition: UserRepositoryInterface {
+class UserRepositoryImpl: UserRepository {
     func login(type: LoginProvider) {
         switch type {
         case .apple: break
