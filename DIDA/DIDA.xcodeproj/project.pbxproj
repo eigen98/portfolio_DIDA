@@ -37,6 +37,12 @@
 		C15753E229AA70960048E62C /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342D29A0CD090023DA68 /* Pretendard-SemiBold.ttf */; };
 		C15753E329AA70960048E62C /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342F29A0CD090023DA68 /* Pretendard-Thin.ttf */; };
 		C15753E429AA70960048E62C /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342C29A0CD090023DA68 /* Pretendard-ExtraLight.ttf */; };
+		C16AEC8429EA85EB00A37C78 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8329EA85EB00A37C78 /* UserSession.swift */; };
+		C16AEC8629EA866000A37C78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8529EA866000A37C78 /* Constants.swift */; };
+		C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */; };
+		C16AEC8A29EA8A0500A37C78 /* UserSessionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */; };
+		C16AEC8C29EA8F1C00A37C78 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8B29EA8F1C00A37C78 /* UserRepository.swift */; };
+		C16AEC8E29EA8F4200A37C78 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8D29EA8F4200A37C78 /* UserRepositoryInterface.swift */; };
 		C16C48E629AA727B008CD62B /* Pods_DIDA_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30D29AA5335008122EF /* AppDelegate.swift */; };
@@ -71,13 +77,9 @@
 		C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */; };
 		C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
 		C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
+		C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A8D3CC29EA7E080023373E /* Auth.storyboard */; };
+		C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */; };
 		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
-		C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
-		EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E777F29A0EE7400E3863C /* SoldOutTableViewCell.swift */; };
-		EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0E778029A0EE7400E3863C /* SoldOutTableViewCell.xib */; };
-		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
-		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
-		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
 		C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,6 +118,11 @@
 		C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C1C8025229B48D1200221FB9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		EE0E778129A0EE7400E3863C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		EE0E778229A0EE7400E3863C /* (null) in Resources */ = {isa = PBXBuildFile; };
+		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
+		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
+		EE110542299A900B00C5D370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE110541299A900B00C5D370 /* ViewController.swift */; };
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
 		EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */; };
@@ -203,6 +210,12 @@
 		C14389C729AB6EC500138586 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C15158D029A2219000017147 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		C15158D229A22E5F00017147 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		C16AEC8329EA85EB00A37C78 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		C16AEC8529EA866000A37C78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeViewModel.swift; sourceTree = "<group>"; };
+		C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInterface.swift; sourceTree = "<group>"; };
+		C16AEC8B29EA8F1C00A37C78 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		C16AEC8D29EA8F4200A37C78 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
 		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C188B30D29AA5335008122EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C188B30F29AA5335008122EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +242,8 @@
 		C1956ECC29ACE1B000018A93 /* SnackBarActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarActionItem.swift; sourceTree = "<group>"; };
 		C1956ECF29ADB78400018A93 /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
 		C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		C1A8D3CC29EA7E080023373E /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
 		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,6 +406,7 @@
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C1A8D3CE29EA7E1F0023373E /* LoginHome */,
 				C136340229A0C66D0023DA68 /* Main */,
 				C136344629A0E0100023DA68 /* Home */,
 				C136344729A0E0190023DA68 /* Swap */,
@@ -405,6 +421,10 @@
 			children = (
 				97BAE12429B11F190001F60A /* Repository.swift */,
 				97BAE0F529ABCC890001F60A /* Usecase */,
+				C16AEC8329EA85EB00A37C78 /* UserSession.swift */,
+				C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */,
+				C16AEC8B29EA8F1C00A37C78 /* UserRepository.swift */,
+				C16AEC8D29EA8F4200A37C78 /* UserRepositoryInterface.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -424,6 +444,7 @@
 				C136343D29A0D6C20023DA68 /* Base */,
 				C136340329A0C6840023DA68 /* Fonts.swift */,
 				C136340529A0C68C0023DA68 /* Colors.swift */,
+				C16AEC8529EA866000A37C78 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -598,6 +619,15 @@
 			path = SnackBar;
 			sourceTree = "<group>";
 		};
+		C1A8D3CE29EA7E1F0023373E /* LoginHome */ = {
+			isa = PBXGroup;
+			children = (
+				C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */,
+				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
+			);
+			path = LoginHome;
+			sourceTree = "<group>";
+		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,15 +667,16 @@
 				C13633FC29A0C5C10023DA68 /* Data */,
 				C13633FD29A0C5F80023DA68 /* Common */,
 				C136340B29A0CAA10023DA68 /* Infratruction */,
+				C136340D29A0CCA40023DA68 /* Supporting Files */,
 				EE11053D299A900B00C5D370 /* AppDelegate.swift */,
 				EE11053F299A900B00C5D370 /* SceneDelegate.swift */,
 				EE110541299A900B00C5D370 /* ViewController.swift */,
 				EE110543299A900B00C5D370 /* Main.storyboard */,
+				C1A8D3CC29EA7E080023373E /* Auth.storyboard */,
 				EE110546299A900C00C5D370 /* Assets.xcassets */,
 				C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */,
 				EE110548299A900C00C5D370 /* LaunchScreen.storyboard */,
 				EE11054B299A900C00C5D370 /* Info.plist */,
-				C136340D29A0CCA40023DA68 /* Supporting Files */,
 			);
 			path = DIDA;
 			sourceTree = "<group>";
@@ -847,16 +878,14 @@
 				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
 				9784770929AB397B00950F40 /* PostTableViewCell.xib in Resources */,
-				EE0E778229A0EE7400E3863C /* SoldOutTableViewCell.xib in Resources */,
+				EE0E778229A0EE7400E3863C /* (null) in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */,
-				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
 				97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
-				EEFA9C8229A0C39D0061D9D9 /* HotItemTableViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
 				C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */,
 				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
@@ -867,6 +896,7 @@
 				EE365C8C29A11F6800B53A6E /* ActiveActivityTableViewCell.xib in Resources */,
 				C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */,
 				C1956EC229ACD4EB00018A93 /* TableViewCell.xib in Resources */,
+				C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */,
 				EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */,
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
@@ -968,7 +998,7 @@
 				C1956E9F29AC777C00018A93 /* TextFieldViewController.swift in Sources */,
 				C1956EBD29ACD3FB00018A93 /* TableViewController.swift in Sources */,
 				C188B32629AA5B01008122EF /* Fonts.swift in Sources */,
-				C1C8022629B1159900221FB9 /* TabBarButton.swift in Sources */,
+				C1C8022629B1159900221FB9 /* (null) in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C1C8022629B1159900221FB9 /* (null) in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
@@ -1002,54 +1032,18 @@
 			files = (
 				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
-				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
-				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
-				EE365C8B29A11F6800B53A6E /* ActiveActivityTableViewCell.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
-				EEC91FB229A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.swift in Sources */,
-				C14389C829AB6EC500138586 /* Profile.swift in Sources */,
-				C136344529A0DEA00023DA68 /* MainNavigationController.swift in Sources */,
-				C15158D329A22E5F00017147 /* TabBarItem.swift in Sources */,
-				C1956ECD29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
-				C1956EC029ACD4EB00018A93 /* TableViewCell.swift in Sources */,
-				C136344D29A0E0ED0023DA68 /* SwapViewController.swift in Sources */,
-				C136344129A0D6FB0023DA68 /* BaseViewModel.swift in Sources */,
-				C1956ECA29ACDD5000018A93 /* SnackBar.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
-				C136340429A0C6840023DA68 /* Fonts.swift in Sources */,
-				C136340629A0C68C0023DA68 /* Colors.swift in Sources */,
-				EE365C9029A12ABB00B53A6E /* HotSellerTableViewCell.swift in Sources */,
+				C16AEC8629EA866000A37C78 /* Constants.swift in Sources */,
 				EE110542299A900B00C5D370 /* ViewController.swift in Sources */,
-				C1956E9229AB788B00018A93 /* TextView.swift in Sources */,
-				C136340A29A0CA980023DA68 /* UIColor+Extension.swift in Sources */,
-				C15158D129A2219000017147 /* TabBar.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
-				EEC91FAC29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift in Sources */,
-				C14389CA29AB6EC900138586 /* Buttons.swift in Sources */,
-				EEC91FAF29A1E05D002AFB65 /* MainCustomTabbar.swift in Sources */,
 				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
-				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
-				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
-				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
-				C188B32929AA61AA008122EF /* UIImage+Extension.swift in Sources */,
-				C1956E9B29AC773100018A93 /* TextField.swift in Sources */,
-				EEFA9C8529A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
-				EE365C8629A116D000B53A6E /* RecentNFTTableViewCell.swift in Sources */,
-				C14389C229AA811700138586 /* String+Extension.swift in Sources */,
-				C136344B29A0E0640023DA68 /* HomeViewController.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
-				C136345129A0E1280023DA68 /* MyPageViewController.swift in Sources */,
-				C136344F29A0E10A0023DA68 /* CommunityViewController.swift in Sources */,
-				C136344329A0DE900023DA68 /* MainViewController.swift in Sources */,
-				C1956EA229AC8B6D00018A93 /* FullTextField.swift in Sources */,
-				C136343F29A0D6D30023DA68 /* BaseViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
-				EE0E778129A0EE7400E3863C /* SoldOutTableViewCell.swift in Sources */,
-				EEFA9C8129A0C39D0061D9D9 /* HotItemTableViewCell.swift in Sources */,
-				EEC91FB629A1F1ED002AFB65 /* SellerCollectionViewCell.swift in Sources */,
+				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				EECD7EFC29B56D8E0067961B /* TabbarSectionCollectionViewCell.swift in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
@@ -1057,6 +1051,7 @@
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
+				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
@@ -1070,10 +1065,13 @@
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
+				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
 				C1C8023329B48BB700221FB9 /* ActiveActivityTableViewCell.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
+				C16AEC8E29EA8F4200A37C78 /* UserRepositoryInterface.swift in Sources */,
+				C16AEC8C29EA8F1C00A37C78 /* UserRepository.swift in Sources */,
 				C1C8022D29B48BA100221FB9 /* MainViewController.swift in Sources */,
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
@@ -1084,12 +1082,14 @@
 				C1C8023629B48BEA00221FB9 /* HomeViewController.swift in Sources */,
 				C1C8024229B48C1400221FB9 /* SceneDelegate.swift in Sources */,
 				C1C8023929B48BF300221FB9 /* SwapViewController.swift in Sources */,
+				C16AEC8429EA85EB00A37C78 /* UserSession.swift in Sources */,
 				C1C8024929B48C2E00221FB9 /* SnackBarActionItem.swift in Sources */,
 				EECD7EF529B562C60067961B /* HotItemSectionCollectionViewCell.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,
 				EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */,
 				C1C8025229B48D1200221FB9 /* Profile.swift in Sources */,
 				EECD7EF829B565EF0067961B /* UICollectionReusableView+Extension.swift in Sources */,
+				C16AEC8A29EA8A0500A37C78 /* UserSessionInterface.swift in Sources */,
 				C1C8022F29B48BB200221FB9 /* SellerCollectionViewCell.swift in Sources */,
 				C1C8024C29B48D0000221FB9 /* LineTabBar.swift in Sources */,
 			);
@@ -1321,7 +1321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1329,7 +1329,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1366,7 +1365,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

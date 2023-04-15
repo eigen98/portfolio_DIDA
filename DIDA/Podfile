@@ -24,6 +24,9 @@ target 'DIDA' do
 
     pod 'Moya', '~> 15.0'
 
+  # kakao
+    pod 'KakaoSDKUser'
+
 end
 
 target 'DIDA-UI' do

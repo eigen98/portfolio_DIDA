@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LoginHomeViewController" customModule="DIDA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="didalogo1" translatesAutoresizingMaskIntoConstraints="NO" id="093-TN-hWc">
+                                <rect key="frame" x="70" y="143" width="253" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="093-TN-hWc" secondAttribute="height" multiplier="1:1" id="MHn-31-B7G"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fHt-P2-s31">
+                                <rect key="frame" x="16" y="705.33333333333337" width="361" height="80.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-6W-oi9">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-Qz-aUH">
+                                        <rect key="frame" x="0.0" y="46.333333333333258" width="361" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="background_black"/>
+                        <constraints>
+                            <constraint firstItem="093-TN-hWc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="B1g-qe-Q5f"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="093-TN-hWc" secondAttribute="trailing" constant="70" id="EVk-Uh-Eh6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fHt-P2-s31" secondAttribute="bottom" constant="32" id="R9k-G0-nhf"/>
+                            <constraint firstItem="093-TN-hWc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="84" id="XVL-9t-a5s"/>
+                            <constraint firstItem="093-TN-hWc" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="gJK-QJ-wwI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHt-P2-s31" secondAttribute="trailing" constant="16" id="yzC-Eu-WRj"/>
+                            <constraint firstItem="fHt-P2-s31" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zVd-Az-fSo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnApple" destination="4PL-6W-oi9" id="JY3-AL-vEV"/>
+                        <outlet property="btnKakao" destination="5hH-Qz-aUH" id="n0S-F0-7dl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="didalogo1" width="3859" height="3859"/>
+        <namedColor name="background_black">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
