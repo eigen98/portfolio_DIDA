@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum LoginProvider {
+    case apple
+    case kakao
+}
+
 protocol UserRepository {
+    func login(type: LoginProvider)
     
+    func isLogin() -> Bool
+    func fetchMyself() -> UserEntity?
 }

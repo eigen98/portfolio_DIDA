@@ -8,13 +8,31 @@
 import Foundation
 
 class UserRepositoryImpl: UserRepository {
+    
     func login(type: LoginProvider) {
         switch type {
-        case .apple: break
+        case .apple:
+            loginWithApple()
         case .kakao:
-            UserSession.shared.loginWithKakao { idToken, error in
-                
-            }
+            loginWithKakao()
         }
+    }
+    
+    private func loginWithApple() {
+        
+    }
+    
+    private func loginWithKakao() {
+        UserSession.shared.loginWithKakao { idToken, error in
+            
+        }
+    }
+    
+    func isLogin() -> Bool {
+        return false
+    }
+    
+    func fetchMyself() -> UserEntity? {
+        return nil
     }
 }

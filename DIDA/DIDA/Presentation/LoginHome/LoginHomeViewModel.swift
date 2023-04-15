@@ -26,6 +26,11 @@ class LoginHomeViewModel: BaseViewModel {
     override func bind() {
         tapAppleLoginButton.bind { [weak self] _ in
             guard let `self` = self else { return }
+            self.userSessionRepository.login(type: .kakao)
+        }.disposed(by: self.disposeBag)
+        
+        self.tapAppleLoginButton.bind { [weak self] _ in
+            guard let `self` = self else { return }
             
         }.disposed(by: self.disposeBag)
     }

@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol LoginHomeViewControllerDelegate: AnyObject {
+    func didSusccessLogin()
+}
+
 class LoginHomeViewController: BaseViewController {
     
     @IBOutlet weak var btnApple: UIButton!
     @IBOutlet weak var btnKakao: UIButton!
+    
+    weak var delegate: LoginHomeViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

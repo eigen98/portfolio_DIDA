@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum LoginProvider {
-    case apple
-    case kakao
-}
-
 protocol UserSessionInterface {
-    // func login(type: LoginProvider)
+    func loginWithKakao(completion: @escaping (String?, Error?) -> Void)
 }

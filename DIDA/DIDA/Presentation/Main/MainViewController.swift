@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: BaseViewController {
     @IBOutlet weak var tabBarView: TabBar!
     
+    let viewModel: MainViewModel = MainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,12 @@ extension MainViewController: TabBarDelegate {
         case .make:
             break
         default:
+            if (selectedMenu == .swap || selectedMenu == .mypage) {
+                if (self.viewModel.isLogin == false) {
+                    self.showLogin()
+                }
+            }
+            
             if (selectedMenu.rawValue < TabBarMenu.make.rawValue) {
                 tabBarViewController.selectedIndex = selectedMenu.rawValue
             } else {
