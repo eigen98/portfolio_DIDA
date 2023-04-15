@@ -1,24 +1,11 @@
 //
-//  HomeMapper.swift
+//  Array+Extension.swift
 //  DIDA
 //
-//  Created by JeongMin Ko on 2023/03/19.
+//  Created by 김두리 on 2023/04/15.
 //
 
 import Foundation
-
-
-extension GetMainResponse {
-    func toDomain() -> HomeEntity {
-        return HomeEntity(
-            getHotItems: getHotItems.toDomain(),
-            getHotSellers: getHotSellers.toDomain(),
-            getRecentCards: getRecentCards.toDomain(),
-            getHotUsers: getHotUsers.toDomain()
-        )
-    }
-}
-
 
 extension Array where Element == HotItemResponse {
     func toDomain() -> [HotItemEntity] {

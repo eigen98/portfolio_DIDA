@@ -19,7 +19,7 @@ class UserSession: UserSessionInterface {
     }
     
     func initialize() {
-        KakaoSDK.initSDK(appKey: Constants.kakaoKey)
+        KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
     }
     
     func loginWithKakao(completion: @escaping (String?, Error?) -> Void) {

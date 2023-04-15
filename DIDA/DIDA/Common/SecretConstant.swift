@@ -8,6 +8,6 @@
 import Foundation
 class SecretConstant{
     static let baseURL = "https://service-dida.shop"
-   
+    static let kakaoKey = "814d020ba27df768374da1401ca3c1c6"
     
 }

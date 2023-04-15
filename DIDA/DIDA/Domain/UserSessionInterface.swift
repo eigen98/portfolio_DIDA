@@ -13,5 +13,5 @@ enum LoginProvider {
 }
 
 protocol UserSessionInterface {
-    func login(type: LoginProvider)
+    // func login(type: LoginProvider)
 }
