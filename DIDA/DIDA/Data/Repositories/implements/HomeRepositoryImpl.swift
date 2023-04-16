@@ -7,25 +7,16 @@
 
 import Foundation
 import RxSwift
-class HomeRepositoryImpl : HomeRepository{
+
+class HomeRepositoryImpl: HomeRepository {
     
-    let apiClient : APIClient<HomeAPI>
+    let disposeBag = DisposeBag()
     
-    init(apiClient: APIClient<HomeAPI>) {
-        self.apiClient = apiClient
+    func getMain() -> Single<GetMainResponse> {
+        return APIClient.request(.main).map(GetMainResponse.self)
     }
-    //14 메인 화면 가져오기(판매완료 없음)
-    func getMain() -> Single<GetMainResponse> { //  Single<Result<GetMainResponse, NetworkError>>
-        return apiClient.request(.main)
-            .map(GetMainResponse.self)
-            .debug()
-        
-    }
-    //15. 홈화면 판매 완료 메인화면 가져오기
+    
     func getMainSoldout(term : String) -> Single<GetMainSoldoutNFTResponse> {
-        return apiClient.request(.soldout(term: term))
-            .map(GetMainSoldoutNFTResponse.self)
-            .debug()
+        return APIClient.request(.soldout(term: term)).map(GetMainSoldoutNFTResponse.self)
     }
-    
 }

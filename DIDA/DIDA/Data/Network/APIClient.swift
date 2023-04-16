@@ -9,16 +9,18 @@ import Foundation
 import Moya
 import RxSwift
 
-class APIClient<Target: TargetType>: MoyaProvider<Target> {
+class APIClient: MoyaProvider<DidaAPI> {
     
-    init(plugins: [PluginType] = [NetworkLoggerPlugin()]) {
+    static let shared = APIClient()
+    
+    private init(plugins: [PluginType] = [NetworkLoggerPlugin()]) {
         let session = MoyaProvider<Target>.defaultAlamofireSession()
         session.sessionConfiguration.timeoutIntervalForRequest = 10
         super.init(session: session, plugins: plugins)
     }
     
-    func request(_ target: Target) -> Single<Response> {
-        return self.rx.request(target)
+    static func request(_ target: Target) -> Single<Response> {
+        return APIClient.shared.rx.request(target)
             .retry(2)
     }
 }

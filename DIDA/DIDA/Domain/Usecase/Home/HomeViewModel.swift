@@ -8,37 +8,36 @@
 import Foundation
 import RxSwift
 import RxCocoa
+
 class HomeViewModel : BaseViewModel{
     
     private var disposeBag : DisposeBag
     
+    private let homeRepository: HomeRepository
+    
     struct Input {
         
     }
+    
     struct Output{
         var homeOutput : BehaviorSubject<HomeEntity>
     }
-    struct Dependency {
-        let homeRepository : HomeRepository
-    }
     
-    init(dependency : Dependency) {
-        
+    override init() {
         input = Input()
         output = Output(homeOutput: BehaviorSubject<HomeEntity>(value: HomeEntity(getHotItems: [],
                                                                                   getHotSellers: [],
                                                                                   getRecentCards: [],
                                                                                   getHotUsers: [])) )
-        self.dependency = dependency
+        self.homeRepository = HomeRepositoryImpl()
         disposeBag = DisposeBag()
     }
     
     var input: Input
     var output: Output
-    var dependency : Dependency
     
     override func bind(){
-        dependency.homeRepository
+        self.homeRepository
             .getMain()
             .map{ response in
                 response.toDomain()

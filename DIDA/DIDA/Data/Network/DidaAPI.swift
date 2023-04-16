@@ -1,22 +1,27 @@
 //
-//  HomeAPI.swift
+//  DidaAPI.swift
 //  DIDA
 //
-//  Created by JeongMin Ko on 2023/03/20.
+//  Created by 김두리 on 2023/04/15.
 //
 
 import Foundation
 import Moya
+import RxSwift
 
-//Home에서 사용할 API 엔드포인트를 정의
-enum HomeAPI{
+enum DidaAPI {
     case main
     case soldout(term: String)
 }
 
-extension HomeAPI : TargetType{
-    var baseURL : URL{
+extension DidaAPI: TargetType {
+    
+    var baseURL: URL {
         return URL(string: SecretConstant.baseURL)!
+    }
+    
+    var headers: [String: String]? {
+        return ["Authorization" : ""]
     }
     
     var path: String {
@@ -33,9 +38,4 @@ extension HomeAPI : TargetType{
     var task: Task {
         return .requestPlain
     }
-    
-    var headers: [String: String]? {
-        return ["Authorization" : ""]
-    }
-    
 }

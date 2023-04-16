@@ -71,13 +71,13 @@ class HomeViewController: BaseViewController {
     var dataSource: HomeDataSource? = nil
     
     //MARK: ViewModel
-    let homeViewModel : HomeViewModel = HomeViewModel(dependency: .init(homeRepository: RepositoryProvider.getHomeRepository()))
+    let homeViewModel : HomeViewModel = HomeViewModel()
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         bindViewModel()
         initCollectionView()
         bindEvent()
@@ -88,7 +88,7 @@ class HomeViewController: BaseViewController {
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-       
+        
         registerNIB()
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
@@ -97,30 +97,30 @@ class HomeViewController: BaseViewController {
         
         initSnapshot()
         
-       
+        
     }
     
-
-  
+    
+    
     override func bindViewModel() {
         mainpageCollectionView.rx.contentOffset
-               .compactMap { [weak self] contentOffset -> IndexPath? in
-                   guard let self = self else { return nil }
-                   let visibleRect = CGRect(origin: contentOffset, size: self.mainpageCollectionView.bounds.size)
-                   let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-                   return self.mainpageCollectionView.indexPathForItem(at: visiblePoint)
-               }
-               .filter { $0.section == 1 }
-               .distinctUntilChanged()
-               .subscribe(onNext: { [weak self] visibleIndexPath in
-                   guard let self = self else { return }
-                   let headerIndexPath = IndexPath(item: 0, section: 1)
-                   guard let headerView = self.mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: headerIndexPath) as? TabbarCollectionReusableView else {
-                       return
-                   }
-                   //headerView.tabbar.tabbarView.selectedSegmentIndex = visibleIndexPath.row
-               })
-               .disposed(by: disposeBag)
+            .compactMap { [weak self] contentOffset -> IndexPath? in
+                guard let self = self else { return nil }
+                let visibleRect = CGRect(origin: contentOffset, size: self.mainpageCollectionView.bounds.size)
+                let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+                return self.mainpageCollectionView.indexPathForItem(at: visiblePoint)
+            }
+            .filter { $0.section == 1 }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] visibleIndexPath in
+                guard let self = self else { return }
+                let headerIndexPath = IndexPath(item: 0, section: 1)
+                guard let headerView = self.mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: headerIndexPath) as? TabbarCollectionReusableView else {
+                    return
+                }
+                //headerView.tabbar.tabbarView.selectedSegmentIndex = visibleIndexPath.row
+            })
+            .disposed(by: disposeBag)
     }
     
 }
@@ -131,13 +131,13 @@ extension HomeViewController {
     
     private func registerNIB(){
         self.mainpageCollectionView.backgroundColor = .black
-       
+        
         //HotItem Cell
         mainpageCollectionView.register(UINib(nibName: HotItemSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier)
         
         //CustomTabbar Cell (Sticky Header)
         mainpageCollectionView.register(TabbarCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TabbarCollectionReusableView.reuseIdentifier)
-       
+        
         
         //HotSeller Cell
         mainpageCollectionView.register(UINib(nibName: HotSellerSectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier)
@@ -154,7 +154,7 @@ extension HomeViewController {
     // HomeViewModel의 output 업데이트를 구독 -> 새 스냅샷으로 datasource를 업데이트
     private func initSnapshot() {
         self.mainpageCollectionView.dataSource = dataSource
-
+        
         if let dataSourceBinder = dataSource?.rx.snapshot() {
             homeViewModel.output.homeOutput
                 .map(makeSnapshot)
@@ -162,7 +162,7 @@ extension HomeViewController {
                 .disposed(by: disposeBag)
         }
     }
-
+    
     //전달된 HomeEntity를 기반으로 스냅샷을 생성
     private func makeSnapshot(_ homeEntity: HomeEntity) -> NSDiffableDataSourceSnapshot<Int, HomeSectionType> {
         var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionType>()
@@ -171,11 +171,11 @@ extension HomeViewController {
         snapshot.appendItems([.hotItem(homeEntity.getHotItems)], toSection: 0)
         snapshot.appendItems([.hotSeller(homeEntity.getHotSellers)], toSection: 1)
         snapshot.appendItems([.soldOut([])], toSection: 1)
-       
+        
         snapshot.appendItems([  .recentNFT(homeEntity.getRecentCards)], toSection: 1)
         snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
-                            
-                            
+        
+        
         return snapshot
     }
     
@@ -191,7 +191,7 @@ extension HomeViewController {
                 as! HotItemSectionCollectionViewCell
                 cell.hotItems = data
                 return cell
-
+                
             case .hotSeller(let data):
                 let cell: HotSellerSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotSellerSectionCollectionViewCell
@@ -209,17 +209,17 @@ extension HomeViewController {
                 as! RecentNFTSectionCollectionViewCell
                 cell.configure(items: data)
                 return cell
-            
+                
             case .activity(let data):
                 let cell: ActivitySectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivitySectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! ActivitySectionCollectionViewCell
                 cell.configure(items: data)
                 return cell
-            
+                
                 
             default :
                 
-               return UICollectionViewCell()
+                return UICollectionViewCell()
                 
             }
         })
@@ -234,9 +234,9 @@ extension HomeViewController {
                     header.isClickedTabbar = true
                 })
                 .disposed(by: self.disposeBag)
-
+            
             return header
-        
+            
         }
     }
     
@@ -261,8 +261,8 @@ extension HomeViewController {
         }
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-            config.interSectionSpacing = 0
-            layout.configuration = config
+        config.interSectionSpacing = 0
+        layout.configuration = config
         return layout
     }
     
@@ -275,7 +275,7 @@ extension HomeViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
- 
+        
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging
         return section
@@ -284,7 +284,7 @@ extension HomeViewController {
     
     //탭바 Section (HotSeller, Soldout, 최신 NFT ,Activity)
     private func createTabbarSection() -> NSCollectionLayoutSection {
- 
+        
         // Create an array of groups
         let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100))
         let groups = createGroupsOfTabbarSection()
@@ -345,5 +345,5 @@ extension HomeViewController {
         
         return groups
     }
-
+    
 }
