@@ -9,12 +9,11 @@ import Foundation
 import RxSwift
 import RxRelay
 
-protocol BaseViewModelInput { }
-protocol BaseViewModelOutput { }
-
 protocol BaseViewModelInterface {
     var showLoading: PublishRelay<Bool> { get }
-    var showErrorMessage: PublishSubject<String> { get }
+    var showError: PublishSubject<Error> { get }
+    var showSnackBar: PublishSubject<SnackBar> { get }
+    // toast 구현 후 변경 필요
     var showToastMessage: PublishSubject<Bool> { get }
 
 }
@@ -27,18 +26,11 @@ class BaseViewModel: BaseViewModelInterface {
     }
     
     var showLoading = PublishRelay<Bool>()
-    var showErrorMessage = PublishSubject<String>()
+    var showError = PublishSubject<Error>()
+    var showSnackBar = PublishSubject<SnackBar>()
     var showToastMessage = PublishSubject<Bool>()
     
     func bind() {
         // input이랑 output 연결
     }
-}
-
-extension BaseViewModel: BaseViewModelInput {
-    
-}
-
-extension BaseViewModel: BaseViewModelOutput {
-    
 }
