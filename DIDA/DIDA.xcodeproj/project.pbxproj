@@ -421,8 +421,10 @@
 		97BAE0F529ABCC890001F60A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				EE2F894D29C6E3D200D2A1BF /* Home */,
-				97BAE0FF29AC759B0001F60A /* Community */,
+				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
+				C16AECA629EABA6A00A37C78 /* MainViewModel.swift */,
+				EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */,
+				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -445,14 +447,6 @@
 			children = (
 			);
 			path = Request;
-			sourceTree = "<group>";
-		};
-		97BAE0FF29AC759B0001F60A /* Community */ = {
-			isa = PBXGroup;
-			children = (
-				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
-			);
-			path = Community;
 			sourceTree = "<group>";
 		};
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
@@ -506,7 +500,6 @@
 			children = (
 				C136344429A0DEA00023DA68 /* MainNavigationController.swift */,
 				C136344229A0DE900023DA68 /* MainViewController.swift */,
-				C16AECA629EABA6A00A37C78 /* MainViewModel.swift */,
 				C15158D029A2219000017147 /* TabBar.swift */,
 				C15158D229A22E5F00017147 /* TabBarItem.swift */,
 			);
@@ -713,7 +706,6 @@
 			isa = PBXGroup;
 			children = (
 				C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */,
-				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
 				C16AECAA29EABDFA00A37C78 /* LoginNavigationController.swift */,
 			);
 			path = LoginHome;
@@ -769,14 +761,6 @@
 				EE11054B299A900C00C5D370 /* Info.plist */,
 			);
 			path = DIDA;
-			sourceTree = "<group>";
-		};
-		EE2F894D29C6E3D200D2A1BF /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		EE365C8129A1167400B53A6E /* HotItem */ = {
