@@ -78,6 +78,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+       
         bindViewModel()
         initCollectionView()
         bindEvent()
@@ -228,7 +230,7 @@ extension HomeViewController {
         dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TabbarCollectionReusableView.reuseIdentifier, for: indexPath) as! TabbarCollectionReusableView
             
-            header.setTabBar()
+            
             header.tabSelectedSubject
                 .subscribe(onNext: { [weak self] index in
                     self?.scrollToIndex(index: index)

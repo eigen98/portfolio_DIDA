@@ -35,6 +35,7 @@ class TabbarCollectionReusableView: UICollectionReusableView {
         addSubview(tabbar)
         setupConstraints()
         self.backgroundColor = .black
+        setTabBar()
     }
     
     private func setupConstraints() {
