@@ -190,6 +190,7 @@ extension HomeViewController {
                 let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotItemSectionCollectionViewCell
                 cell.hotItems = data
+                cell.configureCollectionView()
                 return cell
                 
             case .hotSeller(let data):
