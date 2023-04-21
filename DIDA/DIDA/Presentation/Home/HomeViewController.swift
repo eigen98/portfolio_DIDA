@@ -88,11 +88,11 @@ class HomeViewController: BaseViewController {
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-        
+       
         registerNIB()
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
-        
+       
         configureDataSource()
         
         initSnapshot()
