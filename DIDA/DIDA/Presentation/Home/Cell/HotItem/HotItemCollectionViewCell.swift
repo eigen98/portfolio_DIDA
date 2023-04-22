@@ -22,8 +22,6 @@ class HotItemCollectionViewCell: UICollectionViewCell {
     
     var disposeBag = DisposeBag()
     
-    var isLiked = false
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,7 +32,7 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
-        isLiked = false
+       
     }
     
     func configure(item: HotItemEntity) {
@@ -42,7 +40,7 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         nftNameLabel.text = item.nftName
         priceLabel.text = "\(item.price) dida"
         heartCountLabel.text = item.heartCount
-        updateHeartImg()
+        self.heartImageView.image = UIImage(named: "heart-fill")
         bind()
     }
 
@@ -50,19 +48,8 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         heartContainerView.rx.tapGesture
             .subscribe(onNext: { [weak self] in
                 print("My view was tapped")
-                self?.isLiked.toggle()
-                self?.updateHeartImg()
             })
             .disposed(by: disposeBag)
-    }
-
-    func updateHeartImg() {
-        if self.isLiked {
-            self.heartImageView.image = UIImage(named: "heart-fill")
-        }else{
-            
-            self.heartImageView.image = UIImage(systemName : "heart")
-        }
     }
 
 }

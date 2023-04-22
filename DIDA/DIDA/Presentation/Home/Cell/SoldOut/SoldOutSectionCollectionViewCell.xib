@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,17 +26,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="352" height="547"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold Out 💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-3A-XkA">
-                                <rect key="frame" x="16" y="8" width="111" height="59"/>
+                                <rect key="frame" x="16" y="66" width="111" height="28"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="Lhc-Cp-9mg"/>
+                                    <constraint firstAttribute="height" constant="28" id="6Uo-xP-Qwp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="기간 별 가장 비싸게 팔린 NFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GW-XP-DKb">
-                                <rect key="frame" x="16" y="69" width="167" height="17"/>
+                                <rect key="frame" x="16" y="96" width="167" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="gsO-P1-d5b"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7p-Ae-FhU" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
-                                <rect key="frame" x="16" y="102" width="105" height="36"/>
+                                <rect key="frame" x="16" y="129" width="105" height="36"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="5es-23-q3n"/>
@@ -61,7 +61,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkf-Id-7GR" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
-                                <rect key="frame" x="131" y="102" width="76" height="36"/>
+                                <rect key="frame" x="131" y="129" width="76" height="36"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="4vV-S3-htc"/>
@@ -77,7 +77,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-bx-ccx" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
-                                <rect key="frame" x="217" y="102" width="76" height="36"/>
+                                <rect key="frame" x="217" y="129" width="76" height="36"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="NC8-i7-Jnh"/>
@@ -93,7 +93,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HJ-79-1dm">
-                                <rect key="frame" x="16" y="433" width="320" height="56"/>
+                                <rect key="frame" x="16" y="460" width="320" height="56"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="CgR-Oy-7GB"/>
@@ -107,7 +107,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-yF-NiM">
-                                <rect key="frame" x="16" y="152" width="320" height="79"/>
+                                <rect key="frame" x="16" y="179" width="320" height="79"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFT name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-mI-Ph8">
                                         <rect key="frame" x="93" y="16" width="111" height="20"/>
@@ -198,7 +198,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-xp-y4u">
-                                <rect key="frame" x="16" y="243" width="320" height="79"/>
+                                <rect key="frame" x="16" y="270" width="320" height="79"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Fo-Ub-CWX">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
@@ -295,7 +295,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kq-Pq-woX" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
-                                <rect key="frame" x="303" y="102" width="76" height="36"/>
+                                <rect key="frame" x="303" y="129" width="76" height="36"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="OHi-lR-uFr"/>
@@ -311,7 +311,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-Ck-lhV">
-                                <rect key="frame" x="16" y="334" width="320" height="79"/>
+                                <rect key="frame" x="16" y="361" width="320" height="79"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="htR-x1-1q1">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
@@ -406,7 +406,6 @@
                             <constraint firstItem="f7p-Ae-FhU" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="2OV-C7-TXN"/>
                             <constraint firstItem="tNL-xp-y4u" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="8lk-RA-AJv"/>
                             <constraint firstItem="1Kq-Pq-woX" firstAttribute="centerY" secondItem="pFg-bx-ccx" secondAttribute="centerY" id="GJt-Hy-WSU"/>
-                            <constraint firstItem="itM-av-d19" firstAttribute="top" secondItem="1HJ-79-1dm" secondAttribute="bottom" constant="50" id="Hsb-6q-86h"/>
                             <constraint firstItem="1HJ-79-1dm" firstAttribute="top" secondItem="ddR-Ck-lhV" secondAttribute="bottom" constant="20" id="Olh-gM-qre"/>
                             <constraint firstAttribute="trailing" secondItem="1HJ-79-1dm" secondAttribute="trailing" constant="16" id="QfG-VQ-fpe"/>
                             <constraint firstItem="ddR-Ck-lhV" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="Qgt-8B-a1Z"/>
@@ -417,6 +416,7 @@
                             <constraint firstItem="1HJ-79-1dm" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="VPM-qD-uj6"/>
                             <constraint firstItem="mkf-Id-7GR" firstAttribute="centerY" secondItem="f7p-Ae-FhU" secondAttribute="centerY" id="Xtr-3Q-zv7"/>
                             <constraint firstAttribute="trailing" secondItem="tNL-xp-y4u" secondAttribute="trailing" constant="16" id="Y38-kL-S98"/>
+                            <constraint firstItem="9GW-XP-DKb" firstAttribute="top" secondItem="SgS-3A-XkA" secondAttribute="bottom" constant="2" id="a4T-fo-Ozw"/>
                             <constraint firstItem="itM-av-d19" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="b58-N5-f0w"/>
                             <constraint firstItem="SgS-3A-XkA" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="c8T-Zt-DvR"/>
                             <constraint firstItem="pFg-bx-ccx" firstAttribute="centerY" secondItem="mkf-Id-7GR" secondAttribute="centerY" id="cRG-0D-1DW"/>
@@ -426,10 +426,10 @@
                             <constraint firstItem="pFg-bx-ccx" firstAttribute="leading" secondItem="mkf-Id-7GR" secondAttribute="trailing" constant="10" id="h1d-EK-oiA"/>
                             <constraint firstItem="ddR-Ck-lhV" firstAttribute="top" secondItem="tNL-xp-y4u" secondAttribute="bottom" constant="12" id="k0a-Er-uwY"/>
                             <constraint firstItem="f7p-Ae-FhU" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="kRh-QZ-fAg"/>
-                            <constraint firstItem="SgS-3A-XkA" firstAttribute="top" secondItem="MKF-TW-Z7k" secondAttribute="top" constant="8" id="kg8-oq-3pO"/>
+                            <constraint firstItem="SgS-3A-XkA" firstAttribute="top" secondItem="MKF-TW-Z7k" secondAttribute="top" constant="66" id="kg8-oq-3pO"/>
                             <constraint firstItem="9GW-XP-DKb" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="mMG-8f-Q5G"/>
                             <constraint firstItem="Goq-yF-NiM" firstAttribute="top" secondItem="f7p-Ae-FhU" secondAttribute="bottom" constant="14" id="mMa-V5-Sgr"/>
-                            <constraint firstItem="9GW-XP-DKb" firstAttribute="top" secondItem="SgS-3A-XkA" secondAttribute="bottom" constant="2" id="qBv-oL-q7M"/>
+                            <constraint firstItem="itM-av-d19" firstAttribute="top" secondItem="1HJ-79-1dm" secondAttribute="bottom" constant="23" id="qVy-gR-8Iz"/>
                             <constraint firstItem="mkf-Id-7GR" firstAttribute="leading" secondItem="f7p-Ae-FhU" secondAttribute="trailing" constant="10" id="qaq-cJ-fai"/>
                             <constraint firstAttribute="bottom" secondItem="itM-av-d19" secondAttribute="bottom" id="ytO-Kh-3ZV"/>
                         </constraints>
