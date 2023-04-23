@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
 
 
 class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
@@ -26,6 +27,9 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var fourthItemImageView: UIImageView!
     
     
+    @IBOutlet weak var moreButton: UIButton!
+    
+    var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +37,9 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(items : [UserNftEntity]){
+        
+        bind()
+        
         let numberOfItems = items.count
         switch numberOfItems {
         case 4 :
@@ -75,10 +82,40 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
             break
         }
         
+        
+        
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
     
     
     
     
 
+}
+
+extension RecentNFTSectionCollectionViewCell{
+    func bind(){
+        moreButton.rx.tap
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: {
+                print("tap()")
+                var nextResponder = self.next
+                while nextResponder != nil {
+                    if let viewController = nextResponder as? UIViewController {
+                        print("viewController : \(viewController)")
+                        if let navController = viewController.navigationController {
+                            print("navi : \(navController)")
+                            let nextVC = MoreRecentNFTViewController()
+                            navController.pushViewController(nextVC, animated: true)
+                            break
+                        }
+                    }
+                    nextResponder = nextResponder?.next
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
