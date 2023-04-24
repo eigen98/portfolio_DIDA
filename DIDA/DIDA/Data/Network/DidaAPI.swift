@@ -12,6 +12,7 @@ import RxSwift
 enum DidaAPI {
     case main
     case soldout(term: String)
+    case moreRecentNFT(page: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -28,6 +29,7 @@ extension DidaAPI: TargetType {
         switch self {
         case .main: return "/main"
         case .soldout(let term): return "/main/\(term)"
+        case .moreRecentNFT(let page) : return "/recent/card/\(page)"
         }
     }
     

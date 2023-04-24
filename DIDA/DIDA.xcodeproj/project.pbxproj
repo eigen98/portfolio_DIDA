@@ -153,6 +153,9 @@
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
 		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
 		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
+		EECD327929F6534B00C5764E /* MoreRecentNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD327829F6534B00C5764E /* MoreRecentNFTViewModel.swift */; };
+		EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD327B29F65B8300C5764E /* MoreHomeRepository.swift */; };
+		EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD327D29F65C9500C5764E /* MoreHomeRepositoryImpl.swift */; };
 		EECD7EF529B562C60067961B /* HotItemSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD7EF329B562C60067961B /* HotItemSectionCollectionViewCell.swift */; };
 		EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECD7EF429B562C60067961B /* HotItemSectionCollectionViewCell.xib */; };
 		EECD7EF829B565EF0067961B /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD7EF729B565EF0067961B /* UICollectionReusableView+Extension.swift */; };
@@ -315,6 +318,9 @@
 		EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarPageCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerCollectionViewCell.xib; sourceTree = "<group>"; };
+		EECD327829F6534B00C5764E /* MoreRecentNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRecentNFTViewModel.swift; sourceTree = "<group>"; };
+		EECD327B29F65B8300C5764E /* MoreHomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHomeRepository.swift; sourceTree = "<group>"; };
+		EECD327D29F65C9500C5764E /* MoreHomeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHomeRepositoryImpl.swift; sourceTree = "<group>"; };
 		EECD7EF329B562C60067961B /* HotItemSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EECD7EF429B562C60067961B /* HotItemSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EECD7EF729B565EF0067961B /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
@@ -440,6 +446,7 @@
 		97BAE0F729ABCCBC0001F60A /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				EECD328029F660F100C5764E /* Home */,
 				EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */,
 				EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */,
 				EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */,
@@ -615,6 +622,7 @@
 			isa = PBXGroup;
 			children = (
 				C16AEC8D29EA8F4200A37C78 /* UserRepository.swift */,
+				EECD327B29F65B8300C5764E /* MoreHomeRepository.swift */,
 				EEE3862329C810DC00A10E47 /* HomeRepository.swift */,
 				C16AECA029EA94CC00A37C78 /* implements */,
 			);
@@ -627,6 +635,7 @@
 				97BAE12429B11F190001F60A /* Repository.swift */,
 				C16AEC8B29EA8F1C00A37C78 /* UserRepositoryImpl.swift */,
 				EEE3862529C8125400A10E47 /* HomeRepositoryImpl.swift */,
+				EECD327D29F65C9500C5764E /* MoreHomeRepositoryImpl.swift */,
 			);
 			path = implements;
 			sourceTree = "<group>";
@@ -861,6 +870,7 @@
 		EE6D138A29F3A6DC00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EECD327729F6533200C5764E /* RecentNFTMore */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -875,6 +885,29 @@
 				EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */,
 			);
 			path = MainCustomTabbar;
+			sourceTree = "<group>";
+		};
+		EECD327729F6533200C5764E /* RecentNFTMore */ = {
+			isa = PBXGroup;
+			children = (
+				EECD327829F6534B00C5764E /* MoreRecentNFTViewModel.swift */,
+			);
+			path = RecentNFTMore;
+			sourceTree = "<group>";
+		};
+		EECD327F29F660E900C5764E /* More */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		EECD328029F660F100C5764E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EECD327F29F660E900C5764E /* More */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EECD7EF929B56D5E0067961B /* TabbarCell */ = {
@@ -1209,6 +1242,7 @@
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
+				EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
@@ -1221,6 +1255,7 @@
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
 				C1C8022E29B48BB200221FB9 /* MainTabbarCollectionViewCell.swift in Sources */,
+				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
@@ -1274,6 +1309,7 @@
 				C16AEC8A29EA8A0500A37C78 /* UserSessionInterface.swift in Sources */,
 				C1C8022F29B48BB200221FB9 /* SellerCollectionViewCell.swift in Sources */,
 				C1C8024C29B48D0000221FB9 /* LineTabBar.swift in Sources */,
+				EECD327929F6534B00C5764E /* MoreRecentNFTViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
