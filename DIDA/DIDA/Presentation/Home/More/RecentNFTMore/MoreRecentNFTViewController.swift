@@ -13,16 +13,8 @@ class MoreRecentNFTViewController: BaseViewController {
 
     
     private let disposeBag = DisposeBag()
-    
+    let viewModel: MoreRecentNFTViewModel = MoreRecentNFTViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    private var dataSource = Observable<[UserNftEntity]>.just([UserNftEntity.init(cardId: 13, userName: "Duru", cardName: "ㅌㅅㅌ", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/83c335ec-829a-71f5-f785-06fbaab27033.jpg",
-                                                                                  price: "", liked: false),
-                                                               UserNftEntity.init(cardId: 13, userName: "Duru", cardName: "ㅌㅅㅌ", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/83c335ec-829a-71f5-f785-06fbaab27033.jpg",
-                                                                                                                                             price: "", liked: false),
-                                                               UserNftEntity.init(cardId: 13, userName: "Duru", cardName: "ㅌㅅㅌ", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/83c335ec-829a-71f5-f785-06fbaab27033.jpg",
-                                                                                                                                             price: "", liked: false)
-    ])
     
     
     override func viewDidLoad() {
@@ -31,11 +23,11 @@ class MoreRecentNFTViewController: BaseViewController {
         initCollectionView()
         bindEvent()
         bindViewModel()
-       
+        
     }
     
     override func bindViewModel() {
-        dataSource
+        viewModel.output.recentNFTData
             .bind(to: collectionView.rx.items(cellIdentifier: MoreRecentNFTCollectionViewCell.reuseIdentifier, cellType: MoreRecentNFTCollectionViewCell.self)) { index, item, cell in
                 cell.configure(item: item)
             }
