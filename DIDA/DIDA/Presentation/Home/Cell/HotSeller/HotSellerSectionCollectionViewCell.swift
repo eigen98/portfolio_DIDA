@@ -62,13 +62,13 @@ extension HotSellerSectionCollectionViewCell: UICollectionViewDelegateFlowLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hotSellers.count
+        return 1//hotSellers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! SellerCollectionViewCell
-        let item = hotSellers[indexPath.row]
-        cell.configure(seller: item)
+//        let item = hotSellers[indexPath.row]
+//        cell.configure(seller: item)
         return cell
     }
 }
