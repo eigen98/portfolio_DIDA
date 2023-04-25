@@ -14,4 +14,5 @@ protocol MoreHomeRepository{
     //40 최근 NFT 더보기
     func getMoreRecentNFT(page : Int) -> Single<[RecentCardResponse]> //  Single<Result<GetMainResponse, NetworkError>>
     
+    func getMoreHotActivity(page : Int) -> Single<[GetMoreActivityResponse]> //  Single<Result<GetMainResponse, NetworkError>>
 }
