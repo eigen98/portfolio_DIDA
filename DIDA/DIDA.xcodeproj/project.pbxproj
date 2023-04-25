@@ -129,6 +129,13 @@
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
 		EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */; };
 		EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */; };
+		EE0AB95329F79E3B0010F182 /* MoreActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95129F79E3B0010F182 /* MoreActivityViewController.swift */; };
+		EE0AB95429F79E3B0010F182 /* MoreActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0AB95229F79E3B0010F182 /* MoreActivityViewController.xib */; };
+		EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */; };
+		EE0AB95829F79F7F0010F182 /* MoreActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0AB95629F79F7F0010F182 /* MoreActivityCollectionViewCell.xib */; };
+		EE0AB95B29F7A3DF0010F182 /* MoreActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95A29F7A3DF0010F182 /* MoreActivityViewModel.swift */; };
+		EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95C29F7AFEE0010F182 /* GetMoreActivityResponse.swift */; };
+		EE0AB96129F7B0D40010F182 /* MoreActivityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB96029F7B0D40010F182 /* MoreActivityEntity.swift */; };
 		EE0E778129A0EE7400E3863C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		EE0E778229A0EE7400E3863C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053D299A900B00C5D370 /* AppDelegate.swift */; };
@@ -289,6 +296,13 @@
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionReusableView.swift; sourceTree = "<group>"; };
 		EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarCollectionReusableView.xib; sourceTree = "<group>"; };
+		EE0AB95129F79E3B0010F182 /* MoreActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityViewController.swift; sourceTree = "<group>"; };
+		EE0AB95229F79E3B0010F182 /* MoreActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActivityViewController.xib; sourceTree = "<group>"; };
+		EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE0AB95629F79F7F0010F182 /* MoreActivityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActivityCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE0AB95A29F7A3DF0010F182 /* MoreActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityViewModel.swift; sourceTree = "<group>"; };
+		EE0AB95C29F7AFEE0010F182 /* GetMoreActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreActivityResponse.swift; sourceTree = "<group>"; };
+		EE0AB96029F7B0D40010F182 /* MoreActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityEntity.swift; sourceTree = "<group>"; };
 		EE11053A299A900B00C5D370 /* DIDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE11053D299A900B00C5D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE11053F299A900B00C5D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -607,6 +621,7 @@
 		C16AEC9229EA933100A37C78 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				EE0AB95E29F7B0B90010F182 /* Home */,
 				C16AEC9329EA935900A37C78 /* HotUserEntity.swift */,
 				C16AEC9529EA936700A37C78 /* UserNftEntity.swift */,
 				C16AEC9729EA937300A37C78 /* HotSellerEntity.swift */,
@@ -740,6 +755,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EE0AB94F29F79DF40010F182 /* ActivityMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE0AB95029F79E190010F182 /* Cell */,
+				EE0AB95129F79E3B0010F182 /* MoreActivityViewController.swift */,
+				EE0AB95229F79E3B0010F182 /* MoreActivityViewController.xib */,
+			);
+			path = ActivityMore;
+			sourceTree = "<group>";
+		};
+		EE0AB95029F79E190010F182 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */,
+				EE0AB95629F79F7F0010F182 /* MoreActivityCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EE0AB95929F7A3BE0010F182 /* ActivityMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE0AB95A29F7A3DF0010F182 /* MoreActivityViewModel.swift */,
+			);
+			path = ActivityMore;
+			sourceTree = "<group>";
+		};
+		EE0AB95E29F7B0B90010F182 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EE0AB95F29F7B0BE0010F182 /* More */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EE0AB95F29F7B0BE0010F182 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				EE0AB96029F7B0D40010F182 /* MoreActivityEntity.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		EE110531299A900B00C5D370 = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +892,7 @@
 		EE6D137E29F3A22C00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE0AB94F29F79DF40010F182 /* ActivityMore */,
 				EE6D137F29F3A2D000C748BE /* RecentNFTMore */,
 			);
 			path = More;
@@ -870,6 +929,7 @@
 		EE6D138A29F3A6DC00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE0AB95929F7A3BE0010F182 /* ActivityMore */,
 				EECD327729F6533200C5764E /* RecentNFTMore */,
 			);
 			path = More;
@@ -898,6 +958,7 @@
 		EECD327F29F660E900C5764E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE0AB95C29F7AFEE0010F182 /* GetMoreActivityResponse.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1071,6 +1132,7 @@
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EE6D138329F3A30400C748BE /* MoreRecentNFTViewController.xib in Resources */,
 				9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */,
+				EE0AB95429F79E3B0010F182 /* MoreActivityViewController.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
 				97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
@@ -1085,6 +1147,7 @@
 				C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */,
 				EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */,
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
+				EE0AB95829F79F7F0010F182 /* MoreActivityCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 				9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */,
 				C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */,
@@ -1229,6 +1292,7 @@
 				EEE3862929C8179E00A10E47 /* APIClient.swift in Sources */,
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
+				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
@@ -1236,12 +1300,14 @@
 				C16AECA529EAB96200A37C78 /* UIViewController+Extension.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				EE6D138229F3A30400C748BE /* MoreRecentNFTViewController.swift in Sources */,
+				EE0AB95B29F7A3DF0010F182 /* MoreActivityViewModel.swift in Sources */,
 				EEE9DD0D29C70F8800056719 /* RecentCardResponse.swift in Sources */,
 				C16AECAB29EABDFA00A37C78 /* LoginNavigationController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
+				EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */,
 				EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
@@ -1258,6 +1324,7 @@
 				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
+				EE0AB96129F7B0D40010F182 /* MoreActivityEntity.swift in Sources */,
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
 				C16AEC9A29EA938200A37C78 /* HotItemEntity.swift in Sources */,
@@ -1285,6 +1352,7 @@
 				EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */,
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C1C8024B29B48C3400221FB9 /* TableViewCell.swift in Sources */,
+				EE0AB95329F79E3B0010F182 /* MoreActivityViewController.swift in Sources */,
 				EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */,
 				EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */,
 				EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */,
