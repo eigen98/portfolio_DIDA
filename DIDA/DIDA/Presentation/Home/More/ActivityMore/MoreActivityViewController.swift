@@ -6,24 +6,43 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+class MoreActivityViewController: BaseViewController {
 
-class MoreActivityViewController: UIViewController {
-
+    
+    private let disposeBag = DisposeBag()
+    @IBOutlet weak var collectionView: UICollectionView!
+    let viewModel: MoreActivityViewModel = MoreActivityViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        initCollectionView()
+        bindEvent()
+        bindViewModel()
+    }
+    
+    override func bindViewModel() {
+        viewModel.output.activityData
+            .bind(to: collectionView.rx.items(cellIdentifier: MoreActivityCollectionViewCell.reuseIdentifier, cellType: MoreActivityCollectionViewCell.self)) { index, item, cell in
+                cell.configure(item: item)
+            }
+            .disposed(by: disposeBag)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+//MARK: UI
+extension MoreActivityViewController{
+    func initCollectionView(){
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: (collectionView.frame.width) - 64.0 , height: 230)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 32, bottom: 0, right: 32)
+        self.collectionView.collectionViewLayout = layout
+        
+        collectionView.register(UINib(nibName: MoreActivityCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MoreActivityCollectionViewCell.reuseIdentifier)
     }
-    */
-
 }
