@@ -13,6 +13,7 @@ enum DidaAPI {
     case main
     case soldout(term: String)
     case moreRecentNFT(page: Int)
+    case moreHotUser(page: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -30,6 +31,7 @@ extension DidaAPI: TargetType {
         case .main: return "/main"
         case .soldout(let term): return "/main/\(term)"
         case .moreRecentNFT(let page) : return "/recent/card/\(page)"
+        case .moreHotUser(let page) : return "/hot/user/\(page)"
         }
     }
     
