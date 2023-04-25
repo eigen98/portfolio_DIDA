@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2rk-zY-Kde">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2rk-zY-Kde">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -236,7 +236,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="bFe-bu-f3J" userLabel="Home"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mainpageCollectionView" destination="gEw-Ud-RRY" id="uUh-tm-3dM"/>
                     </connections>
@@ -349,7 +348,7 @@
     </scenes>
     <resources>
         <image name="TabBar" width="389" height="101"/>
-        <image name="pencil-fill" width="24" height="24"/>
+        <image name="pencil-fill" width="23" height="23"/>
         <image name="tabbar-plus" width="60" height="60"/>
         <namedColor name="brand_lemon">
             <color red="0.98431372549019602" green="0.97254901960784312" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

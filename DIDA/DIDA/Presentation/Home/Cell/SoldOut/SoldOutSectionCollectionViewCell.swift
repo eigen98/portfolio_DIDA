@@ -112,7 +112,13 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
      }
     // items를 사용하여 soldoutItems를 설정하고 이미지 뷰를 구성하는 함수
      func configure(items: [UserNftEntity]) {
-         soldoutItems = items
+         //soldoutItems = items
+         
+         //mock
+         soldoutItems = [UserNftEntity(cardId: 48,
+                                       userName: "서승환",
+                                       cardName: "테스트 크크", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/4696abf4-4368-b4c9-7fac-a50e9c8fb3a2.jpg", price: "10000000.000000",
+                                       liked: false)]
          configureImageViews()
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
@@ -142,7 +148,8 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
     //이미지 설정
      private func configureImageView(_ imageView: UIImageView, item: UserNftEntity) {
-         imageView.kf.setImage(with: URL(string: item.imgUrl))
+         imageView.kf.setImage(with: URL(string: item.imgUrl), options: [.scaleFactor(CGFloat(1.0))])
+         
 
      }
 }

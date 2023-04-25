@@ -13,8 +13,9 @@ class TabbarCollectionReusableView: UICollectionReusableView {
     private(set) var tabSelectedSubject = PublishSubject<Int>()
     var isClickedTabbar = false
     
-    lazy var tabbar: LineTabBar = {
-        let tabbar = LineTabBar()
+    lazy var tabbar: ScrollableTabBar = {
+        let tabbar = ScrollableTabBar()
+        tabbar.width = 102
         tabbar.translatesAutoresizingMaskIntoConstraints = false
         return tabbar
     }()
@@ -34,6 +35,7 @@ class TabbarCollectionReusableView: UICollectionReusableView {
         addSubview(tabbar)
         setupConstraints()
         self.backgroundColor = .black
+        setTabBar()
     }
     
     private func setupConstraints() {
@@ -54,7 +56,7 @@ class TabbarCollectionReusableView: UICollectionReusableView {
 extension TabbarCollectionReusableView: LineTabBarDelegate {
     func didTapTabBarItem(selectedIndex: Int) {
 //        isClickedTabbar = true
-        self.tabbar.tabbarView.selectedSegmentIndex = selectedIndex
+       // self.tabbar.tabbarView.selectedSegmentIndex = selectedIndex
 
         tabSelectedSubject.onNext(selectedIndex)
         
