@@ -52,10 +52,10 @@ class MoreRecentNFTViewController: BaseViewController {
 extension MoreRecentNFTViewController{
     func initCollectionView(){
         let layout = UICollectionViewFlowLayout()
-        
+        let width = UIScreen.main.bounds.size.width
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        layout.itemSize = CGSize(width: (collectionView.frame.width) / 2 - 52 , height: 292)
+        layout.itemSize = CGSize(width: width / 2 - 16 , height: 292)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         self.collectionView.collectionViewLayout = layout
         
