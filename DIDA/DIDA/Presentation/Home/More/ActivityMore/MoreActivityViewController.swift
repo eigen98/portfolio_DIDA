@@ -36,11 +36,11 @@ class MoreActivityViewController: BaseViewController {
 extension MoreActivityViewController{
     func initCollectionView(){
         let layout = UICollectionViewFlowLayout()
-        
+        let width = UIScreen.main.bounds.size.width
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        layout.itemSize = CGSize(width: (collectionView.frame.width) - 64.0 , height: 230)
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 32, bottom: 0, right: 32)
+        layout.itemSize = CGSize(width: width - 32.0 , height: 230)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = layout
         
         collectionView.register(UINib(nibName: MoreActivityCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MoreActivityCollectionViewCell.reuseIdentifier)
