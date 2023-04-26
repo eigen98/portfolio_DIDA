@@ -62,14 +62,37 @@ extension HotSellerSectionCollectionViewCell: UICollectionViewDelegateFlowLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1//hotSellers.count
+        return 3//hotSellers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! SellerCollectionViewCell
 //        let item = hotSellers[indexPath.row]
 //        cell.configure(seller: item)
+        if indexPath.row == 2{
+            cell.configureMoreButton()
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        if indexPath.row == 2{
+            var nextResponder = self.next
+            while nextResponder != nil {
+                if let viewController = nextResponder as? UIViewController {
+                    print("viewController : \(viewController)")
+                    if let navController = viewController.navigationController {
+                        print("navi : \(navController)")
+                        let nextVC = MoreHotSellerViewController()
+                        navController.pushViewController(nextVC, animated: true)
+                        break
+                    }
+                }
+                nextResponder = nextResponder?.next
+            }
+        }
+        
     }
 }
 
