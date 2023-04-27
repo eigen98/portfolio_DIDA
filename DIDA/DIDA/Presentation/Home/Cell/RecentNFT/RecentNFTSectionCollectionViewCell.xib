@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -445,6 +445,7 @@
                 <outlet property="firstItemImageView" destination="NDk-Cm-8UJ" id="MG3-tT-cyp"/>
                 <outlet property="firstItemsContainerView" destination="1Tv-Ge-Z8v" id="U4G-Sp-afa"/>
                 <outlet property="fourthItemImageView" destination="nCI-Id-8Vq" id="5WR-LN-lul"/>
+                <outlet property="moreButton" destination="5Y8-g6-ARl" id="PWB-3E-AaM"/>
                 <outlet property="secondItemImageView" destination="fwY-uL-NeQ" id="EVu-5B-db5"/>
                 <outlet property="secondItemsContainerView" destination="mEK-BD-7hv" id="knG-Sd-UVS"/>
                 <outlet property="thirdItemImageView" destination="cFc-1Q-boS" id="NaJ-Kk-KlB"/>

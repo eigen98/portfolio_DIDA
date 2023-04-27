@@ -78,6 +78,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+       
         bindViewModel()
         initCollectionView()
         bindEvent()
@@ -88,11 +90,11 @@ class HomeViewController: BaseViewController {
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-        
+       
         registerNIB()
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
-        
+       
         configureDataSource()
         
         initSnapshot()
@@ -190,6 +192,7 @@ extension HomeViewController {
                 let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotItemSectionCollectionViewCell
                 cell.hotItems = data
+                cell.configureCollectionView()
                 return cell
                 
             case .hotSeller(let data):
@@ -227,7 +230,7 @@ extension HomeViewController {
         dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TabbarCollectionReusableView.reuseIdentifier, for: indexPath) as! TabbarCollectionReusableView
             
-            header.setTabBar()
+            
             header.tabSelectedSubject
                 .subscribe(onNext: { [weak self] index in
                     self?.scrollToIndex(index: index)

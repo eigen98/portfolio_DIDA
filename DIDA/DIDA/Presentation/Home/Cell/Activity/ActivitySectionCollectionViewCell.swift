@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class ActivitySectionCollectionViewCell: UICollectionViewCell {
 
     //첫번째 유저 프로필
-    
+    var disposeBag = DisposeBag()
     @IBOutlet weak var firstItemContainerView: UIView!
     
     @IBOutlet weak var firstItemImageView: UIImageView!
@@ -34,7 +35,8 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var secondFollowButton: Buttons!
     
-   
+    @IBOutlet weak var moreButton: UIButton!
+    
     
     //세번째 유저 프로필
     
@@ -55,9 +57,14 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         configureButtons()
 
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
     
     
     func configure(items: [HotUserEntity]) {
+        bind()
         clearViews()
         
         for (index, item) in items.enumerated() {
@@ -110,4 +117,25 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         }
     }
     
+}
+
+extension ActivitySectionCollectionViewCell{
+    func bind(){
+        moreButton.rx.tap
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: {
+                var nextResponder = self.next
+                while nextResponder != nil {
+                    if let viewController = nextResponder as? UIViewController {
+                        if let navController = viewController.navigationController {
+                            let nextVC = MoreActivityViewController()
+                            navController.pushViewController(nextVC, animated: true)
+                            break
+                        }
+                    }
+                    nextResponder = nextResponder?.next
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }

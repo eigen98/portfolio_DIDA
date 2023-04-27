@@ -22,20 +22,25 @@ class HotItemCollectionViewCell: UICollectionViewCell {
     
     var disposeBag = DisposeBag()
     
-    var isLiked = false
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
+        
+    }
+    //셀이 화면 밖으로 스크롤되어 더 이상 보이지 않을 때와 같이 셀을 재사용하려고 할 때 호출
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.kf.cancelDownloadTask()
+        imageView.image = nil
+       
     }
     
     func configure(item: HotItemEntity) {
-        imageView.kf.setImage(with: URL(string: item.nftImg))
+        imageView.kf.setImage(with: URL(string: item.nftImg), placeholder: UIImage(systemName: "placeholder"))
         nftNameLabel.text = item.nftName
         priceLabel.text = "\(item.price) dida"
         heartCountLabel.text = item.heartCount
-        updateHeartImg()
+        self.heartImageView.image = UIImage(named: "heart-fill")
         bind()
     }
 
@@ -43,19 +48,8 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         heartContainerView.rx.tapGesture
             .subscribe(onNext: { [weak self] in
                 print("My view was tapped")
-                self?.isLiked.toggle()
-                self?.updateHeartImg()
             })
             .disposed(by: disposeBag)
-    }
-
-    func updateHeartImg() {
-        if self.isLiked {
-            self.heartImageView.image = UIImage(named: "heart-fill")
-        }else{
-            
-            self.heartImageView.image = UIImage(systemName : "heart")
-        }
     }
 
 }

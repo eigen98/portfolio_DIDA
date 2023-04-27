@@ -16,13 +16,16 @@ class SellerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var moreButtonContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
+    
     func configure(seller : HotSellerEntity){
+        moreButtonContainerView.isHidden = true
         if let profileURL = URL(string: seller.sellerProfile), let backgroundURL = URL(string: seller.sellerBacground) {
             self.sellerProfileImageView.kf.setImage(with: profileURL)
             self.sellerBackgroundImageView.kf.setImage(with: backgroundURL)
@@ -31,6 +34,10 @@ class SellerCollectionViewCell: UICollectionViewCell {
         self.nameLabel.text = seller.sellerName
         
         
+    }
+    
+    func configureMoreButton(){
+        moreButtonContainerView.isHidden = false
     }
 
 }
