@@ -105,6 +105,9 @@ class HomeViewController: BaseViewController {
     
     
     override func bindViewModel() {
+        
+       
+        
         mainpageCollectionView.rx.contentOffset
             .compactMap { [weak self] contentOffset -> IndexPath? in
                 guard let self = self else { return nil }
@@ -158,11 +161,33 @@ extension HomeViewController {
         self.mainpageCollectionView.dataSource = dataSource
         
         if let dataSourceBinder = dataSource?.rx.snapshot() {
+            
+            homeViewModel.showLoading
+                .subscribe(onNext: {[weak self] isLoading in
+                    
+                    isLoading ? self?.makeLoadingSnapShot() : ()
+                       
+                })
+                .disposed(by: disposeBag)
+            
+            
             homeViewModel.output.homeOutput
                 .map(makeSnapshot)
                 .bind(to: dataSourceBinder)
                 .disposed(by: disposeBag)
         }
+    }
+    
+    private func makeLoadingSnapShot(){
+        var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionType>()
+        let loadingEntity = HomeEntity.initLoadingItems()
+        snapshot.appendSections([0, 1])
+        snapshot.appendItems([.hotItem(loadingEntity.getHotItems)], toSection: 0)
+        snapshot.appendItems([.hotSeller(loadingEntity.getHotSellers)], toSection: 1)
+        snapshot.appendItems([.soldOut([])], toSection: 1)
+        snapshot.appendItems([.recentNFT(loadingEntity.getRecentCards)], toSection: 1)
+        snapshot.appendItems([.activity(loadingEntity.getHotUsers)], toSection: 1)
+        self.dataSource?.apply(snapshot,animatingDifferences: true)
     }
     
     //전달된 HomeEntity를 기반으로 스냅샷을 생성
@@ -175,8 +200,8 @@ extension HomeViewController {
         snapshot.appendItems([.soldOut([])], toSection: 1)
         
         snapshot.appendItems([  .recentNFT(homeEntity.getRecentCards)], toSection: 1)
-        snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
-        
+        //snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
+        snapshot.appendItems([  .activity([HotUserEntity(userId: 1, name: "dd", profileUrl: "", count: 4, followed: true, me: false)])], toSection: 1)
         
         return snapshot
     }
