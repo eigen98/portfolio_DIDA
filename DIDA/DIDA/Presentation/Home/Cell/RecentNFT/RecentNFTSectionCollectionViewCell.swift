@@ -13,18 +13,35 @@ import RxSwift
 class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
 
     var items = [UserNftEntity]()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    
     //상단 컨테이너 뷰
     @IBOutlet weak var firstItemsContainerView: UIView!
+    
+    
+    @IBOutlet weak var firstContainerView: UIView!
     
     @IBOutlet weak var firstItemImageView: UIImageView!
     
     @IBOutlet weak var secondItemImageView: UIImageView!
+    
+    @IBOutlet weak var secondContainerView: UIView!
+    
+    
     //하단 컨테이너 뷰
     @IBOutlet weak var secondItemsContainerView: UIView!
     
     @IBOutlet weak var thirdItemImageView: UIImageView!
     
+    
+    @IBOutlet weak var thirdContainerView: UIView!
+    
     @IBOutlet weak var fourthItemImageView: UIImageView!
+    
+    @IBOutlet weak var fourthContainerView: UIView!
     
     
     @IBOutlet weak var moreButton: UIButton!
@@ -39,6 +56,9 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     func configure(items : [UserNftEntity]){
         
         bind()
+        if items.first?.cardId == -1{
+            configureLoadingView()
+        }
         
         let numberOfItems = items.count
         switch numberOfItems {
@@ -91,7 +111,22 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     }
     
     
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        [titleLabel,
+         firstContainerView,
+         secondContainerView,
+         thirdContainerView,
+         fourthContainerView,
+         moreButton]
+            .forEach{
+                $0.startSkeletonAnimation(cornerRadius: 8)
+            }
+    }
     
+    func removeLottieAnimationView(){
+        self.contentView.stopSkeletonAnimation()
+    }
     
 
 }
