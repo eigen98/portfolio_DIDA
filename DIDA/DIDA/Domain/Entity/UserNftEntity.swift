@@ -19,4 +19,7 @@ struct UserNftEntity : Codable, Equatable {
     static func == (lhs: UserNftEntity, rhs: UserNftEntity) -> Bool {
             return lhs.cardId == rhs.cardId
         }
+    static func initLoadingEntity() -> UserNftEntity{
+        return UserNftEntity(cardId: -1, userName: "", cardName: "", imgUrl: "", price: "", liked: false)
+    }
 }

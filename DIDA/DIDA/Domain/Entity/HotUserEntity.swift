@@ -18,4 +18,8 @@ struct HotUserEntity : Codable, Equatable{
     static func == (lhs: HotUserEntity, rhs: HotUserEntity) -> Bool {
             return lhs.userId == rhs.userId
         }
+    
+    static func initLoadingEntity() -> HotUserEntity{
+        return HotUserEntity(userId: -1, name: "", profileUrl: "", count: 0, followed: false, me: false)
+    }
 }

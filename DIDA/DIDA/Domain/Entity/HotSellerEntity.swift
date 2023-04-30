@@ -17,4 +17,7 @@ struct HotSellerEntity : Codable, Equatable{
     static func == (lhs: HotSellerEntity, rhs: HotSellerEntity) -> Bool {
             return lhs.userId == rhs.userId
         }
+    static func initLoadingEntity() -> HotSellerEntity{
+        return HotSellerEntity(userId: -1, sellerBacground: "", sellerProfile: "", sellerName: "")
+    }
 }

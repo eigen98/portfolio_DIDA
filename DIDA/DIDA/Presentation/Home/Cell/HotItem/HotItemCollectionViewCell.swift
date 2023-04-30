@@ -7,7 +7,7 @@
 
 import UIKit
 import RxSwift
-
+import Lottie
 //HOT Item 리스트 컬렉션뷰 셀
 class HotItemCollectionViewCell: UICollectionViewCell {
     
@@ -42,6 +42,10 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         heartCountLabel.text = item.heartCount
         self.heartImageView.image = UIImage(named: "heart-fill")
         bind()
+        if item.cardId == -1 {
+            self.containerView.isHidden = true
+            configureLoadingView()
+        }
     }
 
     func bind() {
@@ -50,6 +54,14 @@ class HotItemCollectionViewCell: UICollectionViewCell {
                 print("My view was tapped")
             })
             .disposed(by: disposeBag)
+    }
+    
+    func configureLoadingView(){
+        self.contentView.startSkeletonAnimation()
+    }
+    
+    func removeLottieAnimationView(){
+        self.contentView.stopSkeletonAnimation()
     }
 
 }

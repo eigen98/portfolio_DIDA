@@ -176,6 +176,7 @@
             </constraints>
             <size key="customSize" width="126" height="174"/>
             <connections>
+                <outlet property="containerView" destination="f6m-yp-Ada" id="nfh-oS-n4o"/>
                 <outlet property="moreButtonContainerView" destination="NH3-QT-XJs" id="dts-po-Fy3"/>
                 <outlet property="nameLabel" destination="PtV-ba-kA2" id="eBa-vF-Wq2"/>
                 <outlet property="sellerBackgroundImageView" destination="smR-n0-NO2" id="Wud-1Q-zlt"/>

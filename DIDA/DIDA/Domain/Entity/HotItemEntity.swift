@@ -18,4 +18,8 @@ struct HotItemEntity : Codable, Equatable{
     static func == (lhs: HotItemEntity, rhs: HotItemEntity) -> Bool {
             return lhs.cardId == rhs.cardId
         }
+    
+    static func initLoadingEntity() -> HotItemEntity{
+        return HotItemEntity(cardId: -1, nftImg: "", nftName: "", heartCount: "", price: "")
+    }
 }
