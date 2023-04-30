@@ -12,4 +12,14 @@ struct HomeEntity{
     var getHotSellers : [HotSellerEntity]
     var getRecentCards : [UserNftEntity]
     var getHotUsers : [HotUserEntity]
+    
+    /*
+     DataSource에 넣어줄 로딩 셀 아이템을 생성합니다.
+     */
+    static func initLoadingItems() -> HomeEntity{
+        return HomeEntity(getHotItems: [HotItemEntity.initLoadingEntity()],
+                          getHotSellers: [HotSellerEntity.initLoadingEntity()],
+                          getRecentCards: [UserNftEntity.initLoadingEntity()],
+                          getHotUsers: [HotUserEntity.initLoadingEntity()])
+    }
 }

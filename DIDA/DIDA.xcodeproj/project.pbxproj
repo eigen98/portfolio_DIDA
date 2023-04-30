@@ -129,6 +129,11 @@
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
 		EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */; };
 		EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */; };
+		EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07EE9029F8EC9300285A9F /* MoreHotSellerViewController.swift */; };
+		EE07EE9329F8EC9300285A9F /* MoreHotSellerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE07EE9129F8EC9300285A9F /* MoreHotSellerViewController.xib */; };
+		EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07EE9429F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift */; };
+		EE07EE9729F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE07EE9529F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib */; };
+		EE07EE9A29F8F83800285A9F /* MoreHotSellerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07EE9929F8F83800285A9F /* MoreHotSellerViewModel.swift */; };
 		EE0AB95329F79E3B0010F182 /* MoreActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95129F79E3B0010F182 /* MoreActivityViewController.swift */; };
 		EE0AB95429F79E3B0010F182 /* MoreActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0AB95229F79E3B0010F182 /* MoreActivityViewController.xib */; };
 		EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */; };
@@ -157,6 +162,8 @@
 		EE6D138329F3A30400C748BE /* MoreRecentNFTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6D138129F3A30400C748BE /* MoreRecentNFTViewController.xib */; };
 		EE6D138729F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6D138529F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift */; };
 		EE6D138829F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */; };
+		EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */; };
+		EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */; };
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
 		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
 		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
@@ -296,6 +303,11 @@
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionReusableView.swift; sourceTree = "<group>"; };
 		EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarCollectionReusableView.xib; sourceTree = "<group>"; };
+		EE07EE9029F8EC9300285A9F /* MoreHotSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHotSellerViewController.swift; sourceTree = "<group>"; };
+		EE07EE9129F8EC9300285A9F /* MoreHotSellerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreHotSellerViewController.xib; sourceTree = "<group>"; };
+		EE07EE9429F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHotSellerCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE07EE9529F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreHotSellerCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE07EE9929F8F83800285A9F /* MoreHotSellerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHotSellerViewModel.swift; sourceTree = "<group>"; };
 		EE0AB95129F79E3B0010F182 /* MoreActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityViewController.swift; sourceTree = "<group>"; };
 		EE0AB95229F79E3B0010F182 /* MoreActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreActivityViewController.xib; sourceTree = "<group>"; };
 		EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActivityCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -325,6 +337,8 @@
 		EE6D138129F3A30400C748BE /* MoreRecentNFTViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreRecentNFTViewController.xib; sourceTree = "<group>"; };
 		EE6D138529F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRecentNFTCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreRecentNFTCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dida_loading_lottie.json; sourceTree = "<group>"; };
+		EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabbar.swift; sourceTree = "<group>"; };
@@ -545,6 +559,7 @@
 				EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */,
 				C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */,
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
+				EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */,
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -552,6 +567,7 @@
 		C136340D29A0CCA40023DA68 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE9D486729FE1D9700E184DF /* LottieFiles */,
 				C1956EB529ACD0F300018A93 /* Pretendard-Bold.otf */,
 				C136342E29A0CD090023DA68 /* Pretendard-Black.ttf */,
 				C136343029A0CD090023DA68 /* Pretendard-ExtraBold.ttf */,
@@ -755,6 +771,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EE07EE8C29F8EC4D00285A9F /* HotSellerMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE07EE8D29F8EC5E00285A9F /* Cell */,
+				EE07EE9029F8EC9300285A9F /* MoreHotSellerViewController.swift */,
+				EE07EE9129F8EC9300285A9F /* MoreHotSellerViewController.xib */,
+			);
+			path = HotSellerMore;
+			sourceTree = "<group>";
+		};
+		EE07EE8D29F8EC5E00285A9F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EE07EE9429F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift */,
+				EE07EE9529F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EE07EE9829F8F81E00285A9F /* HotSellerMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE07EE9929F8F83800285A9F /* MoreHotSellerViewModel.swift */,
+			);
+			path = HotSellerMore;
+			sourceTree = "<group>";
+		};
+		EE07EE9C29F8FC3000285A9F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */,
+				EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EE0AB94F29F79DF40010F182 /* ActivityMore */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,11 +932,10 @@
 		EE365C8D29A12A8D00B53A6E /* HotSeller */ = {
 			isa = PBXGroup;
 			children = (
-				EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */,
-				EEC91FB429A1F1ED002AFB65 /* SellerCollectionViewCell.swift */,
-				EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */,
+				EE07EE9C29F8FC3000285A9F /* Cell */,
 				EE48694C29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift */,
 				EE48694D29B58927005CEF31 /* HotSellerSectionCollectionViewCell.xib */,
+				EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */,
 			);
 			path = HotSeller;
 			sourceTree = "<group>";
@@ -892,6 +943,7 @@
 		EE6D137E29F3A22C00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE07EE8C29F8EC4D00285A9F /* HotSellerMore */,
 				EE0AB94F29F79DF40010F182 /* ActivityMore */,
 				EE6D137F29F3A2D000C748BE /* RecentNFTMore */,
 			);
@@ -929,10 +981,19 @@
 		EE6D138A29F3A6DC00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE07EE9829F8F81E00285A9F /* HotSellerMore */,
 				EE0AB95929F7A3BE0010F182 /* ActivityMore */,
 				EECD327729F6533200C5764E /* RecentNFTMore */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		EE9D486729FE1D9700E184DF /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */,
+			);
+			path = LottieFiles;
 			sourceTree = "<group>";
 		};
 		EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */ = {
@@ -1129,14 +1190,17 @@
 				EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
+				EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				EE6D138329F3A30400C748BE /* MoreRecentNFTViewController.xib in Resources */,
 				9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */,
 				EE0AB95429F79E3B0010F182 /* MoreActivityViewController.xib in Resources */,
 				EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */,
+				EE07EE9329F8EC9300285A9F /* MoreHotSellerViewController.xib in Resources */,
 				97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
+				EE07EE9729F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib in Resources */,
 				C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */,
 				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
@@ -1293,6 +1357,7 @@
 				EE11053E299A900B00C5D370 /* AppDelegate.swift in Sources */,
 				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
 				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
+				EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
@@ -1328,6 +1393,7 @@
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
 				C16AEC9A29EA938200A37C78 /* HotItemEntity.swift in Sources */,
+				EE07EE9A29F8F83800285A9F /* MoreHotSellerViewModel.swift in Sources */,
 				C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */,
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
@@ -1363,10 +1429,12 @@
 				C1C8023629B48BEA00221FB9 /* HomeViewController.swift in Sources */,
 				C1C8024229B48C1400221FB9 /* SceneDelegate.swift in Sources */,
 				C1C8023929B48BF300221FB9 /* SwapViewController.swift in Sources */,
+				EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */,
 				C16AEC8429EA85EB00A37C78 /* UserSession.swift in Sources */,
 				C1C8024929B48C2E00221FB9 /* SnackBarActionItem.swift in Sources */,
 				EECD7EF529B562C60067961B /* HotItemSectionCollectionViewCell.swift in Sources */,
 				C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */,
+				EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */,
 				EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */,
 				C16AEC9829EA937300A37C78 /* HotSellerEntity.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,

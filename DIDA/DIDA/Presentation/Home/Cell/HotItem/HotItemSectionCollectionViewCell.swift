@@ -10,6 +10,8 @@ import Kingfisher
 
 class HotItemSectionCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     
     var hotItems = [HotItemEntity]()
@@ -60,6 +62,9 @@ extension HotItemSectionCollectionViewCell : UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotItemCollectionViewCell", for: indexPath) as! HotItemCollectionViewCell
         
         let item = self.hotItems[indexPath.row]
+        if item.cardId == -1{
+            titleLabel.startSkeletonAnimation()
+        }
         cell.configure(item: item)
       
         return cell

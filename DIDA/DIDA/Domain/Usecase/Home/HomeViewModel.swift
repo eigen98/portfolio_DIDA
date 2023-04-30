@@ -37,6 +37,8 @@ class HomeViewModel : BaseViewModel{
     var output: Output
     
     override func bind(){
+        self.showLoading.accept(true) // Start loading
+        
         self.homeRepository
             .getMain()
             .map{ response in
@@ -50,6 +52,7 @@ class HomeViewModel : BaseViewModel{
                 
             }, onCompleted: {
                 print("통신 완료")
+                self.showLoading.accept(false) // Stop loading on completion
             })
             .disposed(by: disposeBag)
         

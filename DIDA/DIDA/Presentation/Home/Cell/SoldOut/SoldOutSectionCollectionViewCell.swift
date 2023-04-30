@@ -16,6 +16,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     var disposeBag = DisposeBag()
     //일주일 이내, 1개월 6개월, 올한해 버튼
     
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var weekButton: Buttons!
     
@@ -28,8 +29,12 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     //첫번째 NFT
     @IBOutlet weak var firstItemContainerView: UIView!
     
+    @IBOutlet weak var firstUserNameContainerView: UIView!
     @IBOutlet weak var firstImageView: UIImageView!
     
+    @IBOutlet weak var firstNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var firstUserNameLabel: UILabel!
     @IBOutlet weak var firstHeightConstraint: NSLayoutConstraint!
     
     //두번째 NFT
@@ -39,13 +44,31 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var secondImageView: UIImageView!
     
+    @IBOutlet weak var secondUserNameContainerView: UIView!
+    @IBOutlet weak var secondNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var secondUserNameLabel: UILabel!
+    
     
     //세번째 NFT
     @IBOutlet weak var thirdItemContainerView: UIView!
     
     @IBOutlet weak var thirdHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var thirdImageView: UIImageView!
+    
+    @IBOutlet weak var thirdUserNameContainerView: UIView!
+    @IBOutlet weak var thirdNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var thirdUserNameLabel: UILabel!
+    
+    @IBOutlet weak var moreButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -115,10 +138,13 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
          //soldoutItems = items
          
          //mock
-         soldoutItems = [UserNftEntity(cardId: 48,
+         soldoutItems = [UserNftEntity(cardId: 28,
                                        userName: "서승환",
                                        cardName: "테스트 크크", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/4696abf4-4368-b4c9-7fac-a50e9c8fb3a2.jpg", price: "10000000.000000",
                                        liked: false)]
+         if soldoutItems.first?.cardId == -1{
+             self.configureLoadingView()
+         }
          configureImageViews()
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
@@ -152,4 +178,31 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
          
 
      }
+    
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        self.subTitleLabel.isHidden = true
+        [titleLabel,
+         scrollView,
+         self.firstImageView,
+         self.firstNFTNameLabel,
+         self.firstUserNameContainerView,
+         self.secondImageView,
+         self.secondNFTNameLabel,
+         self.secondUserNameContainerView,
+         self.thirdImageView,
+         self.thirdNFTNameLabel,
+         self.thirdUserNameContainerView,
+         self.moreButton
+        ]
+            .forEach{
+                $0.startSkeletonAnimation(cornerRadius: 8)
+            }
+            
+        
+    }
+    
+    func removeLottieAnimationView(){
+        self.contentView.stopSkeletonAnimation()
+    }
 }

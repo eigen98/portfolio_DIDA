@@ -12,6 +12,14 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
 
     //첫번째 유저 프로필
     var disposeBag = DisposeBag()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    
+    
+    
     @IBOutlet weak var firstItemContainerView: UIView!
     
     @IBOutlet weak var firstItemImageView: UIImageView!
@@ -66,6 +74,9 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     func configure(items: [HotUserEntity]) {
         bind()
         clearViews()
+        if items.first?.userId == -1{
+            configureLoadingView()
+        }
         
         for (index, item) in items.enumerated() {
             if index == 0 {
@@ -115,6 +126,25 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
             $0?.buttonHeight = .h32
             $0?.customTitleColor = .init(normal: .white, disabled: .white, selected: .white, hightlight: .white)
         }
+    }
+    
+    
+    
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        subTitleLabel.isHidden = true
+        [titleLabel,
+         firstItemContainerView,
+         secondItemContainerView,
+         thirdItemContainerView,
+         moreButton]
+            .forEach{
+                $0.startSkeletonAnimation(cornerRadius: 8)
+            }
+    }
+    
+    func removeLottieAnimationView(){
+        self.contentView.stopSkeletonAnimation()
     }
     
 }
