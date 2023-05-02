@@ -88,7 +88,7 @@ class HomeViewController: BaseViewController {
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-       
+        self.mainpageCollectionView.showsVerticalScrollIndicator = false
         registerNIB()
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
