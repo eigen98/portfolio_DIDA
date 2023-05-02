@@ -76,6 +76,8 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         clearViews()
         if items.first?.userId == -1{
             configureLoadingView()
+        }else{
+            removeLottieAnimationView()
         }
         
         for (index, item) in items.enumerated() {
@@ -144,7 +146,16 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     }
     
     func removeLottieAnimationView(){
-        self.contentView.stopSkeletonAnimation()
+        subTitleLabel.isHidden = false
+        [titleLabel,
+         firstItemContainerView,
+         secondItemContainerView,
+         thirdItemContainerView,
+         moreButton]
+            .forEach{
+                $0?.stopSkeletonAnimation()
+            }
+        moreButton.backgroundColor = .init(hex: "#33333333")
     }
     
 }
