@@ -58,6 +58,8 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
         bind()
         if items.first?.cardId == -1{
             configureLoadingView()
+        }else{
+            removeLottieAnimationView()
         }
         
         let numberOfItems = items.count
@@ -125,7 +127,16 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     }
     
     func removeLottieAnimationView(){
-        self.contentView.stopSkeletonAnimation()
+        [titleLabel,
+         firstContainerView,
+         secondContainerView,
+         thirdContainerView,
+         fourthContainerView,
+         moreButton]
+            .forEach{
+                $0.stopSkeletonAnimation()
+            }
+        moreButton.backgroundColor = .init(hex: "#33333333")
     }
     
 
