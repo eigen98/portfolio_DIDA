@@ -534,6 +534,8 @@
                 <outlet property="firstImageView" destination="bF6-yE-n7r" id="fab-jW-tvb"/>
                 <outlet property="firstItemContainerView" destination="Goq-yF-NiM" id="Hno-o1-D1j"/>
                 <outlet property="firstNFTNameLabel" destination="SyE-mI-Ph8" id="dWw-Qb-frT"/>
+                <outlet property="firstPriceLabel" destination="YfD-nx-OZI" id="SLg-ht-qjQ"/>
+                <outlet property="firstUserImageView" destination="TZ7-kK-Oky" id="Hrn-xH-wdz"/>
                 <outlet property="firstUserNameContainerView" destination="BxN-ZH-eRP" id="DTV-Lh-8pb"/>
                 <outlet property="firstUserNameLabel" destination="mkz-xQ-Xlu" id="mg3-uB-iep"/>
                 <outlet property="moreButton" destination="1HJ-79-1dm" id="88D-pb-bsO"/>
@@ -543,6 +545,8 @@
                 <outlet property="secondImageView" destination="8Fo-Ub-CWX" id="TMN-vl-Ks4"/>
                 <outlet property="secondItemContainerView" destination="tNL-xp-y4u" id="lR1-Wm-Sv2"/>
                 <outlet property="secondNFTNameLabel" destination="0Rl-hd-9oM" id="r69-1R-h2y"/>
+                <outlet property="secondPriceLabel" destination="DXA-Ws-Y7p" id="xND-LY-RZG"/>
+                <outlet property="secondUserImageView" destination="05s-Uv-S22" id="WzX-Nc-GM4"/>
                 <outlet property="secondUserNameContainerView" destination="n4Z-xr-Xt1" id="O58-A1-DDv"/>
                 <outlet property="secondUserNameLabel" destination="oQ6-Ax-XUi" id="dmR-U4-yHc"/>
                 <outlet property="sixMonthButton" destination="pFg-bx-ccx" id="3dI-HO-Drb"/>
@@ -551,6 +555,8 @@
                 <outlet property="thirdImageView" destination="htR-x1-1q1" id="5ki-84-5Ia"/>
                 <outlet property="thirdItemContainerView" destination="ddR-Ck-lhV" id="dTi-9v-bpV"/>
                 <outlet property="thirdNFTNameLabel" destination="f75-4k-mNZ" id="b6k-6e-Yqo"/>
+                <outlet property="thirdPriceLabel" destination="3TD-YQ-M4X" id="ug9-SW-cxa"/>
+                <outlet property="thirdUserImageView" destination="oJm-NV-W3h" id="Q1g-Lv-MvM"/>
                 <outlet property="thirdUserNameContainerView" destination="eNP-3r-X7v" id="bbS-3G-nHN"/>
                 <outlet property="thirdUserNameLabel" destination="pDM-xY-ZNs" id="1rZ-1w-HXg"/>
                 <outlet property="titleLabel" destination="SgS-3A-XkA" id="d7a-FT-gau"/>
