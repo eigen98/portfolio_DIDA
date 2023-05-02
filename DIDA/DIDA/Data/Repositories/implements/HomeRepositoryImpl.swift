@@ -15,8 +15,8 @@ class HomeRepositoryImpl: HomeRepository {
     func getMain() -> Single<GetMainResponse> {
         return APIClient.request(.main).map(GetMainResponse.self)
     }
-    
-    func getMainSoldout(term : String) -> Single<GetMainSoldoutNFTResponse> {
-        return APIClient.request(.soldout(term: term)).map(GetMainSoldoutNFTResponse.self)
+    //term : 7, 30, 60, 365
+    func getMainSoldout(term : String) -> Single<[GetMainSoldoutNFTResponse]> {
+        return APIClient.request(.soldout(term: term)).map([GetMainSoldoutNFTResponse].self)
     }
 }
