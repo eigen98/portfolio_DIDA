@@ -186,6 +186,7 @@
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
 		EEE9DD0D29C70F8800056719 /* RecentCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0C29C70F8800056719 /* RecentCardResponse.swift */; };
 		EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */; };
+		EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -366,6 +367,7 @@
 		EEE9DD0C29C70F8800056719 /* RecentCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentCardResponse.swift; path = DIDA/Data/Response/RecentCardResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -973,6 +975,7 @@
 			isa = PBXGroup;
 			children = (
 				EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */,
+				EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */,
 				EE6D138A29F3A6DC00C748BE /* More */,
 			);
 			path = Home;
@@ -1402,6 +1405,7 @@
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
+				EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,

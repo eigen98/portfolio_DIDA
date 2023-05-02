@@ -46,24 +46,6 @@ class HomeViewModel : BaseViewModel{
     var output: Output
     
     override func bind(){
-       
-//        self.homeRepository
-//            .getMain()
-//            .map{ response in
-//                response.toDomain()
-//            }
-//            .asObservable()
-//            .subscribe(onNext: { result in
-//                print("통신 결과 :  \(result)")
-//                self.output.homeOutput.onNext(result)
-//                
-//                
-//            }, onCompleted: {
-//                print("통신 완료")
-//                self.showLoading.accept(false) // Stop loading on completion
-//            })
-//            .disposed(by: disposeBag)
-        
         
         let loadNextPage = input.loadNextPageTrigger
                    .filter { !self.isLoadingNextPage }
