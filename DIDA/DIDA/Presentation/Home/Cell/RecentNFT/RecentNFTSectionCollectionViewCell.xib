@@ -445,14 +445,34 @@
                 <outlet property="firstContainerView" destination="VOQ-TR-8gp" id="Ybk-K4-P67"/>
                 <outlet property="firstItemImageView" destination="NDk-Cm-8UJ" id="MG3-tT-cyp"/>
                 <outlet property="firstItemsContainerView" destination="1Tv-Ge-Z8v" id="U4G-Sp-afa"/>
+                <outlet property="firstLikeButton" destination="yQ5-i2-IoE" id="wBg-dS-HQe"/>
+                <outlet property="firstNFTNameLabel" destination="goJ-CD-Fwz" id="hTh-Rl-vk0"/>
+                <outlet property="firstPriceLabel" destination="JIo-ZH-oD3" id="RfZ-4Z-KvH"/>
+                <outlet property="firstProfileImageView" destination="zjY-au-57H" id="CpM-E6-APt"/>
+                <outlet property="firstUserNameLabel" destination="LYg-fz-RfP" id="VtC-Oe-F0X"/>
                 <outlet property="fourthContainerView" destination="Lrz-0C-WhM" id="LeZ-jD-f5N"/>
                 <outlet property="fourthItemImageView" destination="nCI-Id-8Vq" id="5WR-LN-lul"/>
+                <outlet property="fourthLikeButton" destination="Lcl-pO-S4C" id="EgL-Ob-f8q"/>
+                <outlet property="fourthNFTNameLabel" destination="d9R-Zu-0yz" id="TsD-hY-fzJ"/>
+                <outlet property="fourthPriceLabel" destination="gb2-ea-lNk" id="rvi-CH-iUN"/>
+                <outlet property="fourthProfileImageView" destination="NEq-dp-HSE" id="GYx-8Y-jY3"/>
+                <outlet property="fourthUserNameLabel" destination="rps-xh-mq8" id="G4G-aG-4zs"/>
                 <outlet property="moreButton" destination="5Y8-g6-ARl" id="PWB-3E-AaM"/>
                 <outlet property="secondContainerView" destination="7vC-2L-oPV" id="Z60-yL-v2m"/>
                 <outlet property="secondItemImageView" destination="fwY-uL-NeQ" id="EVu-5B-db5"/>
                 <outlet property="secondItemsContainerView" destination="mEK-BD-7hv" id="knG-Sd-UVS"/>
+                <outlet property="secondLikeButton" destination="U7D-HY-d9f" id="w79-uG-z7g"/>
+                <outlet property="secondNFTNameLabel" destination="Oca-oZ-OzY" id="4Vk-HX-0HP"/>
+                <outlet property="secondPriceLabel" destination="24s-48-a41" id="s3e-kp-UjJ"/>
+                <outlet property="secondProfileImageView" destination="nDD-oh-emW" id="LlK-Dp-afa"/>
+                <outlet property="secondUserNameLabel" destination="xRo-7f-K1R" id="bPV-E9-0z2"/>
                 <outlet property="thirdContainerView" destination="mo9-Wp-C2G" id="oI2-qg-6WM"/>
                 <outlet property="thirdItemImageView" destination="cFc-1Q-boS" id="NaJ-Kk-KlB"/>
+                <outlet property="thirdLikeButton" destination="AWr-g1-c6g" id="fU0-qM-wsm"/>
+                <outlet property="thirdNFTNameLabel" destination="zpm-50-Wjn" id="S6j-5D-3vA"/>
+                <outlet property="thirdPriceLabel" destination="mPX-UD-rPd" id="Y5b-it-76E"/>
+                <outlet property="thirdProfileImageView" destination="Q3e-ih-arr" id="l6h-Lh-yhA"/>
+                <outlet property="thirdUserNameLabel" destination="fCd-14-Rvb" id="rKb-eq-VhY"/>
                 <outlet property="titleLabel" destination="EFc-JA-43O" id="UZY-xx-Ydi"/>
             </connections>
             <point key="canvasLocation" x="394.6564885496183" y="90.845070422535215"/>
