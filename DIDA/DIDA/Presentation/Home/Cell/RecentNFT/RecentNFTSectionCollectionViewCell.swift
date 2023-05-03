@@ -26,9 +26,31 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var firstItemImageView: UIImageView!
     
+    @IBOutlet weak var firstUserNameLabel: UILabel!
+    
+    @IBOutlet weak var firstNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var firstProfileImageView: UIImageView!
+    
+    @IBOutlet weak var firstPriceLabel: UILabel!
+    
+    
+    @IBOutlet weak var firstLikeButton: UIButton!
+    
+    
     @IBOutlet weak var secondItemImageView: UIImageView!
     
     @IBOutlet weak var secondContainerView: UIView!
+    
+    @IBOutlet weak var secondUserNameLabel: UILabel!
+    
+    @IBOutlet weak var secondProfileImageView: UIImageView!
+    
+    @IBOutlet weak var secondPriceLabel: UILabel!
+    
+    @IBOutlet weak var secondNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var secondLikeButton: UIButton!
     
     
     //하단 컨테이너 뷰
@@ -36,12 +58,32 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var thirdItemImageView: UIImageView!
     
-    
     @IBOutlet weak var thirdContainerView: UIView!
+    
+    @IBOutlet weak var thirdUserNameLabel: UILabel!
+    
+    @IBOutlet weak var thirdNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var thirdProfileImageView: UIImageView!
+    
+    @IBOutlet weak var thirdPriceLabel: UILabel!
+    
+    @IBOutlet weak var thirdLikeButton: UIButton!
+    
     
     @IBOutlet weak var fourthItemImageView: UIImageView!
     
     @IBOutlet weak var fourthContainerView: UIView!
+    
+    @IBOutlet weak var fourthUserNameLabel: UILabel!
+    
+    @IBOutlet weak var fourthNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var fourthProfileImageView: UIImageView!
+    
+    @IBOutlet weak var fourthPriceLabel: UILabel!
+    
+    @IBOutlet weak var fourthLikeButton: UIButton!
     
     
     @IBOutlet weak var moreButton: UIButton!
@@ -56,53 +98,33 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     func configure(items : [UserNftEntity]){
         
         bind()
+        self.items = items
         if items.first?.cardId == -1{
             configureLoadingView()
         }else{
             removeLottieAnimationView()
         }
         
-        let numberOfItems = items.count
-        switch numberOfItems {
-        case 4 :
-            print("아이템 4개")
-            let firstItem = items[0]
-            let secondItem = items[1]
-            let thirdItem = items[2]
-            let fourthItem = items[3]
+        
+        let itemViews: [(UIImageView?, UILabel?, UILabel?, UILabel?, UIButton?)] = [
+                (firstItemImageView, firstUserNameLabel, firstNFTNameLabel, firstPriceLabel, firstLikeButton),
+                (secondItemImageView, secondUserNameLabel, secondNFTNameLabel, secondPriceLabel, secondLikeButton),
+                (thirdItemImageView, thirdUserNameLabel, thirdNFTNameLabel, thirdPriceLabel, thirdLikeButton),
+                (fourthItemImageView, fourthUserNameLabel, fourthNFTNameLabel, fourthPriceLabel, fourthLikeButton)
+            ]
             
-            if let url = URL(string: firstItem.imgUrl){
-                firstItemImageView.kf.setImage(with: url)
+            for (index, item) in items.enumerated() {
+                if let url = URL(string: item.imgUrl) {
+                    itemViews[index].0?.kf.setImage(with: url)
+                }
+                
+                itemViews[index].1?.text = item.userName
+                itemViews[index].2?.text = item.cardName
+                itemViews[index].3?.text = "\(roundedStringToTwoDecimalPlaces(value: (item.price))) dida"
+                
+                let imageName = item.liked ? "heart-fill" : "heart-unfill"
+                itemViews[index].4?.setImage(UIImage(named: imageName), for: .normal)
             }
-            
-            if let url = URL(string: secondItem.imgUrl){
-                secondItemImageView.kf.setImage(with: url)
-            }
-            
-            if let url = URL(string: thirdItem.imgUrl){
-                thirdItemImageView.kf.setImage(with: url)
-            }
-            
-            if let url = URL(string: fourthItem.imgUrl){
-                fourthItemImageView.kf.setImage(with: url)
-            }
-           
-            
-            break
-        case 3:
-            print("아이템 3개")
-            break
-        case 2:
-            print("아이템 2개")
-            break
-        case 1:
-            print("아이템 1개")
-            let firstItem = items[0]
-            
-            break
-        default:
-            break
-        }
         
         
         
@@ -163,5 +185,49 @@ extension RecentNFTSectionCollectionViewCell{
                 }
             })
             .disposed(by: disposeBag)
+        
+        let likeButtons = [firstLikeButton, secondLikeButton, thirdLikeButton, fourthLikeButton]
+
+        for (index, likeButton) in likeButtons.enumerated() {
+            likeButton?.rx.tap
+                .map { [weak self] in
+                    let isLiked = !(self?.items[index].liked ?? false)
+                    self?.items[index].liked = isLiked
+                    return isLiked
+                }
+                .do(onNext: { isLiked in
+                    let imageName = isLiked ? "heart-fill" : "heart-unfill"
+                    likeButton?.setImage(UIImage(named: imageName), for: .normal)
+                })
+                .subscribe()
+                .disposed(by: disposeBag)
+        }
+        
+    }
+    
+    /*
+     String 값을 소수점 둘째 자리 수까지 반올림하는 함수.
+     */
+    func roundedStringToTwoDecimalPlaces(value: String) -> String {
+        if value == "" { return "0.00" }
+            if let doubleValue = Double(value) {
+                var resultValue = ""
+                let absValue = abs(doubleValue)
+                let sign = doubleValue < 0 ? "-" : ""
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                formatter.maximumFractionDigits = 2
+                if absValue < 1000 {
+                    resultValue = formatter.string(from: NSNumber(value: absValue)) ?? ""
+                } else if absValue < 1000000 {
+                    resultValue = formatter.string(from: NSNumber(value: absValue / 1000)) ?? ""
+                    resultValue += "K"
+                } else {
+                    resultValue = formatter.string(from: NSNumber(value: absValue / 1000000)) ?? ""
+                    resultValue += "M"
+                }
+                return "\(sign)\(resultValue)"
+            }
+            return "0.00"
     }
 }
