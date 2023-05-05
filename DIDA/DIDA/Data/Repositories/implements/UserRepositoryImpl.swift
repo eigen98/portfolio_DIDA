@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class UserRepositoryImpl: UserRepository {
     
-    func login(type: LoginProvider) {
+    func login(type: LoginProvider){
         switch type {
         case .apple:
             loginWithApple()
@@ -22,12 +23,28 @@ class UserRepositoryImpl: UserRepository {
         
     }
     
-    private func loginWithKakao() {
-        UserSession.shared.loginWithKakao { idToken, error in
+    private func loginWithKakao() -> Single<LoginProviderEntity> {
+        return Single<Bool>.create { single in
+            UserSession.shared.loginWithKakao { idToken, error in
+                if let error = error {
+                    single(.failure(error))
+                    return
+                }
+                
+                if let idToken = idToken {
+                    var entity = LoginProviderEntity(idToken: idToken, email: <#T##String?#>, isFirst: <#T##Bool#>)
+                }
+            }
             
+            
+            return Disposables.create()
         }
+        
     }
     
+    func signUp() {
+        
+    }
     func isLogin() -> Bool {
         return false
     }

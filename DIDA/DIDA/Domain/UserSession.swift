@@ -14,9 +14,7 @@ class UserSession: UserSessionInterface {
     
     static let shared = UserSession()
     
-    private init() {
-        self.initialize()
-    }
+    private init() { }
     
     func initialize() {
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UserSessionInterface {
-    func loginWithKakao(completion: @escaping (String?, Error?) -> Void)
+    func loginWithKakao(completion: @escaping (String?, Error?) -> Void
 }

@@ -39,6 +39,7 @@ extension MainViewController: TabBarDelegate {
             if (selectedMenu == .swap || selectedMenu == .mypage) {
                 if (self.viewModel.isLogin == false) {
                     self.showLogin()
+                    return
                 }
             }
             

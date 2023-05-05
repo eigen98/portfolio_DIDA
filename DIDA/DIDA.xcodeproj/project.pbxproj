@@ -93,7 +93,6 @@
 		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
-		C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D029A2219000017147 /* TabBar.swift */; };
 		C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D229A22E5F00017147 /* TabBarItem.swift */; };
 		C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344429A0DEA00023DA68 /* MainNavigationController.swift */; };
@@ -175,17 +174,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1C8022929B488F900221FB9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -899,7 +887,6 @@
 				EE110537299A900B00C5D370 /* Frameworks */,
 				EE110538299A900B00C5D370 /* Resources */,
 				C395EE1B414FFB656B3D2BB2 /* [CP] Embed Pods Frameworks */,
-				C1C8022929B488F900221FB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1450,9 +1437,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1466,9 +1455,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dida.DIDA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1487,9 +1477,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1503,9 +1495,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dida.DIDA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
