@@ -63,3 +63,19 @@ extension Array where Element == HotUserResponse {
         }
     }
 }
+
+extension Array where Element == GetMoreActivityResponse {
+    func toDomain() -> [MoreActivityEntity] {
+        return map {
+            MoreActivityEntity(
+                userId: $0.userId,
+                name: $0.name,
+                profileUrl: $0.profileUrl,
+                cardCnt: $0.cardCnt,
+                cardUrls: $0.cardUrls,
+                followed : $0.followed
+            )
+        }
+    }
+}
+

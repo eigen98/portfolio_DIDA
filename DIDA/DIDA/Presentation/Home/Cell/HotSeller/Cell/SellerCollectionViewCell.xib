@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.ttf">
+            <string>Pretendard-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -37,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="120" width="126" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtV-ba-kA2">
-                                        <rect key="frame" x="30" y="23" width="66.333333333333329" height="17"/>
+                                        <rect key="frame" x="30" y="23" width="66" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -91,19 +95,69 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH3-QT-XJs">
+                                <rect key="frame" x="0.0" y="0.0" width="126" height="174"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jng-Tg-IaO">
+                                        <rect key="frame" x="43" y="57" width="40" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhu-w2-i9x">
+                                                <rect key="frame" x="0.0" y="-1" width="40" height="42"/>
+                                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MVg-or-s5h"/>
+                                                    <constraint firstAttribute="width" constant="40" id="lmb-WW-4Rt"/>
+                                                </constraints>
+                                                <imageReference key="image" image="chevron.right" catalog="system" symbolScale="large"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdX-bZ-iqq">
+                                                <rect key="frame" x="4.3333333333333339" y="46" width="31.333333333333329" height="14"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="bhu-w2-i9x" firstAttribute="centerX" secondItem="Jng-Tg-IaO" secondAttribute="centerX" id="HjA-Rg-yCm"/>
+                                            <constraint firstItem="bhu-w2-i9x" firstAttribute="top" secondItem="Jng-Tg-IaO" secondAttribute="top" id="KJv-KG-wBs"/>
+                                            <constraint firstAttribute="bottom" secondItem="rdX-bZ-iqq" secondAttribute="bottom" id="TuW-dH-cdW"/>
+                                            <constraint firstAttribute="width" constant="40" id="gGE-C2-AQq"/>
+                                            <constraint firstAttribute="height" constant="60" id="xTY-mr-HS9"/>
+                                            <constraint firstItem="rdX-bZ-iqq" firstAttribute="centerX" secondItem="Jng-Tg-IaO" secondAttribute="centerX" id="yFo-n1-ozb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Jng-Tg-IaO" firstAttribute="centerY" secondItem="NH3-QT-XJs" secondAttribute="centerY" id="D8R-cY-81c"/>
+                                    <constraint firstItem="Jng-Tg-IaO" firstAttribute="centerX" secondItem="NH3-QT-XJs" secondAttribute="centerX" id="pX5-XN-K5U"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="nEt-tJ-KMQ" secondAttribute="bottom" constant="40" id="7GX-M4-uHa"/>
                             <constraint firstItem="smR-n0-NO2" firstAttribute="leading" secondItem="f6m-yp-Ada" secondAttribute="leading" id="8zr-5t-102"/>
                             <constraint firstItem="smR-n0-NO2" firstAttribute="top" secondItem="f6m-yp-Ada" secondAttribute="top" id="BUd-Bs-ByR"/>
+                            <constraint firstAttribute="bottom" secondItem="NH3-QT-XJs" secondAttribute="bottom" id="GoO-1d-pDS"/>
                             <constraint firstAttribute="width" constant="126" id="KIx-O1-KCy"/>
                             <constraint firstItem="PtV-ba-kA2" firstAttribute="centerX" secondItem="197-vN-j0p" secondAttribute="centerX" id="N4p-0t-Ueb"/>
+                            <constraint firstItem="NH3-QT-XJs" firstAttribute="top" secondItem="f6m-yp-Ada" secondAttribute="top" id="OiE-EQ-Gyj"/>
                             <constraint firstItem="nEt-tJ-KMQ" firstAttribute="centerX" secondItem="f6m-yp-Ada" secondAttribute="centerX" id="PA6-82-Z7s"/>
                             <constraint firstAttribute="trailing" secondItem="Hba-Nb-igx" secondAttribute="trailing" id="PRd-No-1Uo"/>
                             <constraint firstAttribute="height" constant="174" id="Yqx-HN-eo9"/>
                             <constraint firstItem="Hba-Nb-igx" firstAttribute="leading" secondItem="f6m-yp-Ada" secondAttribute="leading" id="aU1-rp-aMC"/>
+                            <constraint firstAttribute="trailing" secondItem="NH3-QT-XJs" secondAttribute="trailing" id="iJC-tA-nic"/>
                             <constraint firstAttribute="bottom" secondItem="Hba-Nb-igx" secondAttribute="bottom" id="kIC-2j-xF2"/>
                             <constraint firstAttribute="trailing" secondItem="smR-n0-NO2" secondAttribute="trailing" id="oR4-zE-W5h"/>
+                            <constraint firstItem="NH3-QT-XJs" firstAttribute="leading" secondItem="f6m-yp-Ada" secondAttribute="leading" id="wqh-wk-h6O"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -122,6 +176,7 @@
             </constraints>
             <size key="customSize" width="126" height="174"/>
             <connections>
+                <outlet property="moreButtonContainerView" destination="NH3-QT-XJs" id="dts-po-Fy3"/>
                 <outlet property="nameLabel" destination="PtV-ba-kA2" id="eBa-vF-Wq2"/>
                 <outlet property="sellerBackgroundImageView" destination="smR-n0-NO2" id="Wud-1Q-zlt"/>
                 <outlet property="sellerProfileImageView" destination="197-vN-j0p" id="cvb-2l-mYc"/>
@@ -129,4 +184,7 @@
             <point key="canvasLocation" x="87.022900763358777" y="8.4507042253521139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+    </resources>
 </document>
