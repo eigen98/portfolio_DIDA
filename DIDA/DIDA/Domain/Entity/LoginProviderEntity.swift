@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginProviderEntity: Codable {
-    let idToken: String?
-    let email: String?
+    var email: String? = nil
+    var nickname: String? = nil
     let isFirst: Bool
 }

@@ -56,6 +56,13 @@
 		C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AECAC29EAC91100A37C78 /* DidaAPI.swift */; };
 		C16C48E629AA727B008CD62B /* Pods_DIDA_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */; };
+		C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */; };
+		C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */; };
+		C16FDCF62A05572300FB5F53 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */; };
+		C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF72A0647A200FB5F53 /* Token.swift */; };
+		C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */; };
+		C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */; };
 		C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30D29AA5335008122EF /* AppDelegate.swift */; };
 		C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30F29AA5335008122EF /* SceneDelegate.swift */; };
 		C188B31229AA5335008122EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B31129AA5335008122EF /* ViewController.swift */; };
@@ -256,6 +263,13 @@
 		C16AECA829EABB3700A37C78 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		C16AECAA29EABDFA00A37C78 /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		C16AECAC29EAC91100A37C78 /* DidaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidaAPI.swift; sourceTree = "<group>"; };
+		C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DidaAPI+Error.swift"; sourceTree = "<group>"; };
+		C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCF72A0647A200FB5F53 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
+		C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C188B30D29AA5335008122EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C188B30F29AA5335008122EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -465,6 +479,9 @@
 				EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */,
 				EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */,
 				EEE9DD0C29C70F8800056719 /* RecentCardResponse.swift */,
+				C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */,
+				C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */,
+				C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -472,6 +489,7 @@
 		97BAE0F829ABCCCF0001F60A /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -543,6 +561,7 @@
 				EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */,
 				C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */,
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
+				C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */,
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -627,6 +646,7 @@
 				C16AEC9B29EA938F00A37C78 /* HomeEntity.swift */,
 				C16AECA229EAB5FC00A37C78 /* LoginProviderEntity.swift */,
 				C16AECA829EABB3700A37C78 /* UserEntity.swift */,
+				C16FDCF72A0647A200FB5F53 /* Token.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1023,6 +1043,7 @@
 				EEE3862A29C81CA900A10E47 /* NetworkError.swift */,
 				EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */,
 				C16AECAC29EAC91100A37C78 /* DidaAPI.swift */,
+				C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1315,6 +1336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */,
+				C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */,
 				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
@@ -1337,6 +1360,7 @@
 				C16AECA529EAB96200A37C78 /* UIViewController+Extension.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				EE6D138229F3A30400C748BE /* MoreRecentNFTViewController.swift in Sources */,
+				C16FDCF62A05572300FB5F53 /* SignupResponseDTO.swift in Sources */,
 				EE0AB95B29F7A3DF0010F182 /* MoreActivityViewModel.swift in Sources */,
 				EEE9DD0D29C70F8800056719 /* RecentCardResponse.swift in Sources */,
 				C16AECAB29EABDFA00A37C78 /* LoginNavigationController.swift in Sources */,
@@ -1345,6 +1369,7 @@
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
 				EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */,
+				C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */,
 				EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
@@ -1370,10 +1395,12 @@
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
+				C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */,
 				EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
+				C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,
@@ -1385,6 +1412,7 @@
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
+				C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */,
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
 				EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */,

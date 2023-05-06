@@ -6,14 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
-enum LoginProvider {
-    case apple
-    case kakao
-}
+
 
 protocol UserRepository {
-    func login(type: LoginProvider)
+    func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> ())
+    func signup()
     
     func isLogin() -> Bool
     func fetchMyself() -> UserEntity?

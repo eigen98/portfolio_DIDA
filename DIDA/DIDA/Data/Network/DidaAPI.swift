@@ -10,10 +10,14 @@ import Moya
 import RxSwift
 
 enum DidaAPI {
+    /// MARK: Home
     case main
     case soldout(term: String)
     case moreRecentNFT(page: Int)
     case moreHotUser(page: Int)
+    
+    /// MARK: Login
+    case socialLogin(request: SignupRequestDTO)
 }
 
 extension DidaAPI: TargetType {
@@ -28,18 +32,45 @@ extension DidaAPI: TargetType {
     
     var path: String {
         switch self {
+        /// MARK: Home
         case .main: return "/main"
         case .soldout(let term): return "/main/\(term)"
         case .moreRecentNFT(let page) : return "/recent/card/\(page)"
         case .moreHotUser(let page) : return "/hot/user/\(page)"
+        
+        /// MARK: Login
+        case .socialLogin(let request): return "/\(request.type.rawValue)/login"
         }
     }
     
     var method: Moya.Method {
-        return .get
+        switch self {
+        /// MARK: Home
+        case .main: return .get
+        case .soldout: return .get
+        case .moreRecentNFT: return .get
+        case .moreHotUser: return .get
+            
+        /// MARK: Login
+        case .socialLogin: return .post
+        }
     }
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        /// MARK: Home
+        case .main:
+            return .requestPlain
+        case .soldout:
+            return .requestPlain
+        case .moreRecentNFT:
+            return .requestPlain
+        case .moreHotUser:
+            return .requestPlain
+            
+        /// MARK: Login
+        case .socialLogin(let request):
+            return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+        }
     }
 }

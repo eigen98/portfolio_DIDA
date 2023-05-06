@@ -10,41 +10,16 @@ import RxSwift
 
 class UserRepositoryImpl: UserRepository {
     
-    func login(type: LoginProvider){
-        switch type {
-        case .apple:
-            loginWithApple()
-        case .kakao:
-            loginWithKakao()
+    func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> ()) {
+        UserSession.shared.login(type: type) { entity, error in
+            completion(entity, error)
         }
     }
     
-    private func loginWithApple() {
+    func signup() {
         
     }
     
-    private func loginWithKakao() -> Single<LoginProviderEntity> {
-        return Single<Bool>.create { single in
-            UserSession.shared.loginWithKakao { idToken, error in
-                if let error = error {
-                    single(.failure(error))
-                    return
-                }
-                
-                if let idToken = idToken {
-                    var entity = LoginProviderEntity(idToken: idToken, email: <#T##String?#>, isFirst: <#T##Bool#>)
-                }
-            }
-            
-            
-            return Disposables.create()
-        }
-        
-    }
-    
-    func signUp() {
-        
-    }
     func isLogin() -> Bool {
         return false
     }
