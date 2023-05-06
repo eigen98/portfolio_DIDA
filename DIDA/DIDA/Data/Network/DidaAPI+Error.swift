@@ -13,4 +13,7 @@ enum DidaError: Error {
     /// social login token error
     case Unknown
     case invaildIdToken
+    
+    /// api error
+    case apiError(BaseErrorResponseDTO)
 }
