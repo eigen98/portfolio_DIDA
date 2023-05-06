@@ -17,6 +17,8 @@
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
 		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
+		C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */; };
+		C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
 		C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
@@ -63,6 +65,8 @@
 		C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF72A0647A200FB5F53 /* Token.swift */; };
 		C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */; };
 		C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */; };
+		C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDD042A0659C800FB5F53 /* SignupViewController.swift */; };
+		C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */; };
 		C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30D29AA5335008122EF /* AppDelegate.swift */; };
 		C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30F29AA5335008122EF /* SceneDelegate.swift */; };
 		C188B31229AA5335008122EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B31129AA5335008122EF /* ViewController.swift */; };
@@ -221,6 +225,8 @@
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorResponseDTO.swift; sourceTree = "<group>"; };
+		C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestDTO.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		C16FDCF72A0647A200FB5F53 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		C16FDD042A0659C800FB5F53 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C188B30D29AA5335008122EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C188B30F29AA5335008122EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -465,6 +473,7 @@
 				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
 				C16AECA629EABA6A00A37C78 /* MainViewModel.swift */,
 				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
+				C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 				C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */,
 				C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */,
 				C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */,
+				C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -490,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */,
+				C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -498,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A8D3CE29EA7E1F0023373E /* LoginHome */,
+				C16FDD032A0659A100FB5F53 /* Signup */,
 				C136340229A0C66D0023DA68 /* Main */,
 				C136344629A0E0100023DA68 /* Home */,
 				C136344729A0E0190023DA68 /* Swap */,
@@ -671,6 +683,14 @@
 				EECD327D29F65C9500C5764E /* MoreHomeRepositoryImpl.swift */,
 			);
 			path = implements;
+			sourceTree = "<group>";
+		};
+		C16FDD032A0659A100FB5F53 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C16FDD042A0659C800FB5F53 /* SignupViewController.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
@@ -1338,6 +1358,7 @@
 			files = (
 				C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */,
 				C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */,
+				C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */,
 				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
@@ -1378,6 +1399,7 @@
 				C16AEC9429EA935900A37C78 /* HotUserEntity.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
+				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
 				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
@@ -1400,7 +1422,9 @@
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
+				C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */,
 				C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */,
+				C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,

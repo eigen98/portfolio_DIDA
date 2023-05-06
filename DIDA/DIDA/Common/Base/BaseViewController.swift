@@ -17,7 +17,8 @@ class BaseViewController: UIViewController {
     func bindEvent() { }
     
     func showError(error: Error) {
-        
+        // TODO: error catch -> showing toast
+        print("error:: \(error)")
     }
     
     func showLogin(delegate: LoginHomeViewControllerDelegate? = nil) {

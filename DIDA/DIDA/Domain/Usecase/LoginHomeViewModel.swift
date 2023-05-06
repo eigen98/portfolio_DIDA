@@ -17,12 +17,28 @@ class LoginHomeViewModel: BaseViewModel {
         let tapAppleLoginButton = PublishSubject<Void>()
     }
     
+    struct Output {
+        let goToSignup: Observable<Void>
+        let successedLogin: Observable<Void>
+        let loginEntity: BehaviorRelay<LoginProviderEntity?>
+    }
+    
     let input: Input = Input()
-    let disposeBag = DisposeBag()
-    let userSessionRepository: UserRepository
+    let ouptut: Output
+    
+    private let disposeBag = DisposeBag()
+    private let userSessionRepository: UserRepository
+    
+    private let goToSignup = PublishSubject<Void>()
+    private let successedLogin = PublishSubject<Void>()
     
     override init() {
         self.userSessionRepository = UserRepositoryImpl()
+        self.ouptut = Output(
+            goToSignup: self.goToSignup.asObservable(),
+            successedLogin: self.successedLogin.asObservable(),
+            loginEntity: .init(value: nil)
+        )
     }
     
     override func bind() {
@@ -38,10 +54,12 @@ class LoginHomeViewModel: BaseViewModel {
                 
                 guard let entity = entity else { return }
                 
+                self.ouptut.loginEntity.accept(entity)
+                
                 if entity.isFirst {
-                    print("signup \(entity)")
+                    self.goToSignup.onNext(())
                 } else {
-                    
+                    self.successedLogin.onNext(())
                 }
             }
         }.disposed(by: self.disposeBag)
@@ -59,10 +77,12 @@ class LoginHomeViewModel: BaseViewModel {
                 
                 guard let entity = entity else { return }
                 
+                self.ouptut.loginEntity.accept(entity)
+                
                 if entity.isFirst {
-                    print("signup")
+                    self.goToSignup.onNext(())
                 } else {
-                    
+                    self.successedLogin.onNext(())
                 }
             }
         }.disposed(by: self.disposeBag)
