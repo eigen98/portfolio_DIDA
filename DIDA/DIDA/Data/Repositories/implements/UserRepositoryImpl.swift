@@ -16,8 +16,16 @@ class UserRepositoryImpl: UserRepository {
         }
     }
     
-    func signup() {
-        
+    func signup(email: String, nickname: String, completion: @escaping (Error?) -> ()) {
+        UserSession.shared.signup(email: email, nickname: nickname) { error in
+            
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+        }
     }
     
     func isLogin() -> Bool {

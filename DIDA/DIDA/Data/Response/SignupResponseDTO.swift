@@ -8,7 +8,7 @@
 import Foundation
 
 struct SignupResponseDTO: Codable {
-    let accessToken: String?
+    let accessToken: String
     let refreshToken: String?
     
     enum CodingKeys: String, CodingKey {

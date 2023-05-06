@@ -17,7 +17,8 @@ enum DidaAPI {
     case moreHotUser(page: Int)
     
     /// MARK: Login
-    case socialLogin(request: SignupRequestDTO)
+    case socialLogin(request: LoginRequestDTO)
+    case signup(request: SignupRequestDTO)
 }
 
 extension DidaAPI: TargetType {
@@ -40,6 +41,7 @@ extension DidaAPI: TargetType {
         
         /// MARK: Login
         case .socialLogin(let request): return "/\(request.type.rawValue)/login"
+        case .signup: return "/new/user"
         }
     }
     
@@ -53,6 +55,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Login
         case .socialLogin: return .post
+        case .signup: return .post
         }
     }
     
@@ -70,6 +73,8 @@ extension DidaAPI: TargetType {
             
         /// MARK: Login
         case .socialLogin(let request):
+            return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+        case .signup(let request):
             return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
         }
     }

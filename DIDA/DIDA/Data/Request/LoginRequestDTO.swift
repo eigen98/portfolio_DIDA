@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SignupRequestDTO: Codable {
+struct LoginRequestDTO: Codable {
     var type: SocialType = .kakao
     let idToken: String
     
