@@ -22,6 +22,12 @@ class UserSession: UserSessionInterface {
     
     private init() { }
     
+    public var accessToekn: String {
+        get {
+            self.token.value?.accessToken ?? ""
+        }
+    }
+    
     func initialize() {
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
     }

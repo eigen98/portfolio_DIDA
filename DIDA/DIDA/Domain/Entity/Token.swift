@@ -9,5 +9,5 @@ import Foundation
 
 struct Token {
     var accessToken: String
-    var refreshToken: String
+    var refreshToken: String?
 }
