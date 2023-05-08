@@ -154,6 +154,7 @@
 		EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */; };
 		EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */; };
 		EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */; };
+		EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */; };
 		EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */; };
 		EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */; };
 		EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48694C29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift */; };
@@ -330,6 +331,7 @@
 		EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainResponse.swift; path = DIDA/Data/Response/GetMainResponse.swift; sourceTree = SOURCE_ROOT; };
 		EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainSoldoutResponse.swift; path = DIDA/Data/Response/GetMainSoldoutResponse.swift; sourceTree = SOURCE_ROOT; };
+		EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionViewModel.swift; sourceTree = "<group>"; };
 		EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldOutSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE48694C29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSellerSectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -976,6 +978,7 @@
 			children = (
 				EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */,
 				EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */,
+				EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */,
 				EE6D138A29F3A6DC00C748BE /* More */,
 			);
 			path = Home;
@@ -1408,6 +1411,7 @@
 				EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
+				EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
 				C16AEC8E29EA8F4200A37C78 /* UserRepository.swift in Sources */,

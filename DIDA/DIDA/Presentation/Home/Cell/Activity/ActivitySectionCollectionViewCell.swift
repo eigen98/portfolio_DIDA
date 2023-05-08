@@ -12,7 +12,7 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
 
     //첫번째 유저 프로필
     var disposeBag = DisposeBag()
-    
+    private let viewModel = ActivitySectionViewModel()
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -62,7 +62,7 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureButtons()
+       
 
     }
     override func prepareForReuse() {
@@ -84,14 +84,20 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
             if index == 0 {
                 firstItemContainerView.isHidden = false
                 configureView(firstItemImageView, firstItemNameLabel, firstItemCountLabel, item)
+                viewModel.input.followButtonTapped.accept((items[0].followed, 0))
             } else if index == 1 {
                 secondItemContainerView.isHidden = false
                 configureView(secondItemImageView, secondItemNameLabel, secondItemCountLabel, item)
+                viewModel.input.followButtonTapped.accept((items[1].followed, 1))
             } else if index == 2 {
                 thirdItemContainerView.isHidden = false
                 configureView(thirdItemImageView, thirdItemNameLabel, thirdItemCountLabel, item)
+                viewModel.input.followButtonTapped.accept((items[1].followed, 0))
             }
         }
+        
+        
+        
     }
     
     private func configureView(_ imageView: UIImageView, _ nameLabel: UILabel, _ countLabel: UILabel, _ item: HotUserEntity) {
@@ -120,16 +126,17 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         thirdItemCountLabel.text = nil
     }
     
-    private func configureButtons() {
-        let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
-        buttons.forEach {
-            $0?.style = .dialog
-            $0?.shape = .circle
-            $0?.buttonHeight = .h32
-            $0?.customTitleColor = .init(normal: .white, disabled: .white, selected: .white, hightlight: .white)
-        }
-    }
     
+    func configureButtons(idx: Int, bool : Bool){
+        let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
+        buttons[idx]?.style = bool ? .dialog : .primary
+        buttons[idx]?.shape = .circle
+        
+        let text = bool ? "팔로우" : "팔로잉"
+        buttons[idx]?.setTitle(text, for: .normal)
+        let color = bool ? UIColor.white : UIColor.black
+        buttons[idx]?.customTitleColor = .init(normal: color, disabled: color, selected: color, hightlight: color)
+    }
     
     
     //스켈레톤 로딩뷰 보여주기
@@ -162,6 +169,9 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
 
 extension ActivitySectionCollectionViewCell{
     func bind(){
+        
+        //MARK: Input
+        //더보기 Button
         moreButton.rx.tap
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: {
@@ -178,5 +188,30 @@ extension ActivitySectionCollectionViewCell{
                 }
             })
             .disposed(by: disposeBag)
+        
+        //Follow Buttons
+        let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
+        for(index, button) in buttons.enumerated(){
+            button?.rx.tap
+                .map{
+                    if "\(button?.style ?? ButtonStyle.primary)" != "primary"{
+                        return ( false,index)
+                    }else{
+                        print("\(button?.style ?? ButtonStyle.primary)")
+                        return ( true,index)
+                    }
+                    
+                }
+                .bind(to: viewModel.input.followButtonTapped)
+                .disposed(by: disposeBag)
+        }
+        
+        //MARK: OUTPUT
+        viewModel.output.followStatusChanged
+            .subscribe(onNext: {[weak self] bool, idx in
+                self?.configureButtons(idx: idx, bool: bool)
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
