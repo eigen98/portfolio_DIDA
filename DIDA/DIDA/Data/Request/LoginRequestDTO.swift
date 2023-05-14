@@ -17,6 +17,6 @@ struct LoginRequestDTO: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case idToken = "id_token"
+        case idToken
     }
 }
