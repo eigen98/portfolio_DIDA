@@ -10,6 +10,8 @@ import RxSwift
 
 class UserRepositoryImpl: UserRepository {
     
+    private let disposeBag = DisposeBag()
+    
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> ()) {
         UserSession.shared.login(type: type) { entity, error in
             completion(entity, error)
@@ -29,10 +31,33 @@ class UserRepositoryImpl: UserRepository {
     }
     
     func isLogin() -> Bool {
-        return false
+        return UserSession.shared.accessToekn.isNotEmpty
     }
     
     func fetchMyself() -> UserEntity? {
-        return nil
+        return UserSession.shared.userEntity
+    }
+    
+    func fetchMyselfObservable() -> Observable<UserEntity?> {
+        return UserSession.shared.userEntityObservable
+    }
+    
+    func duplicatedNickname(nickname: String, completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.duplicatedNickname(request: .init(nickname: nickname)))
+            .asObservable()
+            .flatMap { response -> Single<DuplicatedNicknameResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(DuplicatedNicknameResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                completion(response.used, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+        
     }
 }

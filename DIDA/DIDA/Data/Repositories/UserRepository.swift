@@ -11,7 +11,10 @@ import RxSwift
 protocol UserRepository {
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> ())
     func signup(email: String, nickname: String, completion: @escaping (Error?) -> ())
+    func duplicatedNickname(nickname: String, completion: @escaping (Bool?, Error?) -> ()) 
     
     func isLogin() -> Bool
+    
     func fetchMyself() -> UserEntity?
+    func fetchMyselfObservable() -> Observable<UserEntity?>
 }

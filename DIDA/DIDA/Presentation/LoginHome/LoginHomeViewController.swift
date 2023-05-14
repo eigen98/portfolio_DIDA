@@ -29,6 +29,7 @@ class LoginHomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
         configure()
         bindEvent()
         bindViewModel()
@@ -70,7 +71,24 @@ class LoginHomeViewController: BaseViewController {
             let storyboard = UIStoryboard(name: "Auth", bundle: nil)
             if let viewController = storyboard.instantiateViewController(identifier: "SignupViewController") as? SignupViewController {
                 viewController.email = loginEntity.email
+                viewController.delegate = self
+                self.navigationController?.pushViewController(viewController, animated: true)
             }
         }.disposed(by: self.disposeBag)
+        
+        self.viewModel.ouptut.successedLogin.take(1).bind { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.delegate?.didSusccessLogin()
+            self.dismiss(animated: true)
+            
+        }.disposed(by: self.disposeBag)
+    }
+}
+
+extension LoginHomeViewController: SignupViewControllerDelegate {
+    func didSusccessLoginSignup() {
+        print("LoginNavigationController:: didSusccessLoginSignup")
+        self.delegate?.didSusccessLogin()
     }
 }

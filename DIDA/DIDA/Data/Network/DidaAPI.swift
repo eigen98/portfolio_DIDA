@@ -19,6 +19,10 @@ enum DidaAPI {
     /// MARK: Login
     case socialLogin(request: LoginRequestDTO)
     case signup(request: SignupRequestDTO)
+    case duplicatedNickname(request: DuplicatedNicknameRequestDTO)
+    
+    /// MARK: Member
+    case fetchMyself
 }
 
 extension DidaAPI: TargetType {
@@ -42,6 +46,10 @@ extension DidaAPI: TargetType {
         /// MARK: Login
         case .socialLogin(let request): return "/\(request.type.rawValue)/login"
         case .signup: return "/new/user"
+        case .duplicatedNickname: return "/user/nickname"
+        
+        /// MARK: Member
+        case .fetchMyself: return "/user"
         }
     }
     
@@ -56,6 +64,10 @@ extension DidaAPI: TargetType {
         /// MARK: Login
         case .socialLogin: return .post
         case .signup: return .post
+        case .duplicatedNickname: return .post
+        
+        /// MARK: Member
+        case .fetchMyself: return .get
         }
     }
     
@@ -76,6 +88,12 @@ extension DidaAPI: TargetType {
             return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
         case .signup(let request):
             return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+        case .duplicatedNickname(let request):
+            return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+        
+        /// MARK: Member
+        case .fetchMyself:
+            return .requestPlain
         }
     }
 }

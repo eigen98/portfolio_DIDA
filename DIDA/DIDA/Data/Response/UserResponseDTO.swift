@@ -30,4 +30,8 @@ struct UserResponseDTO: Codable {
         case followerCnt
         case followingCnt
     }
+    
+    func toEntity() -> UserEntity {
+        return UserEntity(userId: userId ?? 0, nickname: nickname, profileImage: profileUrl, description: description, hasWallet: getWallet ?? false, cardCnt: cardCnt ?? 0, followerCnt: followerCnt ?? 0, followingCnt: followingCnt ?? 0)
+    }
 }

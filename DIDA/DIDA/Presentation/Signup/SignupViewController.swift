@@ -9,12 +9,18 @@ import UIKit
 import RxSwift
 import RxKeyboard
 
+protocol SignupViewControllerDelegate: AnyObject {
+    func didSusccessLoginSignup()
+}
+
 class SignupViewController: BaseViewController {
     
     @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var textField: TextField!
     @IBOutlet weak var signupbutton: Buttons!
     @IBOutlet weak var buttomBottomConstraint: NSLayoutConstraint!
+    
+    weak var delegate: SignupViewControllerDelegate?
     
     let viewModel = SignupViewModel()
     
@@ -30,8 +36,6 @@ class SignupViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true
-        
         textField.maxLength = self.limitCount
         textField.placeholder = "닉네임을 입력해주세요"
         
@@ -46,18 +50,25 @@ class SignupViewController: BaseViewController {
         bindViewModel()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+         self.view.endEditing(true)
+   }
+    
     override func bindEvent() {
-        
-        self.view.rx.tapGesture.bind { [weak self] _ in
-            guard let `self` = self else { return }
-            self.view.endEditing(true)
-        }.disposed(by: self.disposeBag)
         
         self.textField.rx.text.bind { [weak self] text in
             guard let `self` = self else { return }
+            let inputStringCnt = text?.count ?? 0
             
-            self.textCountLabel.text = String(format: "%d/%d", text?.count ?? 0, self.limitCount)
-            self.viewModel.input.nicknameInput.onNext(text)
+            self.textCountLabel.text = String(format: "%d/%d", inputStringCnt, self.limitCount)
+            self.signupbutton.isEnabled = inputStringCnt > 1
+        }.disposed(by: self.disposeBag)
+        
+        self.textField.rx.text.debounce(.seconds(1), scheduler: MainScheduler.asyncInstance).bind { [weak self] text in
+            guard let `self` = self else { return }
+            
+            self.viewModel.input.nicknameInput.accept(text)
+            self.viewModel.checkDuplictated()
         }.disposed(by: self.disposeBag)
         
         self.signupbutton.rx.tap.debounce(.seconds(1), scheduler: MainScheduler.asyncInstance).bind { [weak self] _ in
@@ -84,6 +95,12 @@ class SignupViewController: BaseViewController {
         }.disposed(by: self.disposeBag)
         
         self.viewModel.output.isSavable.bind(to: self.signupbutton.rx.isEnabled).disposed(by: self.disposeBag)
+        
+        self.viewModel.output.isSuccess.filter { $0 }.take(1).bind { [weak self] _ in
+            guard let `self` = self else { return }
+            
+            self.delegate?.didSusccessLoginSignup()
+        }.disposed(by: self.disposeBag)
     }
     
 }

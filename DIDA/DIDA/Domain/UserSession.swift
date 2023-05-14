@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxOptional
 import RxRelay
 import KakaoSDKAuth
 import KakaoSDKCommon
@@ -19,6 +20,7 @@ class UserSession: UserSessionInterface {
     private let disposeBag = DisposeBag()
     
     private let token = BehaviorRelay<Token?>(value: nil)
+    private let user = BehaviorRelay<UserEntity?>(value: nil)
     
     private init() { }
     
@@ -28,8 +30,25 @@ class UserSession: UserSessionInterface {
         }
     }
     
+    public var userEntity: UserEntity? {
+        get {
+            self.userEntity.value
+        }
+    }
+    
+    public var userEntityObservable: Observable<UserEntity?> {
+        get {
+            self.user.asObservable()
+        }
+    }
+    
     func initialize() {
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
+        
+        token.filterNil().bind { [weak self] _ in
+            guard let `self` = self else { return }
+            self.fetchMyself()
+        }.disposed(by: self.disposeBag)
     }
     
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> Void) {
@@ -72,7 +91,7 @@ class UserSession: UserSessionInterface {
                     return
                 }
                 
-                completion(oauthToken?.idToken, nil)
+                completion(oauthToken?.accessToken, nil)
             }
         } else {
             
@@ -84,7 +103,7 @@ class UserSession: UserSessionInterface {
                     return
                 }
                 
-                completion(certToken?.token.idToken, nil)
+                completion(certToken?.token.accessToken, nil)
             }
         }
     }
@@ -117,6 +136,7 @@ class UserSession: UserSessionInterface {
                     return
                 }
                 
+                self.token.accept(Token(accessToken: accessToken, refreshToken: refreshToken))
                 completion(LoginProviderEntity(isFirst: false), nil)
                 
             } onError: { error in
@@ -142,6 +162,36 @@ class UserSession: UserSessionInterface {
                 completion(nil)
             } onError: { error in
                 completion(error)
+            }.disposed(by: self.disposeBag)
+
+    }
+    
+    func logout() {
+        self.token.accept(nil)
+        self.user.accept(nil)
+    }
+    
+    func fetchMyself() {
+        APIClient.request(.fetchMyself)
+            .asObservable()
+            .flatMap { response -> Single<UserResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(UserResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                let entity = response.toEntity()
+                
+                self.user.accept(entity)
+            } onError: { error in
+                print(error)
+                
+                // TODO: token 갱신
+                self.token.accept(nil)
+                self.user.accept(nil)
             }.disposed(by: self.disposeBag)
 
     }

@@ -19,6 +19,8 @@
 		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
 		C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */; };
 		C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */; };
+		C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */; };
+		C134D72E2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
 		C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
@@ -227,6 +229,8 @@
 		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestDTO.swift; sourceTree = "<group>"; };
+		C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedNicknameRequestDTO.swift; sourceTree = "<group>"; };
+		C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedNicknameResponseDTO.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 				C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */,
 				C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */,
 				C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */,
+				C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 			children = (
 				C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */,
 				C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */,
+				C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1408,6 +1414,7 @@
 				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
+				C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */,
 				EE0AB96129F7B0D40010F182 /* MoreActivityEntity.swift in Sources */,
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
@@ -1416,6 +1423,7 @@
 				C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */,
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
+				C134D72E2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
 				C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */,
 				EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */,
