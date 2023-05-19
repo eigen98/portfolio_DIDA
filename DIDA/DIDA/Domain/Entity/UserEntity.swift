@@ -8,5 +8,14 @@
 import Foundation
 
 struct UserEntity {
+    let userId: Int
+    let nickname: String?
+    let profileImage: String?
+    let description: String?
     
+    let hasWallet: Bool
+    let cardCnt: Int
+    
+    let followerCnt: Int
+    let followingCnt: Int
 }

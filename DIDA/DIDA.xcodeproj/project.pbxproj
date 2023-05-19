@@ -17,6 +17,10 @@
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
 		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
+		C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */; };
+		C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */; };
+		C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */; };
+		C134D72E2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */; };
 		C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */; };
 		C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342929A0CD090023DA68 /* Pretendard-Light.ttf */; };
 		C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C136342B29A0CD090023DA68 /* Pretendard-Medium.ttf */; };
@@ -56,6 +60,15 @@
 		C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AECAC29EAC91100A37C78 /* DidaAPI.swift */; };
 		C16C48E629AA727B008CD62B /* Pods_DIDA_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C16C48E729AA727B008CD62B /* Pods_DIDA_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F60FCECB8D76E5EE3736A33 /* Pods_DIDA_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */; };
+		C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */; };
+		C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */; };
+		C16FDCF62A05572300FB5F53 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */; };
+		C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF72A0647A200FB5F53 /* Token.swift */; };
+		C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */; };
+		C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */; };
+		C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDD042A0659C800FB5F53 /* SignupViewController.swift */; };
+		C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */; };
 		C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30D29AA5335008122EF /* AppDelegate.swift */; };
 		C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B30F29AA5335008122EF /* SceneDelegate.swift */; };
 		C188B31229AA5335008122EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B31129AA5335008122EF /* ViewController.swift */; };
@@ -93,7 +106,6 @@
 		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
-		C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D029A2219000017147 /* TabBar.swift */; };
 		C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15158D229A22E5F00017147 /* TabBarItem.swift */; };
 		C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C136344429A0DEA00023DA68 /* MainNavigationController.swift */; };
@@ -202,17 +214,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1C8022929B488F900221FB9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C1C8022829B488F900221FB9 /* Pods_DIDA.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +231,10 @@
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorResponseDTO.swift; sourceTree = "<group>"; };
+		C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestDTO.swift; sourceTree = "<group>"; };
+		C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedNicknameRequestDTO.swift; sourceTree = "<group>"; };
+		C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedNicknameResponseDTO.swift; sourceTree = "<group>"; };
 		C136340329A0C6840023DA68 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C136340529A0C68C0023DA68 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C136340729A0C6FA0023DA68 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -272,6 +277,15 @@
 		C16AECA829EABB3700A37C78 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		C16AECAA29EABDFA00A37C78 /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		C16AECAC29EAC91100A37C78 /* DidaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidaAPI.swift; sourceTree = "<group>"; };
+		C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DidaAPI+Error.swift"; sourceTree = "<group>"; };
+		C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
+		C16FDCF72A0647A200FB5F53 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
+		C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		C16FDD042A0659C800FB5F53 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		C188B30B29AA5335008122EF /* DIDA-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIDA-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C188B30D29AA5335008122EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C188B30F29AA5335008122EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -471,6 +485,7 @@
 				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
 				C16AECA629EABA6A00A37C78 /* MainViewModel.swift */,
 				97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */,
+				C16FDD062A0659F700FB5F53 /* SignupViewModel.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -485,6 +500,11 @@
 				EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */,
 				EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */,
 				EEE9DD0C29C70F8800056719 /* RecentCardResponse.swift */,
+				C16FDCE92A054B2400FB5F53 /* SocialLoginResponseDTO.swift */,
+				C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */,
+				C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */,
+				C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */,
+				C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -492,6 +512,9 @@
 		97BAE0F829ABCCCF0001F60A /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */,
+				C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */,
+				C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -500,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A8D3CE29EA7E1F0023373E /* LoginHome */,
+				C16FDD032A0659A100FB5F53 /* Signup */,
 				C136340229A0C66D0023DA68 /* Main */,
 				C136344629A0E0100023DA68 /* Home */,
 				C136344729A0E0190023DA68 /* Swap */,
@@ -563,7 +587,11 @@
 				EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */,
 				C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */,
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
+
 				EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */,
+
+				C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */,
+
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -649,6 +677,7 @@
 				C16AEC9B29EA938F00A37C78 /* HomeEntity.swift */,
 				C16AECA229EAB5FC00A37C78 /* LoginProviderEntity.swift */,
 				C16AECA829EABB3700A37C78 /* UserEntity.swift */,
+				C16FDCF72A0647A200FB5F53 /* Token.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -673,6 +702,14 @@
 				EECD327D29F65C9500C5764E /* MoreHomeRepositoryImpl.swift */,
 			);
 			path = implements;
+			sourceTree = "<group>";
+		};
+		C16FDD032A0659A100FB5F53 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C16FDD042A0659C800FB5F53 /* SignupViewController.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
@@ -1055,6 +1092,7 @@
 				EEE3862A29C81CA900A10E47 /* NetworkError.swift */,
 				EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */,
 				C16AECAC29EAC91100A37C78 /* DidaAPI.swift */,
+				C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1112,7 +1150,6 @@
 				EE110537299A900B00C5D370 /* Frameworks */,
 				EE110538299A900B00C5D370 /* Resources */,
 				C395EE1B414FFB656B3D2BB2 /* [CP] Embed Pods Frameworks */,
-				C1C8022929B488F900221FB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1349,6 +1386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */,
+				C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */,
+				C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */,
 				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
@@ -1371,6 +1411,7 @@
 				C16AECA529EAB96200A37C78 /* UIViewController+Extension.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				EE6D138229F3A30400C748BE /* MoreRecentNFTViewController.swift in Sources */,
+				C16FDCF62A05572300FB5F53 /* SignupResponseDTO.swift in Sources */,
 				EE0AB95B29F7A3DF0010F182 /* MoreActivityViewModel.swift in Sources */,
 				EEE9DD0D29C70F8800056719 /* RecentCardResponse.swift in Sources */,
 				C16AECAB29EABDFA00A37C78 /* LoginNavigationController.swift in Sources */,
@@ -1379,6 +1420,7 @@
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
 				EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */,
+				C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */,
 				EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
@@ -1387,6 +1429,7 @@
 				C16AEC9429EA935900A37C78 /* HotUserEntity.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
+				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
 				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
@@ -1395,6 +1438,7 @@
 				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
+				C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */,
 				EE0AB96129F7B0D40010F182 /* MoreActivityEntity.swift in Sources */,
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
@@ -1403,12 +1447,20 @@
 				C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */,
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
+				C134D72E2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
+				C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */,
 				EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
+
 				EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */,
+
+				C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */,
+				C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */,
+				C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */,
+
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */,
@@ -1421,6 +1473,7 @@
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
+				C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */,
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
 				EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */,
@@ -1686,12 +1739,15 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1702,9 +1758,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dida.DIDA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1723,12 +1780,15 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1739,9 +1799,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dida.DIDA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

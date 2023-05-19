@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum SocialType: String {
+    case kakao
+    case apple
+}
+
 protocol UserSessionInterface {
-    func loginWithKakao(completion: @escaping (String?, Error?) -> Void)
+    func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> Void)
+    func socialLogin(type: SocialType, idToken: String, completion: @escaping (LoginProviderEntity?, Error?) -> ())
+    func signup(email: String, nickname: String, completion: @escaping (Error?) -> ())
+    func logout()
+    func fetchMyself()
 }

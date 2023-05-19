@@ -79,7 +79,7 @@ class TabBar: UIView {
         }
     }
     
-    @objc private func didTapButton(_ button: UIButton?) {
+    @objc public func didTapButton(_ button: UIButton?) {
         guard let button = button else { return }
         
         if let doChange = delegate?.doChangedTab(button: button) {
