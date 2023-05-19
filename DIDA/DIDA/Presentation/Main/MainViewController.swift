@@ -17,6 +17,18 @@ class MainViewController: BaseViewController {
         
         tabBarView.delegate = self
     }
+    
+    func showLogin() {
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
+          
+        if let controller = storyBoard.instantiateViewController(withIdentifier: "LoginHomeViewController") as? LoginHomeViewController {
+            
+            controller.delegate = self
+            controller.modalPresentationStyle = .fullScreen
+            
+            self.topViewController()?.present(controller, animated: true)
+        }
+    }
 }
 
 extension MainViewController: TabBarDelegate {
@@ -39,6 +51,7 @@ extension MainViewController: TabBarDelegate {
             if (selectedMenu == .swap || selectedMenu == .mypage) {
                 if (self.viewModel.isLogin == false) {
                     self.showLogin()
+                    return
                 }
             }
             
@@ -48,5 +61,16 @@ extension MainViewController: TabBarDelegate {
                 tabBarViewController.selectedIndex = selectedMenu.rawValue-1
             }
         }
+    }
+}
+
+extension MainViewController: LoginHomeViewControllerDelegate {
+    func didSusccessLogin() {
+        print("LoginNavigationController:: didSusccessLogin")
+        
+        // 메인(홈)으로 이동
+        
+        let homeButton = self.tabBarView.toButton(at: TabBarMenu.home.rawValue)
+        self.tabBarView.didTapButton(homeButton)
     }
 }

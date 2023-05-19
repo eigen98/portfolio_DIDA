@@ -6,8 +6,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.ttf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login Navigation Controller-->
         <scene sceneID="5gz-Ib-Y0Q">
@@ -33,36 +45,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="didalogo1" translatesAutoresizingMaskIntoConstraints="NO" id="093-TN-hWc">
-                                <rect key="frame" x="70" y="187" width="253" height="253"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="093-TN-hWc" secondAttribute="height" multiplier="1:1" id="MHn-31-B7G"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fHt-P2-s31">
-                                <rect key="frame" x="16" y="705.33333333333337" width="361" height="80.666666666666629"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfC-e3-67q">
+                                <rect key="frame" x="0.0" y="103" width="393" height="590"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-6W-oi9">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="didalogo1" translatesAutoresizingMaskIntoConstraints="NO" id="093-TN-hWc">
+                                        <rect key="frame" x="130.66666666666666" y="229" width="131.99999999999997" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="093-TN-hWc" secondAttribute="height" multiplier="1:1" id="MHn-31-B7G"/>
+                                            <constraint firstAttribute="width" constant="132" id="vzr-h3-tfS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="093-TN-hWc" firstAttribute="centerX" secondItem="jfC-e3-67q" secondAttribute="centerX" id="BR5-gZ-9MP"/>
+                                    <constraint firstItem="093-TN-hWc" firstAttribute="centerY" secondItem="jfC-e3-67q" secondAttribute="centerY" id="zi5-6m-xUL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fHt-P2-s31">
+                                <rect key="frame" x="16" y="726" width="361" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-6W-oi9" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="AppleLogo"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-Qz-aUH">
-                                        <rect key="frame" x="0.0" y="46.333333333333258" width="361" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-Qz-aUH" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="36" width="361" height="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="14" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="kakao_logo1"/>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빠르게 로그인하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-uC-8eD">
+                                <rect key="frame" x="146.33333333333334" y="693" width="100.33333333333334" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="text_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7s-BT-hIT">
+                                <rect key="frame" x="0.0" y="115" width="48" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="4B3-ZJ-Kj6"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="close"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="background_black"/>
                         <constraints>
-                            <constraint firstItem="093-TN-hWc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="B1g-qe-Q5f"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="093-TN-hWc" secondAttribute="trailing" constant="70" id="EVk-Uh-Eh6"/>
+                            <constraint firstItem="Z7s-BT-hIT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1af-dh-rfe"/>
+                            <constraint firstItem="qMm-uC-8eD" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="LBo-2Z-LE6"/>
+                            <constraint firstItem="fHt-P2-s31" firstAttribute="top" secondItem="qMm-uC-8eD" secondAttribute="bottom" constant="16" id="NCd-2N-o4b"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fHt-P2-s31" secondAttribute="bottom" constant="32" id="R9k-G0-nhf"/>
-                            <constraint firstItem="093-TN-hWc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="84" id="XVL-9t-a5s"/>
-                            <constraint firstItem="093-TN-hWc" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="gJK-QJ-wwI"/>
+                            <constraint firstItem="jfC-e3-67q" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Van-WH-kIy"/>
+                            <constraint firstItem="Z7s-BT-hIT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="12" id="cmQ-Ef-UdY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jfC-e3-67q" secondAttribute="trailing" id="ehj-b8-msN"/>
+                            <constraint firstItem="jfC-e3-67q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kBs-Xw-hu0"/>
+                            <constraint firstItem="qMm-uC-8eD" firstAttribute="top" secondItem="jfC-e3-67q" secondAttribute="bottom" id="wDV-zx-nAU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHt-P2-s31" secondAttribute="trailing" constant="16" id="yzC-Eu-WRj"/>
                             <constraint firstItem="fHt-P2-s31" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zVd-Az-fSo"/>
                         </constraints>
@@ -70,6 +111,7 @@
                     <navigationItem key="navigationItem" id="QQn-Ck-TeW"/>
                     <connections>
                         <outlet property="btnApple" destination="4PL-6W-oi9" id="JY3-AL-vEV"/>
+                        <outlet property="btnClose" destination="Z7s-BT-hIT" id="NGL-iZ-5hP"/>
                         <outlet property="btnKakao" destination="5hH-Qz-aUH" id="n0S-F0-7dl"/>
                     </connections>
                 </viewController>
@@ -77,11 +119,95 @@
             </objects>
             <point key="canvasLocation" x="-22" y="5"/>
         </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="b2a-t9-WfI">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TWW-bd-tVj" customClass="SignupViewController" customModule="DIDA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YD2-RD-QfF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신의 이름은?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkV-rT-IVZ">
+                                <rect key="frame" x="16" y="108" width="190.66666666666666" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="32"/>
+                                <color key="textColor" name="text_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-gx-IlY" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="784" width="361" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DJ-Zb-VTt">
+                                <rect key="frame" x="16.000000000000004" y="200.33333333333334" width="36.333333333333343" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="I71-TI-BDK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="text_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8L-Od-HAh">
+                                <rect key="frame" x="349.33333333333331" y="204" width="27.666666666666686" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="AaG-cL-IDz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="text_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-8d-O2U" customClass="TextField" customModule="DIDA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="228.33333333333334" width="361" height="51.000000000000028"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="b9J-GV-08f"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q9W-Nt-vXp"/>
+                        <color key="backgroundColor" name="background_black"/>
+                        <constraints>
+                            <constraint firstItem="9fM-8d-O2U" firstAttribute="leading" secondItem="Q9W-Nt-vXp" secondAttribute="leading" constant="16" id="4Lq-lx-Ty7"/>
+                            <constraint firstItem="DkV-rT-IVZ" firstAttribute="leading" secondItem="Q9W-Nt-vXp" secondAttribute="leading" constant="16" id="5Fp-HA-SOm"/>
+                            <constraint firstItem="R8L-Od-HAh" firstAttribute="centerY" secondItem="4DJ-Zb-VTt" secondAttribute="centerY" id="7zv-6s-IPv"/>
+                            <constraint firstItem="4DJ-Zb-VTt" firstAttribute="top" secondItem="DkV-rT-IVZ" secondAttribute="bottom" constant="54" id="HXZ-vu-bs8"/>
+                            <constraint firstItem="9fM-8d-O2U" firstAttribute="top" secondItem="4DJ-Zb-VTt" secondAttribute="bottom" id="RKq-x4-uXa"/>
+                            <constraint firstItem="DkV-rT-IVZ" firstAttribute="top" secondItem="Q9W-Nt-vXp" secondAttribute="top" constant="49" id="S5f-tF-Sgh"/>
+                            <constraint firstItem="4DJ-Zb-VTt" firstAttribute="leading" secondItem="Q9W-Nt-vXp" secondAttribute="leading" constant="16" id="VEL-Ue-chl"/>
+                            <constraint firstItem="Q9W-Nt-vXp" firstAttribute="trailing" secondItem="9fM-8d-O2U" secondAttribute="trailing" constant="16" id="bMd-Qr-gvq"/>
+                            <constraint firstItem="Q9W-Nt-vXp" firstAttribute="bottom" secondItem="GFC-gx-IlY" secondAttribute="bottom" id="goL-ft-kOX"/>
+                            <constraint firstItem="GFC-gx-IlY" firstAttribute="leading" secondItem="Q9W-Nt-vXp" secondAttribute="leading" constant="16" id="pPj-CF-SK4"/>
+                            <constraint firstItem="Q9W-Nt-vXp" firstAttribute="trailing" secondItem="R8L-Od-HAh" secondAttribute="trailing" constant="16" id="svP-Dw-Khs"/>
+                            <constraint firstItem="Q9W-Nt-vXp" firstAttribute="trailing" secondItem="GFC-gx-IlY" secondAttribute="trailing" constant="16" id="wkI-QD-JV3"/>
+                            <constraint firstItem="Q9W-Nt-vXp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DkV-rT-IVZ" secondAttribute="trailing" constant="16" id="zb0-7S-39L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qAr-Jn-kz5"/>
+                    <connections>
+                        <outlet property="buttomBottomConstraint" destination="goL-ft-kOX" id="20b-zt-WLe"/>
+                        <outlet property="signupbutton" destination="GFC-gx-IlY" id="Qjl-9M-r9t"/>
+                        <outlet property="textCountLabel" destination="R8L-Od-HAh" id="2Wk-iu-4HP"/>
+                        <outlet property="textField" destination="9fM-8d-O2U" id="Ywp-Ri-ygE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="em1-pK-D6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="AppleLogo" width="24" height="24"/>
+        <image name="close" width="32" height="32"/>
         <image name="didalogo1" width="3859" height="3859"/>
+        <image name="kakao_logo1" width="22" height="22"/>
         <namedColor name="background_black">
             <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="text_white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
