@@ -79,3 +79,18 @@ extension Array where Element == GetMoreActivityResponse {
     }
 }
 
+extension Array where Element == GetMainSoldoutNFTResponse{
+    func toDomain() -> [UserNftEntity] {
+        return map {
+            UserNftEntity(
+                cardId: $0.nftId,
+                userName: $0.userName,
+                cardName: $0.name,
+                imgUrl: $0.imgUrl,
+                price: $0.price,
+                liked : false
+            )
+        }
+    }
+}
+

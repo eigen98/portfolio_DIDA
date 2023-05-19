@@ -16,6 +16,10 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     var disposeBag = DisposeBag()
     //일주일 이내, 1개월 6개월, 올한해 버튼
     
+    //MARK: ViewModel
+    let viewModel : SoldOutSectionViewModel = SoldOutSectionViewModel()
+    
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var weekButton: Buttons!
     
@@ -28,7 +32,18 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     //첫번째 NFT
     @IBOutlet weak var firstItemContainerView: UIView!
     
+    @IBOutlet weak var firstUserNameContainerView: UIView!
     @IBOutlet weak var firstImageView: UIImageView!
+    
+    @IBOutlet weak var firstNFTNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var firstUserImageView: UIImageView!
+    
+    @IBOutlet weak var firstUserNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var firstPriceLabel: UILabel!
     
     @IBOutlet weak var firstHeightConstraint: NSLayoutConstraint!
     
@@ -39,19 +54,68 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var secondImageView: UIImageView!
     
+    @IBOutlet weak var secondUserNameContainerView: UIView!
+    
+    @IBOutlet weak var secondUserImageView: UIImageView!
+    
+    @IBOutlet weak var secondNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var secondUserNameLabel: UILabel!
+    
+    @IBOutlet weak var secondPriceLabel: UILabel!
+    
+    
     
     //세번째 NFT
     @IBOutlet weak var thirdItemContainerView: UIView!
     
     @IBOutlet weak var thirdHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var thirdImageView: UIImageView!
+    
+    @IBOutlet weak var thirdUserNameContainerView: UIView!
+    
+    
+    @IBOutlet weak var thirdUserImageView: UIImageView!
+    
+    @IBOutlet weak var thirdNFTNameLabel: UILabel!
+    
+    @IBOutlet weak var thirdUserNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var thirdPriceLabel: UILabel!
+    
+    @IBOutlet weak var moreButton: UIButton!
     
     
     override func awakeFromNib() {
-         super.awakeFromNib()
-         configureButtons()
-     }
+        super.awakeFromNib()
+        configureButtons()
+        bindViewModel()
+    }
+    
+    
+    func bindViewModel() {
+        viewModel.output.isRefreshing
+            .subscribe(onNext: {[weak self] isLoading in
+                isLoading ? self?.configureLoadingView() : self?.removeLoadingView()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.soldoutOutput
+            .subscribe(onNext: {[weak self] items in
+                self?.soldoutItems = items
+                self?.configure(items: items)
+            }).disposed(by: disposeBag)
+    }
+    
+    
     //선택된 버튼을 설정하고 나머지 버튼의 스타일을 변경하는 함수
     func setSelectedButton(_ selectedButton: Buttons) {
         let allButtons = [weekButton, oneMonthButton, sixMonthButton, yearButton]
@@ -79,7 +143,11 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
         weekButton.rx.tap
             .bind { [weak self] in
                 guard let self = self, let weekButton = self.weekButton else { return }
+                
                 self.setSelectedButton(weekButton)
+                
+                viewModel.input
+                    .refreshTrigger.onNext("7")
             }
             .disposed(by: disposeBag)
         
@@ -87,6 +155,9 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
             .bind { [weak self] in
                 guard let self = self, let oneMonthButton = self.oneMonthButton else { return }
                 self.setSelectedButton(oneMonthButton)
+                
+                viewModel.input
+                    .refreshTrigger.onNext("30")
             }
             .disposed(by: disposeBag)
         
@@ -94,6 +165,9 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
             .bind { [weak self] in
                 guard let self = self, let sixMonthButton = self.sixMonthButton else { return }
                 self.setSelectedButton(sixMonthButton)
+                
+                viewModel.input
+                    .refreshTrigger.onNext("60")
             }
             .disposed(by: disposeBag)
         
@@ -101,6 +175,9 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
             .bind { [weak self] in
                 guard let self = self, let yearButton = self.yearButton else { return }
                 self.setSelectedButton(yearButton)
+                
+                viewModel.input
+                    .refreshTrigger.onNext("365")
             }
             .disposed(by: disposeBag)
     }
@@ -112,19 +189,12 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
      }
     // items를 사용하여 soldoutItems를 설정하고 이미지 뷰를 구성하는 함수
      func configure(items: [UserNftEntity]) {
-         //soldoutItems = items
-         
-         //mock
-         soldoutItems = [UserNftEntity(cardId: 48,
-                                       userName: "서승환",
-                                       cardName: "테스트 크크", imgUrl: "https://metadata-store.klaytnapi.com/eccac2a4-5e45-6ab9-b4ef-32dec2207105/4696abf4-4368-b4c9-7fac-a50e9c8fb3a2.jpg", price: "10000000.000000",
-                                       liked: false)]
          configureImageViews()
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
      private func configureImageViews() {
          let cellHeight = self.contentView.bounds.height
-         let numberOfItems = soldoutItems.count
+         let numberOfItems = self.soldoutItems.count
 
          firstItemContainerView.isHidden = true
          secondItemContainerView.isHidden = true
@@ -132,16 +202,26 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
          if numberOfItems >= 1 {
              configureImageView(firstImageView, item: soldoutItems[0])
+             firstNFTNameLabel.text = soldoutItems[0].cardName
+             firstUserNameLabel.text = soldoutItems[0].userName
+             
+             firstPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[0].price)
              firstItemContainerView.isHidden = false
          }
 
          if numberOfItems >= 2 {
              configureImageView(secondImageView, item: soldoutItems[1])
+             secondNFTNameLabel.text = soldoutItems[1].cardName
+             secondUserNameLabel.text = soldoutItems[1].userName
+             secondPriceLabel.text = roundedStringToTwoDecimalPlaces(value: soldoutItems[1].price)
              secondItemContainerView.isHidden = false
          }
 
          if numberOfItems >= 3 {
              configureImageView(thirdImageView, item: soldoutItems[2])
+             thirdNFTNameLabel.text = soldoutItems[2].cardName
+             thirdUserNameLabel.text = soldoutItems[2].userName
+             thirdPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[2].price)
              thirdItemContainerView.isHidden = false
          }
      }
@@ -152,4 +232,73 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
          
 
      }
+    
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        self.subTitleLabel.isHidden = true
+        [titleLabel,
+         scrollView,
+         self.firstImageView,
+         self.firstNFTNameLabel,
+         self.firstUserNameContainerView,
+         self.secondImageView,
+         self.secondNFTNameLabel,
+         self.secondUserNameContainerView,
+         self.thirdImageView,
+         self.thirdNFTNameLabel,
+         self.thirdUserNameContainerView,
+         self.moreButton
+        ]
+            .forEach{
+                $0.startSkeletonAnimation(cornerRadius: 8)
+            }
+            
+        
+    }
+    
+    func removeLoadingView(){
+        
+        self.subTitleLabel.isHidden = false
+        [titleLabel,
+         scrollView,
+         self.firstImageView,
+         self.firstNFTNameLabel,
+         self.firstUserNameContainerView,
+         self.secondImageView,
+         self.secondNFTNameLabel,
+         self.secondUserNameContainerView,
+         self.thirdImageView,
+         self.thirdNFTNameLabel,
+         self.thirdUserNameContainerView,
+         self.moreButton
+        ]
+            .forEach{
+                $0?.stopSkeletonAnimation()
+            }
+        
+        moreButton.backgroundColor = .init(hex: "#33333333")
+        
+        [firstUserNameContainerView,
+         secondUserNameContainerView,
+         thirdUserNameContainerView].forEach{
+            $0.clipsToBounds = false
+        }
+        
+        
+    }
+    
+    /*
+     String 값을 소수점 둘째 자리 수까지 반올림하는 함수.
+     */
+    func roundedStringToTwoDecimalPlaces(value: String) -> String {
+        if value == ""{ return "00.00"}
+        if let doubleValue = Double(value) {
+            let roundedValue = round(doubleValue * 100) / 100
+            return String(format: "%.2f", roundedValue)
+        }
+        
+        return "00.00"
+    }
 }
+
+

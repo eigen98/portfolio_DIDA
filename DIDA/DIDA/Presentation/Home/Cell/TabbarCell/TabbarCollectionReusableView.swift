@@ -51,6 +51,19 @@ class TabbarCollectionReusableView: UICollectionReusableView {
         self.tabbar.tabItems = ["Hot Seller", "Sold Out", "최신 NFT", "활동"]
         self.tabbar.delegate = self
     }
+    
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        
+        let loadingView = UIView()
+        loadingView.frame = self.frame
+        self.addSubview(loadingView)
+        loadingView.startSkeletonAnimation()
+    }
+    
+    func removeLottieAnimationView(){
+        //self.contentView.stopSkeletonAnimation()
+    }
 }
 
 extension TabbarCollectionReusableView: LineTabBarDelegate {

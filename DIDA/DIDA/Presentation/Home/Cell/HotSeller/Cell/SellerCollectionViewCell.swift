@@ -10,6 +10,7 @@ import UIKit
 class SellerCollectionViewCell: UICollectionViewCell {
 
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sellerProfileImageView: UIImageView!
     
     @IBOutlet weak var sellerBackgroundImageView: UIImageView!
@@ -25,6 +26,12 @@ class SellerCollectionViewCell: UICollectionViewCell {
     
     
     func configure(seller : HotSellerEntity){
+        if seller.userId == -1 {
+            self.containerView.isHidden = true
+            configureLoadingView()
+        }
+        print("userId : \(seller.userId)")
+        
         moreButtonContainerView.isHidden = true
         if let profileURL = URL(string: seller.sellerProfile), let backgroundURL = URL(string: seller.sellerBacground) {
             self.sellerProfileImageView.kf.setImage(with: profileURL)
@@ -32,12 +39,20 @@ class SellerCollectionViewCell: UICollectionViewCell {
         }
         
         self.nameLabel.text = seller.sellerName
-        
+       
         
     }
     
     func configureMoreButton(){
         moreButtonContainerView.isHidden = false
+    }
+    //스켈레톤 로딩뷰 보여주기
+    func configureLoadingView(){
+        self.contentView.startSkeletonAnimation()
+    }
+    
+    func removeLottieAnimationView(){
+        self.contentView.stopSkeletonAnimation()
     }
 
 }

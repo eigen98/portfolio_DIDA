@@ -78,19 +78,17 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-       
         bindViewModel()
         initCollectionView()
         bindEvent()
-        mainpageCollectionView.reloadData()
+        homeViewModel.input.refreshTrigger.onNext(())
     }
     
     
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
-       
+        self.mainpageCollectionView.showsVerticalScrollIndicator = false
         registerNIB()
         
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
@@ -105,6 +103,27 @@ class HomeViewController: BaseViewController {
     
     
     override func bindViewModel() {
+        
+        homeViewModel.output.isRefreshing
+                   .subscribe(onNext: {[weak self] isLoading in
+                       isLoading ? self?.makeLoadingSnapShot() : ()
+                   })
+                   .disposed(by: disposeBag)
+        
+        // Refresh control 추가
+        let refreshControl = UIRefreshControl()
+        mainpageCollectionView.refreshControl = refreshControl
+        
+        // Refresh control 이벤트 바인딩
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: homeViewModel.input.refreshTrigger)
+            .disposed(by: disposeBag)
+        
+        // Refresh control 로딩 상태 업데이트
+        homeViewModel.output.isRefreshing
+            .bind(to: refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
         mainpageCollectionView.rx.contentOffset
             .compactMap { [weak self] contentOffset -> IndexPath? in
                 guard let self = self else { return nil }
@@ -158,11 +177,27 @@ extension HomeViewController {
         self.mainpageCollectionView.dataSource = dataSource
         
         if let dataSourceBinder = dataSource?.rx.snapshot() {
+            
+            // 다음 페이지 로드 이벤트를 구현해야 함 (예: 스크롤 끝 도달 시)
+            // homeViewModel.input.loadNextPageTrigger.onNext(())
+            
             homeViewModel.output.homeOutput
                 .map(makeSnapshot)
                 .bind(to: dataSourceBinder)
                 .disposed(by: disposeBag)
         }
+    }
+    
+    private func makeLoadingSnapShot(){
+        var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionType>()
+        let loadingEntity = HomeEntity.initLoadingItems()
+        snapshot.appendSections([0, 1])
+        snapshot.appendItems([.hotItem(loadingEntity.getHotItems)], toSection: 0)
+        snapshot.appendItems([.hotSeller(loadingEntity.getHotSellers)], toSection: 1)
+        snapshot.appendItems([.soldOut([])], toSection: 1)
+        snapshot.appendItems([.recentNFT(loadingEntity.getRecentCards)], toSection: 1)
+        snapshot.appendItems([.activity(loadingEntity.getHotUsers)], toSection: 1)
+        self.dataSource?.apply(snapshot,animatingDifferences: true)
     }
     
     //전달된 HomeEntity를 기반으로 스냅샷을 생성
@@ -175,8 +210,8 @@ extension HomeViewController {
         snapshot.appendItems([.soldOut([])], toSection: 1)
         
         snapshot.appendItems([  .recentNFT(homeEntity.getRecentCards)], toSection: 1)
-        snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
-        
+        //snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
+        snapshot.appendItems([  .activity([HotUserEntity(userId: 1, name: "dd", profileUrl: "", count: 4, followed: true, me: false)])], toSection: 1)
         
         return snapshot
     }
