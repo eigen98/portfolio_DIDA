@@ -17,19 +17,7 @@ class BaseViewController: UIViewController {
     func bindEvent() { }
     
     func showError(error: Error) {
-        
-    }
-    
-    func showLogin(delegate: LoginHomeViewControllerDelegate? = nil) {
-        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
-          
-        if let controller = storyBoard.instantiateInitialViewController() {
-//            if let delegate = delegate {
-//                controller.delegate = delegate
-//            }
-            controller.modalPresentationStyle = .fullScreen
-            
-            self.topViewController()?.present(controller, animated: true)
-        }
+        // TODO: error catch -> showing toast
+        print("error:: \(error)")
     }
 }
