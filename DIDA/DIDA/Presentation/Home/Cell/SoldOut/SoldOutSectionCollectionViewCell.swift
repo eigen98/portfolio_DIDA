@@ -146,7 +146,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 
                 self.setSelectedButton(weekButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("7")
             }
             .disposed(by: disposeBag)
@@ -156,7 +156,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let oneMonthButton = self.oneMonthButton else { return }
                 self.setSelectedButton(oneMonthButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("30")
             }
             .disposed(by: disposeBag)
@@ -166,7 +166,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let sixMonthButton = self.sixMonthButton else { return }
                 self.setSelectedButton(sixMonthButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("60")
             }
             .disposed(by: disposeBag)
@@ -176,7 +176,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let yearButton = self.yearButton else { return }
                 self.setSelectedButton(yearButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("365")
             }
             .disposed(by: disposeBag)
