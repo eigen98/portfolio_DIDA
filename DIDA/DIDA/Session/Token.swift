@@ -35,6 +35,10 @@ class Token: TokenInterface {
         
     }
     
+    var tokenObservable: Observable<DIDAToken?> {
+        return self.entity.asObservable()
+    }
+    
     var accessToken: String? {
         return self.entity.value?.accessToken
     }

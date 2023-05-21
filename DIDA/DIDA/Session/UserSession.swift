@@ -23,15 +23,9 @@ class UserSession: UserSessionInterface {
     
     private init() { }
     
-    public var accessToekn: String {
-        get {
-            Token.shared.accessToken ?? ""
-        }
-    }
-    
     public var userEntity: UserEntity? {
         get {
-            self.userEntity.value
+            self.user.value
         }
     }
     
@@ -44,6 +38,16 @@ class UserSession: UserSessionInterface {
     func initialize() {
         Token.shared.initialize()
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
+        
+        Token.shared.tokenObservable.map { $0?.accessToken }.distinctUntilChanged().bind { [weak self] didaToken in
+            guard let `self` = self else { return }
+            
+            if didaToken == nil {
+                self.user.accept(nil)
+            } else {
+                self.fetchMyself()
+            }
+        }.disposed(by: self.disposeBag)
     }
     
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> Void) {

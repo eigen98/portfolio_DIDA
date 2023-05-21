@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct DIDAToken: Codable {
     let accessToken: String
@@ -13,6 +14,7 @@ struct DIDAToken: Codable {
 }
 
 protocol TokenInterface {
+    var tokenObservable: Observable<DIDAToken?> { get }
     var accessToken: String? { get }
     var refreshToken: String? { get }
     
