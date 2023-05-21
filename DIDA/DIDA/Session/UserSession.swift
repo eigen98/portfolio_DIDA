@@ -42,12 +42,8 @@ class UserSession: UserSessionInterface {
     }
     
     func initialize() {
+        Token.shared.initialize()
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
-        
-//        token.filterNil().bind { [weak self] _ in
-//            guard let `self` = self else { return }
-//            self.fetchMyself()
-//        }.disposed(by: self.disposeBag)
     }
     
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> Void) {

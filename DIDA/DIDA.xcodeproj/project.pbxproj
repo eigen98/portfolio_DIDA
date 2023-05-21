@@ -140,6 +140,7 @@
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
 		C1FB97062A1A196000A4D8D6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97052A1A196000A4D8D6 /* Token.swift */; };
 		C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */; };
+		C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */; };
 		EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */; };
 		EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */; };
 		EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07EE9029F8EC9300285A9F /* MoreHotSellerViewController.swift */; };
@@ -317,6 +318,7 @@
 		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		C1FB97052A1A196000A4D8D6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterface.swift; sourceTree = "<group>"; };
+		C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStorage.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				EEE3862729C8143D00A10E47 /* Network */,
 				97BAE0F829ABCCCF0001F60A /* Request */,
 				97BAE0F729ABCCBC0001F60A /* Response */,
+				C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1494,6 +1497,7 @@
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C1C8024B29B48C3400221FB9 /* TableViewCell.swift in Sources */,
 				EE0AB95329F79E3B0010F182 /* MoreActivityViewController.swift in Sources */,
+				C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */,
 				EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */,
 				EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */,
 				EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */,

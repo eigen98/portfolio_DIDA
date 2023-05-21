@@ -16,6 +16,7 @@ protocol TokenInterface {
     var accessToken: String? { get }
     var refreshToken: String? { get }
     
-    func set(accessToken: String, refreshToken: String)
+    func initialize()
+    func `set`(accessToken: String, refreshToken: String)
     func remove()
 }

@@ -21,8 +21,18 @@ class Token: TokenInterface {
     
     private let entity = BehaviorRelay<DIDAToken?>(value: nil)
     
-    init() {
-        self.read()
+    private init() { }
+    
+    func initialize() {
+        let isFirstInstall = ApplicationStorage.shared.read(.isFirst, defaultValue: true)
+        
+        if isFirstInstall {
+            self.remove()
+            ApplicationStorage.shared.set(.isFirst, value: !isFirstInstall)
+        } else {
+            self.read()
+        }
+        
     }
     
     var accessToken: String? {
@@ -71,11 +81,10 @@ class Token: TokenInterface {
             kSecAttrAccount: self.account
         ]
         
-        let statusCode = SecItemDelete(query)
+        SecItemDelete(query)
         
-        if statusCode != noErr {
-            self.entity.accept(nil)
-        }
+        // 무조건 entity 값을 비워준다.
+        self.entity.accept(nil)
     }
     
     private func read() {
