@@ -19,14 +19,13 @@ class UserSession: UserSessionInterface {
     
     private let disposeBag = DisposeBag()
     
-    private let token = BehaviorRelay<Token?>(value: nil)
     private let user = BehaviorRelay<UserEntity?>(value: nil)
     
     private init() { }
     
     public var accessToekn: String {
         get {
-            self.token.value?.accessToken ?? ""
+            Token.shared.accessToken ?? ""
         }
     }
     
@@ -45,10 +44,10 @@ class UserSession: UserSessionInterface {
     func initialize() {
         KakaoSDK.initSDK(appKey: SecretConstant.kakaoKey)
         
-        token.filterNil().bind { [weak self] _ in
-            guard let `self` = self else { return }
-            self.fetchMyself()
-        }.disposed(by: self.disposeBag)
+//        token.filterNil().bind { [weak self] _ in
+//            guard let `self` = self else { return }
+//            self.fetchMyself()
+//        }.disposed(by: self.disposeBag)
     }
     
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> Void) {
@@ -136,7 +135,8 @@ class UserSession: UserSessionInterface {
                     return
                 }
                 
-                self.token.accept(Token(accessToken: accessToken, refreshToken: refreshToken))
+                Token.shared.set(accessToken: accessToken, refreshToken: refreshToken)
+                                
                 completion(LoginProviderEntity(isFirst: false), nil)
                 
             } onError: { error in
@@ -155,10 +155,10 @@ class UserSession: UserSessionInterface {
                     let error = try response.map(BaseErrorResponseDTO.self)
                     return .error(DidaError.apiError(error))
                 }
-            }.subscribe { [weak self] response in
-                guard let `self` = self else { return }
+            }.subscribe { response in
                 
-                self.token.accept(Token(accessToken: response.accessToken, refreshToken: response.refreshToken))
+                Token.shared.set(accessToken: response.accessToken, refreshToken: response.refreshToken)
+                
                 completion(nil)
             } onError: { error in
                 completion(error)
@@ -167,7 +167,7 @@ class UserSession: UserSessionInterface {
     }
     
     func logout() {
-        self.token.accept(nil)
+        Token.shared.remove()
         self.user.accept(nil)
     }
     
@@ -190,7 +190,7 @@ class UserSession: UserSessionInterface {
                 print(error)
                 
                 // TODO: token 갱신
-                self.token.accept(nil)
+                Token.shared.remove()
                 self.user.accept(nil)
             }.disposed(by: self.disposeBag)
 
