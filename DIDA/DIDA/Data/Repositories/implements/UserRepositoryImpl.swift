@@ -31,7 +31,7 @@ class UserRepositoryImpl: UserRepository {
     }
     
     func isLogin() -> Bool {
-        return UserSession.shared.accessToekn.isNotEmpty
+        return UserSession.shared.userEntity != nil
     }
     
     func fetchMyself() -> UserEntity? {

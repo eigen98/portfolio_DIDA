@@ -71,7 +71,7 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configure(items: [HotUserEntity]) {
+    func configure(items: [UserEntity]) {
         bind()
         clearViews()
         if items.first?.userId == -1{
@@ -84,15 +84,15 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
             if index == 0 {
                 firstItemContainerView.isHidden = false
                 configureView(firstItemImageView, firstItemNameLabel, firstItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((items[0].followed, 0))
+                //viewModel.input.followButtonTapped.accept((items[0].followed, 0))
             } else if index == 1 {
                 secondItemContainerView.isHidden = false
                 configureView(secondItemImageView, secondItemNameLabel, secondItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((items[1].followed, 1))
+                //viewModel.input.followButtonTapped.accept((items[1].followed, 1))
             } else if index == 2 {
                 thirdItemContainerView.isHidden = false
                 configureView(thirdItemImageView, thirdItemNameLabel, thirdItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((items[1].followed, 0))
+                //viewModel.input.followButtonTapped.accept((items[1].followed, 0))
             }
         }
         
@@ -100,12 +100,12 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func configureView(_ imageView: UIImageView, _ nameLabel: UILabel, _ countLabel: UILabel, _ item: HotUserEntity) {
-           if let url = URL(string: item.profileUrl) {
+    private func configureView(_ imageView: UIImageView, _ nameLabel: UILabel, _ countLabel: UILabel, _ item: UserEntity) {
+        if let url = URL(string: item.profileImage ?? "") {
                imageView.kf.setImage(with: url)
            }
-           nameLabel.text = item.name
-           countLabel.text = "\(item.count) 작품"
+        nameLabel.text = item.nickname
+        countLabel.text = "\(item.cardCnt) 작품"
     }
     
     private func clearViews() {

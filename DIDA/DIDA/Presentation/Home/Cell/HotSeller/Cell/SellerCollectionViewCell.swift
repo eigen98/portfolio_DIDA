@@ -25,7 +25,7 @@ class SellerCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configure(seller : HotSellerEntity){
+    func configure(seller : UserEntity){
         if seller.userId == -1 {
             self.containerView.isHidden = true
             configureLoadingView()
@@ -33,12 +33,12 @@ class SellerCollectionViewCell: UICollectionViewCell {
         print("userId : \(seller.userId)")
         
         moreButtonContainerView.isHidden = true
-        if let profileURL = URL(string: seller.sellerProfile), let backgroundURL = URL(string: seller.sellerBacground) {
+        if let profileURL = URL(string: seller.profileImage ?? ""), let backgroundURL = URL(string: seller.profileImage ?? "") {
             self.sellerProfileImageView.kf.setImage(with: profileURL)
             self.sellerBackgroundImageView.kf.setImage(with: backgroundURL)
         }
         
-        self.nameLabel.text = seller.sellerName
+        self.nameLabel.text = seller.nickname
        
         
     }

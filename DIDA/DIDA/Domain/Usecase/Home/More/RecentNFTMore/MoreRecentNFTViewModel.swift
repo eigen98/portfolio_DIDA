@@ -20,12 +20,12 @@ class MoreRecentNFTViewModel : BaseViewModel{
     }
     
     struct Output{
-        var recentNFTData : BehaviorSubject<[UserNftEntity]>
+        var recentNFTData : BehaviorSubject<[NFTEntity]>
     }
     
     override init() {
         input = Input()
-        output = Output(recentNFTData: BehaviorSubject<[UserNftEntity]>(value: []))
+        output = Output(recentNFTData: BehaviorSubject<[NFTEntity]>(value: []))
         disposeBag = DisposeBag()
         moreRepository = MoreHomeRepositoryImpl()
     }

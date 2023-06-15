@@ -12,7 +12,7 @@ import RxSwift
 
 class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
 
-    var items = [UserNftEntity]()
+    var items = [NFTEntity]()
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -95,7 +95,7 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configure(items : [UserNftEntity]){
+    func configure(items : [NFTEntity]){
         
         bind()
         self.items = items
@@ -114,12 +114,12 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
             ]
             
             for (index, item) in items.enumerated() {
-                if let url = URL(string: item.imgUrl) {
+                if let url = URL(string: item.nftImg) {
                     itemViews[index].0?.kf.setImage(with: url)
                 }
                 
-                itemViews[index].1?.text = item.userName
-                itemViews[index].2?.text = item.cardName
+                itemViews[index].1?.text = item.nickname
+                itemViews[index].2?.text = item.nftName
                 itemViews[index].3?.text = "\(roundedStringToTwoDecimalPlaces(value: (item.price))) dida"
                 
                 let imageName = item.liked ? "heart-fill" : "heart-unfill"

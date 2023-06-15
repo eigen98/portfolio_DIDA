@@ -46,10 +46,6 @@
 		C16AEC8A29EA8A0500A37C78 /* UserSessionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */; };
 		C16AEC8C29EA8F1C00A37C78 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8B29EA8F1C00A37C78 /* UserRepositoryImpl.swift */; };
 		C16AEC8E29EA8F4200A37C78 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC8D29EA8F4200A37C78 /* UserRepository.swift */; };
-		C16AEC9429EA935900A37C78 /* HotUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9329EA935900A37C78 /* HotUserEntity.swift */; };
-		C16AEC9629EA936700A37C78 /* UserNftEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9529EA936700A37C78 /* UserNftEntity.swift */; };
-		C16AEC9829EA937300A37C78 /* HotSellerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9729EA937300A37C78 /* HotSellerEntity.swift */; };
-		C16AEC9A29EA938200A37C78 /* HotItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9929EA938200A37C78 /* HotItemEntity.swift */; };
 		C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9B29EA938F00A37C78 /* HomeEntity.swift */; };
 		C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */; };
 		C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16AECA229EAB5FC00A37C78 /* LoginProviderEntity.swift */; };
@@ -64,7 +60,6 @@
 		C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */; };
 		C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */; };
 		C16FDCF62A05572300FB5F53 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */; };
-		C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF72A0647A200FB5F53 /* Token.swift */; };
 		C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */; };
 		C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */; };
 		C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FDD042A0659C800FB5F53 /* SignupViewController.swift */; };
@@ -139,6 +134,9 @@
 		C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C1C8025229B48D1200221FB9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		C1FB97062A1A196000A4D8D6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97052A1A196000A4D8D6 /* Token.swift */; };
+		C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */; };
+		C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */; };
 		EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */; };
 		EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0443F629CDCF9700B6A1AF /* TabbarCollectionReusableView.xib */; };
 		EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07EE9029F8EC9300285A9F /* MoreHotSellerViewController.swift */; };
@@ -177,6 +175,7 @@
 		EE6D138829F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */; };
 		EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */; };
 		EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */; };
+		EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */; };
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
 		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
 		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
@@ -265,10 +264,6 @@
 		C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInterface.swift; sourceTree = "<group>"; };
 		C16AEC8B29EA8F1C00A37C78 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		C16AEC8D29EA8F4200A37C78 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		C16AEC9329EA935900A37C78 /* HotUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotUserEntity.swift; sourceTree = "<group>"; };
-		C16AEC9529EA936700A37C78 /* UserNftEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNftEntity.swift; sourceTree = "<group>"; };
-		C16AEC9729EA937300A37C78 /* HotSellerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSellerEntity.swift; sourceTree = "<group>"; };
-		C16AEC9929EA938200A37C78 /* HotItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemEntity.swift; sourceTree = "<group>"; };
 		C16AEC9B29EA938F00A37C78 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		C16AECA229EAB5FC00A37C78 /* LoginProviderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProviderEntity.swift; sourceTree = "<group>"; };
@@ -281,7 +276,6 @@
 		C16FDCEB2A054C9100FB5F53 /* DidaAPI+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DidaAPI+Error.swift"; sourceTree = "<group>"; };
 		C16FDCED2A054ED600FB5F53 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
 		C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
-		C16FDCF72A0647A200FB5F53 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		C16FDD042A0659C800FB5F53 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +309,9 @@
 		C1A8D3CC29EA7E080023373E /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
 		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		C1FB97052A1A196000A4D8D6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterface.swift; sourceTree = "<group>"; };
+		C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStorage.swift; sourceTree = "<group>"; };
 		C5449B74294F171881EA4CD0 /* Pods-DIDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIDA.release.xcconfig"; path = "Target Support Files/Pods-DIDA/Pods-DIDA.release.xcconfig"; sourceTree = "<group>"; };
 		E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0443F529CDCF9700B6A1AF /* TabbarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -356,6 +353,7 @@
 		EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreRecentNFTCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dida_loading_lottie.json; sourceTree = "<group>"; };
 		EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTEntity.swift; sourceTree = "<group>"; };
 		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabbar.swift; sourceTree = "<group>"; };
@@ -538,8 +536,6 @@
 			children = (
 				97BAE0F529ABCC890001F60A /* Usecase */,
 				C16AEC9229EA933100A37C78 /* Entity */,
-				C16AEC8329EA85EB00A37C78 /* UserSession.swift */,
-				C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -551,6 +547,7 @@
 				EEE3862729C8143D00A10E47 /* Network */,
 				97BAE0F829ABCCCF0001F60A /* Request */,
 				97BAE0F729ABCCBC0001F60A /* Response */,
+				C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -587,11 +584,8 @@
 				EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */,
 				C16AEC9D29EA93EA00A37C78 /* Array+Extension.swift */,
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
-
 				EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */,
-
 				C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */,
-
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -670,14 +664,10 @@
 			isa = PBXGroup;
 			children = (
 				EE0AB95E29F7B0B90010F182 /* Home */,
-				C16AEC9329EA935900A37C78 /* HotUserEntity.swift */,
-				C16AEC9529EA936700A37C78 /* UserNftEntity.swift */,
-				C16AEC9729EA937300A37C78 /* HotSellerEntity.swift */,
-				C16AEC9929EA938200A37C78 /* HotItemEntity.swift */,
+				EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */,
 				C16AEC9B29EA938F00A37C78 /* HomeEntity.swift */,
 				C16AECA229EAB5FC00A37C78 /* LoginProviderEntity.swift */,
 				C16AECA829EABB3700A37C78 /* UserEntity.swift */,
-				C16FDCF72A0647A200FB5F53 /* Token.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -801,6 +791,25 @@
 			path = LoginHome;
 			sourceTree = "<group>";
 		};
+		C1FB97042A1A191800A4D8D6 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				C1FB97092A1A1AEC00A4D8D6 /* interfaces */,
+				C16AEC8329EA85EB00A37C78 /* UserSession.swift */,
+				C1FB97052A1A196000A4D8D6 /* Token.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		C1FB97092A1A1AEC00A4D8D6 /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */,
+				C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */,
+			);
+			path = interfaces;
+			sourceTree = "<group>";
+		};
 		D289DCB4F2E520AC2328E8D6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,6 +925,7 @@
 			children = (
 				C13633FA29A0C59F0023DA68 /* Presentation */,
 				C13633FB29A0C5B70023DA68 /* Domain */,
+				C1FB97042A1A191800A4D8D6 /* Session */,
 				C13633FC29A0C5C10023DA68 /* Data */,
 				C13633FD29A0C5F80023DA68 /* Common */,
 				C136340B29A0CAA10023DA68 /* Infratruction */,
@@ -1396,7 +1406,6 @@
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				EEE3862F29C81DF500A10E47 /* HomeAPI.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
-				C16AEC9629EA936700A37C78 /* UserNftEntity.swift in Sources */,
 				C16AECA729EABA6A00A37C78 /* MainViewModel.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				EEE3862929C8179E00A10E47 /* APIClient.swift in Sources */,
@@ -1426,7 +1435,6 @@
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
-				C16AEC9429EA935900A37C78 /* HotUserEntity.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
 				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
@@ -1442,27 +1450,24 @@
 				EE0AB96129F7B0D40010F182 /* MoreActivityEntity.swift in Sources */,
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
-				C16AEC9A29EA938200A37C78 /* HotItemEntity.swift in Sources */,
 				EE07EE9A29F8F83800285A9F /* MoreHotSellerViewModel.swift in Sources */,
 				C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */,
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
 				C134D72E2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
-				C16FDCF82A0647A200FB5F53 /* Token.swift in Sources */,
 				EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
-
 				EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */,
-
 				C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */,
+				C1FB97062A1A196000A4D8D6 /* Token.swift in Sources */,
 				C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */,
 				C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */,
-
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
+				C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */,
 				EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
@@ -1473,6 +1478,7 @@
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
+				EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */,
 				C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */,
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
@@ -1480,6 +1486,7 @@
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C1C8024B29B48C3400221FB9 /* TableViewCell.swift in Sources */,
 				EE0AB95329F79E3B0010F182 /* MoreActivityViewController.swift in Sources */,
+				C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */,
 				EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */,
 				EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */,
 				EE0443F729CDCF9700B6A1AF /* TabbarCollectionReusableView.swift in Sources */,
@@ -1497,7 +1504,6 @@
 				C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */,
 				EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */,
 				EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */,
-				C16AEC9829EA937300A37C78 /* HotSellerEntity.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,
 				EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */,
 				EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */,

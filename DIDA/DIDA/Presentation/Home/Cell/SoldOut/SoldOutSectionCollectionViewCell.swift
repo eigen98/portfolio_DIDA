@@ -11,7 +11,7 @@ import RxSwift
 class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
     
-    var soldoutItems = [UserNftEntity]()
+    var soldoutItems = [NFTEntity]()
     var selectedIdx = 0
     var disposeBag = DisposeBag()
     //일주일 이내, 1개월 6개월, 올한해 버튼
@@ -146,7 +146,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 
                 self.setSelectedButton(weekButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("7")
             }
             .disposed(by: disposeBag)
@@ -156,7 +156,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let oneMonthButton = self.oneMonthButton else { return }
                 self.setSelectedButton(oneMonthButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("30")
             }
             .disposed(by: disposeBag)
@@ -166,7 +166,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let sixMonthButton = self.sixMonthButton else { return }
                 self.setSelectedButton(sixMonthButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("60")
             }
             .disposed(by: disposeBag)
@@ -176,7 +176,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 guard let self = self, let yearButton = self.yearButton else { return }
                 self.setSelectedButton(yearButton)
                 
-                viewModel.input
+                self.viewModel.input
                     .refreshTrigger.onNext("365")
             }
             .disposed(by: disposeBag)
@@ -188,7 +188,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
          button.buttonHeight = height
      }
     // items를 사용하여 soldoutItems를 설정하고 이미지 뷰를 구성하는 함수
-     func configure(items: [UserNftEntity]) {
+     func configure(items: [NFTEntity]) {
          configureImageViews()
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
@@ -202,8 +202,8 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
          if numberOfItems >= 1 {
              configureImageView(firstImageView, item: soldoutItems[0])
-             firstNFTNameLabel.text = soldoutItems[0].cardName
-             firstUserNameLabel.text = soldoutItems[0].userName
+             firstNFTNameLabel.text = soldoutItems[0].nftName
+             firstUserNameLabel.text = soldoutItems[0].nickname
              
              firstPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[0].price)
              firstItemContainerView.isHidden = false
@@ -211,24 +211,24 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
          if numberOfItems >= 2 {
              configureImageView(secondImageView, item: soldoutItems[1])
-             secondNFTNameLabel.text = soldoutItems[1].cardName
-             secondUserNameLabel.text = soldoutItems[1].userName
+             secondNFTNameLabel.text = soldoutItems[1].nftName
+             secondUserNameLabel.text = soldoutItems[1].nickname
              secondPriceLabel.text = roundedStringToTwoDecimalPlaces(value: soldoutItems[1].price)
              secondItemContainerView.isHidden = false
          }
 
          if numberOfItems >= 3 {
              configureImageView(thirdImageView, item: soldoutItems[2])
-             thirdNFTNameLabel.text = soldoutItems[2].cardName
-             thirdUserNameLabel.text = soldoutItems[2].userName
+             thirdNFTNameLabel.text = soldoutItems[2].nftName
+             thirdUserNameLabel.text = soldoutItems[2].nickname
              thirdPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[2].price)
              thirdItemContainerView.isHidden = false
          }
      }
 
     //이미지 설정
-     private func configureImageView(_ imageView: UIImageView, item: UserNftEntity) {
-         imageView.kf.setImage(with: URL(string: item.imgUrl), options: [.scaleFactor(CGFloat(1.0))])
+     private func configureImageView(_ imageView: UIImageView, item: NFTEntity) {
+         imageView.kf.setImage(with: URL(string: item.nftImg), options: [.scaleFactor(CGFloat(1.0))])
          
 
      }

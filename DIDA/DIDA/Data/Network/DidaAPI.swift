@@ -32,7 +32,7 @@ extension DidaAPI: TargetType {
     }
     
     var headers: [String: String]? {
-        return ["Authorization" : UserSession.shared.accessToekn]
+        return ["Authorization" : Token.shared.accessToken ?? ""]
     }
     
     var path: String {

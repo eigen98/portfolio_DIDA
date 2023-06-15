@@ -10,7 +10,7 @@ import UIKit
 class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
     
-    var hotSellers = [HotSellerEntity]()
+    var hotSellers = [UserEntity]()
     @IBOutlet weak var containerView: UIView!
     
     private let cellIdentifier = "SellerCollectionViewCell"

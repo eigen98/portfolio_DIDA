@@ -9,61 +9,25 @@ import UIKit
 import RxDataSources
 import RxSwift
 
-// Item
-enum HomeSectionType: Hashable {
-    case hotItem([HotItemEntity])
-    case stickyTabbar
-    case hotSeller([HotSellerEntity])
-    case soldOut([UserNftEntity])
-    case recentNFT([UserNftEntity])
-    case activity([HotUserEntity])
-    
-    var identifier: String {
-        switch self {
-        case .hotItem:
-            return "hotItem"
-        case .stickyTabbar:
-            return "stickyTabbar"
-        case .hotSeller:
-            return "hotSeller"
-        case .soldOut:
-            return "soldOut"
-        case .recentNFT:
-            return "recentNFT"
-        case .activity:
-            return "activity"
-        }
-    }
-    
-    static func == (lhs: HomeSectionType, rhs: HomeSectionType) -> Bool {
-        switch (lhs, rhs) {
-        case (.hotItem(let a), .hotItem(let b)):
-            return a == b
-        case (.stickyTabbar, .stickyTabbar):
-            return true
-        case (.hotSeller(let a), .hotSeller(let b)):
-            return a == b
-        case (.soldOut(let a), .soldOut(let b)):
-            return a == b
-        case (.recentNFT(let a), .recentNFT(let b)):
-            return a == b
-        case (.activity(let a), .activity(let b)):
-            return a == b
-        default:
-            return false
-        }
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
-    }
+// Section
+enum HomeSectionType : Hashable {
+    case regularSection //stickyHeader 미적용 섹션
+    case stickyHeaderSection //stickyHeader 적용 섹션
+}
+
+enum HomeSectionItem: Hashable {
+    case hotItems([NFTEntity]) //HOT Item
+    case hotSellerItems([UserEntity]) // HOT Seller
+    case soldOutItems([NFTEntity]) // SOLD Out
+    case recentNFTItems([NFTEntity]) // 최신 NFT
+    case activityItems([UserEntity]) // 활발한 활동
 }
 
 //홈뷰
 class HomeViewController: BaseViewController {
     
     // 홈에서 사용할 Section과 Item을 명시하여 UICollectionViewDiffableDataSource를 typealias로 생성
-    typealias HomeDataSource = UICollectionViewDiffableDataSource<Int, HomeSectionType>
+    typealias HomeDataSource = UICollectionViewDiffableDataSource<HomeSectionType, HomeSectionItem>
     
     @IBOutlet weak var mainpageCollectionView: UICollectionView!
     
@@ -89,27 +53,27 @@ class HomeViewController: BaseViewController {
     func initCollectionView(){
         
         self.mainpageCollectionView.showsVerticalScrollIndicator = false
-        registerNIB()
-        
+        self.mainpageCollectionView.dataSource = dataSource
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
-       
+        
+        registerNIB()
         configureDataSource()
-        
-        initSnapshot()
-        
-        
+
     }
     
     
     
     override func bindViewModel() {
         
-        homeViewModel.output.isRefreshing
-                   .subscribe(onNext: {[weak self] isLoading in
-                       isLoading ? self?.makeLoadingSnapShot() : ()
-                   })
-                   .disposed(by: disposeBag)
+        homeViewModel.output.homeOutput
+            .bind{ [weak self] result in
+                if let snapShot = self?.makeSnapshot(result){
+                    self?.dataSource?.apply(snapShot)
+                }
+                
+            }.disposed(by: disposeBag)
         
+      
         // Refresh control 추가
         let refreshControl = UIRefreshControl()
         mainpageCollectionView.refreshControl = refreshControl
@@ -172,93 +136,61 @@ extension HomeViewController {
         //활발한 활동 Cell
         mainpageCollectionView.register(UINib(nibName: ActivitySectionCollectionViewCell.reuseIdentifier , bundle: nil), forCellWithReuseIdentifier: ActivitySectionCollectionViewCell.reuseIdentifier)
     }
-    // HomeViewModel의 output 업데이트를 구독 -> 새 스냅샷으로 datasource를 업데이트
-    private func initSnapshot() {
-        self.mainpageCollectionView.dataSource = dataSource
-        
-        if let dataSourceBinder = dataSource?.rx.snapshot() {
-            
-            // 다음 페이지 로드 이벤트를 구현해야 함 (예: 스크롤 끝 도달 시)
-            // homeViewModel.input.loadNextPageTrigger.onNext(())
-            
-            homeViewModel.output.homeOutput
-                .map(makeSnapshot)
-                .bind(to: dataSourceBinder)
-                .disposed(by: disposeBag)
-        }
-    }
     
-    private func makeLoadingSnapShot(){
-        var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionType>()
-        let loadingEntity = HomeEntity.initLoadingItems()
-        snapshot.appendSections([0, 1])
-        snapshot.appendItems([.hotItem(loadingEntity.getHotItems)], toSection: 0)
-        snapshot.appendItems([.hotSeller(loadingEntity.getHotSellers)], toSection: 1)
-        snapshot.appendItems([.soldOut([])], toSection: 1)
-        snapshot.appendItems([.recentNFT(loadingEntity.getRecentCards)], toSection: 1)
-        snapshot.appendItems([.activity(loadingEntity.getHotUsers)], toSection: 1)
-        self.dataSource?.apply(snapshot,animatingDifferences: true)
-    }
-    
+
     //전달된 HomeEntity를 기반으로 스냅샷을 생성
-    private func makeSnapshot(_ homeEntity: HomeEntity) -> NSDiffableDataSourceSnapshot<Int, HomeSectionType> {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, HomeSectionType>()
+    private func makeSnapshot(_ homeEntity: HomeEntity) -> NSDiffableDataSourceSnapshot<HomeSectionType, HomeSectionItem> {
+        var snapshot = NSDiffableDataSourceSnapshot<HomeSectionType, HomeSectionItem>()
         // add data to snapshot
-        snapshot.appendSections([0, 1])
-        snapshot.appendItems([.hotItem(homeEntity.getHotItems)], toSection: 0)
-        snapshot.appendItems([.hotSeller(homeEntity.getHotSellers)], toSection: 1)
-        snapshot.appendItems([.soldOut([])], toSection: 1)
-        
-        snapshot.appendItems([  .recentNFT(homeEntity.getRecentCards)], toSection: 1)
-        //snapshot.appendItems([  .activity(homeEntity.getHotUsers)], toSection: 1)
-        snapshot.appendItems([  .activity([HotUserEntity(userId: 1, name: "dd", profileUrl: "", count: 4, followed: true, me: false)])], toSection: 1)
-        
+        snapshot.appendSections([.regularSection, .stickyHeaderSection])
+        snapshot.appendItems([.hotItems(homeEntity.getHotItems)], toSection: .regularSection)
+        snapshot.appendItems([.hotSellerItems(homeEntity.getHotSellers)], toSection: .stickyHeaderSection)
+        snapshot.appendItems([.soldOutItems([])], toSection: .stickyHeaderSection)
+
+        snapshot.appendItems([  .recentNFTItems(homeEntity.getRecentCards)], toSection: .stickyHeaderSection)
+        snapshot.appendItems([  .activityItems(homeEntity.getHotUsers)], toSection: .stickyHeaderSection)
         return snapshot
     }
-    
+
     // 데이터 소스 초기화
     private func configureDataSource() {
         // dataSource 값 정의
         
+        
         dataSource = HomeDataSource(collectionView: mainpageCollectionView, cellProvider: { collectionView, indexPath, item in
             //cell 구성
             switch item {
-            case .hotItem(let data):
+            case .hotItems(let data):
                 let cell: HotItemSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotItemSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotItemSectionCollectionViewCell
                 cell.hotItems = data
                 cell.configureCollectionView()
                 return cell
-                
-            case .hotSeller(let data):
+
+            case .hotSellerItems(let data):
                 let cell: HotSellerSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSellerSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! HotSellerSectionCollectionViewCell
                 cell.hotSellers = data
                 return cell
-                
-            case .soldOut(let data):
+
+            case .soldOutItems(let data):
                 let cell: SoldOutSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SoldOutSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! SoldOutSectionCollectionViewCell
                 cell.configure(items: data)
                 return cell
-                
-            case .recentNFT(let data):
+
+            case .recentNFTItems(let data):
                 let cell: RecentNFTSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentNFTSectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! RecentNFTSectionCollectionViewCell
                 cell.configure(items: data)
                 return cell
-                
-            case .activity(let data):
+
+            case .activityItems(let data):
                 let cell: ActivitySectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivitySectionCollectionViewCell.reuseIdentifier , for: indexPath)
                 as! ActivitySectionCollectionViewCell
                 cell.configure(items: data)
                 return cell
-                
-                
-            default :
-                
-                return UICollectionViewCell()
-                
+
             }
         })
         

@@ -22,7 +22,7 @@ class SoldOutSectionViewModel : BaseViewModel{
     }
     
     struct Output{
-        var soldoutOutput : BehaviorSubject<[UserNftEntity]>
+        var soldoutOutput : BehaviorSubject<[NFTEntity]>
         var isLoading: BehaviorSubject<Bool>
         var isRefreshing: BehaviorSubject<Bool>
     }
@@ -31,7 +31,7 @@ class SoldOutSectionViewModel : BaseViewModel{
     override init() {
         input = Input(refreshTrigger: PublishSubject<String>())
         
-        output = Output(soldoutOutput: BehaviorSubject<[UserNftEntity]>(value: []),
+        output = Output(soldoutOutput: BehaviorSubject<[NFTEntity]>(value: []),
         
                         isLoading: BehaviorSubject<Bool>(value: false),
                         isRefreshing: BehaviorSubject<Bool>(value: false))
