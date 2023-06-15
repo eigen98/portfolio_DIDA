@@ -7,3 +7,12 @@
 
 import Foundation
 
+struct NFTEntity : Hashable{
+    var cardId : Int
+    var nickname : String
+    var nftName : String
+    var nftImg : String
+    var heartCount : String
+    var price : String
+    var liked : Bool
+}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserEntity {
+struct UserEntity : Hashable {
     let userId: Int
     let nickname: String?
     let profileImage: String?
