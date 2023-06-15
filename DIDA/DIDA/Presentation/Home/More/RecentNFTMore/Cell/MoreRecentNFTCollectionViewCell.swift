@@ -39,11 +39,11 @@ class MoreRecentNFTCollectionViewCell: UICollectionViewCell {
         disposeBag = DisposeBag()
     }
     
-    func configure(item : UserNftEntity){
+    func configure(item : NFTEntity){
         bind()
-        itemImage.kf.setImage(with: URL(string: item.imgUrl), placeholder: UIImage(systemName: "placeholder"))
-        nftNameLabel.text = item.cardName
-        userNameLabel.text = item.userName
+        itemImage.kf.setImage(with: URL(string: item.nftImg), placeholder: UIImage(systemName: "placeholder"))
+        nftNameLabel.text = item.nftName
+        userNameLabel.text = item.nickname
         priceLabel.text = item.price
         islike = item.liked
         toggleLikeImage()

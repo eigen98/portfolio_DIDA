@@ -14,7 +14,7 @@ class HotItemSectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     
-    var hotItems = [HotItemEntity]()
+    var hotItems = [NFTEntity]()
     
     override func awakeFromNib() {
         super.awakeFromNib()

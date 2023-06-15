@@ -17,7 +17,7 @@ class MoreHotSellerViewModel : BaseViewModel{
     }
     
     struct Output{
-        var hotSellerData : BehaviorSubject<[HotSellerEntity]>
+        var hotSellerData : BehaviorSubject<[UserEntity]>
     }
     
     override init() {
@@ -29,7 +29,7 @@ class MoreHotSellerViewModel : BaseViewModel{
     override func bind() {
         super.bind()
         //Mock Data
-        output.hotSellerData.onNext([HotSellerEntity(userId: 7, sellerBacground: "NFT의 imgUrl", sellerProfile: "유저의 imgUrl", sellerName: "yoo_jitsu"),
-                                     HotSellerEntity(userId: 7, sellerBacground: "NFT의 imgUrl", sellerProfile: "유저의 imgUrl", sellerName: "yoo_jitsu")])
+//        output.hotSellerData.onNext([HotSellerEntity(userId: 7, sellerBacground: "NFT의 imgUrl", sellerProfile: "유저의 imgUrl", sellerName: "yoo_jitsu"),
+//                                     HotSellerEntity(userId: 7, sellerBacground: "NFT의 imgUrl", sellerProfile: "유저의 imgUrl", sellerName: "yoo_jitsu")])
     }
 }

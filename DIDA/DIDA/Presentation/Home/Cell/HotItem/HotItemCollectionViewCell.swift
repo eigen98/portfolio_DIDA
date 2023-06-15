@@ -35,7 +35,7 @@ class HotItemCollectionViewCell: UICollectionViewCell {
        
     }
     
-    func configure(item: HotItemEntity) {
+    func configure(item: NFTEntity) {
         imageView.kf.setImage(with: URL(string: item.nftImg), placeholder: UIImage(systemName: "placeholder"))
         nftNameLabel.text = item.nftName
         priceLabel.text = "\(item.price) dida"

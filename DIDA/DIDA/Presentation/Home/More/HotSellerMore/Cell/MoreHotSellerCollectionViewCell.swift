@@ -30,7 +30,7 @@ class MoreHotSellerCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configure(item : HotSellerEntity){
+    func configure(item : UserEntity){
        
     }
     

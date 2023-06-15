@@ -36,7 +36,7 @@ class MoreRecentNFTViewController: BaseViewController {
     
     
     override func bindEvent() {
-        collectionView.rx.modelSelected(UserNftEntity.self)
+        collectionView.rx.modelSelected(NFTEntity.self)
             .subscribe(onNext: { item in
                 // Handle selection of item
                 print("Selected item: \(item)")
