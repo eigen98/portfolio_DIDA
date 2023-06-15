@@ -7,11 +7,11 @@
 
 import Foundation
 struct GetMainSoldoutNFTResponse : Codable{
-    var nftId : Int
-    var name : String
-    var imgUrl : String
-    var price : String
-    var userId : Int
-    var userName : String
-    var profileUrl : String
+    var nftId : Int?
+    var name : String?
+    var imgUrl : String?
+    var price : String?
+    var userId : Int?
+    var userName : String?
+    var profileUrl : String?
 }
