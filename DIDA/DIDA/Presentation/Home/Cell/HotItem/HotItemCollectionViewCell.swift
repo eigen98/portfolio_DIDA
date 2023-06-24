@@ -26,6 +26,7 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         
+        
     }
     //셀이 화면 밖으로 스크롤되어 더 이상 보이지 않을 때와 같이 셀을 재사용하려고 할 때 호출
     override func prepareForReuse() {
@@ -42,26 +43,9 @@ class HotItemCollectionViewCell: UICollectionViewCell {
         heartCountLabel.text = item.heartCount
         self.heartImageView.image = UIImage(named: "heart-fill")
         bind()
-        if item.cardId == -1 {
-            self.containerView.isHidden = true
-            configureLoadingView()
-        }
     }
 
     func bind() {
-        heartContainerView.rx.tapGesture
-            .subscribe(onNext: { [weak self] in
-                print("My view was tapped")
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func configureLoadingView(){
-        self.contentView.startSkeletonAnimation()
-    }
-    
-    func removeLottieAnimationView(){
-        self.contentView.stopSkeletonAnimation()
     }
 
 }

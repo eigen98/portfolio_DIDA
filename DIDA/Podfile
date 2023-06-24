@@ -25,6 +25,7 @@ target 'DIDA' do
     pod 'Kingfisher', '~> 7.0'
     pod 'Moya/RxSwift'
     pod 'lottie-ios'
+    pod 'SkeletonView'
 
   # kakao
     pod 'KakaoSDKUser'

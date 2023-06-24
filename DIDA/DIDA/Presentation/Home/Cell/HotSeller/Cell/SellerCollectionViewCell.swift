@@ -27,8 +27,7 @@ class SellerCollectionViewCell: UICollectionViewCell {
     
     func configure(seller : UserEntity){
         if seller.userId == -1 {
-            self.containerView.isHidden = true
-            configureLoadingView()
+            self.showSkeleton(usingColor: Colors.surface_2!)
         }
         print("userId : \(seller.userId)")
         
@@ -48,7 +47,7 @@ class SellerCollectionViewCell: UICollectionViewCell {
     }
     //스켈레톤 로딩뷰 보여주기
     func configureLoadingView(){
-        self.contentView.startSkeletonAnimation()
+        //self.contentView.startSkeletonAnimation()
     }
     
     func removeLottieAnimationView(){

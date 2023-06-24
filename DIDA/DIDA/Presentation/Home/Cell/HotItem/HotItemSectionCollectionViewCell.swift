@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SkeletonView
 
 class HotItemSectionCollectionViewCell: UICollectionViewCell {
 
@@ -18,8 +19,6 @@ class HotItemSectionCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       // configureCollectionView()
-        
     }
     
     
@@ -36,7 +35,8 @@ extension HotItemSectionCollectionViewCell {
     func configureCollectionView() {
         hotItemCollectionView.delegate = self
         hotItemCollectionView.dataSource = self
-        
+       
+        //hotItemCollectionView.isSkeletonable = true
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
@@ -62,11 +62,14 @@ extension HotItemSectionCollectionViewCell : UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotItemCollectionViewCell", for: indexPath) as! HotItemCollectionViewCell
         
         let item = self.hotItems[indexPath.row]
-        if item.cardId == -1{
-            titleLabel.startSkeletonAnimation()
+        
+        if item.cardId == -1 {
+            cell.showSkeleton(usingColor: Colors.surface_2!)
+            self.showSkeleton(usingColor: Colors.surface_2!)
+        } else {
+             cell.hideSkeleton()
+             cell.configure(item: item)
         }
-        cell.configure(item: item)
-      
         return cell
     }
     
