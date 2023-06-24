@@ -3,7 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,29 +21,56 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meR-ph-9fA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOT Item 🔥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1k-dV-lDY">
-                                <rect key="frame" x="0.0" y="8" width="118.33333333333333" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-re-ajH">
+                                <rect key="frame" x="15.999999999999993" y="8" width="118.33333333333331" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOT Item 🔥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1k-dV-lDY">
+                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useFontLineHeight" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="background_black"/>
+                                <constraints>
+                                    <constraint firstItem="s1k-dV-lDY" firstAttribute="leading" secondItem="lbI-re-ajH" secondAttribute="leading" id="9RS-bG-VZK"/>
+                                    <constraint firstItem="s1k-dV-lDY" firstAttribute="top" secondItem="lbI-re-ajH" secondAttribute="top" id="YvR-BG-CYk"/>
+                                    <constraint firstAttribute="height" constant="24" id="mv5-Bf-fYe"/>
+                                    <constraint firstAttribute="width" constant="118.33" id="ppw-wo-Ywh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-5T-OFh">
                                 <rect key="frame" x="0.0" y="40" width="320" height="244"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="YFP-tz-NRM"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tWp-5T-OFh" secondAttribute="trailing" id="34w-c3-zVm"/>
+                            <constraint firstItem="tWp-5T-OFh" firstAttribute="top" secondItem="lbI-re-ajH" secondAttribute="bottom" constant="8" symbolic="YES" id="AHf-ot-no5"/>
+                            <constraint firstItem="lbI-re-ajH" firstAttribute="leading" secondItem="meR-ph-9fA" secondAttribute="leading" constant="16" id="CCg-PK-2Sw"/>
                             <constraint firstAttribute="height" constant="284" id="FUo-wh-iDT"/>
-                            <constraint firstItem="s1k-dV-lDY" firstAttribute="leading" secondItem="meR-ph-9fA" secondAttribute="leading" id="OsH-IQ-nvK"/>
-                            <constraint firstItem="tWp-5T-OFh" firstAttribute="top" secondItem="s1k-dV-lDY" secondAttribute="bottom" constant="8" symbolic="YES" id="YBy-uN-i1O"/>
-                            <constraint firstItem="s1k-dV-lDY" firstAttribute="top" secondItem="meR-ph-9fA" secondAttribute="top" constant="8" id="cEq-4o-l7b"/>
+                            <constraint firstItem="lbI-re-ajH" firstAttribute="top" secondItem="meR-ph-9fA" secondAttribute="top" constant="8" id="Wh0-bf-du9"/>
                             <constraint firstAttribute="bottom" secondItem="tWp-5T-OFh" secondAttribute="bottom" id="gAR-Ey-jnB"/>
                             <constraint firstItem="tWp-5T-OFh" firstAttribute="leading" secondItem="meR-ph-9fA" secondAttribute="leading" id="zsg-Xn-6uI"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -54,6 +82,9 @@
                 <constraint firstItem="meR-ph-9fA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="r5A-fM-XGJ"/>
             </constraints>
             <size key="customSize" width="320" height="284"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="hotItemCollectionView" destination="tWp-5T-OFh" id="pRT-c0-t3c"/>
                 <outlet property="titleLabel" destination="s1k-dV-lDY" id="4kg-HZ-uFC"/>
@@ -61,4 +92,9 @@
             <point key="canvasLocation" x="345.03816793893128" y="102.8169014084507"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="background_black">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

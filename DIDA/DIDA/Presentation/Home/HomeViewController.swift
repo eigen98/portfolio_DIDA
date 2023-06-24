@@ -8,6 +8,7 @@
 import UIKit
 import RxDataSources
 import RxSwift
+import SkeletonView
 
 // Section
 enum HomeSectionType : Hashable {
@@ -45,6 +46,7 @@ class HomeViewController: BaseViewController {
         bindViewModel()
         initCollectionView()
         bindEvent()
+        
         homeViewModel.input.refreshTrigger.onNext(())
     }
     
@@ -54,6 +56,7 @@ class HomeViewController: BaseViewController {
         
         self.mainpageCollectionView.showsVerticalScrollIndicator = false
         self.mainpageCollectionView.dataSource = dataSource
+        self.view.isSkeletonable = true
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
         
         registerNIB()
@@ -68,7 +71,7 @@ class HomeViewController: BaseViewController {
         homeViewModel.output.homeOutput
             .bind{ [weak self] result in
                 if let snapShot = self?.makeSnapshot(result){
-                    self?.dataSource?.apply(snapShot)
+                    //self?.dataSource?.apply(snapShot)
                 }
                 
             }.disposed(by: disposeBag)
@@ -83,9 +86,27 @@ class HomeViewController: BaseViewController {
             .bind(to: homeViewModel.input.refreshTrigger)
             .disposed(by: disposeBag)
         
+        
+        
+        
         // Refresh control 로딩 상태 업데이트
-        homeViewModel.output.isRefreshing
-            .bind(to: refreshControl.rx.isRefreshing)
+        homeViewModel.showLoading
+            .bind(onNext: {[weak self] isLoading in
+                if isLoading {
+                    print("로딩 시작")
+                    
+                    if let snapShot = self?.makeSnapshot(HomeEntity(getHotItems: [NFTEntity(cardId: -1, nickname: "", nftName: "", nftImg: "", heartCount: "", price: "", liked: false), NFTEntity(cardId: -1, nickname: "", nftName: "", nftImg: "", heartCount: "", price: "", liked: false)],
+                                                                    getHotSellers: [UserEntity(userId: -1, nickname: "", profileImage: nil, description: nil, hasWallet: false, cardCnt: 0, followerCnt: 0, followingCnt: 0)],
+                                                                    getRecentCards: [],
+                                                                    getHotUsers: [])){
+                        self?.dataSource?.apply(snapShot)
+                        self?.mainpageCollectionView.reloadData()
+                    }
+                    
+                } else {
+                    print("로딩 종료")
+                }
+            })
             .disposed(by: disposeBag)
         
         mainpageCollectionView.rx.contentOffset
@@ -317,3 +338,5 @@ extension HomeViewController {
     }
     
 }
+
+

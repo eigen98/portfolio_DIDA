@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +36,10 @@
                                     <constraint firstAttribute="height" constant="126" id="Ud8-tJ-2tq"/>
                                     <constraint firstAttribute="width" constant="126" id="Y8w-lF-XDc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isUserInteractionDisabledWhenSkeletonIsActive" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hba-Nb-igx">
                                 <rect key="frame" x="0.0" y="120" width="126" height="54"/>
@@ -52,6 +56,9 @@
                                     <constraint firstAttribute="height" constant="54" id="ck8-ri-6Th"/>
                                     <constraint firstAttribute="bottom" secondItem="PtV-ba-kA2" secondAttribute="bottom" constant="14" id="hNt-GH-yDe"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEt-tJ-KMQ">
                                 <rect key="frame" x="39" y="86" width="48" height="48"/>
@@ -73,6 +80,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
@@ -93,6 +101,8 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH3-QT-XJs">
@@ -140,6 +150,10 @@
                                     <constraint firstItem="Jng-Tg-IaO" firstAttribute="centerY" secondItem="NH3-QT-XJs" secondAttribute="centerY" id="D8R-cY-81c"/>
                                     <constraint firstItem="Jng-Tg-IaO" firstAttribute="centerX" secondItem="NH3-QT-XJs" secondAttribute="centerX" id="pX5-XN-K5U"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>
@@ -163,6 +177,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <integer key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -175,6 +190,9 @@
                 <constraint firstItem="f6m-yp-Ada" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bNT-7p-Fhc"/>
             </constraints>
             <size key="customSize" width="126" height="174"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="containerView" destination="f6m-yp-Ada" id="nfh-oS-n4o"/>
                 <outlet property="moreButtonContainerView" destination="NH3-QT-XJs" id="dts-po-Fy3"/>

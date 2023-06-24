@@ -11,6 +11,7 @@ class TabbarCollectionReusableView: UICollectionReusableView {
     
     var disposeBag = DisposeBag()
     private(set) var tabSelectedSubject = PublishSubject<Int>()
+    var isLoading = false
     var isClickedTabbar = false
     
     lazy var tabbar: ScrollableTabBar = {
@@ -58,7 +59,7 @@ class TabbarCollectionReusableView: UICollectionReusableView {
         let loadingView = UIView()
         loadingView.frame = self.frame
         self.addSubview(loadingView)
-        loadingView.startSkeletonAnimation()
+//        loadingView.startSkeletonAnimation()
     }
     
     func removeLottieAnimationView(){

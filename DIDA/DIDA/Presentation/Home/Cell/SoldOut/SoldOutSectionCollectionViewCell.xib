@@ -3,8 +3,9 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,16 +26,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-TW-Z7k">
                         <rect key="frame" x="0.0" y="0.0" width="352" height="518"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold Out 💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-3A-XkA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-Jb-Mml">
                                 <rect key="frame" x="0.0" y="8" width="111" height="28"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold Out 💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-3A-XkA">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="28"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="6Uo-xP-Qwp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="6Uo-xP-Qwp"/>
+                                    <constraint firstAttribute="width" constant="111" id="R0H-Sp-3PS"/>
+                                    <constraint firstItem="SgS-3A-XkA" firstAttribute="leading" secondItem="ZI4-Jb-Mml" secondAttribute="leading" id="S3W-7F-cCy"/>
+                                    <constraint firstItem="SgS-3A-XkA" firstAttribute="top" secondItem="ZI4-Jb-Mml" secondAttribute="top" id="W1H-nQ-Ml9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="기간 별 가장 비싸게 팔린 NFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GW-XP-DKb">
                                 <rect key="frame" x="0.0" y="38" width="167" height="17"/>
                                 <constraints>
@@ -168,6 +183,9 @@
                                     <constraint firstAttribute="trailing" secondItem="No0-zl-Vlb" secondAttribute="trailing" id="u6b-ZL-NPF"/>
                                     <constraint firstItem="No0-zl-Vlb" firstAttribute="top" secondItem="Goq-yF-NiM" secondAttribute="top" constant="16" id="vIl-kX-Lxm"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-xp-y4u">
                                 <rect key="frame" x="0.0" y="212" width="352" height="79"/>
@@ -273,6 +291,9 @@
                                     <constraint firstItem="8Fo-Ub-CWX" firstAttribute="top" secondItem="tNL-xp-y4u" secondAttribute="top" id="u5Y-6n-n9L"/>
                                     <constraint firstItem="n4Z-xr-Xt1" firstAttribute="top" secondItem="0Rl-hd-9oM" secondAttribute="bottom" constant="8" symbolic="YES" id="zJD-1Q-0B6"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itM-av-d19">
                                 <rect key="frame" x="0.0" y="510" width="352" height="8"/>
@@ -386,6 +407,9 @@
                                     <constraint firstItem="htR-x1-1q1" firstAttribute="leading" secondItem="ddR-Ck-lhV" secondAttribute="leading" id="kx9-ht-lcC"/>
                                     <constraint firstAttribute="height" constant="79" id="nEB-fr-yVO"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI4-jE-Xeh">
                                 <rect key="frame" x="0.0" y="71" width="352" height="36"/>
@@ -472,6 +496,9 @@
                                             <constraint firstItem="f7p-Ae-FhU" firstAttribute="baseline" secondItem="mkf-Id-7GR" secondAttribute="baseline" id="miK-Qc-KNG"/>
                                             <constraint firstItem="f7p-Ae-FhU" firstAttribute="baseline" secondItem="pFg-bx-ccx" secondAttribute="baseline" id="oZj-Iu-7XQ"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -490,7 +517,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZI4-Jb-Mml" firstAttribute="top" secondItem="MKF-TW-Z7k" secondAttribute="top" constant="8" id="7gQ-Yz-mdx"/>
                             <constraint firstItem="tNL-xp-y4u" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="8lk-RA-AJv"/>
+                            <constraint firstItem="ZI4-Jb-Mml" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="DdS-I5-7UC"/>
+                            <constraint firstItem="9GW-XP-DKb" firstAttribute="top" secondItem="ZI4-Jb-Mml" secondAttribute="bottom" constant="2" id="LBa-Yl-cdk"/>
                             <constraint firstAttribute="trailing" secondItem="gI4-jE-Xeh" secondAttribute="trailing" id="Ma9-m4-z3i"/>
                             <constraint firstItem="itM-av-d19" firstAttribute="top" secondItem="1HJ-79-1dm" secondAttribute="bottom" constant="52" id="NOF-qc-vSF"/>
                             <constraint firstItem="1HJ-79-1dm" firstAttribute="top" secondItem="ddR-Ck-lhV" secondAttribute="bottom" constant="20" id="Olh-gM-qre"/>
@@ -503,18 +533,18 @@
                             <constraint firstItem="1HJ-79-1dm" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="VPM-qD-uj6"/>
                             <constraint firstAttribute="trailing" secondItem="tNL-xp-y4u" secondAttribute="trailing" id="Y38-kL-S98"/>
                             <constraint firstItem="gI4-jE-Xeh" firstAttribute="top" secondItem="9GW-XP-DKb" secondAttribute="bottom" constant="16" id="YTf-7x-OAM"/>
-                            <constraint firstItem="9GW-XP-DKb" firstAttribute="top" secondItem="SgS-3A-XkA" secondAttribute="bottom" constant="2" id="a4T-fo-Ozw"/>
                             <constraint firstItem="gI4-jE-Xeh" firstAttribute="trailing" secondItem="itM-av-d19" secondAttribute="trailing" id="akk-Gj-90I"/>
                             <constraint firstItem="itM-av-d19" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="b58-N5-f0w"/>
-                            <constraint firstItem="SgS-3A-XkA" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="c8T-Zt-DvR"/>
                             <constraint firstAttribute="trailing" secondItem="itM-av-d19" secondAttribute="trailing" id="dZt-Px-Glj"/>
                             <constraint firstItem="Goq-yF-NiM" firstAttribute="top" secondItem="gI4-jE-Xeh" secondAttribute="bottom" constant="14" id="eFw-4H-DIV"/>
                             <constraint firstItem="ddR-Ck-lhV" firstAttribute="top" secondItem="tNL-xp-y4u" secondAttribute="bottom" constant="12" id="k0a-Er-uwY"/>
-                            <constraint firstItem="SgS-3A-XkA" firstAttribute="top" secondItem="MKF-TW-Z7k" secondAttribute="top" constant="8" id="kg8-oq-3pO"/>
                             <constraint firstItem="9GW-XP-DKb" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="mMG-8f-Q5G"/>
                             <constraint firstItem="gI4-jE-Xeh" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="r7A-bK-3Fq"/>
                             <constraint firstAttribute="bottom" secondItem="itM-av-d19" secondAttribute="bottom" id="vzG-nX-MX4"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -568,5 +598,8 @@
     </objects>
     <resources>
         <image name="copper-coin-fill" width="28.333333969116211" height="28"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
