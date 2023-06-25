@@ -102,9 +102,23 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     
     
     func bindViewModel() {
+        
+        //Loading
         viewModel.output.isRefreshing
             .subscribe(onNext: {[weak self] isLoading in
-                isLoading ? self?.configureLoadingView() : self?.removeLoadingView()
+                
+                if isLoading{
+                    [self?.firstItemContainerView,
+                     self?.secondItemContainerView,
+                     self?.thirdItemContainerView].forEach{
+                        $0?.isHidden = false
+                    }
+                    self?.showSkeleton(usingColor: Colors.surface_2!)
+                    
+                }else{
+                    self?.hideSkeleton()
+                }
+                
             })
             .disposed(by: disposeBag)
         
@@ -230,62 +244,8 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
      private func configureImageView(_ imageView: UIImageView, item: NFTEntity) {
          imageView.kf.setImage(with: URL(string: item.nftImg), options: [.scaleFactor(CGFloat(1.0))])
          
-
      }
     
-    //스켈레톤 로딩뷰 보여주기
-    func configureLoadingView(){
-        self.subTitleLabel.isHidden = true
-        [titleLabel,
-         scrollView,
-         self.firstImageView,
-         self.firstNFTNameLabel,
-         self.firstUserNameContainerView,
-         self.secondImageView,
-         self.secondNFTNameLabel,
-         self.secondUserNameContainerView,
-         self.thirdImageView,
-         self.thirdNFTNameLabel,
-         self.thirdUserNameContainerView,
-         self.moreButton
-        ]
-            .forEach{
-                $0.startSkeletonAnimation(cornerRadius: 8)
-            }
-            
-        
-    }
-    
-    func removeLoadingView(){
-        
-        self.subTitleLabel.isHidden = false
-        [titleLabel,
-         scrollView,
-         self.firstImageView,
-         self.firstNFTNameLabel,
-         self.firstUserNameContainerView,
-         self.secondImageView,
-         self.secondNFTNameLabel,
-         self.secondUserNameContainerView,
-         self.thirdImageView,
-         self.thirdNFTNameLabel,
-         self.thirdUserNameContainerView,
-         self.moreButton
-        ]
-            .forEach{
-                $0?.stopSkeletonAnimation()
-            }
-        
-        moreButton.backgroundColor = .init(hex: "#33333333")
-        
-        [firstUserNameContainerView,
-         secondUserNameContainerView,
-         thirdUserNameContainerView].forEach{
-            $0.clipsToBounds = false
-        }
-        
-        
-    }
     
     /*
      String 값을 소수점 둘째 자리 수까지 반올림하는 함수.
