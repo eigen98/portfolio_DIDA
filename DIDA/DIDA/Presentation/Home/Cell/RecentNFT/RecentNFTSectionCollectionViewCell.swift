@@ -100,9 +100,10 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
         bind()
         self.items = items
         if items.first?.cardId == -1{
-            configureLoadingView()
+            self.showSkeleton(usingColor: Colors.surface_2!)
         }else{
-            removeLottieAnimationView()
+            self.hideSkeleton()
+           
         }
         
         

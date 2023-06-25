@@ -75,9 +75,10 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         bind()
         clearViews()
         if items.first?.userId == -1{
-            configureLoadingView()
+            
+            self.showSkeleton(usingColor: Colors.surface_2!)
         }else{
-            removeLottieAnimationView()
+            self.hideSkeleton()
         }
         
         for (index, item) in items.enumerated() {
