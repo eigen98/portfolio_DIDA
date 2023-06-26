@@ -18,4 +18,7 @@ struct UserEntity : Hashable {
     
     let followerCnt: Int
     let followingCnt: Int
+    
+    //로딩 객체
+    static let loading = UserEntity(userId: -1, nickname: "Loading...", profileImage: nil, description: "Loading...", hasWallet: false, cardCnt: 0, followerCnt: 0, followingCnt: 0)
 }
