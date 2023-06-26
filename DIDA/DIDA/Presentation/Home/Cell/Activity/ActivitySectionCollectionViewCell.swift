@@ -73,11 +73,13 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     
     func configure(items: [UserEntity]) {
         bind()
+        // View를 초기 상태로 클리어
         clearViews()
-        if items.first?.userId == -1{
-            
+        //로딩 객체인지 확인합니다.
+        if items.first == UserEntity.loading {
             self.showSkeleton(usingColor: Colors.surface_2!)
-        }else{
+        } else {
+            // 첫 번째 아이템이 로딩 객체가 아니라면, 스켈레톤 뷰를 숨깁니다.
             self.hideSkeleton()
         }
         
