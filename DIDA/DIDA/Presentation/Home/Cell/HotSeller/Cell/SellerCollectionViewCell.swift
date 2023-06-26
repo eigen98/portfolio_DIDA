@@ -25,11 +25,11 @@ class SellerCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configure(seller : UserEntity){
-        if seller.userId == -1 {
+    func configure(seller: UserEntity){
+        if seller == UserEntity.loading {
             self.showSkeleton(usingColor: Colors.surface_2!)
+            return
         }
-        print("userId : \(seller.userId)")
         
         moreButtonContainerView.isHidden = true
         if let profileURL = URL(string: seller.profileImage ?? ""), let backgroundURL = URL(string: seller.profileImage ?? "") {
@@ -38,20 +38,13 @@ class SellerCollectionViewCell: UICollectionViewCell {
         }
         
         self.nameLabel.text = seller.nickname
-       
+    }
+    
+    func configureMoreButton(seller: UserEntity){
+        if seller != UserEntity.loading {
+            moreButtonContainerView.isHidden = false
+        }
         
-    }
-    
-    func configureMoreButton(){
-        moreButtonContainerView.isHidden = false
-    }
-    //스켈레톤 로딩뷰 보여주기
-    func configureLoadingView(){
-        //self.contentView.startSkeletonAnimation()
-    }
-    
-    func removeLottieAnimationView(){
-        self.contentView.stopSkeletonAnimation()
     }
 
 }

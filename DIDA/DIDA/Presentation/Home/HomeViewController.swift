@@ -71,7 +71,7 @@ class HomeViewController: BaseViewController {
         homeViewModel.output.homeOutput
             .bind{ [weak self] result in
                 if let snapShot = self?.makeSnapshot(result){
-                    //self?.dataSource?.apply(snapShot)
+                    self?.dataSource?.apply(snapShot)
                 }
                 
             }.disposed(by: disposeBag)
@@ -93,18 +93,14 @@ class HomeViewController: BaseViewController {
         homeViewModel.showLoading
             .bind(onNext: {[weak self] isLoading in
                 if isLoading {
-                    print("로딩 시작")
-                    
-                    if let snapShot = self?.makeSnapshot(HomeEntity(getHotItems: [NFTEntity(cardId: -1, nickname: "", nftName: "", nftImg: "", heartCount: "", price: "", liked: false), NFTEntity(cardId: -1, nickname: "", nftName: "", nftImg: "", heartCount: "", price: "", liked: false)],
-                                                                    getHotSellers: [UserEntity(userId: -1, nickname: "", profileImage: nil, description: nil, hasWallet: false, cardCnt: 0, followerCnt: 0, followingCnt: 0)],
-                                                                    getRecentCards: [],
-                                                                    getHotUsers: [])){
+                    if let snapShot = self?.makeSnapshot(HomeEntity(getHotItems: [NFTEntity.loading, NFTEntity.loading],
+                                                                    getHotSellers: [UserEntity.loading, UserEntity.loading],
+                                                                    getRecentCards: [NFTEntity.loading, NFTEntity.loading],
+                                                                    getHotUsers: [UserEntity.loading, UserEntity.loading, UserEntity.loading])){
                         self?.dataSource?.apply(snapShot)
                         self?.mainpageCollectionView.reloadData()
                     }
                     
-                } else {
-                    print("로딩 종료")
                 }
             })
             .disposed(by: disposeBag)

@@ -99,12 +99,15 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
         
         bind()
         self.items = items
-        if items.first?.cardId == -1{
-            configureLoadingView()
-        }else{
-            removeLottieAnimationView()
-        }
         
+        // 첫 번째 아이템이 싱글톤 로딩 객체인지 확인
+        if items.first == NFTEntity.loading {
+//            스켈레톤 뷰를 보여줍니다.
+            self.showSkeleton(usingColor: Colors.surface_2!)
+        } else {
+//            스켈레톤 뷰를 숨깁니다.
+            self.hideSkeleton()
+        }
         
         let itemViews: [(UIImageView?, UILabel?, UILabel?, UILabel?, UIButton?)] = [
                 (firstItemImageView, firstUserNameLabel, firstNFTNameLabel, firstPriceLabel, firstLikeButton),
@@ -112,16 +115,16 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
                 (thirdItemImageView, thirdUserNameLabel, thirdNFTNameLabel, thirdPriceLabel, thirdLikeButton),
                 (fourthItemImageView, fourthUserNameLabel, fourthNFTNameLabel, fourthPriceLabel, fourthLikeButton)
             ]
-            
+            // 아이템 이미지 로드
             for (index, item) in items.enumerated() {
                 if let url = URL(string: item.nftImg) {
                     itemViews[index].0?.kf.setImage(with: url)
                 }
-                
+                // 아이템의 텍스트 필드 설정
                 itemViews[index].1?.text = item.nickname
                 itemViews[index].2?.text = item.nftName
                 itemViews[index].3?.text = "\(roundedStringToTwoDecimalPlaces(value: (item.price))) dida"
-                
+                //좋아요 여부에 따라 설정
                 let imageName = item.liked ? "heart-fill" : "heart-unfill"
                 itemViews[index].4?.setImage(UIImage(named: imageName), for: .normal)
             }

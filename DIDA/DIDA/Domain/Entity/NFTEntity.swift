@@ -15,4 +15,7 @@ struct NFTEntity : Hashable{
     var heartCount : String
     var price : String
     var liked : Bool
+    
+    //로딩 객체
+    static let loading = NFTEntity(cardId: -1, nickname: "Loading...", nftName: "Loading...", nftImg: "Loading...", heartCount: "Loading...", price: "Loading...", liked: false)
 }
