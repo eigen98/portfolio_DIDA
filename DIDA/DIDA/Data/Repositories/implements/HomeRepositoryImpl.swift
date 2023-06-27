@@ -10,13 +10,25 @@ import RxSwift
 
 class HomeRepositoryImpl: HomeRepository {
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
-    func getMain() -> Single<GetMainResponse> {
-        return APIClient.request(.main).map(GetMainResponse.self)
+    func getMain(completion: @escaping (Result<GetMainResponse, Error>) -> ()) {
+        APIClient.request(.main)
+            .map(GetMainResponse.self)
+            .subscribe(onSuccess: { (response) in
+                completion(.success(response))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
     }
-    //term : 7, 30, 60, 365
-    func getMainSoldout(term : String) -> Single<[GetMainSoldoutNFTResponse]> {
-        return APIClient.request(.soldout(term: term)).map([GetMainSoldoutNFTResponse].self)
+    
+    func getMainSoldout(term: String, completion: @escaping (Result<[GetMainSoldoutNFTResponse], Error>) -> ()) {
+        APIClient.request(.soldout(term: term))
+            .map([GetMainSoldoutNFTResponse].self)
+            .subscribe(onSuccess: { (response) in
+                completion(.success(response))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
     }
 }

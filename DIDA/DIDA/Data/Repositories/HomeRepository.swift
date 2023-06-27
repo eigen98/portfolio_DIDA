@@ -9,11 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol HomeRepository{
-    //14 메인 화면 가져오기(판매완료 없음)
-    func getMain() -> Single<GetMainResponse> //  Single<Result<GetMainResponse, NetworkError>>
-
-    //15. 홈화면 판매 완료 메인화면 가져오기 //term : 7, 30, 60, 365
-    func getMainSoldout(term : String) -> Single<[GetMainSoldoutNFTResponse]>
-    
+protocol HomeRepository {
+    func getMain(completion: @escaping (Result<GetMainResponse, Error>) -> ())
+    func getMainSoldout(term: String, completion: @escaping (Result<[GetMainSoldoutNFTResponse], Error>) -> ())
 }
