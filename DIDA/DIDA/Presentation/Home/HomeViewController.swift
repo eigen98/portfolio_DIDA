@@ -69,11 +69,15 @@ class HomeViewController: BaseViewController {
     override func bindViewModel() {
         
         homeViewModel.output.homeOutput
-            .bind{ [weak self] result in
-                if let snapShot = self?.makeSnapshot(result){
-                    self?.dataSource?.apply(snapShot)
+            .subscribe { [weak self] result in
+                switch result {
+                case .success(let homeEntity):
+                    if let snapShot = self?.makeSnapshot(homeEntity) {
+                        self?.dataSource?.apply(snapShot)
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
                 }
-                
             }.disposed(by: disposeBag)
         
       
