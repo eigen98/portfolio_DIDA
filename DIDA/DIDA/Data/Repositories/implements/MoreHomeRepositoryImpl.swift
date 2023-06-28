@@ -7,20 +7,28 @@
 
 import Foundation
 import RxSwift
-class MoreHomeRepositoryImpl : MoreHomeRepository{
-    
-    
-    
+
+
+class MoreHomeRepositoryImpl : MoreHomeRepository {
     let disposeBag = DisposeBag()
-    //최신 NFT 더보기
-    func getMoreRecentNFT(page : Int) -> RxSwift.Single<[RecentCardResponse]> {
-        APIClient.request(.moreRecentNFT(page: page)).map([RecentCardResponse].self)
+
+    func getMoreRecentNFT(page: Int, completion: @escaping (Result<[RecentCardResponse], Error>) -> ()) {
+        APIClient.request(.moreRecentNFT(page: page))
+            .map([RecentCardResponse].self)
+            .subscribe(onSuccess: { (response) in
+                completion(.success(response))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
     }
-    
-    //활발한 활동 더보기
-    func getMoreHotActivity(page: Int) -> RxSwift.Single<[GetMoreActivityResponse]> {
-        APIClient.request(.moreHotUser(page: page)).map([GetMoreActivityResponse].self)
+
+    func getMoreHotActivity(page: Int, completion: @escaping (Result<[GetMoreActivityResponse], Error>) -> ()) {
+        APIClient.request(.moreHotUser(page: page))
+            .map([GetMoreActivityResponse].self)
+            .subscribe(onSuccess: { (response) in
+                completion(.success(response))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
     }
-    
-    
 }

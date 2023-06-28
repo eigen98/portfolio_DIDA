@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 //홈 더보기 레포지토리
-protocol MoreHomeRepository{
+protocol MoreHomeRepository {
     //40 최근 NFT 더보기
-    func getMoreRecentNFT(page : Int) -> Single<[RecentCardResponse]> //  Single<Result<GetMainResponse, NetworkError>>
+    func getMoreRecentNFT(page: Int, completion: @escaping (Result<[RecentCardResponse], Error>) -> ())
     
-    func getMoreHotActivity(page : Int) -> Single<[GetMoreActivityResponse]> //  Single<Result<GetMainResponse, NetworkError>>
+    func getMoreHotActivity(page: Int, completion: @escaping (Result<[GetMoreActivityResponse], Error>) -> ())
 }
