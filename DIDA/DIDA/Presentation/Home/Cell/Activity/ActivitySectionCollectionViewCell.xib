@@ -437,11 +437,49 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJi-KD-rXV">
+                        <rect key="frame" x="62.666666666666657" y="109" width="260" height="94"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 아무도 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rR-6Y-dgl">
+                                <rect key="frame" x="77.666666666666686" y="0.0" width="104.66666666666669" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KfQ-R7-ipC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV8-sE-zDf" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                                <rect key="frame" x="19.333333333333343" y="39" width="221" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="Mas-en-dSL"/>
+                                    <constraint firstAttribute="height" constant="56" id="h3j-x8-yhY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="NFT 생성하기"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="94" id="2Xv-cQ-X27"/>
+                            <constraint firstAttribute="width" constant="260" id="3JW-4F-QZ6"/>
+                            <constraint firstItem="6rR-6Y-dgl" firstAttribute="centerX" secondItem="WJi-KD-rXV" secondAttribute="centerX" id="8zh-6p-b9Y"/>
+                            <constraint firstItem="mV8-sE-zDf" firstAttribute="top" secondItem="6rR-6Y-dgl" secondAttribute="bottom" constant="18" id="IVO-AD-0gt"/>
+                            <constraint firstItem="mV8-sE-zDf" firstAttribute="centerX" secondItem="WJi-KD-rXV" secondAttribute="centerX" id="YFU-ge-0z3"/>
+                            <constraint firstItem="6rR-6Y-dgl" firstAttribute="top" secondItem="WJi-KD-rXV" secondAttribute="top" id="eSc-pN-X9T"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="CIL-01-8d8" secondAttribute="trailing" id="0t1-kY-arn"/>
+                <constraint firstItem="WJi-KD-rXV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8gd-rS-ATE"/>
+                <constraint firstItem="WJi-KD-rXV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="109" id="KzM-yT-hqN"/>
                 <constraint firstItem="CIL-01-8d8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Obd-bM-qlV"/>
                 <constraint firstAttribute="bottom" secondItem="CIL-01-8d8" secondAttribute="bottom" id="o1I-EI-ril"/>
                 <constraint firstItem="CIL-01-8d8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uzR-ld-S7B"/>
@@ -451,6 +489,8 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="createNFTButton" destination="mV8-sE-zDf" id="5ex-2r-f0G"/>
+                <outlet property="emptyContainerView" destination="WJi-KD-rXV" id="CjG-Bk-Ma4"/>
                 <outlet property="firstFollowButton" destination="00i-ZY-a3Z" id="WfD-jC-EOs"/>
                 <outlet property="firstItemContainerView" destination="dAJ-4q-GSJ" id="lfT-on-7fo"/>
                 <outlet property="firstItemCountLabel" destination="vFg-sp-VaY" id="91a-jj-STm"/>

@@ -19,9 +19,49 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdp-KS-WRc">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="307"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-32-aT7">
+                                <rect key="frame" x="84" y="129" width="260" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 아무도 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-BI-y1u">
+                                        <rect key="frame" x="77.666666666666657" y="0.0" width="104.66666666666666" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="kAF-8p-azu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbK-vK-Jmg" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                                        <rect key="frame" x="19.666666666666686" y="39" width="221" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221" id="gau-lk-Gsn"/>
+                                            <constraint firstAttribute="height" constant="56" id="yGq-uP-aou"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="NFT 생성하기"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Ito-Yt-xnK"/>
+                                    <constraint firstItem="hbK-vK-Jmg" firstAttribute="centerX" secondItem="f1g-32-aT7" secondAttribute="centerX" id="LYv-D4-6cp"/>
+                                    <constraint firstItem="kcE-BI-y1u" firstAttribute="top" secondItem="f1g-32-aT7" secondAttribute="top" id="cFI-Ri-tjh"/>
+                                    <constraint firstItem="kcE-BI-y1u" firstAttribute="centerX" secondItem="f1g-32-aT7" secondAttribute="centerX" id="orX-o0-hMC"/>
+                                    <constraint firstAttribute="height" constant="94" id="pcW-Pn-Bcc"/>
+                                    <constraint firstItem="hbK-vK-Jmg" firstAttribute="top" secondItem="kcE-BI-y1u" secondAttribute="bottom" constant="18" id="r2n-U8-9Ja"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="307" id="12I-qS-7la"/>
+                            <constraint firstItem="f1g-32-aT7" firstAttribute="top" secondItem="mdp-KS-WRc" secondAttribute="top" constant="129" id="Xnz-2a-pp3"/>
+                            <constraint firstItem="f1g-32-aT7" firstAttribute="centerX" secondItem="mdp-KS-WRc" secondAttribute="centerX" id="ncg-dT-7hq"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 가장 핫한 셀러" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-9c-Lqr">
@@ -80,6 +120,8 @@
             <size key="customSize" width="428" height="307"/>
             <connections>
                 <outlet property="containerView" destination="mdp-KS-WRc" id="nH6-is-UYQ"/>
+                <outlet property="createNFTButton" destination="hbK-vK-Jmg" id="5y8-f0-3kd"/>
+                <outlet property="emptyContainerView" destination="f1g-32-aT7" id="qJN-MG-0ng"/>
             </connections>
             <point key="canvasLocation" x="421.37404580152668" y="94.014084507042256"/>
         </collectionViewCell>

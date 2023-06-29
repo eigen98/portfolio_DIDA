@@ -13,6 +13,10 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     var hotSellers = [UserEntity]()
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var emptyContainerView: UIView!
+    @IBOutlet weak var createNFTButton: Buttons!
+    
+    
     private let cellIdentifier = "SellerCollectionViewCell"
     
     lazy var pageCollectionView: UICollectionView = {
@@ -25,7 +29,7 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.isScrollEnabled = true
@@ -38,7 +42,7 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layout()
-        
+        attribute()
         pageCollectionView.reloadData()
     }
     
@@ -53,6 +57,18 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
         }
         
         
+    }
+    
+    private func attribute(){
+        self.createNFTButton.shape = .round
+        self.createNFTButton.style = .primary
+        self.createNFTButton.buttonHeight = .h56
+        
+        if hotSellers.count == 0{
+            emptyContainerView.isHidden = false
+        }else{
+            emptyContainerView.isHidden = true
+        }
     }
 }
 
