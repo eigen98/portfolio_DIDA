@@ -37,20 +37,22 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupPageCollectionView()
-    }
-    
-    private func setupPageCollectionView() {
-        containerView.addSubview(pageCollectionView)
-        
-        NSLayoutConstraint.activate([
-            pageCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            pageCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            pageCollectionView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            pageCollectionView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -40)
-        ])
+        layout()
         
         pageCollectionView.reloadData()
+    }
+    
+    private func layout() {
+        containerView.addSubview(pageCollectionView)
+        
+        pageCollectionView.snp.makeConstraints{
+            $0.leading.equalTo(containerView.snp.leading).offset(16)
+            $0.trailing.equalTo(containerView.snp.trailing).inset(16)
+            $0.top.equalTo(containerView.snp.top).offset(87)
+            $0.bottom.equalTo(containerView.snp.bottom).inset(42)
+        }
+        
+        
     }
 }
 
