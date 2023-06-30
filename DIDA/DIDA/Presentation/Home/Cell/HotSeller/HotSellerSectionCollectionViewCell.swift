@@ -13,6 +13,10 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     var hotSellers = [UserEntity]()
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var emptyContainerView: UIView!
+    @IBOutlet weak var createNFTButton: Buttons!
+    
+    
     private let cellIdentifier = "SellerCollectionViewCell"
     
     lazy var pageCollectionView: UICollectionView = {
@@ -25,7 +29,7 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.isScrollEnabled = true
@@ -37,20 +41,34 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupPageCollectionView()
+        layout()
+        attribute()
+        pageCollectionView.reloadData()
     }
     
-    private func setupPageCollectionView() {
+    private func layout() {
         containerView.addSubview(pageCollectionView)
         
-        NSLayoutConstraint.activate([
-            pageCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            pageCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            pageCollectionView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            pageCollectionView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -40)
-        ])
+        pageCollectionView.snp.makeConstraints{
+            $0.leading.equalTo(containerView.snp.leading).offset(16)
+            $0.trailing.equalTo(containerView.snp.trailing).inset(16)
+            $0.top.equalTo(containerView.snp.top).offset(87)
+            $0.bottom.equalTo(containerView.snp.bottom).inset(42)
+        }
         
-        pageCollectionView.reloadData()
+        
+    }
+    
+    private func attribute(){
+        self.createNFTButton.shape = .round
+        self.createNFTButton.style = .primary
+        self.createNFTButton.buttonHeight = .h56
+        
+        if hotSellers.count == 0{
+            emptyContainerView.isHidden = false
+        }else{
+            emptyContainerView.isHidden = true
+        }
     }
 }
 

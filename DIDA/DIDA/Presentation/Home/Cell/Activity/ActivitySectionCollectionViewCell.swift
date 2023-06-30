@@ -17,7 +17,9 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var subTitleLabel: UILabel!
     
+    @IBOutlet weak var emptyContainerView: UIView!
     
+    @IBOutlet weak var createNFTButton: Buttons!
     
     
     @IBOutlet weak var firstItemContainerView: UIView!
@@ -100,6 +102,18 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         }
         
         
+        //Empty View
+        self.createNFTButton.shape = .round
+        self.createNFTButton.style = .primary
+        self.createNFTButton.buttonHeight = .h56
+        
+        if items.count == 0{
+            emptyContainerView.isHidden = false
+        }else{
+            emptyContainerView.isHidden = true
+        }
+        
+        
         
     }
     
@@ -139,33 +153,6 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
         buttons[idx]?.setTitle(text, for: .normal)
         let color = bool ? UIColor.white : UIColor.black
         buttons[idx]?.customTitleColor = .init(normal: color, disabled: color, selected: color, hightlight: color)
-    }
-    
-    
-    //스켈레톤 로딩뷰 보여주기
-    func configureLoadingView(){
-        subTitleLabel.isHidden = true
-        [titleLabel,
-         firstItemContainerView,
-         secondItemContainerView,
-         thirdItemContainerView,
-         moreButton]
-            .forEach{
-                $0.startSkeletonAnimation(cornerRadius: 8)
-            }
-    }
-    
-    func removeLottieAnimationView(){
-        subTitleLabel.isHidden = false
-        [titleLabel,
-         firstItemContainerView,
-         secondItemContainerView,
-         thirdItemContainerView,
-         moreButton]
-            .forEach{
-                $0?.stopSkeletonAnimation()
-            }
-        moreButton.backgroundColor = .init(hex: "#33333333")
     }
     
 }

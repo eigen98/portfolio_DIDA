@@ -43,6 +43,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         bindViewModel()
         initCollectionView()
         bindEvent()
@@ -50,6 +51,29 @@ class HomeViewController: BaseViewController {
         homeViewModel.input.refreshTrigger.onNext(())
     }
     
+    //네비게이션 바 설정.
+    private func setupNavigationBar() {
+        
+        if let naviagationController = tabBarController?.parent {
+            //DIDA 타이틀
+            let titleLabel = UILabel()
+            titleLabel.text = "DIDA"
+            titleLabel.font = Fonts.bold_24
+            titleLabel.textColor = .white
+            let titleButtonItem = UIBarButtonItem(customView: titleLabel)
+            naviagationController.navigationItem.leftBarButtonItem = titleButtonItem
+            
+            // 알림 버튼
+            let buttonImage = UIImage(named: "bell")
+            let rightButton = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(rightButtonTapped))
+            naviagationController.navigationItem.rightBarButtonItem = rightButton
+        }
+    }
+
+    
+    @objc func rightButtonTapped() {
+            print("Right button in First VC tapped.")
+    }
     
     // 컬렉션뷰 초기화
     func initCollectionView(){
@@ -317,19 +341,19 @@ extension HomeViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         //HOTSeller 그룹
-        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(244)) //244
+        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(337)) //244
         let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         
         //SOLDOUT 그룹
-        let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(529))
+        let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(489))
         let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item])
         
         //최신 NFT 그룹
-        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(740))
+        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(770))
         let recentNFTGroup = NSCollectionLayoutGroup.vertical(layoutSize: recentNFTGroupSize, subitems: [item])
         
         //활발한 활동 그룹
-        let activityGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(491))
+        let activityGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(445))
         let activityGroup = NSCollectionLayoutGroup.vertical(layoutSize: activityGroupSize, subitems: [item])
         let groups = [sellerGroup, soldoutGroup, recentNFTGroup, activityGroup]
         
