@@ -43,6 +43,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         bindViewModel()
         initCollectionView()
         bindEvent()
@@ -50,6 +51,29 @@ class HomeViewController: BaseViewController {
         homeViewModel.input.refreshTrigger.onNext(())
     }
     
+    //네비게이션 바 설정.
+    private func setupNavigationBar() {
+        
+        if let naviagationController = tabBarController?.parent {
+            //DIDA 타이틀
+            let titleLabel = UILabel()
+            titleLabel.text = "DIDA"
+            titleLabel.font = Fonts.bold_24
+            titleLabel.textColor = .white
+            let titleButtonItem = UIBarButtonItem(customView: titleLabel)
+            naviagationController.navigationItem.leftBarButtonItem = titleButtonItem
+            
+            // 알림 버튼
+            let buttonImage = UIImage(named: "bell")
+            let rightButton = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(rightButtonTapped))
+            naviagationController.navigationItem.rightBarButtonItem = rightButton
+        }
+    }
+
+    
+    @objc func rightButtonTapped() {
+            print("Right button in First VC tapped.")
+    }
     
     // 컬렉션뷰 초기화
     func initCollectionView(){
