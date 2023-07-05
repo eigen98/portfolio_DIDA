@@ -16,14 +16,17 @@ class MoreRecentNFTViewModel : BaseViewModel {
     var output: Output
     private let moreRepository: MoreHomeRepository
 
-    struct Input {}
+    struct Input {
+            let refreshTrigger: PublishRelay<Void>
+        }
+
 
     struct Output {
         var recentNFTData: BehaviorSubject<[NFTEntity]>
     }
 
     override init() {
-        input = Input()
+        input = Input(refreshTrigger: PublishRelay<Void>())
         output = Output(recentNFTData: BehaviorSubject<[NFTEntity]>(value: []))
         disposeBag = DisposeBag()
         moreRepository = MoreHomeRepositoryImpl()
@@ -32,16 +35,35 @@ class MoreRecentNFTViewModel : BaseViewModel {
     override func bind() {
         super.bind()
         
-        moreRepository.getMoreRecentNFT(page: 0) { [weak self] result in
-            switch result {
-            case .success(let response):
-                let mappedEntities = response.toDomain()
-                self?.output.recentNFTData.onNext(mappedEntities)
-            case .failure(let error):
-               
-                print(error.localizedDescription)
-            }
-        }
+        input.refreshTrigger
+                   .do(onNext: { [weak self] _ in
+                       self?.showLoading.accept(true)
+                       print("로딩 시작")
+                   })
+                   .flatMapLatest { [weak self] _ in
+                       self?.getRecentNFTData() ?? Observable.empty()
+                   }
+                   .do(onNext: { [weak self] _ in
+                       self?.showLoading.accept(false)
+                   })
+                   .bind(to: output.recentNFTData)
+                   .disposed(by: disposeBag)
     }
+    
+    // New function to fetch data
+       private func getRecentNFTData() -> Observable<[NFTEntity]> {
+           return Observable.create { [weak self] observer in
+               self?.moreRepository.getMoreRecentNFT(page: 0) { result in
+                   switch result {
+                   case .success(let response):
+                       let mappedEntities = response.toDomain()
+                       observer.onNext(mappedEntities)
+                   case .failure(let error):
+                       observer.onError(error)
+                   }
+               }
+               return Disposables.create()
+           }
+       }
 }
 
