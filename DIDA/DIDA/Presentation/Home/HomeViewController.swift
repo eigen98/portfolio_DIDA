@@ -98,9 +98,11 @@ class HomeViewController: BaseViewController {
                 case .success(let homeEntity):
                     if let snapShot = self?.makeSnapshot(homeEntity) {
                         self?.dataSource?.apply(snapShot)
+                        self?.mainpageCollectionView.refreshControl?.endRefreshing()
                     }
                 case .failure(let error):
                     print("Error: \(error)")
+                    self?.mainpageCollectionView.refreshControl?.endRefreshing()
                 }
             }.disposed(by: disposeBag)
         
