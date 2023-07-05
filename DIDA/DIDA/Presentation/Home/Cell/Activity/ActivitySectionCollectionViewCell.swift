@@ -89,15 +89,15 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
             if index == 0 {
                 firstItemContainerView.isHidden = false
                 configureView(firstItemImageView, firstItemNameLabel, firstItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[0].followed, 0))
+                viewModel.input.followButtonTapped.accept((false, 0))
             } else if index == 1 {
                 secondItemContainerView.isHidden = false
                 configureView(secondItemImageView, secondItemNameLabel, secondItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[1].followed, 1))
+                viewModel.input.followButtonTapped.accept((false, 1))
             } else if index == 2 {
                 thirdItemContainerView.isHidden = false
                 configureView(thirdItemImageView, thirdItemNameLabel, thirdItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[1].followed, 0))
+                viewModel.input.followButtonTapped.accept((false, 0))
             }
         }
         

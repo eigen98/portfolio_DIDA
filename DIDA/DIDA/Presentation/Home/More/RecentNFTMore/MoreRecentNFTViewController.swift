@@ -23,6 +23,7 @@ class MoreRecentNFTViewController: BaseViewController {
         initCollectionView()
         bindEvent()
         bindViewModel()
+        viewModel.input.refreshTrigger.accept(())
         
     }
     
@@ -31,6 +32,22 @@ class MoreRecentNFTViewController: BaseViewController {
             .bind(to: collectionView.rx.items(cellIdentifier: MoreRecentNFTCollectionViewCell.reuseIdentifier, cellType: MoreRecentNFTCollectionViewCell.self)) { index, item, cell in
                 cell.configure(item: item)
             }
+            .disposed(by: disposeBag)
+        
+        // loading 상태에 따라 loading view를 표시하거나 숨김
+        viewModel.showLoading
+            .bind(onNext: { [weak self] isLoading in
+                if isLoading {
+                    // Show loading view
+                    self?.collectionView.showSkeleton()
+                    print("로딩중")
+                    
+                } else {
+                    // Hide loading view
+                    self?.view.hideSkeleton()
+                    self?.collectionView.refreshControl?.endRefreshing()
+                }
+            })
             .disposed(by: disposeBag)
     }
     
@@ -42,6 +59,13 @@ class MoreRecentNFTViewController: BaseViewController {
                 print("Selected item: \(item)")
             })
             .disposed(by: disposeBag)
+        
+        let refreshControl = UIRefreshControl()
+               collectionView.refreshControl = refreshControl
+
+               refreshControl.rx.controlEvent(.valueChanged)
+                   .bind(to: viewModel.input.refreshTrigger)
+                   .disposed(by: disposeBag)
     }
     
     
