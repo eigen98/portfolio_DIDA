@@ -98,6 +98,7 @@
 		C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
 		C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A8D3CC29EA7E080023373E /* Auth.storyboard */; };
 		C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */; };
+		C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384112A5AA95400FC3950 /* TitleBar.swift */; };
 		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
@@ -134,6 +135,9 @@
 		C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C1C8025229B48D1200221FB9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		C1D3840F2A5AA90A00FC3950 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
+		C1D384122A5AA95400FC3950 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384112A5AA95400FC3950 /* TitleBar.swift */; };
+		C1D384152A5AA96300FC3950 /* TitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */; };
 		C1FB97062A1A196000A4D8D6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97052A1A196000A4D8D6 /* Token.swift */; };
 		C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */; };
 		C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */; };
@@ -309,6 +313,8 @@
 		C1A8D3CC29EA7E080023373E /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
 		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		C1D384112A5AA95400FC3950 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
+		C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarViewController.swift; sourceTree = "<group>"; };
 		C1FB97052A1A196000A4D8D6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterface.swift; sourceTree = "<group>"; };
 		C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStorage.swift; sourceTree = "<group>"; };
@@ -705,6 +711,7 @@
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
 			isa = PBXGroup;
 			children = (
+				C1D384102A5AA94500FC3950 /* TitleBar */,
 				C1956EC829ACDD3D00018A93 /* SnackBar */,
 				C1956EB829ACD39E00018A93 /* TableViewCell */,
 				C1956EA429AC8E4400018A93 /* LineTabBar */,
@@ -789,6 +796,15 @@
 				C16AECAA29EABDFA00A37C78 /* LoginNavigationController.swift */,
 			);
 			path = LoginHome;
+			sourceTree = "<group>";
+		};
+		C1D384102A5AA94500FC3950 /* TitleBar */ = {
+			isa = PBXGroup;
+			children = (
+				C1D384112A5AA95400FC3950 /* TitleBar.swift */,
+				C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */,
+			);
+			path = TitleBar;
 			sourceTree = "<group>";
 		};
 		C1FB97042A1A191800A4D8D6 /* Session */ = {
@@ -1369,9 +1385,11 @@
 				C1C8022629B1159900221FB9 /* (null) in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
+				C1D3840F2A5AA90A00FC3950 /* TabBarButton.swift in Sources */,
 				C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
 				C1956EA629AC8E4F00018A93 /* LineTabBarController.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
+				C1D384152A5AA96300FC3950 /* TitleBarViewController.swift in Sources */,
 				C1956E9C29AC773100018A93 /* TextField.swift in Sources */,
 				C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */,
 				C1956E9329AB788B00018A93 /* TextView.swift in Sources */,
@@ -1382,6 +1400,7 @@
 				C1956EC129ACD4EB00018A93 /* TableViewCell.swift in Sources */,
 				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
 				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
+				C1D384122A5AA95400FC3950 /* TitleBar.swift in Sources */,
 				C188B31229AA5335008122EF /* ViewController.swift in Sources */,
 				C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */,
 				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
@@ -1434,6 +1453,7 @@
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
+				C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
@@ -1745,11 +1765,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1767,7 +1785,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1786,11 +1803,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1808,7 +1823,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
