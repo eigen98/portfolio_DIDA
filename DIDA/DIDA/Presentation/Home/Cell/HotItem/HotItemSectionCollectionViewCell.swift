@@ -40,8 +40,8 @@ extension HotItemSectionCollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
-        layout.itemSize = CGSize(width: 266, height: 222)
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 32, right: 0)
+        layout.itemSize = CGSize(width: 266, height: 222)//
+        layout.sectionInset = UIEdgeInsets(top: 11, left: 0, bottom: 11, right: 0)
         layout.scrollDirection = .horizontal
        
         hotItemCollectionView.collectionViewLayout = layout
