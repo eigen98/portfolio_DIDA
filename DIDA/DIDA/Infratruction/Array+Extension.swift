@@ -11,11 +11,11 @@ extension Array where Element == HotItemResponse {
     func toDomain() -> [NFTEntity] {
         return map {
             NFTEntity(
-                cardId: $0.cardId ?? 0,
-                nickname: $0.name ?? "",
-                nftName: $0.name ?? "",
-                nftImg: $0.imgUrl ?? "",
-                heartCount: $0.count ?? "",
+                cardId: $0.nftId ?? 0,
+                nickname: $0.nftName ?? "",
+                nftName: $0.nftName ?? "",
+                nftImg: $0.nftImgUrl ?? "",
+                heartCount: $0.likeCount ?? "",
                 price: $0.price ?? "",
                 liked: false
             )

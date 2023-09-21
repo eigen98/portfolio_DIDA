@@ -7,9 +7,9 @@
 
 import Foundation
 struct HotItemResponse : Codable{
-    var cardId : Int?
-    var imgUrl : String?
-    var name : String?
+    var nftId : Int?
+    var nftImgUrl : String?
+    var nftName : String?
     var price : String?
-    var count : String?
+    var likeCount : String?
 }
