@@ -7,10 +7,10 @@
 
 import Foundation
 struct RecentCardResponse: Codable{
-    var cardId : Int?
-    var cardName : String?
-    var userName : String?
-    var imgUrl : String?
+    var nftId : Int?
+    var nftName : String?
+    var memberName : String?
+    var nftImgUrl : String?
     var price : String?
     var liked : Bool?
     
