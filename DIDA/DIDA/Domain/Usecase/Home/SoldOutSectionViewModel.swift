@@ -17,7 +17,7 @@ class SoldOutSectionViewModel : BaseViewModel{
     var output: Output
     
     struct Input {
-        let refreshTrigger: PublishSubject<String>
+        let refreshTrigger: PublishSubject<Int>
     }
     
     struct Output {
@@ -27,7 +27,7 @@ class SoldOutSectionViewModel : BaseViewModel{
     }
     
     override init() {
-        input = Input(refreshTrigger: PublishSubject<String>())
+        input = Input(refreshTrigger: PublishSubject<Int>())
         output = Output(soldoutOutput: BehaviorSubject<[NFTEntity]>(value: []),
                         isLoading: BehaviorSubject<Bool>(value: false),
                         isRefreshing: BehaviorSubject<Bool>(value: false))
@@ -38,10 +38,10 @@ class SoldOutSectionViewModel : BaseViewModel{
     override func bind() {
         input.refreshTrigger
             .subscribe(onNext: { [weak self] term in
-                self?.homeRepository.getMainSoldout(term: term) { [weak self] result in
+                self?.homeRepository.getMainSoldout(range: term) { [weak self] result in
                     switch result {
                     case .success(let response):
-                        let entities = response.toDomain()
+                        let entities = response.nftAndMemberInfos?.toDomain() ?? []
                         self?.output.soldoutOutput.onNext(entities)
                     case .failure(let error):
                         print("Error getting data: \(error)")
