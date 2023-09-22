@@ -27,8 +27,8 @@ extension Array where Element == HotItemResponse {
 extension Array where Element == HotSellerResponse {
     func toDomain() -> [UserEntity] {
         return map {
-            UserEntity(userId: $0.userId,
-                       nickname: $0.name,
+            UserEntity(userId: $0.memberId,
+                       nickname: $0.memberName,
                        profileImage: $0.profileUrl,
                        description: "",
                        hasWallet: false,

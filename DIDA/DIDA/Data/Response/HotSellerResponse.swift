@@ -7,8 +7,8 @@
 
 import Foundation
 struct HotSellerResponse :Codable {
-    var userId: Int
-    var name: String
-    var imgUrl: String
+    var memberId: Int
+    var memberName: String
     var profileUrl: String
+    var nftImgUrl: String
 }
