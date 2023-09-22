@@ -11,14 +11,14 @@ struct GetMainResponse : Codable {
     var getHotItems : [HotItemResponse]?
     var getHotSellers : [HotSellerResponse]?
     var getRecentNfts : [RecentCardResponse]?
-    var getHotUsers : [HotUserResponse]?
+    var getHotMembers : [HotUserResponse]?
     
     func toDomain() -> HomeEntity {
         return HomeEntity(
             getHotItems: getHotItems?.toDomain() ?? [],
             getHotSellers: getHotSellers?.toDomain() ?? [],
             getRecentCards: getRecentNfts?.toDomain() ?? [],
-            getHotUsers: getHotUsers?.toDomain() ?? []
+            getHotUsers: getHotMembers?.toDomain() ?? []
         )
     }
 }

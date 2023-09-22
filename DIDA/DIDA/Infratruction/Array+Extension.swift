@@ -44,10 +44,10 @@ extension Array where Element == RecentCardResponse {
     func toDomain() -> [NFTEntity] {
         return map {
             NFTEntity(
-                cardId: $0.cardId ?? 0,
-                nickname:  $0.userName ?? "",
-                nftName: $0.cardName ?? "",
-                nftImg: $0.imgUrl ?? "",
+                cardId: $0.nftId ?? 0,
+                nickname:  $0.memberName ?? "",
+                nftName: $0.nftName ?? "",
+                nftImg: $0.nftImgUrl ?? "",
                 heartCount: "",
                 price:  $0.price ?? "",
                 liked: $0.liked ?? false)
@@ -58,12 +58,12 @@ extension Array where Element == HotUserResponse {
     func toDomain() -> [UserEntity] {
         return map {
             UserEntity(
-                userId: $0.userId ?? 0,
-                nickname: $0.name ?? "",
+                userId: $0.memberId ?? 0,
+                nickname: $0.memberName ?? "",
                 profileImage: $0.profileUrl ?? "",
                 description: "",
                 hasWallet: false,
-                cardCnt: $0.count ?? 0,
+                cardCnt: $0.nftCount ?? 0,
                 followerCnt: 0,
                 followingCnt: 0
             )
