@@ -203,7 +203,6 @@
 		EEE3862629C8125400A10E47 /* HomeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862529C8125400A10E47 /* HomeRepositoryImpl.swift */; };
 		EEE3862929C8179E00A10E47 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862829C8179E00A10E47 /* APIClient.swift */; };
 		EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862A29C81CA900A10E47 /* NetworkError.swift */; };
-		EEE3862F29C81DF500A10E47 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862E29C81DF500A10E47 /* HomeAPI.swift */; };
 		EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3863029C81EC600A10E47 /* SecretConstant.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
@@ -395,7 +394,6 @@
 		EEE3862529C8125400A10E47 /* HomeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpl.swift; sourceTree = "<group>"; };
 		EEE3862829C8179E00A10E47 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EEE3862A29C81CA900A10E47 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		EEE3862E29C81DF500A10E47 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		EEE3863029C81EC600A10E47 /* SecretConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstant.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -1166,7 +1164,6 @@
 		EEE3862D29C81DDD00A10E47 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
-				EEE3862E29C81DF500A10E47 /* HomeAPI.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -1467,7 +1464,6 @@
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
-				EEE3862F29C81DF500A10E47 /* HomeAPI.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C16AECA729EABA6A00A37C78 /* MainViewModel.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
