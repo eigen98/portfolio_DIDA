@@ -12,7 +12,7 @@ import RxSwift
 enum DidaAPI {
     /// MARK: Home
     case main
-    case soldout(term: String)
+    case soldout(range: Int)
     case moreRecentNFT(page: Int)
     case moreHotUser(page: Int)
     
@@ -39,7 +39,7 @@ extension DidaAPI: TargetType {
         switch self {
         /// MARK: Home
         case .main: return "/main"
-        case .soldout(let term): return "/main/\(term)"
+        case .soldout: return "/main/sold-out"
         case .moreRecentNFT(let page) : return "/recent/card/\(page)"
         case .moreHotUser(let page) : return "/hot/user/\(page)"
         
@@ -76,8 +76,8 @@ extension DidaAPI: TargetType {
         /// MARK: Home
         case .main:
             return .requestPlain
-        case .soldout:
-            return .requestPlain
+        case .soldout(let range):
+            return .requestParameters(parameters: ["range": range], encoding: URLEncoding.queryString)
         case .moreRecentNFT:
             return .requestPlain
         case .moreHotUser:
