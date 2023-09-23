@@ -291,7 +291,7 @@ extension HomeViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(284))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 36, trailing: 16)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging
@@ -307,11 +307,12 @@ extension HomeViewController {
         let groups = createGroupsOfTabbarSection()
         
         let group = NSCollectionLayoutGroup.vertical(layoutSize: nestedGroupSize, subitems: groups)
+        group.interItemSpacing = .fixed(42)
         
         let section = NSCollectionLayoutSection(group: group)
         
         //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 39, trailing: 0)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .continuous
@@ -351,7 +352,7 @@ extension HomeViewController {
         let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item])
         
         //최신 NFT 그룹
-        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(770))
+        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1))
         let recentNFTGroup = NSCollectionLayoutGroup.vertical(layoutSize: recentNFTGroupSize, subitems: [item])
         
         //활발한 활동 그룹
