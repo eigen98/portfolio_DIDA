@@ -288,10 +288,10 @@ extension HomeViewController {
         // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(284))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(284))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 36, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 36, trailing: 0)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging
