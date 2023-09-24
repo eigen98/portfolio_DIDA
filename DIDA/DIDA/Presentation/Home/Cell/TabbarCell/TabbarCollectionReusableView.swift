@@ -9,10 +9,10 @@ import UIKit
 import RxSwift
 class TabbarCollectionReusableView: UICollectionReusableView {
     
-    var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    private var currentTabIndex: Int = 0
     private(set) var tabSelectedSubject = PublishSubject<Int>()
     var isLoading = false
-    var isClickedTabbar = false
     
     lazy var tabbar: ScrollableTabBar = {
         let tabbar = ScrollableTabBar()
@@ -30,8 +30,14 @@ class TabbarCollectionReusableView: UICollectionReusableView {
         super.init(coder: coder)
         setupView()
     }
-    
-    
+
+    func updateTabBarToIndex(_ index: Int) {
+        if currentTabIndex != index {
+            self.tabbar.moveTabItem(at: index)
+            currentTabIndex = index
+        }
+    }
+
     private func setupView() {
         addSubview(tabbar)
         setupConstraints()
@@ -69,11 +75,6 @@ class TabbarCollectionReusableView: UICollectionReusableView {
 
 extension TabbarCollectionReusableView: LineTabBarDelegate {
     func didTapTabBarItem(selectedIndex: Int) {
-//        isClickedTabbar = true
-       // self.tabbar.tabbarView.selectedSegmentIndex = selectedIndex
-
         tabSelectedSubject.onNext(selectedIndex)
-        
-        
     }
 }
