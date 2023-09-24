@@ -173,6 +173,7 @@
 		EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */; };
 		EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */; };
 		EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */; };
+		EE2592D92AC002FA00260EE5 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */; };
 		EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */; };
 		EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */; };
 		EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */; };
@@ -360,6 +361,7 @@
 		EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitySectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainResponse.swift; path = DIDA/Data/Response/GetMainResponse.swift; sourceTree = SOURCE_ROOT; };
 		EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainSoldoutResponse.swift; path = DIDA/Data/Response/GetMainSoldoutResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -630,6 +632,7 @@
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
 				EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */,
 				C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */,
+				EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */,
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -1494,6 +1497,7 @@
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
+				EE2592D92AC002FA00260EE5 /* UIResponder+Extension.swift in Sources */,
 				C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
