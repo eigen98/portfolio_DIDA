@@ -47,7 +47,7 @@ class HomeViewController: BaseViewController {
         bindViewModel()
         initCollectionView()
         bindEvent()
-        
+        mainpageCollectionView.delegate = self
         homeViewModel.input.refreshTrigger.onNext(())
     }
     
@@ -136,6 +136,7 @@ class HomeViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         mainpageCollectionView.rx.contentOffset
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .compactMap { [weak self] contentOffset -> IndexPath? in
                 guard let self = self else { return nil }
                 let visibleRect = CGRect(origin: contentOffset, size: self.mainpageCollectionView.bounds.size)
@@ -150,7 +151,7 @@ class HomeViewController: BaseViewController {
                 guard let headerView = self.mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: headerIndexPath) as? TabbarCollectionReusableView else {
                     return
                 }
-                //headerView.tabbar.tabbarView.selectedSegmentIndex = visibleIndexPath.row
+                headerView.updateTabBarToIndex(visibleIndexPath.row)
             })
             .disposed(by: disposeBag)
     }
@@ -248,7 +249,6 @@ extension HomeViewController {
             header.tabSelectedSubject
                 .subscribe(onNext: { [weak self] index in
                     self?.scrollToIndex(index: index)
-                    header.isClickedTabbar = true
                 })
                 .disposed(by: self.disposeBag)
             
@@ -364,6 +364,25 @@ extension HomeViewController {
         return groups
     }
     
+}
+
+extension HomeViewController : UICollectionViewDelegate{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView == mainpageCollectionView else { return }
+        
+        updateTabBarForVisibleItem(in: scrollView)
+    }
+    
+    private func updateTabBarForVisibleItem(in scrollView: UIScrollView) {
+        let visibleRect = CGRect(origin: scrollView.contentOffset, size: scrollView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        guard let indexPath = mainpageCollectionView.indexPathForItem(at: visiblePoint),
+              let headerView = mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: 1)) as? TabbarCollectionReusableView else { return }
+        
+        headerView.updateTabBarToIndex(indexPath.row)
+    }
 }
 
 
