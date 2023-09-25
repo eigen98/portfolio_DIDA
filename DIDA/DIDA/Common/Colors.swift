@@ -36,4 +36,5 @@ final class Colors {
     static let surface_6 = UIColor.init(hex: "#595959")
     
     static let border_line = UIColor.init(hex: "#121212")
+    static let skeleton_surface = UIColor.init(hex: "#2C2C2E")
 }
