@@ -17,9 +17,8 @@ class MoreRecentNFTViewModel : BaseViewModel {
     private let moreRepository: MoreHomeRepository
 
     struct Input {
-            let refreshTrigger: PublishRelay<Void>
-        }
-
+        let refreshTrigger: PublishRelay<Void>
+    }
 
     struct Output {
         var recentNFTData: BehaviorSubject<[NFTEntity]>
@@ -36,34 +35,34 @@ class MoreRecentNFTViewModel : BaseViewModel {
         super.bind()
         
         input.refreshTrigger
-                   .do(onNext: { [weak self] _ in
-                       self?.showLoading.accept(true)
-                       print("로딩 시작")
-                   })
-                   .flatMapLatest { [weak self] _ in
-                       self?.getRecentNFTData() ?? Observable.empty()
-                   }
-                   .do(onNext: { [weak self] _ in
-                       self?.showLoading.accept(false)
-                   })
-                   .bind(to: output.recentNFTData)
-                   .disposed(by: disposeBag)
+            .do(onNext: { [weak self] _ in
+                self?.showLoading.accept(true)
+            })
+            .flatMapLatest { [weak self] _ in
+                self?.getRecentNFTData() ?? Observable.empty()
+            }
+            .do(onNext: { [weak self] _ in
+                self?.showLoading.accept(false)
+            })
+            .bind(onNext: { [weak self] data in
+                self?.output.recentNFTData.onNext(data)
+            })
+            .disposed(by: disposeBag)
     }
     
-    // New function to fetch data
-       private func getRecentNFTData() -> Observable<[NFTEntity]> {
-           return Observable.create { [weak self] observer in
-               self?.moreRepository.getMoreRecentNFT(page: 0) { result in
-                   switch result {
-                   case .success(let response):
-                       let mappedEntities = response.toDomain()
-                       observer.onNext(mappedEntities)
-                   case .failure(let error):
-                       observer.onError(error)
-                   }
-               }
-               return Disposables.create()
-           }
-       }
+    private func getRecentNFTData() -> Observable<[NFTEntity]> {
+        return Observable.create { [weak self] observer in
+            self?.moreRepository.getMoreRecentNFT(page: 0) { result in
+                switch result {
+                case .success(let response):
+                    let mappedEntities = response.items.toDomain()
+                    observer.onNext(mappedEntities)
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }
 
