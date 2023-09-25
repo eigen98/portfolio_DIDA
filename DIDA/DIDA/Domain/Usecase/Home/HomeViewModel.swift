@@ -26,10 +26,16 @@ class HomeViewModel : BaseViewModel {
     override init() {
         input = Input(refreshTrigger: PublishSubject<Void>())
         
-        output = Output(homeOutput: BehaviorSubject<Result<HomeEntity, Error>>(value: .success(HomeEntity(getHotItems: [],
-                                                                                                           getHotSellers: [],
-                                                                                                           getRecentCards: [],
-                                                                                                           getHotUsers: []))))
+        output = Output(
+            homeOutput: BehaviorSubject<Result<HomeEntity, Error>>(
+                value: .success(HomeEntity(getHotItems: [],
+                                           getHotSellers: [],
+                                           getRecentCards: [],
+                                           getHotUsers: []
+                                          )
+                )
+            )
+        )
         
         self.homeRepository = HomeRepositoryImpl()
         disposeBag = DisposeBag()
@@ -41,7 +47,6 @@ class HomeViewModel : BaseViewModel {
     override func bind() {
         input.refreshTrigger
                .do(onNext: { [weak self] _ in
-                   print("로딩 시작")
                    self?.showLoading.accept(true)
                })
                .flatMapLatest { [weak self] _ in
