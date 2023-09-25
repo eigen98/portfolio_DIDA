@@ -161,7 +161,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 self.setSelectedButton(weekButton)
                 
                 self.viewModel.input
-                    .refreshTrigger.onNext("7")
+                    .refreshTrigger.onNext(7)
             }
             .disposed(by: disposeBag)
         
@@ -171,7 +171,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 self.setSelectedButton(oneMonthButton)
                 
                 self.viewModel.input
-                    .refreshTrigger.onNext("30")
+                    .refreshTrigger.onNext(30)
             }
             .disposed(by: disposeBag)
         
@@ -181,7 +181,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 self.setSelectedButton(sixMonthButton)
                 
                 self.viewModel.input
-                    .refreshTrigger.onNext("60")
+                    .refreshTrigger.onNext(180)
             }
             .disposed(by: disposeBag)
         
@@ -191,7 +191,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
                 self.setSelectedButton(yearButton)
                 
                 self.viewModel.input
-                    .refreshTrigger.onNext("365")
+                    .refreshTrigger.onNext(365)
             }
             .disposed(by: disposeBag)
     }
@@ -207,7 +207,6 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
      private func configureImageViews() {
-         let cellHeight = self.contentView.bounds.height
          let numberOfItems = self.soldoutItems.count
 
          firstItemContainerView.isHidden = true

@@ -17,6 +17,14 @@
 		97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */; };
 		97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */; };
 		97BAE12529B11F190001F60A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BAE12429B11F190001F60A /* Repository.swift */; };
+		C10232B12A62AD2E00517F0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10232AF2A62AD2E00517F0C /* ProfileViewController.swift */; };
+		C10232B22A62AD2E00517F0C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10232B02A62AD2E00517F0C /* ProfileViewController.xib */; };
+		C10232B62A62AF1700517F0C /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10232B42A62AF1700517F0C /* ProfileCollectionViewCell.swift */; };
+		C10232B72A62AF1700517F0C /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10232B52A62AF1700517F0C /* ProfileCollectionViewCell.xib */; };
+		C10232BB2A62B5A700517F0C /* NftCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10232B92A62B5A700517F0C /* NftCardCollectionViewCell.swift */; };
+		C10232BC2A62B5A700517F0C /* NftCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10232BA2A62B5A700517F0C /* NftCardCollectionViewCell.xib */; };
+		C10232BF2A62B93F00517F0C /* NftOrderingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10232BD2A62B93F00517F0C /* NftOrderingCollectionReusableView.swift */; };
+		C10232C02A62B93F00517F0C /* NftOrderingCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10232BE2A62B93F00517F0C /* NftOrderingCollectionReusableView.xib */; };
 		C134D7242A06AC86009EE0DB /* BaseErrorResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */; };
 		C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */; };
 		C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */; };
@@ -98,6 +106,7 @@
 		C1956ED329B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956ED129B0FC2B00018A93 /* ScrollableTabBar.swift */; };
 		C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A8D3CC29EA7E080023373E /* Auth.storyboard */; };
 		C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */; };
+		C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384112A5AA95400FC3950 /* TitleBar.swift */; };
 		C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
 		C1C8022629B1159900221FB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C1C8022729B488F900221FB9 /* Pods_DIDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41E7EB4DEF3B954D7EC0141 /* Pods_DIDA.framework */; };
@@ -134,6 +143,9 @@
 		C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188B32329AA5550008122EF /* Buttons.swift */; };
 		C1C8025229B48D1200221FB9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14389C729AB6EC500138586 /* Profile.swift */; };
 		C1C8025329B48D1700221FB9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1956E9129AB788B00018A93 /* TextView.swift */; };
+		C1D3840F2A5AA90A00FC3950 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8022429B1159900221FB9 /* TabBarButton.swift */; };
+		C1D384122A5AA95400FC3950 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384112A5AA95400FC3950 /* TitleBar.swift */; };
+		C1D384152A5AA96300FC3950 /* TitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */; };
 		C1FB97062A1A196000A4D8D6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97052A1A196000A4D8D6 /* Token.swift */; };
 		C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */; };
 		C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */; };
@@ -161,6 +173,7 @@
 		EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */; };
 		EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */; };
 		EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */; };
+		EE2592D92AC002FA00260EE5 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */; };
 		EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */; };
 		EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */; };
 		EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */; };
@@ -191,7 +204,6 @@
 		EEE3862629C8125400A10E47 /* HomeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862529C8125400A10E47 /* HomeRepositoryImpl.swift */; };
 		EEE3862929C8179E00A10E47 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862829C8179E00A10E47 /* APIClient.swift */; };
 		EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862A29C81CA900A10E47 /* NetworkError.swift */; };
-		EEE3862F29C81DF500A10E47 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862E29C81DF500A10E47 /* HomeAPI.swift */; };
 		EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3863029C81EC600A10E47 /* SecretConstant.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
@@ -230,6 +242,14 @@
 		97BAE0ED29AB94350001F60A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		97BAE0FB29AC64FE0001F60A /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		97BAE12429B11F190001F60A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C10232AF2A62AD2E00517F0C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C10232B02A62AD2E00517F0C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		C10232B42A62AF1700517F0C /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		C10232B52A62AF1700517F0C /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		C10232B92A62B5A700517F0C /* NftCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		C10232BA2A62B5A700517F0C /* NftCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NftCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		C10232BD2A62B93F00517F0C /* NftOrderingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftOrderingCollectionReusableView.swift; sourceTree = "<group>"; };
+		C10232BE2A62B93F00517F0C /* NftOrderingCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NftOrderingCollectionReusableView.xib; sourceTree = "<group>"; };
 		C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorResponseDTO.swift; sourceTree = "<group>"; };
 		C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestDTO.swift; sourceTree = "<group>"; };
 		C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedNicknameRequestDTO.swift; sourceTree = "<group>"; };
@@ -309,6 +329,8 @@
 		C1A8D3CC29EA7E080023373E /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1A8D3CF29EA7E370023373E /* LoginHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeViewController.swift; sourceTree = "<group>"; };
 		C1C8022429B1159900221FB9 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		C1D384112A5AA95400FC3950 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
+		C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarViewController.swift; sourceTree = "<group>"; };
 		C1FB97052A1A196000A4D8D6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterface.swift; sourceTree = "<group>"; };
 		C1FB970A2A1A2D9900A4D8D6 /* ApplicationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStorage.swift; sourceTree = "<group>"; };
@@ -339,6 +361,7 @@
 		EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE242AE829B9B21D00690518 /* ActivitySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitySectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainResponse.swift; path = DIDA/Data/Response/GetMainResponse.swift; sourceTree = SOURCE_ROOT; };
 		EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainSoldoutResponse.swift; path = DIDA/Data/Response/GetMainSoldoutResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -373,7 +396,6 @@
 		EEE3862529C8125400A10E47 /* HomeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpl.swift; sourceTree = "<group>"; };
 		EEE3862829C8179E00A10E47 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EEE3862A29C81CA900A10E47 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		EEE3862E29C81DF500A10E47 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		EEE3863029C81EC600A10E47 /* SecretConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstant.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -517,6 +539,29 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		C10232B32A62AD3400517F0C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C10232B82A62AF1B00517F0C /* Cells */,
+				C10232AF2A62AD2E00517F0C /* ProfileViewController.swift */,
+				C10232B02A62AD2E00517F0C /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C10232B82A62AF1B00517F0C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C10232B42A62AF1700517F0C /* ProfileCollectionViewCell.swift */,
+				C10232B52A62AF1700517F0C /* ProfileCollectionViewCell.xib */,
+				C10232B92A62B5A700517F0C /* NftCardCollectionViewCell.swift */,
+				C10232BA2A62B5A700517F0C /* NftCardCollectionViewCell.xib */,
+				C10232BD2A62B93F00517F0C /* NftOrderingCollectionReusableView.swift */,
+				C10232BE2A62B93F00517F0C /* NftOrderingCollectionReusableView.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +571,7 @@
 				C136344629A0E0100023DA68 /* Home */,
 				C136344729A0E0190023DA68 /* Swap */,
 				C136344829A0E0340023DA68 /* Community */,
+				C10232B32A62AD3400517F0C /* Profile */,
 				C136344929A0E04F0023DA68 /* MyPage */,
 			);
 			path = Presentation;
@@ -586,6 +632,7 @@
 				C16AECA429EAB96200A37C78 /* UIViewController+Extension.swift */,
 				EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */,
 				C16FDCFB2A064E1900FB5F53 /* Encodable+Extension.swift */,
+				EE2592D82AC002FA00260EE5 /* UIResponder+Extension.swift */,
 			);
 			path = Infratruction;
 			sourceTree = "<group>";
@@ -705,6 +752,7 @@
 		C188B30C29AA5335008122EF /* DIDA-UI */ = {
 			isa = PBXGroup;
 			children = (
+				C1D384102A5AA94500FC3950 /* TitleBar */,
 				C1956EC829ACDD3D00018A93 /* SnackBar */,
 				C1956EB829ACD39E00018A93 /* TableViewCell */,
 				C1956EA429AC8E4400018A93 /* LineTabBar */,
@@ -789,6 +837,15 @@
 				C16AECAA29EABDFA00A37C78 /* LoginNavigationController.swift */,
 			);
 			path = LoginHome;
+			sourceTree = "<group>";
+		};
+		C1D384102A5AA94500FC3950 /* TitleBar */ = {
+			isa = PBXGroup;
+			children = (
+				C1D384112A5AA95400FC3950 /* TitleBar.swift */,
+				C1D384132A5AA96300FC3950 /* TitleBarViewController.swift */,
+			);
+			path = TitleBar;
 			sourceTree = "<group>";
 		};
 		C1FB97042A1A191800A4D8D6 /* Session */ = {
@@ -1110,7 +1167,6 @@
 		EEE3862D29C81DDD00A10E47 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
-				EEE3862E29C81DF500A10E47 /* HomeAPI.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -1234,7 +1290,9 @@
 			files = (
 				EE48694F29B58927005CEF31 /* HotSellerSectionCollectionViewCell.xib in Resources */,
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
+				C10232C02A62B93F00517F0C /* NftOrderingCollectionReusableView.xib in Resources */,
 				EE6D138829F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib in Resources */,
+				C10232B22A62AD2E00517F0C /* ProfileViewController.xib in Resources */,
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
@@ -1245,6 +1303,7 @@
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
 				EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
+				C10232B72A62AF1700517F0C /* ProfileCollectionViewCell.xib in Resources */,
 				EE6D138329F3A30400C748BE /* MoreRecentNFTViewController.xib in Resources */,
 				9784770529AB395400950F40 /* NFTCollectionViewCell.xib in Resources */,
 				EE0AB95429F79E3B0010F182 /* MoreActivityViewController.xib in Resources */,
@@ -1265,6 +1324,7 @@
 				EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */,
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
 				EE0AB95829F79F7F0010F182 /* MoreActivityCollectionViewCell.xib in Resources */,
+				C10232BC2A62B5A700517F0C /* NftCardCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 				9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */,
 				C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */,
@@ -1369,9 +1429,11 @@
 				C1C8022629B1159900221FB9 /* (null) in Sources */,
 				C1956EA929AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C14389C929AB6EC500138586 /* Profile.swift in Sources */,
+				C1D3840F2A5AA90A00FC3950 /* TabBarButton.swift in Sources */,
 				C1956ECE29ACE1B000018A93 /* SnackBarActionItem.swift in Sources */,
 				C1956EA629AC8E4F00018A93 /* LineTabBarController.swift in Sources */,
 				C188B32429AA5550008122EF /* Buttons.swift in Sources */,
+				C1D384152A5AA96300FC3950 /* TitleBarViewController.swift in Sources */,
 				C1956E9C29AC773100018A93 /* TextField.swift in Sources */,
 				C1956ED029ADB78400018A93 /* SnackBarViewController.swift in Sources */,
 				C1956E9329AB788B00018A93 /* TextView.swift in Sources */,
@@ -1382,6 +1444,7 @@
 				C1956EC129ACD4EB00018A93 /* TableViewCell.swift in Sources */,
 				C188B32029AA5507008122EF /* ButtonsViewController.swift in Sources */,
 				C14389C629AB69B100138586 /* ProfileViewController.swift in Sources */,
+				C1D384122A5AA95400FC3950 /* TitleBar.swift in Sources */,
 				C188B31229AA5335008122EF /* ViewController.swift in Sources */,
 				C188B30E29AA5335008122EF /* AppDelegate.swift in Sources */,
 				C188B31029AA5335008122EF /* SceneDelegate.swift in Sources */,
@@ -1404,7 +1467,6 @@
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
-				EEE3862F29C81DF500A10E47 /* HomeAPI.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C16AECA729EABA6A00A37C78 /* MainViewModel.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
@@ -1430,10 +1492,13 @@
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
 				EE0AB95729F79F7F0010F182 /* MoreActivityCollectionViewCell.swift in Sources */,
 				C16FDCFA2A06496B00FB5F53 /* LoginRequestDTO.swift in Sources */,
+				C10232B62A62AF1700517F0C /* ProfileCollectionViewCell.swift in Sources */,
 				EECD327C29F65B8300C5764E /* MoreHomeRepository.swift in Sources */,
 				C1C8023F29B48C0400221FB9 /* BaseViewModel.swift in Sources */,
 				C1C8025329B48D1700221FB9 /* TextView.swift in Sources */,
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
+				EE2592D92AC002FA00260EE5 /* UIResponder+Extension.swift in Sources */,
+				C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
@@ -1443,6 +1508,7 @@
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
 				C1C8022E29B48BB200221FB9 /* MainTabbarCollectionViewCell.swift in Sources */,
+				C10232BB2A62B5A700517F0C /* NftCardCollectionViewCell.swift in Sources */,
 				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
@@ -1451,6 +1517,7 @@
 				C1C8025129B48D0C00221FB9 /* Buttons.swift in Sources */,
 				C1C8023829B48BEF00221FB9 /* HotItemCollectionViewCell.swift in Sources */,
 				EE07EE9A29F8F83800285A9F /* MoreHotSellerViewModel.swift in Sources */,
+				C10232BF2A62B93F00517F0C /* NftOrderingCollectionReusableView.swift in Sources */,
 				C1C8022A29B48BA100221FB9 /* TabBar.swift in Sources */,
 				EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */,
 				C1C8023E29B48C0400221FB9 /* Colors.swift in Sources */,
@@ -1504,6 +1571,7 @@
 				C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */,
 				EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */,
 				EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */,
+				C10232B12A62AD2E00517F0C /* ProfileViewController.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,
 				EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */,
 				EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */,
@@ -1672,7 +1740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1726,7 +1794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1745,11 +1813,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1758,7 +1824,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1767,7 +1833,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1786,11 +1851,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DIDA/DIDA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Y2YJ5DNS7;
+				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DIDA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1799,7 +1862,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1808,7 +1871,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dida.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Dida-live";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -6,12 +6,24 @@
 //
 
 import Foundation
-struct GetMainSoldoutNFTResponse : Codable{
-    var nftId : Int?
-    var name : String?
-    var imgUrl : String?
-    var price : String?
-    var userId : Int?
-    var userName : String?
-    var profileUrl : String?
+struct GetMainSoldoutNFTResponse: Codable {
+    var nftAndMemberInfos: [NFTAndMemberInfo]?
+    
+    struct NFTAndMemberInfo: Codable {
+        var nftInfo: NFTInfo?
+        var memberInfo: MemberInfo?
+    }
+    
+    struct NFTInfo: Codable {
+        var nftId: Int?
+        var nftName: String?
+        var nftImgUrl: String?
+        var price: String?
+    }
+    
+    struct MemberInfo: Codable {
+        var memberId: Int?
+        var memberName: String?
+        var profileImgUrl: String?
+    }
 }

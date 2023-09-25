@@ -11,11 +11,11 @@ extension Array where Element == HotItemResponse {
     func toDomain() -> [NFTEntity] {
         return map {
             NFTEntity(
-                cardId: $0.cardId ?? 0,
-                nickname: $0.name ?? "",
-                nftName: $0.name ?? "",
-                nftImg: $0.imgUrl ?? "",
-                heartCount: $0.count ?? "",
+                cardId: $0.nftId ?? 0,
+                nickname: $0.nftName ?? "",
+                nftName: $0.nftName ?? "",
+                nftImg: $0.nftImgUrl ?? "",
+                heartCount: $0.likeCount ?? "",
                 price: $0.price ?? "",
                 liked: false
             )
@@ -27,8 +27,8 @@ extension Array where Element == HotItemResponse {
 extension Array where Element == HotSellerResponse {
     func toDomain() -> [UserEntity] {
         return map {
-            UserEntity(userId: $0.userId,
-                       nickname: $0.name,
+            UserEntity(userId: $0.memberId,
+                       nickname: $0.memberName,
                        profileImage: $0.profileUrl,
                        description: "",
                        hasWallet: false,
@@ -44,10 +44,10 @@ extension Array where Element == RecentCardResponse {
     func toDomain() -> [NFTEntity] {
         return map {
             NFTEntity(
-                cardId: $0.cardId ?? 0,
-                nickname:  $0.userName ?? "",
-                nftName: $0.cardName ?? "",
-                nftImg: $0.imgUrl ?? "",
+                cardId: $0.nftId ?? 0,
+                nickname:  $0.memberName ?? "",
+                nftName: $0.nftName ?? "",
+                nftImg: $0.nftImgUrl ?? "",
                 heartCount: "",
                 price:  $0.price ?? "",
                 liked: $0.liked ?? false)
@@ -58,12 +58,12 @@ extension Array where Element == HotUserResponse {
     func toDomain() -> [UserEntity] {
         return map {
             UserEntity(
-                userId: $0.userId ?? 0,
-                nickname: $0.name ?? "",
+                userId: $0.memberId ?? 0,
+                nickname: $0.memberName ?? "",
                 profileImage: $0.profileUrl ?? "",
                 description: "",
                 hasWallet: false,
-                cardCnt: $0.count ?? 0,
+                cardCnt: $0.nftCount ?? 0,
                 followerCnt: 0,
                 followingCnt: 0
             )
@@ -86,19 +86,20 @@ extension Array where Element == GetMoreActivityResponse {
     }
 }
 
-extension Array where Element == GetMainSoldoutNFTResponse{
+extension Array where Element == GetMainSoldoutNFTResponse.NFTAndMemberInfo {
     func toDomain() -> [NFTEntity] {
         return map {
             NFTEntity(
-                cardId: $0.nftId ?? 0,
-                nickname: $0.userName ?? "",
-                nftName: $0.name ?? "",
-                nftImg:  $0.imgUrl ?? "",
+                cardId: $0.nftInfo?.nftId ?? 0,
+                nickname: $0.memberInfo?.memberName ?? "",
+                nftName: $0.nftInfo?.nftName ?? "",
+                nftImg: $0.nftInfo?.nftImgUrl ?? "",
                 heartCount: "0",
-                price: $0.price ?? "",
+                price: $0.nftInfo?.price ?? "",
                 liked: false
             )
         }
     }
 }
+
 

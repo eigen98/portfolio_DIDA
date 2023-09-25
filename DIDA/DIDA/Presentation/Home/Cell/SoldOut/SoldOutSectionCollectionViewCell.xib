@@ -16,14 +16,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SoldOutSectionCollectionViewCell" customModule="DIDA" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="352" height="492"/>
+            <rect key="frame" x="0.0" y="0.0" width="352" height="455"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="352" height="492"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="455"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-TW-Z7k">
-                        <rect key="frame" x="0.0" y="0.0" width="352" height="492"/>
+                        <rect key="frame" x="0.0" y="0.0" width="352" height="455"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-Jb-Mml">
                                 <rect key="frame" x="16" y="0.0" width="111" height="28"/>
@@ -60,10 +60,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="기간 별 가장 비싸게 팔린 NFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GW-XP-DKb">
-                                <rect key="frame" x="16" y="30" width="167" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="gsO-P1-d5b"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="30" width="167" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HJ-79-1dm">
-                                <rect key="frame" x="16" y="394" width="320" height="56"/>
+                                <rect key="frame" x="16" y="399" width="320" height="56"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="CgR-Oy-7GB"/>
@@ -88,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-yF-NiM">
-                                <rect key="frame" x="0.0" y="113" width="352" height="79"/>
+                                <rect key="frame" x="0.0" y="118" width="352" height="79"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1v1-f7-SSo">
                                         <rect key="frame" x="107" y="16" width="128" height="24"/>
@@ -236,7 +233,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-xp-y4u">
-                                <rect key="frame" x="0.0" y="204" width="352" height="79"/>
+                                <rect key="frame" x="0.0" y="209" width="352" height="79"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Fo-Ub-CWX">
                                         <rect key="frame" x="16" y="0.0" width="79" height="79"/>
@@ -286,7 +283,7 @@
                                         <rect key="frame" x="109" y="48" width="128" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.65 dida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-Ax-XUi">
-                                                <rect key="frame" x="26" y="-0.33333333333334281" width="54" height="15"/>
+                                                <rect key="frame" x="26" y="-0.33333333333331439" width="54" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -376,7 +373,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-Ck-lhV">
-                                <rect key="frame" x="0.0" y="295" width="352" height="79"/>
+                                <rect key="frame" x="0.0" y="300" width="352" height="79"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="htR-x1-1q1">
                                         <rect key="frame" x="16" y="0.0" width="79" height="79"/>
@@ -516,7 +513,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI4-jE-Xeh">
-                                <rect key="frame" x="16" y="63" width="336" height="36"/>
+                                <rect key="frame" x="16" y="68" width="336" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4J-xT-qFQ">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="36"/>
@@ -628,7 +625,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZI4-Jb-Mml" firstAttribute="top" secondItem="MKF-TW-Z7k" secondAttribute="top" id="7gQ-Yz-mdx"/>
-                            <constraint firstAttribute="bottom" secondItem="1HJ-79-1dm" secondAttribute="bottom" constant="42" id="89Z-yp-SdO"/>
+                            <constraint firstAttribute="bottom" secondItem="1HJ-79-1dm" secondAttribute="bottom" id="89Z-yp-SdO"/>
                             <constraint firstItem="tNL-xp-y4u" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" id="8lk-RA-AJv"/>
                             <constraint firstItem="ZI4-Jb-Mml" firstAttribute="leading" secondItem="MKF-TW-Z7k" secondAttribute="leading" constant="16" id="DdS-I5-7UC"/>
                             <constraint firstAttribute="trailing" secondItem="gI4-jE-Xeh" secondAttribute="trailing" id="Ma9-m4-z3i"/>
@@ -663,7 +660,7 @@
                 <constraint firstItem="MKF-TW-Z7k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" symbolic="YES" id="P7A-gx-Sz1"/>
                 <constraint firstAttribute="bottom" secondItem="MKF-TW-Z7k" secondAttribute="bottom" id="cun-hz-57b"/>
             </constraints>
-            <size key="customSize" width="352" height="492"/>
+            <size key="customSize" width="352" height="455"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
@@ -702,7 +699,7 @@
                 <outlet property="weekButton" destination="f7p-Ae-FhU" id="WQg-Qc-bDo"/>
                 <outlet property="yearButton" destination="1Kq-Pq-woX" id="zYs-V3-gJy"/>
             </connections>
-            <point key="canvasLocation" x="386.25954198473283" y="-73.239436619718319"/>
+            <point key="canvasLocation" x="386.25954198473283" y="-86.267605633802816"/>
         </collectionViewCell>
     </objects>
     <resources>

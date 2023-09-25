@@ -43,38 +43,31 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        setupTitleBar()
         bindViewModel()
         initCollectionView()
         bindEvent()
-        
+        mainpageCollectionView.delegate = self
         homeViewModel.input.refreshTrigger.onNext(())
     }
-    
-    //네비게이션 바 설정.
-    private func setupNavigationBar() {
-        
-        if let naviagationController = tabBarController?.parent {
-            //DIDA 타이틀
-            let titleLabel = UILabel()
-            titleLabel.text = "DIDA"
-            titleLabel.font = Fonts.bold_24
-            titleLabel.textColor = .white
-            let titleButtonItem = UIBarButtonItem(customView: titleLabel)
-            naviagationController.navigationItem.leftBarButtonItem = titleButtonItem
-            
-            // 알림 버튼
-            let buttonImage = UIImage(named: "bell")
-            let rightButton = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(rightButtonTapped))
-            naviagationController.navigationItem.rightBarButtonItem = rightButton
-        }
-    }
 
+    private func setupTitleBar() {
+        let logo = UILabel()
+        logo.text = "DIDA"
+        logo.font = Fonts.bold_24
+        logo.textColor = Colors.text_white
+        customTitleBar.leftItems = [logo]
+        
+        let rightButton = UIButton()
+        rightButton.setImage(UIImage(named: "bell"), for: .normal)
+        rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        customTitleBar.rightItems = [rightButton]
+    }
     
     @objc func rightButtonTapped() {
-            print("Right button in First VC tapped.")
+        print("Right button in HomeViewController tapped.")
     }
-    
+
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
@@ -98,9 +91,11 @@ class HomeViewController: BaseViewController {
                 case .success(let homeEntity):
                     if let snapShot = self?.makeSnapshot(homeEntity) {
                         self?.dataSource?.apply(snapShot)
+                        self?.mainpageCollectionView.refreshControl?.endRefreshing()
                     }
                 case .failure(let error):
                     print("Error: \(error)")
+                    self?.mainpageCollectionView.refreshControl?.endRefreshing()
                 }
             }.disposed(by: disposeBag)
         
@@ -113,11 +108,7 @@ class HomeViewController: BaseViewController {
         refreshControl.rx.controlEvent(.valueChanged)
             .bind(to: homeViewModel.input.refreshTrigger)
             .disposed(by: disposeBag)
-        
-        
-        
-        
-        // Refresh control 로딩 상태 업데이트
+
         homeViewModel.showLoading
             .bind(onNext: {[weak self] isLoading in
                 if isLoading {
@@ -134,6 +125,7 @@ class HomeViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         mainpageCollectionView.rx.contentOffset
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .compactMap { [weak self] contentOffset -> IndexPath? in
                 guard let self = self else { return nil }
                 let visibleRect = CGRect(origin: contentOffset, size: self.mainpageCollectionView.bounds.size)
@@ -148,7 +140,7 @@ class HomeViewController: BaseViewController {
                 guard let headerView = self.mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: headerIndexPath) as? TabbarCollectionReusableView else {
                     return
                 }
-                //headerView.tabbar.tabbarView.selectedSegmentIndex = visibleIndexPath.row
+                headerView.updateTabBarToIndex(visibleIndexPath.row)
             })
             .disposed(by: disposeBag)
     }
@@ -246,7 +238,6 @@ extension HomeViewController {
             header.tabSelectedSubject
                 .subscribe(onNext: { [weak self] index in
                     self?.scrollToIndex(index: index)
-                    header.isClickedTabbar = true
                 })
                 .disposed(by: self.disposeBag)
             
@@ -286,10 +277,10 @@ extension HomeViewController {
         // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(284))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(284))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
         let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 36, trailing: 0)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .groupPaging
@@ -305,11 +296,12 @@ extension HomeViewController {
         let groups = createGroupsOfTabbarSection()
         
         let group = NSCollectionLayoutGroup.vertical(layoutSize: nestedGroupSize, subitems: groups)
+        group.interItemSpacing = .fixed(42)
         
         let section = NSCollectionLayoutSection(group: group)
         
         //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 39, trailing: 0)
         
         section.interGroupSpacing = 0
         section.orthogonalScrollingBehavior = .continuous
@@ -349,7 +341,7 @@ extension HomeViewController {
         let soldoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: soldoutGroupSize, subitems: [item])
         
         //최신 NFT 그룹
-        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(770))
+        let recentNFTGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1))
         let recentNFTGroup = NSCollectionLayoutGroup.vertical(layoutSize: recentNFTGroupSize, subitems: [item])
         
         //활발한 활동 그룹
@@ -361,6 +353,25 @@ extension HomeViewController {
         return groups
     }
     
+}
+
+extension HomeViewController : UICollectionViewDelegate{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView == mainpageCollectionView else { return }
+        
+        updateTabBarForVisibleItem(in: scrollView)
+    }
+    
+    private func updateTabBarForVisibleItem(in scrollView: UIScrollView) {
+        let visibleRect = CGRect(origin: scrollView.contentOffset, size: scrollView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        guard let indexPath = mainpageCollectionView.indexPathForItem(at: visiblePoint),
+              let headerView = mainpageCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: 1)) as? TabbarCollectionReusableView else { return }
+        
+        headerView.updateTabBarToIndex(indexPath.row)
+    }
 }
 
 

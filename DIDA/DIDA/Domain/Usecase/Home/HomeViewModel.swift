@@ -26,10 +26,16 @@ class HomeViewModel : BaseViewModel {
     override init() {
         input = Input(refreshTrigger: PublishSubject<Void>())
         
-        output = Output(homeOutput: BehaviorSubject<Result<HomeEntity, Error>>(value: .success(HomeEntity(getHotItems: [],
-                                                                                                           getHotSellers: [],
-                                                                                                           getRecentCards: [],
-                                                                                                           getHotUsers: []))))
+        output = Output(
+            homeOutput: BehaviorSubject<Result<HomeEntity, Error>>(
+                value: .success(HomeEntity(getHotItems: [],
+                                           getHotSellers: [],
+                                           getRecentCards: [],
+                                           getHotUsers: []
+                                          )
+                )
+            )
+        )
         
         self.homeRepository = HomeRepositoryImpl()
         disposeBag = DisposeBag()
@@ -40,20 +46,18 @@ class HomeViewModel : BaseViewModel {
     
     override func bind() {
         input.refreshTrigger
-            .flatMapLatest { [weak self] _ in
-                self?.fetchHomeData() ?? Observable.empty()
-            }.bind(to: output.homeOutput)
-            .disposed(by: disposeBag)
-        
-        input.refreshTrigger
-            .map { _ in true }
-            .bind(to: showLoading)
-            .disposed(by: disposeBag)
-        
-        output.homeOutput
-            .map { _ in false }
-            .bind(to: showLoading)
-            .disposed(by: disposeBag)
+               .do(onNext: { [weak self] _ in
+                   self?.showLoading.accept(true)
+               })
+               .flatMapLatest { [weak self] _ in
+                   self?.fetchHomeData() ?? Observable.empty()
+               }
+               .do(onNext: { [weak self] _ in
+                   
+                   self?.showLoading.accept(false)
+               })
+               .bind(to: output.homeOutput)
+               .disposed(by: disposeBag)
     }
     
     /*

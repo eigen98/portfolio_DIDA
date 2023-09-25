@@ -13,6 +13,8 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     //첫번째 유저 프로필
     var disposeBag = DisposeBag()
     private let viewModel = ActivitySectionViewModel()
+    let primaryStyleString = "primary"
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -89,15 +91,15 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
             if index == 0 {
                 firstItemContainerView.isHidden = false
                 configureView(firstItemImageView, firstItemNameLabel, firstItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[0].followed, 0))
+                viewModel.input.followButtonTapped.accept((false, 0))
             } else if index == 1 {
                 secondItemContainerView.isHidden = false
                 configureView(secondItemImageView, secondItemNameLabel, secondItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[1].followed, 1))
+                viewModel.input.followButtonTapped.accept((false, 1))
             } else if index == 2 {
                 thirdItemContainerView.isHidden = false
                 configureView(thirdItemImageView, thirdItemNameLabel, thirdItemCountLabel, item)
-                //viewModel.input.followButtonTapped.accept((items[1].followed, 0))
+                viewModel.input.followButtonTapped.accept((false, 0))
             }
         }
         
@@ -146,12 +148,12 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     
     func configureButtons(idx: Int, bool : Bool){
         let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
-        buttons[idx]?.style = bool ? .dialog : .primary
+        buttons[idx]?.style = bool ? .primary : .dialog
         buttons[idx]?.shape = .circle
         
-        let text = bool ? "팔로우" : "팔로잉"
+        let text = bool ? "팔로잉" : "팔로우"
         buttons[idx]?.setTitle(text, for: .normal)
-        let color = bool ? UIColor.white : UIColor.black
+        let color = bool ? UIColor.black : UIColor.white
         buttons[idx]?.customTitleColor = .init(normal: color, disabled: color, selected: color, hightlight: color)
     }
     
@@ -161,42 +163,31 @@ extension ActivitySectionCollectionViewCell{
     func bind(){
         
         //MARK: Input
-        //더보기 Button
         moreButton.rx.tap
             .asDriver(onErrorJustReturn: ())
-            .drive(onNext: {
-                var nextResponder = self.next
-                while nextResponder != nil {
-                    if let viewController = nextResponder as? UIViewController {
-                        if let navController = viewController.navigationController {
-                            let nextVC = MoreActivityViewController()
-                            navController.pushViewController(nextVC, animated: true)
-                            break
-                        }
-                    }
-                    nextResponder = nextResponder?.next
-                }
+            .drive(onNext: { [weak self] in
+                guard let viewController = self?.parentViewController,
+                      let navController = viewController.navigationController else { return }
+                
+                let nextVC = MoreActivityViewController()
+                navController.pushViewController(nextVC, animated: true)
             })
             .disposed(by: disposeBag)
         
-        //Follow Buttons
         let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
         for(index, button) in buttons.enumerated(){
             button?.rx.tap
-                .map{
-                    if "\(button?.style ?? ButtonStyle.primary)" != "primary"{
-                        return ( false,index)
+                .map{ [weak self] in
+                    if "\(button?.style ?? ButtonStyle.primary)" == self?.primaryStyleString{
+                        return (false,index)
                     }else{
-                        print("\(button?.style ?? ButtonStyle.primary)")
-                        return ( true,index)
+                        return (true,index)
                     }
-                    
                 }
                 .bind(to: viewModel.input.followButtonTapped)
                 .disposed(by: disposeBag)
         }
-        
-        //MARK: OUTPUT
+
         viewModel.output.followStatusChanged
             .subscribe(onNext: {[weak self] bool, idx in
                 self?.configureButtons(idx: idx, bool: bool)

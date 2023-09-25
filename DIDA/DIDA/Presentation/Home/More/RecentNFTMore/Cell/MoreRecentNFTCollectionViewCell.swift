@@ -36,11 +36,16 @@ class MoreRecentNFTCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         islike = false
         itemImage.kf.cancelDownloadTask()
+        self.hideSkeleton()
         disposeBag = DisposeBag()
     }
     
     func configure(item : NFTEntity){
         bind()
+        if item == NFTEntity.loading{
+            self.showSkeleton()
+            return
+        }
         itemImage.kf.setImage(with: URL(string: item.nftImg), placeholder: UIImage(systemName: "placeholder"))
         nftNameLabel.text = item.nftName
         userNameLabel.text = item.nickname

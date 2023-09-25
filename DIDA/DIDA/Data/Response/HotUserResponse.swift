@@ -7,10 +7,10 @@
 
 import Foundation
 struct HotUserResponse : Codable{
-    var userId : Int?
-    var name : String?
+    var memberId : Int?
+    var memberName : String?
     var profileUrl : String?
-    var count : Int?
+    var nftCount : Int?
     var followed : Bool?
     var me : Bool?
 }

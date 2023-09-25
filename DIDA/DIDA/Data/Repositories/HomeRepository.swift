@@ -11,5 +11,5 @@ import RxCocoa
 
 protocol HomeRepository {
     func getMain(completion: @escaping (Result<GetMainResponse, Error>) -> ())
-    func getMainSoldout(term: String, completion: @escaping (Result<[GetMainSoldoutNFTResponse], Error>) -> ())
+    func getMainSoldout(range: Int, completion: @escaping (Result<GetMainSoldoutNFTResponse, Error>) -> ())
 }

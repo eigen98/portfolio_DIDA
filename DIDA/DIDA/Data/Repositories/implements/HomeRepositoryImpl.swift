@@ -22,9 +22,9 @@ class HomeRepositoryImpl: HomeRepository {
             }).disposed(by: disposeBag)
     }
     
-    func getMainSoldout(term: String, completion: @escaping (Result<[GetMainSoldoutNFTResponse], Error>) -> ()) {
-        APIClient.request(.soldout(term: term))
-            .map([GetMainSoldoutNFTResponse].self)
+    func getMainSoldout(range: Int, completion: @escaping (Result<GetMainSoldoutNFTResponse, Error>) -> ()) {
+        APIClient.request(.soldout(range: range))
+            .map(GetMainSoldoutNFTResponse.self)
             .subscribe(onSuccess: { (response) in
                 completion(.success(response))
             }, onFailure: { (error) in
