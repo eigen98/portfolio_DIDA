@@ -12,9 +12,9 @@ import RxSwift
 class MoreHomeRepositoryImpl : MoreHomeRepository {
     let disposeBag = DisposeBag()
 
-    func getMoreRecentNFT(page: Int, completion: @escaping (Result<[RecentCardResponse], Error>) -> ()) {
-        APIClient.request(.moreRecentNFT(page: page))
-            .map([RecentCardResponse].self)
+    func getMoreRecentNFT(page: Int, completion: @escaping (Result<PagedRecentCardResponse, Error>) -> ()) {
+        APIClient.request(.moreRecentNFT(page: page, size: 6))
+            .map(PagedRecentCardResponse.self)
             .subscribe(onSuccess: { (response) in
                 completion(.success(response))
             }, onFailure: { (error) in
