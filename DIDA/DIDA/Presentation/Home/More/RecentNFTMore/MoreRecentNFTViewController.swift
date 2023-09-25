@@ -8,10 +8,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkeletonView
+
 //최신 NFT 더보기 ViewController
 class MoreRecentNFTViewController: BaseViewController {
 
-    
     private let disposeBag = DisposeBag()
     let viewModel: MoreRecentNFTViewModel = MoreRecentNFTViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,6 +21,7 @@ class MoreRecentNFTViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTitleBar()
         initCollectionView()
         bindEvent()
         bindViewModel()
@@ -34,42 +36,43 @@ class MoreRecentNFTViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        // loading 상태에 따라 loading view를 표시하거나 숨김
         viewModel.showLoading
             .bind(onNext: { [weak self] isLoading in
                 if isLoading {
-                    // Show loading view
-                    self?.collectionView.showSkeleton()
-                    print("로딩중")
-                    
+                    self?.viewModel.output.recentNFTData.onNext([NFTEntity.loading,
+                                                                 NFTEntity.loading,
+                                                                 NFTEntity.loading,
+                                                                 NFTEntity.loading,
+                                                                 NFTEntity.loading,
+                                                                 NFTEntity.loading])
                 } else {
-                    // Hide loading view
-                    self?.view.hideSkeleton()
                     self?.collectionView.refreshControl?.endRefreshing()
                 }
             })
             .disposed(by: disposeBag)
+
     }
     
     
     override func bindEvent() {
         collectionView.rx.modelSelected(NFTEntity.self)
             .subscribe(onNext: { item in
-                // Handle selection of item
-                print("Selected item: \(item)")
+                
             })
             .disposed(by: disposeBag)
         
         let refreshControl = UIRefreshControl()
-               collectionView.refreshControl = refreshControl
-
-               refreshControl.rx.controlEvent(.valueChanged)
-                   .bind(to: viewModel.input.refreshTrigger)
-                   .disposed(by: disposeBag)
+        collectionView.refreshControl = refreshControl
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.input.refreshTrigger)
+            .disposed(by: disposeBag)
     }
     
-    
-    
+    private func setupTitleBar() {
+        self.setupBackButton()
+        customTitleBar.title = "최신 NFT"
+    }
     
 }
 //MARK: UI
@@ -80,7 +83,7 @@ extension MoreRecentNFTViewController{
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: width / 2 - 16 , height: 292)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10)
         self.collectionView.collectionViewLayout = layout
         
         collectionView.register(UINib(nibName: MoreRecentNFTCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MoreRecentNFTCollectionViewCell.reuseIdentifier)
