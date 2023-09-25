@@ -43,38 +43,31 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        setupTitleBar()
         bindViewModel()
         initCollectionView()
         bindEvent()
         mainpageCollectionView.delegate = self
         homeViewModel.input.refreshTrigger.onNext(())
     }
-    
-    //네비게이션 바 설정.
-    private func setupNavigationBar() {
-        
-        if let naviagationController = tabBarController?.parent {
-            //DIDA 타이틀
-            let titleLabel = UILabel()
-            titleLabel.text = "DIDA"
-            titleLabel.font = Fonts.bold_24
-            titleLabel.textColor = .white
-            let titleButtonItem = UIBarButtonItem(customView: titleLabel)
-            naviagationController.navigationItem.leftBarButtonItem = titleButtonItem
-            
-            // 알림 버튼
-            let buttonImage = UIImage(named: "bell")
-            let rightButton = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(rightButtonTapped))
-            naviagationController.navigationItem.rightBarButtonItem = rightButton
-        }
-    }
 
+    private func setupTitleBar() {
+        let logo = UILabel()
+        logo.text = "DIDA"
+        logo.font = Fonts.bold_24
+        logo.textColor = Colors.text_white
+        customTitleBar.leftItems = [logo]
+        
+        let rightButton = UIButton()
+        rightButton.setImage(UIImage(named: "bell"), for: .normal)
+        rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        customTitleBar.rightItems = [rightButton]
+    }
     
     @objc func rightButtonTapped() {
-            print("Right button in First VC tapped.")
+        print("Right button in HomeViewController tapped.")
     }
-    
+
     // 컬렉션뷰 초기화
     func initCollectionView(){
         
@@ -115,11 +108,7 @@ class HomeViewController: BaseViewController {
         refreshControl.rx.controlEvent(.valueChanged)
             .bind(to: homeViewModel.input.refreshTrigger)
             .disposed(by: disposeBag)
-        
-        
-        
-        
-        // Refresh control 로딩 상태 업데이트
+
         homeViewModel.showLoading
             .bind(onNext: {[weak self] isLoading in
                 if isLoading {
