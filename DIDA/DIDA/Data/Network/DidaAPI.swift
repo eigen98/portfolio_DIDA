@@ -13,7 +13,7 @@ enum DidaAPI {
     /// MARK: Home
     case main
     case soldout(range: Int)
-    case moreRecentNFT(page: Int)
+    case moreRecentNFT(page: Int, size: Int)
     case moreHotUser(page: Int)
     
     /// MARK: Login
@@ -40,7 +40,7 @@ extension DidaAPI: TargetType {
         /// MARK: Home
         case .main: return "/main"
         case .soldout: return "/main/sold-out"
-        case .moreRecentNFT(let page) : return "/recent/card/\(page)"
+        case .moreRecentNFT: return "/recent-nfts"
         case .moreHotUser(let page) : return "/hot/user/\(page)"
         
         /// MARK: Login
@@ -78,8 +78,8 @@ extension DidaAPI: TargetType {
             return .requestPlain
         case .soldout(let range):
             return .requestParameters(parameters: ["range": range], encoding: URLEncoding.queryString)
-        case .moreRecentNFT:
-            return .requestPlain
+        case .moreRecentNFT(let page, let size):
+            return .requestParameters(parameters: ["page": page, "size" : size], encoding: URLEncoding.queryString)
         case .moreHotUser:
             return .requestPlain
             
