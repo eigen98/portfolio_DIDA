@@ -209,6 +209,9 @@
 		EEE3862929C8179E00A10E47 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862829C8179E00A10E47 /* APIClient.swift */; };
 		EEE3862B29C81CA900A10E47 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862A29C81CA900A10E47 /* NetworkError.swift */; };
 		EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3863029C81EC600A10E47 /* SecretConstant.swift */; };
+		EEE4E9ED2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4E9EB2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift */; };
+		EEE4E9EE2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */; };
+		EEE4E9F02AC2F4260001FA10 /* LoadingBlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
@@ -405,6 +408,9 @@
 		EEE3862829C8179E00A10E47 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EEE3862A29C81CA900A10E47 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EEE3863029C81EC600A10E47 /* SecretConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstant.swift; sourceTree = "<group>"; };
+		EEE4E9EB2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldoutCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBlockerView.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotUserResponse.swift; path = DIDA/Data/Response/HotUserResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -613,6 +619,7 @@
 				C136340329A0C6840023DA68 /* Fonts.swift */,
 				C136340529A0C68C0023DA68 /* Colors.swift */,
 				EEE3863029C81EC600A10E47 /* SecretConstant.swift */,
+				EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1111,6 +1118,7 @@
 		EE78706B2AC1A031006BE503 /* SoldoutMore */ = {
 			isa = PBXGroup;
 			children = (
+				EEE4E9EA2AC2E51A0001FA10 /* Cell */,
 				EE78706C2AC1A0B5006BE503 /* MoreSoldoutViewController.swift */,
 				EE78706D2AC1A0B5006BE503 /* MoreSoldoutViewController.xib */,
 			);
@@ -1197,6 +1205,15 @@
 			children = (
 			);
 			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		EEE4E9EA2AC2E51A0001FA10 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEE4E9EB2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift */,
+				EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EEFA9C7E29A0C37B0061D9D9 /* Cell */ = {
@@ -1347,6 +1364,7 @@
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
 				EE78706F2AC1A0B5006BE503 /* MoreSoldoutViewController.xib in Resources */,
+				EEE4E9EE2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib in Resources */,
 				C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */,
 				C1956EC229ACD4EB00018A93 /* TableViewCell.xib in Resources */,
 				C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */,
@@ -1491,6 +1509,7 @@
 				C16FDCEE2A054ED600FB5F53 /* UserResponseDTO.swift in Sources */,
 				C16FDCEA2A054B2400FB5F53 /* SocialLoginResponseDTO.swift in Sources */,
 				C16FDD052A0659C800FB5F53 /* SignupViewController.swift in Sources */,
+				EEE4E9ED2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift in Sources */,
 				978476FF29AB392F00950F40 /* NoisyTableViewCell.swift in Sources */,
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
@@ -1572,6 +1591,7 @@
 				C16AEC8C29EA8F1C00A37C78 /* UserRepositoryImpl.swift in Sources */,
 				C1C8022D29B48BA100221FB9 /* MainViewController.swift in Sources */,
 				C16AECA929EABB3700A37C78 /* UserEntity.swift in Sources */,
+				EEE4E9F02AC2F4260001FA10 /* LoadingBlockerView.swift in Sources */,
 				EE48694E29B58927005CEF31 /* HotSellerSectionCollectionViewCell.swift in Sources */,
 				EEE3863129C81EC600A10E47 /* SecretConstant.swift in Sources */,
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
