@@ -27,7 +27,6 @@ class BaseViewController: UIViewController {
     private func setBaseNavigationBar() {
         guard let navigationController = self.navigationController else { return }
         configureCustomTitleBar(in: navigationController)
-        setupBackButton()
     }
     
     private func configureCustomTitleBar(in navigationController: UINavigationController) {
