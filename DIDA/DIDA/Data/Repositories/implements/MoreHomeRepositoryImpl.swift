@@ -31,4 +31,14 @@ class MoreHomeRepositoryImpl : MoreHomeRepository {
                 completion(.failure(error))
             }).disposed(by: disposeBag)
     }
+    
+    func getMoreSoldOut(range: Int, page: Int, size: Int, completion: @escaping (Result<GetMoreSoldOutResponse, Error>) -> ()) {
+        APIClient.request(.moreSoldOut(range: range, page: page, size: size))
+            .map(GetMoreSoldOutResponse.self)
+            .subscribe(onSuccess: { (response) in
+                completion(.success(response))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
+    }
 }
