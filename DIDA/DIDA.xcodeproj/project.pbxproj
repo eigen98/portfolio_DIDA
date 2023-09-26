@@ -186,6 +186,10 @@
 		EE6D138329F3A30400C748BE /* MoreRecentNFTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6D138129F3A30400C748BE /* MoreRecentNFTViewController.xib */; };
 		EE6D138729F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6D138529F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift */; };
 		EE6D138829F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */; };
+		EE78706E2AC1A0B5006BE503 /* MoreSoldoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE78706C2AC1A0B5006BE503 /* MoreSoldoutViewController.swift */; };
+		EE78706F2AC1A0B5006BE503 /* MoreSoldoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE78706D2AC1A0B5006BE503 /* MoreSoldoutViewController.xib */; };
+		EE7870722AC1AA51006BE503 /* MoreSoldoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7870712AC1AA51006BE503 /* MoreSoldoutViewModel.swift */; };
+		EE8D0BEF2AC2A2AD007F3502 /* GetMoreSoldOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D0BEE2AC2A2AD007F3502 /* GetMoreSoldOutResponse.swift */; };
 		EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */; };
 		EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */; };
 		EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */; };
@@ -374,6 +378,10 @@
 		EE6D138129F3A30400C748BE /* MoreRecentNFTViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreRecentNFTViewController.xib; sourceTree = "<group>"; };
 		EE6D138529F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRecentNFTCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE6D138629F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreRecentNFTCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE78706C2AC1A0B5006BE503 /* MoreSoldoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSoldoutViewController.swift; sourceTree = "<group>"; };
+		EE78706D2AC1A0B5006BE503 /* MoreSoldoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreSoldoutViewController.xib; sourceTree = "<group>"; };
+		EE7870712AC1AA51006BE503 /* MoreSoldoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSoldoutViewModel.swift; sourceTree = "<group>"; };
+		EE8D0BEE2AC2A2AD007F3502 /* GetMoreSoldOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreSoldOutResponse.swift; sourceTree = "<group>"; };
 		EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dida_loading_lottie.json; sourceTree = "<group>"; };
 		EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTEntity.swift; sourceTree = "<group>"; };
@@ -1051,6 +1059,7 @@
 		EE6D137E29F3A22C00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE78706B2AC1A031006BE503 /* SoldoutMore */,
 				EE07EE8C29F8EC4D00285A9F /* HotSellerMore */,
 				EE0AB94F29F79DF40010F182 /* ActivityMore */,
 				EE6D137F29F3A2D000C748BE /* RecentNFTMore */,
@@ -1091,11 +1100,29 @@
 		EE6D138A29F3A6DC00C748BE /* More */ = {
 			isa = PBXGroup;
 			children = (
+				EE7870702AC1AA39006BE503 /* SoldoutMore */,
 				EE07EE9829F8F81E00285A9F /* HotSellerMore */,
 				EE0AB95929F7A3BE0010F182 /* ActivityMore */,
 				EECD327729F6533200C5764E /* RecentNFTMore */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		EE78706B2AC1A031006BE503 /* SoldoutMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE78706C2AC1A0B5006BE503 /* MoreSoldoutViewController.swift */,
+				EE78706D2AC1A0B5006BE503 /* MoreSoldoutViewController.xib */,
+			);
+			path = SoldoutMore;
+			sourceTree = "<group>";
+		};
+		EE7870702AC1AA39006BE503 /* SoldoutMore */ = {
+			isa = PBXGroup;
+			children = (
+				EE7870712AC1AA51006BE503 /* MoreSoldoutViewModel.swift */,
+			);
+			path = SoldoutMore;
 			sourceTree = "<group>";
 		};
 		EE9D486729FE1D9700E184DF /* LottieFiles */ = {
@@ -1130,6 +1157,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0AB95C29F7AFEE0010F182 /* GetMoreActivityResponse.swift */,
+				EE8D0BEE2AC2A2AD007F3502 /* GetMoreSoldOutResponse.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1318,6 +1346,7 @@
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
+				EE78706F2AC1A0B5006BE503 /* MoreSoldoutViewController.xib in Resources */,
 				C136343429A0CD090023DA68 /* Pretendard-Medium.ttf in Resources */,
 				C1956EC229ACD4EB00018A93 /* TableViewCell.xib in Resources */,
 				C1A8D3CD29EA7E080023373E /* Auth.storyboard in Resources */,
@@ -1466,6 +1495,7 @@
 				9784770429AB395400950F40 /* NFTCollectionViewCell.swift in Sources */,
 				97BAE12529B11F190001F60A /* Repository.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
+				EE78706E2AC1A0B5006BE503 /* MoreSoldoutViewController.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C16AECA729EABA6A00A37C78 /* MainViewModel.swift in Sources */,
@@ -1579,7 +1609,9 @@
 				EECD7EF829B565EF0067961B /* UICollectionReusableView+Extension.swift in Sources */,
 				C16AEC8A29EA8A0500A37C78 /* UserSessionInterface.swift in Sources */,
 				C1C8022F29B48BB200221FB9 /* SellerCollectionViewCell.swift in Sources */,
+				EE8D0BEF2AC2A2AD007F3502 /* GetMoreSoldOutResponse.swift in Sources */,
 				C1C8024C29B48D0000221FB9 /* LineTabBar.swift in Sources */,
+				EE7870722AC1AA51006BE503 /* MoreSoldoutViewModel.swift in Sources */,
 				EECD327929F6534B00C5764E /* MoreRecentNFTViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
