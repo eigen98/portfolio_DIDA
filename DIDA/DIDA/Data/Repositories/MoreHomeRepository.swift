@@ -16,5 +16,5 @@ protocol MoreHomeRepository {
     
     func getMoreHotActivity(page: Int, completion: @escaping (Result<[GetMoreActivityResponse], Error>) -> ())
     
-    func getMoreSoldOut(range: Int, page: Int, size: Int, completion: @escaping (Result<GetMoreSoldOutResponse, Error>) -> ())
+    func getMoreSoldOut(range: Int, page: Int, completion: @escaping (Result<GetMoreSoldOutResponse, Error>) -> ())
 }
