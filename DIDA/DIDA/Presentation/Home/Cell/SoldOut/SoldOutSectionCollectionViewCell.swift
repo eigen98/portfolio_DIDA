@@ -10,8 +10,6 @@ import RxSwift
 
 class SoldOutSectionCollectionViewCell: UICollectionViewCell {
 
-    
-    var soldoutItems = [NFTEntity]()
     var selectedIdx = 0
     var disposeBag = DisposeBag()
     //일주일 이내, 1개월 6개월, 올한해 버튼
@@ -102,8 +100,7 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     
     
     func bindViewModel() {
-        
-        //Loading
+
         viewModel.output.isRefreshing
             .subscribe(onNext: {[weak self] isLoading in
                 
@@ -124,7 +121,6 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
         
         viewModel.output.soldoutOutput
             .subscribe(onNext: {[weak self] items in
-                self?.soldoutItems = items
                 self?.configure(items: items)
             }).disposed(by: disposeBag)
     }
@@ -154,6 +150,18 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
     }
     
     func bind(){
+
+        moreButton.rx.tap
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [weak self] in
+                guard let viewController = self?.parentViewController,
+                      let navController = viewController.navigationController else { return }
+                
+                let nextVC = MoreSoldoutViewController()
+                navController.pushViewController(nextVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+
         weekButton.rx.tap
             .bind { [weak self] in
                 guard let self = self, let weekButton = self.weekButton else { return }
@@ -203,41 +211,41 @@ class SoldOutSectionCollectionViewCell: UICollectionViewCell {
      }
     // items를 사용하여 soldoutItems를 설정하고 이미지 뷰를 구성하는 함수
      func configure(items: [NFTEntity]) {
-         configureImageViews()
+         configureImageViews(with: items)
      }
     // 이미지 뷰에 이미지를 설정하고 높이를 조정하는 함수
-     private func configureImageViews() {
-         let numberOfItems = self.soldoutItems.count
-
-         firstItemContainerView.isHidden = true
-         secondItemContainerView.isHidden = true
-         thirdItemContainerView.isHidden = true
-
-         if numberOfItems >= 1 {
-             configureImageView(firstImageView, item: soldoutItems[0])
-             firstNFTNameLabel.text = soldoutItems[0].nftName
-             firstUserNameLabel.text = soldoutItems[0].nickname
-             
-             firstPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[0].price)
-             firstItemContainerView.isHidden = false
-         }
-
-         if numberOfItems >= 2 {
-             configureImageView(secondImageView, item: soldoutItems[1])
-             secondNFTNameLabel.text = soldoutItems[1].nftName
-             secondUserNameLabel.text = soldoutItems[1].nickname
-             secondPriceLabel.text = roundedStringToTwoDecimalPlaces(value: soldoutItems[1].price)
-             secondItemContainerView.isHidden = false
-         }
-
-         if numberOfItems >= 3 {
-             configureImageView(thirdImageView, item: soldoutItems[2])
-             thirdNFTNameLabel.text = soldoutItems[2].nftName
-             thirdUserNameLabel.text = soldoutItems[2].nickname
-             thirdPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: soldoutItems[2].price)
-             thirdItemContainerView.isHidden = false
-         }
-     }
+    private func configureImageViews(with items: [NFTEntity]) {
+        let numberOfItems = items.count
+        
+        firstItemContainerView.isHidden = true
+        secondItemContainerView.isHidden = true
+        thirdItemContainerView.isHidden = true
+        
+        if numberOfItems >= 1 {
+            configureImageView(firstImageView, item: items[0])
+            firstNFTNameLabel.text = items[0].nftName
+            firstUserNameLabel.text = items[0].nickname
+            firstPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: items[0].price)
+            firstItemContainerView.isHidden = false
+        }
+        
+        if numberOfItems >= 2 {
+            configureImageView(secondImageView, item: items[1])
+            secondNFTNameLabel.text = items[1].nftName
+            secondUserNameLabel.text = items[1].nickname
+            secondPriceLabel.text = roundedStringToTwoDecimalPlaces(value: items[1].price)
+            secondItemContainerView.isHidden = false
+        }
+        
+        if numberOfItems >= 3 {
+            configureImageView(thirdImageView, item: items[2])
+            thirdNFTNameLabel.text = items[2].nftName
+            thirdUserNameLabel.text = items[2].nickname
+            thirdPriceLabel.text =  roundedStringToTwoDecimalPlaces(value: items[2].price)
+            thirdItemContainerView.isHidden = false
+        }
+    }
+    
 
     //이미지 설정
      private func configureImageView(_ imageView: UIImageView, item: NFTEntity) {
