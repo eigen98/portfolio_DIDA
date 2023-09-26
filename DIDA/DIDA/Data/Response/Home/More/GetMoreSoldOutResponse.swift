@@ -32,3 +32,18 @@ struct GetMoreSoldOutResponse: Codable {
     }
 }
 
+extension GetMoreSoldOutResponse {
+    func toDomain() -> [NFTEntity] {
+        return self.response.map { item in
+            NFTEntity(
+                cardId: item.nftInfo.nftId,
+                nickname: item.memberInfo.memberName,
+                nftName: item.nftInfo.nftName,
+                nftImg: item.nftInfo.nftImgUrl,
+                heartCount: "",
+                price: item.nftInfo.price,
+                liked: false
+            )
+        }
+    }
+}
