@@ -18,6 +18,7 @@ enum DidaAPI {
     case moreRecentNFT(page: Int, size: Int)
     case moreHotUser(page: Int)
     case moreSoldOut(range: Int, page: Int, size: Int)
+    case moreHotActivity(page: Int, size: Int)
     
     /// MARK: Login
     case socialLogin(request: LoginRequestDTO)
@@ -48,6 +49,7 @@ extension DidaAPI: TargetType {
         case .moreRecentNFT: return "/recent-nfts"
         case .moreHotUser(let page) : return "/hot/user/\(page)"
         case .moreSoldOut : return "/sold-outs"
+        case .moreHotActivity: return "/hot-members"
         
         /// MARK: Login
         case .socialLogin(let request): return "/\(request.type.rawValue)/login"
@@ -69,6 +71,7 @@ extension DidaAPI: TargetType {
         case .moreRecentNFT: return .get
         case .moreHotUser : return .get
         case .moreSoldOut : return .get
+        case .moreHotActivity: return .get
             
         /// MARK: Login
         case .socialLogin: return .post
@@ -92,7 +95,11 @@ extension DidaAPI: TargetType {
         case .moreHotUser:
             return .requestPlain
         case .moreSoldOut(let range, let page, let size):
-                    return .requestParameters(parameters: ["range": range, "page": page, "size": size], encoding: URLEncoding.queryString)
+                    return .requestParameters(parameters: ["range": range, "page": page, "size": size],
+                                              encoding: URLEncoding.queryString)
+        case .moreHotActivity(let page, let size):
+            return .requestParameters(parameters: ["page": page, "size": size],
+                                      encoding: URLEncoding.queryString)
             
         /// MARK: Login
         case .socialLogin(let request):
