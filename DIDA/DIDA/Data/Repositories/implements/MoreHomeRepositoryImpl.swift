@@ -22,9 +22,9 @@ class MoreHomeRepositoryImpl : MoreHomeRepository {
             }).disposed(by: disposeBag)
     }
 
-    func getMoreHotActivity(page: Int, completion: @escaping (Result<[GetMoreActivityResponse], Error>) -> ()) {
-        APIClient.request(.moreHotUser(page: page))
-            .map([GetMoreActivityResponse].self)
+    func getMoreHotActivity(page: Int, completion: @escaping (Result<GetMoreActivityResponse, Error>) -> ()) {
+        APIClient.request(.moreHotActivity(page: page, size: 4))
+            .map(GetMoreActivityResponse.self)
             .subscribe(onSuccess: { (response) in
                 completion(.success(response))
             }, onFailure: { (error) in
