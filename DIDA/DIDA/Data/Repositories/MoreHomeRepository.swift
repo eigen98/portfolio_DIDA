@@ -14,7 +14,7 @@ protocol MoreHomeRepository {
     //40 최근 NFT 더보기
     func getMoreRecentNFT(page: Int, completion: @escaping (Result<PagedRecentCardResponse, Error>) -> ())
     
-    func getMoreHotActivity(page: Int, completion: @escaping (Result<[GetMoreActivityResponse], Error>) -> ())
+    func getMoreHotActivity(page: Int, completion: @escaping (Result<GetMoreActivityResponse, Error>) -> ())
     
     func getMoreSoldOut(range: Int, page: Int, completion: @escaping (Result<GetMoreSoldOutResponse, Error>) -> ())
 }
