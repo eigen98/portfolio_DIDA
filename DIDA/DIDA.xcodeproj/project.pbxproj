@@ -212,6 +212,7 @@
 		EEE4E9ED2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4E9EB2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift */; };
 		EEE4E9EE2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */; };
 		EEE4E9F02AC2F4260001FA10 /* LoadingBlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */; };
+		EEE616F92AC3E0AE002C3647 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE616F82AC3E0AE002C3647 /* ImageGridView.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
@@ -411,6 +412,7 @@
 		EEE4E9EB2AC2E5470001FA10 /* SoldoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldoutCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBlockerView.swift; sourceTree = "<group>"; };
+		EEE616F82AC3E0AE002C3647 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotUserResponse.swift; path = DIDA/Data/Response/HotUserResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -944,6 +946,7 @@
 			children = (
 				EE0AB95529F79F7F0010F182 /* MoreActivityCollectionViewCell.swift */,
 				EE0AB95629F79F7F0010F182 /* MoreActivityCollectionViewCell.xib */,
+				EEE616F82AC3E0AE002C3647 /* ImageGridView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1620,6 +1623,7 @@
 				EECD7EF529B562C60067961B /* HotItemSectionCollectionViewCell.swift in Sources */,
 				C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */,
 				EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */,
+				EEE616F92AC3E0AE002C3647 /* ImageGridView.swift in Sources */,
 				EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */,
 				C10232B12A62AD2E00517F0C /* ProfileViewController.swift in Sources */,
 				C1C8023C29B48C0400221FB9 /* Fonts.swift in Sources */,
