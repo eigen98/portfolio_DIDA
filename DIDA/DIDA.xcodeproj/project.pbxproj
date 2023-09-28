@@ -204,6 +204,8 @@
 		EECD7EF829B565EF0067961B /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD7EF729B565EF0067961B /* UICollectionReusableView+Extension.swift */; };
 		EECF2C8D2AC527E90003237C /* NFTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF2C8B2AC527E90003237C /* NFTDetailViewController.swift */; };
 		EECF2C8E2AC527E90003237C /* NFTDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */; };
+		EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */; };
+		EECF2C932AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */; };
 		EEDA0E6829C86505005D1946 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */; };
 		EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */; };
 		EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862329C810DC00A10E47 /* HomeRepository.swift */; };
@@ -406,6 +408,8 @@
 		EECD7EF729B565EF0067961B /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		EECF2C8B2AC527E90003237C /* NFTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTDetailViewController.swift; sourceTree = "<group>"; };
 		EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTDetailViewController.xib; sourceTree = "<group>"; };
+		EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		EEE3862329C810DC00A10E47 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
@@ -1208,6 +1212,8 @@
 		EECF2C8F2AC52BD10003237C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */,
+				EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1388,6 +1394,7 @@
 				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
 				C136340829A0C6FA0023DA68 /* ColorAssets.xcassets in Resources */,
 				C136343A29A0CD090023DA68 /* Pretendard-Regular.ttf in Resources */,
+				EECF2C932AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib in Resources */,
 				C136343229A0CD090023DA68 /* Pretendard-Light.ttf in Resources */,
 				EE78706F2AC1A0B5006BE503 /* MoreSoldoutViewController.xib in Resources */,
 				EEE4E9EE2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib in Resources */,
@@ -1550,6 +1557,7 @@
 				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
 				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
 				EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */,
+				EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
