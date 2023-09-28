@@ -206,6 +206,9 @@
 		EECF2C8E2AC527E90003237C /* NFTDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */; };
 		EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */; };
 		EECF2C932AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */; };
+		EECF2C962AC531E50003237C /* NFTDetailInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF2C942AC531E50003237C /* NFTDetailInfoCollectionViewCell.swift */; };
+		EECF2C972AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF2C952AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib */; };
+		EECF2C9C2AC537030003237C /* DetailInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF2C9B2AC537030003237C /* DetailInfoListView.swift */; };
 		EEDA0E6829C86505005D1946 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */; };
 		EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */; };
 		EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862329C810DC00A10E47 /* HomeRepository.swift */; };
@@ -410,6 +413,9 @@
 		EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTDetailViewController.xib; sourceTree = "<group>"; };
 		EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		EECF2C942AC531E50003237C /* NFTDetailInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTDetailInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EECF2C952AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NFTDetailInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		EECF2C9B2AC537030003237C /* DetailInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoListView.swift; sourceTree = "<group>"; };
 		EEDA0E6729C86505005D1946 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		EEE3862329C810DC00A10E47 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
@@ -1202,6 +1208,7 @@
 		EECF2C8A2AC527B70003237C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				EECF2C982AC534690003237C /* View */,
 				EECF2C8F2AC52BD10003237C /* Cell */,
 				EECF2C8B2AC527E90003237C /* NFTDetailViewController.swift */,
 				EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */,
@@ -1214,8 +1221,18 @@
 			children = (
 				EECF2C902AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift */,
 				EECF2C912AC52EDE0003237C /* NFTOverviewCollectionViewCell.xib */,
+				EECF2C942AC531E50003237C /* NFTDetailInfoCollectionViewCell.swift */,
+				EECF2C952AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EECF2C982AC534690003237C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EECF2C9B2AC537030003237C /* DetailInfoListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EEE3862729C8143D00A10E47 /* Network */ = {
@@ -1407,6 +1424,7 @@
 				C10232BC2A62B5A700517F0C /* NftCardCollectionViewCell.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 				9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */,
+				EECF2C972AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib in Resources */,
 				C136343829A0CD090023DA68 /* Pretendard-Thin.ttf in Resources */,
 				C136343529A0CD090023DA68 /* Pretendard-ExtraLight.ttf in Resources */,
 				C136343729A0CD090023DA68 /* Pretendard-Black.ttf in Resources */,
@@ -1593,6 +1611,7 @@
 				C1C8022E29B48BB200221FB9 /* MainTabbarCollectionViewCell.swift in Sources */,
 				C10232BB2A62B5A700517F0C /* NftCardCollectionViewCell.swift in Sources */,
 				EECD327E29F65C9500C5764E /* MoreHomeRepositoryImpl.swift in Sources */,
+				EECF2C962AC531E50003237C /* NFTDetailInfoCollectionViewCell.swift in Sources */,
 				C1C8022B29B48BA100221FB9 /* TabBarItem.swift in Sources */,
 				C1C8024029B48C1400221FB9 /* UIImage+Extension.swift in Sources */,
 				C134D72C2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift in Sources */,
@@ -1623,6 +1642,7 @@
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
 				C16AEC8E29EA8F4200A37C78 /* UserRepository.swift in Sources */,
 				C16AEC8C29EA8F1C00A37C78 /* UserRepositoryImpl.swift in Sources */,
+				EECF2C9C2AC537030003237C /* DetailInfoListView.swift in Sources */,
 				C1C8022D29B48BA100221FB9 /* MainViewController.swift in Sources */,
 				C16AECA929EABB3700A37C78 /* UserEntity.swift in Sources */,
 				EEE4E9F02AC2F4260001FA10 /* LoadingBlockerView.swift in Sources */,
