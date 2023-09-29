@@ -6,24 +6,126 @@
 //
 
 import UIKit
-
-class NFTDetailViewController: UIViewController {
-
+import RxSwift
+class NFTDetailViewController: BaseViewController {
+    
+    private let disposeBag = DisposeBag()
+    let viewModel: NFTDetailViewModel = NFTDetailViewModel()
+    var nftId: Int? 
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var purchaseButton: Buttons!
+    @IBOutlet weak var priceContainerWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTitleBar()
+        setupButton()
+        initCollectionView()
+        bindEvent()
+        bindViewModel()
+        viewModel.input.refreshTrigger.accept((nftId ?? 0))
+        
 
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func bindEvent() {
+        purchaseButton.rx.tap
+            .bind(onNext: {
+                
+            })
+            .disposed(by: disposeBag)
     }
-    */
+    
+    override func bindViewModel() {
+        viewModel.output.nftDetailData
+            .bind(to: collectionView.rx.items) { collectionView, row, item in
+                switch item {
+                case .overview(let overviewItem):
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NFTOverviewCollectionViewCell.reuseIdentifier, for: IndexPath(row: row, section: 0)) as! NFTOverviewCollectionViewCell
+                    cell.configure(with: overviewItem)
+                    return cell
 
+                case .detailInfo(let detailInfoItem):
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NFTDetailInfoCollectionViewCell.reuseIdentifier, for: IndexPath(row: row, section: 0)) as! NFTDetailInfoCollectionViewCell
+                    cell.configure(with: detailInfoItem)
+                    return cell
+
+                case .community(let communityItem):
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NFTCommunityCollectionViewCell.reuseIdentifier, for: IndexPath(row: row, section: 0)) as! NFTCommunityCollectionViewCell
+                  
+                    cell.configure(with: communityItem)
+                    return cell
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.output.priceObservable
+            .subscribe(onNext: { [weak self] price in
+                self?.priceLabel.text = self?.roundedStringToTwoDecimalPlaces(value: price ?? "0.00")
+            })
+            .disposed(by: disposeBag)
+
+    }
+    
+    
+    private func setupTitleBar() {
+        self.setupBackButton()
+        let likeButton = UIButton()
+        likeButton.setImage(UIImage(named: "heart-unfill"), for: .normal)
+        likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        
+        let menuButton = UIButton()
+        menuButton.setImage(UIImage(named: "more_vertical"), for: .normal)
+        customTitleBar.rightItems = [likeButton, menuButton]
+    }
+    
+    @objc func likeButtonTapped() {
+        print("Right button in HomeViewController tapped.")
+    }
+    
+    private func initCollectionView() {
+        collectionView.register(UINib(nibName: NFTOverviewCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: NFTOverviewCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: NFTDetailInfoCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: NFTDetailInfoCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: NFTCommunityCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: NFTCommunityCollectionViewCell.reuseIdentifier)
+       
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .vertical
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+
+        self.collectionView.collectionViewLayout = layout
+        
+    }
+    
+    private func setupButton() {
+        purchaseButton.style = .dialog
+        purchaseButton.shape = .round
+    }
+    
+    private func roundedStringToTwoDecimalPlaces(value: String) -> String {
+        if value.isEmpty { return "0.00" }
+        
+        if let doubleValue = Double(value) {
+            let absValue = abs(doubleValue)
+            let sign = doubleValue < 0 ? "-" : ""
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            
+            let (divisor, suffix): (Double, String) = {
+                if absValue < 1_000 { return (1, "") }
+                if absValue < 1_000_000 { return (1_000, "K") }
+                return (1_000_000, "M")
+            }()
+            
+            let formattedValue = formatter.string(from: NSNumber(value: absValue / divisor)) ?? ""
+            return "\(sign)\(formattedValue)\(suffix)"
+        } else {
+            return value
+        }
+    }
 }
