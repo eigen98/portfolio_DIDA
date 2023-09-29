@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol MarketRepository {
+    func getNFTDetail(nftId: Int, completion: @escaping (Result<GetNFTDetailResponse, Error>) -> ())
+}
