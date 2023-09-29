@@ -27,6 +27,9 @@ enum DidaAPI {
     
     /// MARK: Member
     case fetchMyself
+    
+    /// MARK: Market
+    case nftDetail(nftId: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -58,6 +61,9 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return "/user"
+            
+        /// MARK: Market
+        case .nftDetail(let nftId): return "/nft/\(nftId)"
         }
     }
     
@@ -80,6 +86,9 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return .get
+            
+        /// MARK: Market
+        case .nftDetail: return .get
         }
     }
     
@@ -112,6 +121,9 @@ extension DidaAPI: TargetType {
         /// MARK: Member
         case .fetchMyself:
             return .requestPlain
+        
+        /// MARK: Market
+        case .nftDetail: return .requestPlain
         }
     }
 }
