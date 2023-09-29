@@ -83,7 +83,7 @@ extension HotItemSectionCollectionViewCell {
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func updatePageControllerCurrentPage() {
         let proportionalOffset = (hotItemCollectionView.contentOffset.x + Constants.spacing) / (Constants.cellWidth + Constants.spacing)
         let currentPage = Int(round(proportionalOffset))
@@ -116,5 +116,16 @@ extension HotItemSectionCollectionViewCell: UICollectionViewDelegate, UICollecti
             cell.configure(item: item)
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = self.parentViewController,
+              let navController = viewController.navigationController else { return }
+        
+        let id = self.hotItems[indexPath.row].cardId
+        let nextVC = NFTDetailViewController()
+        nextVC.nftId = id
+        navController.pushViewController(nextVC, animated: true)
+        
     }
 }
