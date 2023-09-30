@@ -67,7 +67,7 @@ extension DidaAPI: TargetType {
         case .duplicatedNickname: return "/nickname"
         
         /// MARK: Member
-        case .fetchMyself: return "/user"
+        case .fetchMyself: return "/common/profile"
             
         /// MARK: Market
         case .nftDetail(let nftId): return "/nft/\(nftId)"
