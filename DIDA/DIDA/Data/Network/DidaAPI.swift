@@ -39,7 +39,14 @@ extension DidaAPI: TargetType {
     }
     
     var headers: [String: String]? {
-        return ["Authorization" : Token.shared.accessToken ?? ""]
+        var defaultHeaders = ["Authorization" : Token.shared.accessToken ?? ""]
+        switch self {
+        case .socialLogin:
+            defaultHeaders["Content-Type"] = "application/json; charset=utf-8"
+        default:
+            break
+        }
+        return defaultHeaders
     }
     
     var path: String {
@@ -112,7 +119,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Login
         case .socialLogin(let request):
-            return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+                return .requestJSONEncodable(request)
         case .signup(let request):
             return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
         case .duplicatedNickname(let request):
