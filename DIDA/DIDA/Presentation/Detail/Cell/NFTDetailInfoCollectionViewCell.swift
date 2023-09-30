@@ -90,7 +90,11 @@ extension NFTDetailInfoCollectionViewCell: DetailInfoRowViewDelegate {
         case .contractLink(let address):
             print("컨트랙트 링크 주소를 탭했습니다: \(address)")
         case .ownershipDetails:
-            print("소유권 내역을 탭했습니다.")
+            guard let viewController = self.parentViewController,
+                  let navController = viewController.navigationController else { return }
+            
+            let nextVC = OwnershipNFTViewController()
+            navController.pushViewController(nextVC, animated: true)
         }
     }
 }
