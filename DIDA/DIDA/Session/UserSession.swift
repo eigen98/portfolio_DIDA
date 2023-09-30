@@ -108,40 +108,33 @@ class UserSession: UserSessionInterface {
     }
     
     func socialLogin(type: SocialType, idToken: String, completion: @escaping (LoginProviderEntity?, Error?) -> ()) {
-        
         APIClient.request(.socialLogin(request: LoginRequestDTO(type: type, idToken: idToken)))
             .asObservable()
-            .flatMapLatest { response -> Single<SocialLoginResponseDTO> in
-                if response.statusCode == 200 {
-                    let decode = try response.map(SocialLoginResponseDTO.self)
-                    return Single.just(decode)
-                } else {
+            .flatMapLatest { response -> Observable<LoginProviderEntity> in
+                guard response.statusCode == 200 else {
                     let error = try response.map(BaseErrorResponseDTO.self)
                     return .error(DidaError.apiError(error))
                 }
-               
-            }.subscribe { response in
                 
-                let accessToken = response.accessToken ?? ""
-                let refreshToken = response.refreshToken ?? ""
-                
-                if accessToken.isEmpty {
-                    completion(nil, DidaError.Unknown)
-                    return
+                if let decode = try? response.map(SocialLoginResponseDTO.self) {
+                    Token.shared.set(accessToken: decode.accessToken ?? "",
+                                     refreshToken: decode.refreshToken ?? "")
+                    return .just(LoginProviderEntity(isFirst: false))
                 }
                 
-                if refreshToken.isEmpty {
-                    completion(LoginProviderEntity(email: response.accessToken, isFirst: true), nil)
-                    return
+                if let decode = try? response.map(FirstLoginResponseDTO.self) {
+                    let email = decode.message.components(separatedBy: " ").last ?? ""
+                    return .just(LoginProviderEntity(email: email, isFirst: true))
                 }
                 
-                Token.shared.set(accessToken: accessToken, refreshToken: refreshToken)
-                                
-                completion(LoginProviderEntity(isFirst: false), nil)
-                
-            } onError: { error in
+                return .error(DidaError.Unknown)
+            }
+            .subscribe(onNext: { entity in
+                completion(entity, nil)
+            }, onError: { error in
                 completion(nil, error)
-            }.disposed(by: self.disposeBag)
+            })
+            .disposed(by: self.disposeBag)
     }
     
     func signup(email: String, nickname: String, completion: @escaping (Error?) -> ()) {
