@@ -63,8 +63,8 @@ extension DidaAPI: TargetType {
         
         /// MARK: Login
         case .socialLogin(let request): return "/\(request.type.rawValue)/login"
-        case .signup: return "/new/user"
-        case .duplicatedNickname: return "/user/nickname"
+        case .signup: return "/user"
+        case .duplicatedNickname: return "/nickname"
         
         /// MARK: Member
         case .fetchMyself: return "/user"
