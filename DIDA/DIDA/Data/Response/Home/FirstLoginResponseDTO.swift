@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct FirstLoginResponseDTO: Codable {
+    let code: String
+    let message: String
+    let timestamp: String
+}
