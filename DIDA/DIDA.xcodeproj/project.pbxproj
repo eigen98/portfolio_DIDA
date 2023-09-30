@@ -227,6 +227,8 @@
 		EEE4E9EE2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */; };
 		EEE4E9F02AC2F4260001FA10 /* LoadingBlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */; };
 		EEE616F92AC3E0AE002C3647 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE616F82AC3E0AE002C3647 /* ImageGridView.swift */; };
+		EEE676752AC7D11200D58AA2 /* OwnershipNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676732AC7D11200D58AA2 /* OwnershipNFTViewController.swift */; };
+		EEE676762AC7D11200D58AA2 /* OwnershipNFTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE676742AC7D11200D58AA2 /* OwnershipNFTViewController.xib */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
@@ -441,6 +443,8 @@
 		EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldoutCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEE4E9EF2AC2F4260001FA10 /* LoadingBlockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBlockerView.swift; sourceTree = "<group>"; };
 		EEE616F82AC3E0AE002C3647 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		EEE676732AC7D11200D58AA2 /* OwnershipNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnershipNFTViewController.swift; sourceTree = "<group>"; };
+		EEE676742AC7D11200D58AA2 /* OwnershipNFTViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnershipNFTViewController.xib; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotUserResponse.swift; path = DIDA/Data/Response/HotUserResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -545,6 +549,7 @@
 		97BAE0F529ABCC890001F60A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				EEE676772AC7D15300D58AA2 /* Detail */,
 				EE6D138929F3A6CA00C748BE /* Home */,
 				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
 				C16AECA629EABA6A00A37C78 /* MainViewModel.swift */,
@@ -1246,7 +1251,8 @@
 				EECF2C8F2AC52BD10003237C /* Cell */,
 				EECF2C8B2AC527E90003237C /* NFTDetailViewController.swift */,
 				EECF2C8C2AC527E90003237C /* NFTDetailViewController.xib */,
-				EECF2CA22AC550D20003237C /* NFTDetailViewModel.swift */,
+				EEE676732AC7D11200D58AA2 /* OwnershipNFTViewController.swift */,
+				EEE676742AC7D11200D58AA2 /* OwnershipNFTViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1299,6 +1305,14 @@
 				EEE4E9EC2AC2E5470001FA10 /* SoldoutCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EEE676772AC7D15300D58AA2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EECF2CA22AC550D20003237C /* NFTDetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		EEFA9C7E29A0C37B0061D9D9 /* Cell */ = {
@@ -1427,6 +1441,7 @@
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
 				C1956E9529ABAC2400018A93 /* Assets.xcassets in Resources */,
 				EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */,
+				EEE676762AC7D11200D58AA2 /* OwnershipNFTViewController.xib in Resources */,
 				9784770929AB397B00950F40 /* PostTableViewCell.xib in Resources */,
 				EE0E778229A0EE7400E3863C /* (null) in Resources */,
 				EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */,
@@ -1647,6 +1662,7 @@
 				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
 				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
+				EEE676752AC7D11200D58AA2 /* OwnershipNFTViewController.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
 				C1C8022E29B48BB200221FB9 /* MainTabbarCollectionViewCell.swift in Sources */,
