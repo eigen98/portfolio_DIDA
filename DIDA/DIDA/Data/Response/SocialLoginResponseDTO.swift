@@ -9,10 +9,7 @@ import Foundation
 
 struct SocialLoginResponseDTO: Codable {
     let accessToken: String?
+    let accessTokenExpirationTime: String?
     let refreshToken: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case accessToken
-        case refreshToken
-    }
+    let refreshTokenExpirationTime: String?
 }
