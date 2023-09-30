@@ -235,7 +235,6 @@
 		EEE676812AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE6767F2AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib */; };
 		EEE676832AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676822AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift */; };
 		EEE676852AC7E4E300D58AA2 /* OwnershipSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676842AC7E4E300D58AA2 /* OwnershipSectionHeader.swift */; };
-		EEE676872AC80C3F00D58AA2 /* FirstLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676862AC80C3F00D58AA2 /* FirstLoginResponseDTO.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
@@ -458,7 +457,6 @@
 		EEE6767F2AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOwnerCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEE676822AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnershipNFTViewModel.swift; sourceTree = "<group>"; };
 		EEE676842AC7E4E300D58AA2 /* OwnershipSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnershipSectionHeader.swift; sourceTree = "<group>"; };
-		EEE676862AC80C3F00D58AA2 /* FirstLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginResponseDTO.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotUserResponse.swift; path = DIDA/Data/Response/HotUserResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -1245,7 +1243,6 @@
 			isa = PBXGroup;
 			children = (
 				EECD327F29F660E900C5764E /* More */,
-				EEE676862AC80C3F00D58AA2 /* FirstLoginResponseDTO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1686,7 +1683,6 @@
 				EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */,
 				EE2592D92AC002FA00260EE5 /* UIResponder+Extension.swift in Sources */,
 				C1B3F76E2A5AD0FB00D02053 /* TitleBar.swift in Sources */,
-				EEE676872AC80C3F00D58AA2 /* FirstLoginResponseDTO.swift in Sources */,
 				C1C8024F29B48D0500221FB9 /* TextField.swift in Sources */,
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				EE2455942AC65BD100F48FAA /* GetNFTDetailResponse.swift in Sources */,

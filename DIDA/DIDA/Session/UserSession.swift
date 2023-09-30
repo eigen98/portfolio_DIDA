@@ -116,18 +116,14 @@ class UserSession: UserSessionInterface {
                     return .error(DidaError.apiError(error))
                 }
                 
-                if let decode = try? response.map(SocialLoginResponseDTO.self) {
-                    Token.shared.set(accessToken: decode.accessToken ?? "",
-                                     refreshToken: decode.refreshToken ?? "")
+                if let decode = try? response.map(SocialLoginResponseDTO.self),
+                   let accessToken = decode.accessToken,
+                   let refreshToken = decode.refreshToken {
+                    Token.shared.set(accessToken: accessToken, refreshToken: refreshToken)
                     return .just(LoginProviderEntity(isFirst: false))
+                }else{
+                    return .just(LoginProviderEntity(isFirst: true))
                 }
-                
-                if let decode = try? response.map(FirstLoginResponseDTO.self) {
-                    let email = decode.message.components(separatedBy: " ").last ?? ""
-                    return .just(LoginProviderEntity(email: email, isFirst: true))
-                }
-                
-                return .error(DidaError.Unknown)
             }
             .subscribe(onNext: { entity in
                 completion(entity, nil)
