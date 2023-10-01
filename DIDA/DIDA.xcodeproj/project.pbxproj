@@ -171,6 +171,7 @@
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
 		EE235A152AC91D4000ABB801 /* SocialInteractionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A142AC91D4000ABB801 /* SocialInteractionRepository.swift */; };
 		EE235A172AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A162AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift */; };
+		EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A182AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift */; };
 		EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */; };
 		EE242AE629B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */; };
 		EE242AE929B9B21D00690518 /* ActivitySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */; };
@@ -391,6 +392,7 @@
 		EE11054B299A900C00C5D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE235A142AC91D4000ABB801 /* SocialInteractionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInteractionRepository.swift; sourceTree = "<group>"; };
 		EE235A162AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInteractionRepositoryImpl.swift; sourceTree = "<group>"; };
+		EE235A182AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTSectionViewModel.swift; sourceTree = "<group>"; };
 		EE242AE329B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE242AE429B9A87C00690518 /* RecentNFTSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentNFTSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE242AE729B9B21D00690518 /* ActivitySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1175,6 +1177,7 @@
 				EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */,
 				EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */,
 				EE6D138A29F3A6DC00C748BE /* More */,
+				EE235A182AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1664,6 +1667,7 @@
 				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
 				EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */,
 				EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */,
+				EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
