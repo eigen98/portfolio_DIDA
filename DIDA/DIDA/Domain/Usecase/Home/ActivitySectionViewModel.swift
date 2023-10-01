@@ -57,7 +57,6 @@ class ActivitySectionViewModel : BaseViewModel{
     }
     
     private func performFollowAction(for item: UserEntity) {
-        print("팔로잉()")
         socialInteractionRepository.followUser(memberId: item.userId) { [weak self] result in
             switch result {
             case .success(let success):
