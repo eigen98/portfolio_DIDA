@@ -28,4 +28,21 @@ class SocialInteractionRepositoryImpl: SocialInteractionRepository {
                 completion(.failure(error))
             }).disposed(by: disposeBag)
     }
+    
+    func followUser(memberId: Int, completion: @escaping (Result<Bool, Error>) -> ()) {
+        APIClient.request(.followMember(memberId: memberId))
+            .map { response -> Bool in
+                if response.statusCode == 200 {
+                    return true
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    throw DidaError.apiError(error)
+                }
+            }
+            .subscribe(onSuccess: { (success) in
+                completion(.success(success))
+            }, onFailure: { (error) in
+                completion(.failure(error))
+            }).disposed(by: disposeBag)
+    }
 }
