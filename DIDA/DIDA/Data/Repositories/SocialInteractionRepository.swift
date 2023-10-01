@@ -9,4 +9,6 @@ import Foundation
 
 protocol SocialInteractionRepository {
     func likeNFT(nftId: Int, completion: @escaping (Result<Bool, Error>) -> ())
+    
+    func followUser(memberId: Int, completion: @escaping (Result<Bool, Error>) -> ())
 }
