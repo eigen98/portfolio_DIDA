@@ -42,7 +42,7 @@ class BaseViewController: UIViewController {
             customTitleBar.topAnchor.constraint(equalTo: navigationController.navigationBar.topAnchor),
             customTitleBar.leadingAnchor.constraint(equalTo: navigationController.navigationBar.leadingAnchor),
             customTitleBar.trailingAnchor.constraint(equalTo: navigationController.navigationBar.trailingAnchor),
-            customTitleBar.heightAnchor.constraint(equalToConstant: 44)
+            customTitleBar.bottomAnchor.constraint(equalTo: navigationController.navigationBar.bottomAnchor)
         ])
     }
     
