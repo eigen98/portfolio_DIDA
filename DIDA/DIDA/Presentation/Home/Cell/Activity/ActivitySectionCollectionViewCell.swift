@@ -76,123 +76,121 @@ class ActivitySectionCollectionViewCell: UICollectionViewCell {
     
     
     func configure(items: [UserEntity]) {
-        bind()
-        // View를 초기 상태로 클리어
+        disposeBag = DisposeBag() // disposeBag을 초기화합니다.
         clearViews()
-        //로딩 객체인지 확인합니다.
-        if items.first == UserEntity.loading {
-            self.showSkeleton(usingColor: Colors.surface_2!)
-        } else {
-            // 첫 번째 아이템이 로딩 객체가 아니라면, 스켈레톤 뷰를 숨깁니다.
-            self.hideSkeleton()
-        }
-        
-        for (index, item) in items.enumerated() {
-            if index == 0 {
-                firstItemContainerView.isHidden = false
-                configureView(firstItemImageView, firstItemNameLabel, firstItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((false, 0))
-            } else if index == 1 {
-                secondItemContainerView.isHidden = false
-                configureView(secondItemImageView, secondItemNameLabel, secondItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((false, 1))
-            } else if index == 2 {
-                thirdItemContainerView.isHidden = false
-                configureView(thirdItemImageView, thirdItemNameLabel, thirdItemCountLabel, item)
-                viewModel.input.followButtonTapped.accept((false, 0))
-            }
-        }
-        
-        
-        //Empty View
-        self.createNFTButton.shape = .round
-        self.createNFTButton.style = .primary
-        self.createNFTButton.buttonHeight = .h56
-        
-        if items.count == 0{
-            emptyContainerView.isHidden = false
-        }else{
-            emptyContainerView.isHidden = true
-        }
-        
-        
-        
+        setupSkeletonView(with: items)
+        setupEmptyView(with: items)
+        bindViewModel() // bindViewModel을 여기서 호출하여 버튼에 대한 구독을 설정합니다.
+        viewModel.configure(items: items)
     }
     
-    private func configureView(_ imageView: UIImageView, _ nameLabel: UILabel, _ countLabel: UILabel, _ item: UserEntity) {
-        if let url = URL(string: item.profileImage ?? "") {
-               imageView.kf.setImage(with: url)
-           }
-        nameLabel.text = item.nickname
-        countLabel.text = "\(item.cardCnt) 작품"
+    private func setupSkeletonView(with items: [UserEntity]) {
+        if items.first == UserEntity.loading {
+            showSkeleton(usingColor: Colors.surface_2!)
+        } else {
+            hideSkeleton()
+        }
+    }
+    
+    private func setupEmptyView(with items: [UserEntity]) {
+        createNFTButton.shape = .round
+        createNFTButton.style = .primary
+        createNFTButton.buttonHeight = .h56
+        emptyContainerView.isHidden = !items.isEmpty
     }
     
     private func clearViews() {
-        firstItemContainerView.isHidden = true
-        secondItemContainerView.isHidden = true
-        thirdItemContainerView.isHidden = true
+        let containerViews = [firstItemContainerView, secondItemContainerView, thirdItemContainerView]
+        let imageViews = [firstItemImageView, secondItemImageView, thirdItemImageView]
+        let nameLabels = [firstItemNameLabel, secondItemNameLabel, thirdItemNameLabel]
+        let countLabels = [firstItemCountLabel, secondItemCountLabel, thirdItemCountLabel]
         
-        firstItemImageView.image = nil
-        firstItemNameLabel.text = nil
-        firstItemCountLabel.text = nil
-        
-        secondItemImageView.image = nil
-        secondItemNameLabel.text = nil
-        secondItemCountLabel.text = nil
-        
-        thirdItemImageView.image = nil
-        thirdItemNameLabel.text = nil
-        thirdItemCountLabel.text = nil
+        containerViews.forEach { $0?.isHidden = true }
+        imageViews.forEach { $0?.image = nil }
+        nameLabels.forEach { $0?.text = nil }
+        countLabels.forEach { $0?.text = nil }
+    }
+
+    private func bindViewModel() {
+        bindMoreButton()
+        bindFollowButtons()
+        bindViewModelOutputs()
     }
     
+    private func bindMoreButton() {
+        moreButton.rx.tap
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [weak self] in
+                self?.navigateToMoreActivityViewController()
+            })
+            .disposed(by: disposeBag)
+    }
     
-    func configureButtons(idx: Int, bool : Bool){
+    private func navigateToMoreActivityViewController() {
+        guard let viewController = parentViewController,
+              let navController = viewController.navigationController else { return }
+        let nextVC = MoreActivityViewController()
+        navController.pushViewController(nextVC, animated: true)
+    }
+    
+    private func bindFollowButtons() {
+        let followButtons = [firstFollowButton, secondFollowButton, thirdFollowButton]
+        for (index, followButton) in followButtons.enumerated() {
+            followButton?.rx.tap
+                .map { index }
+                .bind(to: viewModel.input.followButtonTapped)
+                .disposed(by: disposeBag)
+        }
+    }
+    
+    private func bindViewModelOutputs() {
+        viewModel.output.followStatusChanged
+            .subscribe(onNext: { [weak self] (isFollowing, index) in
+                self?.configureButtons(idx: index, bool: isFollowing)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.items
+            .subscribe(onNext: { [weak self] items in
+                self?.configureViews(with: items)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureViews(with items: [UserEntity]) {
+        for (index, item) in items.enumerated() {
+            configureView(at: index, with: item)
+        }
+    }
+    
+    private func configureView(at index: Int, with item: UserEntity) {
+        let containerViews = [firstItemContainerView, secondItemContainerView, thirdItemContainerView]
+        let imageViews = [firstItemImageView, secondItemImageView, thirdItemImageView]
+        let nameLabels = [firstItemNameLabel, secondItemNameLabel, thirdItemNameLabel]
+        let countLabels = [firstItemCountLabel, secondItemCountLabel, thirdItemCountLabel]
+        let followButtons = [firstFollowButton, secondFollowButton, thirdFollowButton]
+        
+        containerViews[index]?.isHidden = false
+        configureView(imageView: imageViews[index], nameLabel: nameLabels[index], countLabel: countLabels[index], with: item)
+        configureButtons(idx: index, bool: item.isFollowing)
+    }
+
+    
+    private func configureView(imageView: UIImageView?, nameLabel: UILabel?, countLabel: UILabel?, with item: UserEntity) {
+        if let url = URL(string: item.profileImage ?? "") {
+            imageView?.kf.setImage(with: url)
+        }
+        nameLabel?.text = item.nickname
+        countLabel?.text = "\(item.cardCnt) 작품"
+    }
+    
+    private func configureButtons(idx: Int, bool: Bool) {
         let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
         buttons[idx]?.style = bool ? .primary : .dialog
         buttons[idx]?.shape = .circle
-        
         let text = bool ? "팔로잉" : "팔로우"
         buttons[idx]?.setTitle(text, for: .normal)
         let color = bool ? UIColor.black : UIColor.white
         buttons[idx]?.customTitleColor = .init(normal: color, disabled: color, selected: color, hightlight: color)
-    }
-    
-}
-
-extension ActivitySectionCollectionViewCell{
-    func bind(){
-        
-        //MARK: Input
-        moreButton.rx.tap
-            .asDriver(onErrorJustReturn: ())
-            .drive(onNext: { [weak self] in
-                guard let viewController = self?.parentViewController,
-                      let navController = viewController.navigationController else { return }
-                
-                let nextVC = MoreActivityViewController()
-                navController.pushViewController(nextVC, animated: true)
-            })
-            .disposed(by: disposeBag)
-        
-        let buttons = [firstFollowButton, secondFollowButton, thirdFollowButton]
-        for(index, button) in buttons.enumerated(){
-            button?.rx.tap
-                .map{ [weak self] in
-                    if "\(button?.style ?? ButtonStyle.primary)" == self?.primaryStyleString{
-                        return (false,index)
-                    }else{
-                        return (true,index)
-                    }
-                }
-                .bind(to: viewModel.input.followButtonTapped)
-                .disposed(by: disposeBag)
-        }
-
-        viewModel.output.followStatusChanged
-            .subscribe(onNext: {[weak self] bool, idx in
-                self?.configureButtons(idx: idx, bool: bool)
-            })
-            .disposed(by: disposeBag)
-        
     }
 }
