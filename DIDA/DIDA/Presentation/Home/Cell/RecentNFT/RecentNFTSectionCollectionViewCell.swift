@@ -13,7 +13,7 @@ import RxSwift
 class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
     
     private enum Constants {
-        static let heartFillImageName = "heart-fill"
+        static let heartFillImageName = "heart-fill-white"
         static let heartUnfillImageName = "heart-unfill"
         static let defaultDecimalString = "0.00"
         static let thousandSuffix = "K"
