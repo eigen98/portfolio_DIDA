@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SocialInteractionRepository {
+    func likeNFT(nftId: Int, completion: @escaping (Result<Bool, Error>) -> ())
+}
