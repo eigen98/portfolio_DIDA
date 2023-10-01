@@ -33,6 +33,7 @@ enum DidaAPI {
     
     /// MARK: User Interaction
     case likeNFT(nftId: Int)
+    case followMember(memberId: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -77,6 +78,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: User Interaction
         case .likeNFT: return "/common/nft/like"
+        case .followMember(let memberId): return "/common/follow/\(memberId)"
         }
     }
     
@@ -105,6 +107,7 @@ extension DidaAPI: TargetType {
 
         /// MARK: User Interaction
         case .likeNFT: return .post
+        case .followMember: return .patch
         }
     }
     
@@ -145,6 +148,8 @@ extension DidaAPI: TargetType {
         /// MARK: NFT Interaction
         case .likeNFT(let nftId):
             return .requestParameters(parameters: ["nftId": nftId], encoding: JSONEncoding.default)
+        case .followMember:
+            return .requestPlain
         }
     }
 }
