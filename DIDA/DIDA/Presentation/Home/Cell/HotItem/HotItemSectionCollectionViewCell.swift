@@ -26,7 +26,12 @@ class HotItemSectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hotItemCollectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
     
-    var hotItems = [NFTEntity]()
+    var hotItems = [NFTEntity](){
+        didSet {
+            pageController.numberOfPages = hotItems.count
+        }
+    }
+    
     private var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
