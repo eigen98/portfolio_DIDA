@@ -65,7 +65,8 @@ extension Array where Element == HotUserResponse {
                 hasWallet: false,
                 cardCnt: $0.nftCount ?? 0,
                 followerCnt: 0,
-                followingCnt: 0
+                followingCnt: 0,
+                isFollowing: $0.followed ?? false
             )
         }
     }
