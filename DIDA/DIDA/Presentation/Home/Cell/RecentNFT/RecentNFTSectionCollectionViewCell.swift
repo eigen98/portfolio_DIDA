@@ -122,69 +122,11 @@ class RecentNFTSectionCollectionViewCell: UICollectionViewCell {
             .disposed(by: disposeBag)
     }
     
-    // MARK: - Configuration
-//    func configure(items: [NFTEntity]) {
-//        bind()
-//
-//        let containerViews = [firstContainerView, secondContainerView, thirdContainerView, fourthContainerView]
-//        let itemViews: [(UIImageView?, UILabel?, UILabel?, UILabel?, UIButton?)] = [
-//            (firstItemImageView, firstUserNameLabel, firstNFTNameLabel, firstPriceLabel, firstLikeButton),
-//            (secondItemImageView, secondUserNameLabel, secondNFTNameLabel, secondPriceLabel, secondLikeButton),
-//            (thirdItemImageView, thirdUserNameLabel, thirdNFTNameLabel, thirdPriceLabel, thirdLikeButton),
-//            (fourthItemImageView, fourthUserNameLabel, fourthNFTNameLabel, fourthPriceLabel, fourthLikeButton)
-//        ]
-//
-//        for (index, containerView) in containerViews.enumerated() {
-//            containerView?.isHidden = index >= items.count
-//        }
-//
-//        for (index, item) in items.enumerated() {
-//            if index >= itemViews.count { break }
-//            if let url = URL(string: item.nftImg) {
-//                itemViews[index].0?.kf.setImage(with: url)
-//            }
-//            itemViews[index].1?.text = item.nickname
-//            itemViews[index].2?.text = item.nftName
-//            itemViews[index].3?.text = "\(roundedStringToTwoDecimalPlaces(value: (item.price)))"
-//            let imageName = item.liked ? Constants.heartFillImageName : Constants.heartUnfillImageName
-//            itemViews[index].4?.setImage(UIImage(named: imageName), for: .normal)
-//        }
-//    }
-    
     func configure(items: [NFTEntity]) {
-            viewModel.configure(items: items)
-            bindViewModel()
-        }
-        
-    
-    // MARK: - Binding
-//    private func bind() {
-//        moreButton.rx.tap
-//            .asDriver(onErrorJustReturn: ())
-//            .drive(onNext: { [weak self] in
-//                guard let viewController = self?.parentViewController,
-//                      let navController = viewController.navigationController else { return }
-//
-//                let nextVC = MoreRecentNFTViewController()
-//                navController.pushViewController(nextVC, animated: true)
-//            })
-//            .disposed(by: disposeBag)
-//
-//        let likeButtons = [firstLikeButton, secondLikeButton, thirdLikeButton, fourthLikeButton]
-//
-//        for likeButton in likeButtons {
-//            likeButton?.rx.tap
-//                .subscribe(onNext: { [weak self, weak likeButton] in
-//                    guard let self = self, let likeButton = likeButton else { return }
-//                    let isLiked = likeButton.isSelected
-//                    likeButton.isSelected = !isLiked
-//                    let imageName = !isLiked ? Constants.heartFillImageName : Constants.heartUnfillImageName
-//                    likeButton.setImage(UIImage(named: imageName), for: .normal)
-//                })
-//                .disposed(by: disposeBag)
-//        }
-//    }
-    
+        viewModel.configure(items: items)
+        bindViewModel()
+    }
+
     // MARK: - Helper Methods
     private func roundedStringToTwoDecimalPlaces(value: String) -> String {
         if value.isEmpty { return Constants.defaultDecimalString }
