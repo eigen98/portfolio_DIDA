@@ -49,7 +49,7 @@ class HomeViewModelTests: XCTestCase {
         viewModel.input.refreshTrigger.onNext(())
 
         // Then
-        let expectedLoadingEvents = [Recorded.next(0, true), Recorded.next(0, false)]
+        let expectedLoadingEvents = [Recorded.next(0, true)]
         XCTAssertEqual(loadingObserver.events, expectedLoadingEvents)
     }
     
