@@ -65,26 +65,28 @@ extension Array where Element == HotUserResponse {
                 hasWallet: false,
                 cardCnt: $0.nftCount ?? 0,
                 followerCnt: 0,
-                followingCnt: 0
+                followingCnt: 0,
+                isFollowing: $0.followed ?? false
             )
         }
     }
 }
 
-extension Array where Element == GetMoreActivityResponse {
+extension Array where Element == ActivityResponse {
     func toDomain() -> [MoreActivityEntity] {
         return map {
             MoreActivityEntity(
-                userId: $0.userId,
-                name: $0.name,
-                profileUrl: $0.profileUrl,
-                cardCnt: $0.cardCnt,
-                cardUrls: $0.cardUrls,
-                followed : $0.followed
+                userId: $0.memberInfo.memberId,
+                name: $0.memberInfo.memberName,
+                profileUrl: $0.memberInfo.profileUrl ?? "",
+                cardCnt: $0.memberInfo.nftCount,
+                cardUrls: $0.nftImgUrl,
+                followed: $0.memberInfo.followed
             )
         }
     }
 }
+
 
 extension Array where Element == GetMainSoldoutNFTResponse.NFTAndMemberInfo {
     func toDomain() -> [NFTEntity] {

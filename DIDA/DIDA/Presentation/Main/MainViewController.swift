@@ -20,13 +20,10 @@ class MainViewController: BaseViewController {
     
     func showLogin() {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
-          
         if let controller = storyBoard.instantiateViewController(withIdentifier: "LoginHomeViewController") as? LoginHomeViewController {
-            
+            let navController = UINavigationController(rootViewController: controller)
             controller.delegate = self
-            controller.modalPresentationStyle = .fullScreen
-            
-            self.topViewController()?.present(controller, animated: true)
+            self.topViewController()?.present(navController, animated: true)
         }
     }
 }

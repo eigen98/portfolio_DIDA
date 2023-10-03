@@ -13,8 +13,12 @@ enum DidaAPI {
     /// MARK: Home
     case main
     case soldout(range: Int)
+    
+    /// MARK: More
     case moreRecentNFT(page: Int, size: Int)
     case moreHotUser(page: Int)
+    case moreSoldOut(range: Int, page: Int, size: Int)
+    case moreHotActivity(page: Int, size: Int)
     
     /// MARK: Login
     case socialLogin(request: LoginRequestDTO)
@@ -23,6 +27,13 @@ enum DidaAPI {
     
     /// MARK: Member
     case fetchMyself
+    
+    /// MARK: Market
+    case nftDetail(nftId: Int)
+    
+    /// MARK: User Interaction
+    case likeNFT(nftId: Int)
+    case followMember(memberId: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -32,7 +43,14 @@ extension DidaAPI: TargetType {
     }
     
     var headers: [String: String]? {
-        return ["Authorization" : Token.shared.accessToken ?? ""]
+        var defaultHeaders = ["Authorization" : Token.shared.accessToken ?? ""]
+        switch self {
+        case .socialLogin:
+            defaultHeaders["Content-Type"] = "application/json; charset=utf-8"
+        default:
+            break
+        }
+        return defaultHeaders
     }
     
     var path: String {
@@ -40,16 +58,27 @@ extension DidaAPI: TargetType {
         /// MARK: Home
         case .main: return "/main"
         case .soldout: return "/main/sold-out"
+            
+        /// MARK: More
         case .moreRecentNFT: return "/recent-nfts"
         case .moreHotUser(let page) : return "/hot/user/\(page)"
+        case .moreSoldOut : return "/sold-outs"
+        case .moreHotActivity: return "/hot-members"
         
         /// MARK: Login
         case .socialLogin(let request): return "/\(request.type.rawValue)/login"
-        case .signup: return "/new/user"
-        case .duplicatedNickname: return "/user/nickname"
+        case .signup: return "/user"
+        case .duplicatedNickname: return "/nickname"
         
         /// MARK: Member
-        case .fetchMyself: return "/user"
+        case .fetchMyself: return "/common/profile"
+            
+        /// MARK: Market
+        case .nftDetail(let nftId): return "/nft/\(nftId)"
+            
+        /// MARK: User Interaction
+        case .likeNFT: return "/common/nft/like"
+        case .followMember(let memberId): return "/common/follow/\(memberId)"
         }
     }
     
@@ -58,8 +87,12 @@ extension DidaAPI: TargetType {
         /// MARK: Home
         case .main: return .get
         case .soldout: return .get
+            
+        /// MARK: More
         case .moreRecentNFT: return .get
-        case .moreHotUser: return .get
+        case .moreHotUser : return .get
+        case .moreSoldOut : return .get
+        case .moreHotActivity: return .get
             
         /// MARK: Login
         case .socialLogin: return .post
@@ -68,6 +101,13 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return .get
+            
+        /// MARK: Market
+        case .nftDetail: return .get
+
+        /// MARK: User Interaction
+        case .likeNFT: return .post
+        case .followMember: return .patch
         }
     }
     
@@ -82,10 +122,16 @@ extension DidaAPI: TargetType {
             return .requestParameters(parameters: ["page": page, "size" : size], encoding: URLEncoding.queryString)
         case .moreHotUser:
             return .requestPlain
+        case .moreSoldOut(let range, let page, let size):
+                    return .requestParameters(parameters: ["range": range, "page": page, "size": size],
+                                              encoding: URLEncoding.queryString)
+        case .moreHotActivity(let page, let size):
+            return .requestParameters(parameters: ["page": page, "size": size],
+                                      encoding: URLEncoding.queryString)
             
         /// MARK: Login
         case .socialLogin(let request):
-            return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
+                return .requestJSONEncodable(request)
         case .signup(let request):
             return .requestParameters(parameters: request.toDictionary ?? ["":""], encoding: JSONEncoding.default)
         case .duplicatedNickname(let request):
@@ -93,6 +139,16 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself:
+            return .requestPlain
+        
+        /// MARK: Market
+        case .nftDetail:
+            return .requestPlain
+            
+        /// MARK: NFT Interaction
+        case .likeNFT(let nftId):
+            return .requestParameters(parameters: ["nftId": nftId], encoding: JSONEncoding.default)
+        case .followMember:
             return .requestPlain
         }
     }

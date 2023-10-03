@@ -8,11 +8,11 @@
 import Foundation
 
 struct SocialLoginResponseDTO: Codable {
+    let code: String?
+    let message: String?
+    let timestamp: String?
     let accessToken: String?
+    let accessTokenExpirationTime: String?
     let refreshToken: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case accessToken
-        case refreshToken
-    }
+    let refreshTokenExpirationTime: String?
 }

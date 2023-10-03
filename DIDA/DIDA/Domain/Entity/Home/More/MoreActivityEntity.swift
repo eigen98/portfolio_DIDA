@@ -6,11 +6,18 @@
 //
 
 import Foundation
-struct MoreActivityEntity{
+struct MoreActivityEntity: Hashable{
     var userId : Int
     var name : String
     var profileUrl : String
-    var cardCnt : Int //var count : Int
+    var cardCnt : Int
     var cardUrls : [String]
     var followed : Bool
+    
+    static let loading = MoreActivityEntity(userId: -1,
+                                            name: "Loading...",
+                                            profileUrl: "Loading...",
+                                            cardCnt: 0,
+                                            cardUrls: ["Loading..."],
+                                            followed: false)
 }

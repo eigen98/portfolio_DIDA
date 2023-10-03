@@ -27,7 +27,6 @@ class BaseViewController: UIViewController {
     private func setBaseNavigationBar() {
         guard let navigationController = self.navigationController else { return }
         configureCustomTitleBar(in: navigationController)
-        setupBackButton()
     }
     
     private func configureCustomTitleBar(in navigationController: UINavigationController) {
@@ -43,7 +42,7 @@ class BaseViewController: UIViewController {
             customTitleBar.topAnchor.constraint(equalTo: navigationController.navigationBar.topAnchor),
             customTitleBar.leadingAnchor.constraint(equalTo: navigationController.navigationBar.leadingAnchor),
             customTitleBar.trailingAnchor.constraint(equalTo: navigationController.navigationBar.trailingAnchor),
-            customTitleBar.heightAnchor.constraint(equalToConstant: 44)
+            customTitleBar.bottomAnchor.constraint(equalTo: navigationController.navigationBar.bottomAnchor)
         ])
     }
     

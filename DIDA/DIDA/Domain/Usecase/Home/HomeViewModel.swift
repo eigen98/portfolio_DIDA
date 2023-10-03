@@ -23,7 +23,7 @@ class HomeViewModel : BaseViewModel {
         var homeOutput : BehaviorSubject<Result<HomeEntity, Error>>
     }
     
-    override init() {
+    init(homeRepository: HomeRepository = HomeRepositoryImpl()) {
         input = Input(refreshTrigger: PublishSubject<Void>())
         
         output = Output(
@@ -37,7 +37,7 @@ class HomeViewModel : BaseViewModel {
             )
         )
         
-        self.homeRepository = HomeRepositoryImpl()
+        self.homeRepository = homeRepository
         disposeBag = DisposeBag()
     }
     

@@ -41,3 +41,10 @@ target 'DIDA-UI' do
     pod 'Kingfisher', '~> 7.0'
 
 end
+
+target 'DIDATests' do
+  inherit! :search_paths 
+  pod 'RxSwift', '~> 6.5.0'
+  pod 'RxTest', '~> 6.5.0' 
+end
+

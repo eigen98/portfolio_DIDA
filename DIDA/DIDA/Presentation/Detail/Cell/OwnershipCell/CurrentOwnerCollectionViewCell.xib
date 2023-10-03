@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.ttf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.ttf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CurrentOwnerCollectionViewCell" customModule="DIDA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="92"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="92"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFi-gr-Urv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCd-AJ-7F6">
+                                <rect key="frame" x="15.999999999999996" y="31" width="40.666666666666657" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.329999999999998" id="rM3-7q-D9d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023.12.28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGL-BT-cUu">
+                                <rect key="frame" x="16" y="12" width="71" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="surface_6"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="432.19 dida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ7-qk-7au">
+                                <rect key="frame" x="298.33333333333331" y="26.666666666666671" width="75.666666666666686" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="brand_lemon"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="92" id="CwW-nq-OdM"/>
+                            <constraint firstItem="FZ7-qk-7au" firstAttribute="top" secondItem="rFi-gr-Urv" secondAttribute="top" constant="26.5" id="N8m-5N-bUX"/>
+                            <constraint firstItem="rCd-AJ-7F6" firstAttribute="top" secondItem="BGL-BT-cUu" secondAttribute="bottom" constant="2" id="NME-FE-SvO"/>
+                            <constraint firstItem="BGL-BT-cUu" firstAttribute="leading" secondItem="rFi-gr-Urv" secondAttribute="leading" constant="16" id="V6W-X5-Y36"/>
+                            <constraint firstAttribute="width" constant="390" id="Yxv-B7-dpw"/>
+                            <constraint firstAttribute="trailing" secondItem="FZ7-qk-7au" secondAttribute="trailing" constant="16" id="a9F-Jk-hzc"/>
+                            <constraint firstItem="BGL-BT-cUu" firstAttribute="top" secondItem="rFi-gr-Urv" secondAttribute="top" constant="12" id="gmy-fI-NdM"/>
+                            <constraint firstItem="rCd-AJ-7F6" firstAttribute="leading" secondItem="rFi-gr-Urv" secondAttribute="leading" constant="16" id="uJU-Mn-dkr"/>
+                            <constraint firstAttribute="bottom" secondItem="rCd-AJ-7F6" secondAttribute="bottom" constant="40.670000000000002" id="yzr-fw-Qt1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rFi-gr-Urv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1RW-iS-oCl"/>
+                <constraint firstItem="rFi-gr-Urv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="62r-w9-nmG"/>
+                <constraint firstAttribute="bottom" secondItem="rFi-gr-Urv" secondAttribute="bottom" id="Lyj-8G-2EJ"/>
+                <constraint firstAttribute="trailing" secondItem="rFi-gr-Urv" secondAttribute="trailing" id="tmx-Wx-Qiq"/>
+            </constraints>
+            <size key="customSize" width="390" height="101"/>
+            <connections>
+                <outlet property="containerHeightConstraint" destination="CwW-nq-OdM" id="Ze4-Q8-oSF"/>
+                <outlet property="containerView" destination="rFi-gr-Urv" id="wvn-qj-MeB"/>
+                <outlet property="containerWidthConstraint" destination="Yxv-B7-dpw" id="kYw-b0-gi9"/>
+                <outlet property="dateLabel" destination="BGL-BT-cUu" id="HF9-4c-YqK"/>
+                <outlet property="priceLabel" destination="FZ7-qk-7au" id="sKa-8p-JBq"/>
+                <outlet property="userNameLabel" destination="rCd-AJ-7F6" id="Ebm-3n-ib1"/>
+            </connections>
+            <point key="canvasLocation" x="207.63358778625954" y="-31.690140845070424"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="brand_lemon">
+            <color red="0.98431372549019602" green="0.97254901960784312" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="surface_6">
+            <color red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

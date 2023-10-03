@@ -26,8 +26,7 @@ enum HomeSectionItem: Hashable {
 
 //홈뷰
 class HomeViewController: BaseViewController {
-    
-    // 홈에서 사용할 Section과 Item을 명시하여 UICollectionViewDiffableDataSource를 typealias로 생성
+
     typealias HomeDataSource = UICollectionViewDiffableDataSource<HomeSectionType, HomeSectionItem>
     
     @IBOutlet weak var mainpageCollectionView: UICollectionView!
@@ -37,7 +36,7 @@ class HomeViewController: BaseViewController {
     
     //MARK: ViewModel
     let homeViewModel : HomeViewModel = HomeViewModel()
-    
+    var isScrolling: Bool = false
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -75,7 +74,8 @@ class HomeViewController: BaseViewController {
         self.mainpageCollectionView.dataSource = dataSource
         self.view.isSkeletonable = true
         mainpageCollectionView.collectionViewLayout = createCompositionalLayout()
-        
+        mainpageCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+
         registerNIB()
         configureDataSource()
 
@@ -99,12 +99,10 @@ class HomeViewController: BaseViewController {
                 }
             }.disposed(by: disposeBag)
         
-      
-        // Refresh control 추가
+
         let refreshControl = UIRefreshControl()
         mainpageCollectionView.refreshControl = refreshControl
         
-        // Refresh control 이벤트 바인딩
         refreshControl.rx.controlEvent(.valueChanged)
             .bind(to: homeViewModel.input.refreshTrigger)
             .disposed(by: disposeBag)
@@ -247,12 +245,13 @@ extension HomeViewController {
     }
     
     func scrollToIndex(index:Int) {
-        let rect = self.mainpageCollectionView.layoutAttributesForItem(at: IndexPath(row: index, section: 1))?.frame
-        self.mainpageCollectionView.scrollRectToVisible(rect!, animated: true)
+        guard !isScrolling else { return }
+        isScrolling = true
+        guard let rect = self.mainpageCollectionView.layoutAttributesForItem(at: IndexPath(row: index, section: 1))?.frame else { return }
+        var offset = rect.origin
+        offset.y -= self.navigationController?.navigationBar.bounds.height ?? 48
+        self.mainpageCollectionView.setContentOffset(offset , animated: true)
     }
-    
-    
-    
     
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
@@ -274,12 +273,11 @@ extension HomeViewController {
     
     //Hot Item Section
     private func createHotItemSection() -> NSCollectionLayoutSection {
-        // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  //각 아이템의 크기를 지정
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(284))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
-        let section = NSCollectionLayoutSection(group: group) // 각 섹션에 포함될 그룹을 지정합니다.
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 36, trailing: 0)
         
         section.interGroupSpacing = 0
@@ -287,11 +285,8 @@ extension HomeViewController {
         return section
     }
     
-    
-    //탭바 Section (HotSeller, Soldout, 최신 NFT ,Activity)
     private func createTabbarSection() -> NSCollectionLayoutSection {
         
-        // Create an array of groups
         let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100))
         let groups = createGroupsOfTabbarSection()
         
@@ -299,8 +294,7 @@ extension HomeViewController {
         group.interItemSpacing = .fixed(42)
         
         let section = NSCollectionLayoutSection(group: group)
-        
-        //섹션의 콘텐츠를 렌더링할 때 해당 콘텐츠의 인셋(inset)을 지정
+
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 39, trailing: 0)
         
         section.interGroupSpacing = 0
@@ -317,10 +311,9 @@ extension HomeViewController {
      Sticky Header 설정
      */
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem{
-        // Sticky Header View 설정
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-        header.pinToVisibleBounds = true // Sticky Header View 설정
+        header.pinToVisibleBounds = true
         return header
     }
     
@@ -328,13 +321,11 @@ extension HomeViewController {
      탭바 섹션의 각 그룹 생성
      */
     private func createGroupsOfTabbarSection() -> [NSCollectionLayoutItem] {
-        // 아이템이나 그룹의 크기를 정의하는 객체
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        //HOTSeller 그룹
-        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(337)) //244
-        let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item]) //그룹의 크기와 그룹 내 아이템의 수를 지정
+        let sellerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(337))
+        let sellerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sellerGroupSize, subitems: [item])
         
         //SOLDOUT 그룹
         let soldoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(489))
@@ -359,7 +350,7 @@ extension HomeViewController : UICollectionViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView == mainpageCollectionView else { return }
-        
+        guard !isScrolling else { return }
         updateTabBarForVisibleItem(in: scrollView)
     }
     
@@ -372,6 +363,8 @@ extension HomeViewController : UICollectionViewDelegate{
         
         headerView.updateTabBarToIndex(indexPath.row)
     }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        isScrolling = false
+    }
 }
-
-
