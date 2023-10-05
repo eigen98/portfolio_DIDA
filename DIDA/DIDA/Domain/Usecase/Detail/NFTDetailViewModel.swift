@@ -23,25 +23,27 @@ class NFTDetailViewModel: BaseViewModel {
     
     struct Input {
         let refreshTrigger: PublishRelay<Int>
+        let followButtonTapped: PublishRelay<Void>
     }
 
     
     struct Output {
         var nftDetailData: BehaviorSubject<[SectionItem]>
         var priceObservable: BehaviorSubject<String?>
+        let followStatusChanged: BehaviorSubject<Bool>
     }
     
     init(marketRepository: MarketRepository = MarketRepositoryImpl()) {
         self.marketRepository = marketRepository
-        input = Input(refreshTrigger: PublishRelay<Int>())
+        input = Input(refreshTrigger: PublishRelay<Int>(), followButtonTapped: PublishRelay<Void>())
         output = Output(nftDetailData: BehaviorSubject<[SectionItem]>(value: [
             .community(nil),
             .detailInfo(nil),
             .overview(nil)]),
-                        priceObservable: BehaviorSubject<String?>(value: nil))
+                        priceObservable: BehaviorSubject<String?>(value: nil), followStatusChanged: BehaviorSubject<Bool>(value: false))
         disposeBag = DisposeBag()
         super.init()
-        bind()
+        
     }
     
     override func bind() {
@@ -51,9 +53,9 @@ class NFTDetailViewModel: BaseViewModel {
             .do(onNext: { [weak self] _ in
                 self?.showLoading.accept(true)
             })
-            .flatMapLatest { [weak self] _ -> Observable<NFTDetailEntity> in
+            .flatMapLatest { [weak self] id -> Observable<NFTDetailEntity> in
                 guard let self = self else { return Observable.empty() }
-                return self.getNFTDetailData()
+                return self.getNFTDetailData(nftId: id)
                 
             }
             .do(onNext: { [weak self] _ in
@@ -78,14 +80,24 @@ class NFTDetailViewModel: BaseViewModel {
                 self?.output.priceObservable.onNext(price)
             })
             .disposed(by: disposeBag)
+        
+        input.followButtonTapped
+            .subscribe(onNext: { [weak self] in
+                print("ViewModel received button tap")
+                guard let self = self else { return }
+                
+                let currentIsFollowing = try? output.followStatusChanged.value()
+                output.followStatusChanged.onNext(!(currentIsFollowing ?? false))
+            })
+            .disposed(by: disposeBag)
     }
     
     private func convertEntityToViewModel(entity: NFTDetailEntity) -> [SectionItem] {
-        let overviewData = OverviewData(nftImageUrl: entity.nftImgUrl, nftName: entity.nftName, description: entity.description, memberName: entity.memberName, memberImageUrl: entity.profileImgUrl)
+        let overviewData = OverviewData(nftImageUrl: entity.nftImgUrl, nftName: entity.nftName, description: entity.description, memberName: entity.memberName, memberImageUrl: entity.profileImgUrl, followed: entity.followed)
         
         let detailInfoData = DetailInfoData(price: entity.price, tokenId: entity.tokenId, contractAddress: entity.contractAddress)
             
-        let communityData = CommunityData(followed: entity.followed, liked: entity.liked, isMe: entity.isMe)
+        let communityData = CommunityData(liked: entity.liked, isMe: entity.isMe)
             
         return [
             .overview(overviewData),
@@ -94,14 +106,14 @@ class NFTDetailViewModel: BaseViewModel {
         ]
     }
     
-    private func getNFTDetailData() -> Observable<NFTDetailEntity> {
+    private func getNFTDetailData(nftId : Int) -> Observable<NFTDetailEntity> {
         return Observable.create { [weak self] observer in
             guard let self = self else {
                 observer.onCompleted()
                 return Disposables.create()
             }
             
-            self.marketRepository.getNFTDetail(nftId: 1) { result in
+            self.marketRepository.getNFTDetail(nftId: nftId) { result in
                 switch result {
                 case .success(let response):
                     let entity = response.toEntity()
@@ -123,6 +135,7 @@ struct OverviewData {
     let description: String
     let memberName: String
     let memberImageUrl : String
+    let followed: Bool
 }
 
 struct DetailInfoData {
@@ -132,7 +145,6 @@ struct DetailInfoData {
 }
 
 struct CommunityData {
-    let followed: Bool
     let liked: Bool
     let isMe: Bool
 }
