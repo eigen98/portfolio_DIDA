@@ -37,7 +37,7 @@ class NFTDetailInfoCollectionViewCell: UICollectionViewCell {
                     imageName: String?,
                     actionType: RowActionType?)] = [
             
-            (title: "가격", data: data.price + " dida", type: .label, imageName: nil, actionType: nil),
+            (title: "가격", data: roundedStringToTwoDecimalPlaces(value: data.price) + " dida", type: .label, imageName: nil, actionType: nil),
             (title: "토큰 ID", data: data.tokenId, type: .label, imageName: nil, actionType: nil),
             (title: "컨트랙트 링크 주소", data: data.contractAddress, type: .link, imageName: "link-m", actionType: .contractLink(data.contractAddress)),
             (title: "소유권 내역", data: "자세히보기", type: .link, imageName: "file-list-3-line", actionType: .ownershipDetails)
@@ -56,7 +56,8 @@ class NFTDetailInfoCollectionViewCell: UICollectionViewCell {
             listView.topAnchor.constraint(equalTo: infoListViewContainer.topAnchor),
             listView.bottomAnchor.constraint(equalTo: infoListViewContainer.bottomAnchor),
             listView.leadingAnchor.constraint(equalTo: infoListViewContainer.leadingAnchor),
-            listView.trailingAnchor.constraint(equalTo: infoListViewContainer.trailingAnchor)
+            listView.trailingAnchor.constraint(equalTo: infoListViewContainer.trailingAnchor),
+            listView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32)
         ])
     }
 
@@ -81,6 +82,30 @@ class NFTDetailInfoCollectionViewCell: UICollectionViewCell {
         separator.backgroundColor = UIColor.separator.cgColor
         separator.frame = CGRect(x: 0, y: self.bounds.height - separatorHeight, width: self.bounds.width, height: separatorHeight)
         self.layer.addSublayer(separator)
+    }
+
+    private func roundedStringToTwoDecimalPlaces(value: String) -> String {
+        if value.isEmpty { return "0.00" }
+        
+        if let doubleValue = Double(value) {
+            let absValue = abs(doubleValue)
+            let sign = doubleValue < 0 ? "-" : ""
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            
+            let (divisor, suffix): (Double, String) = {
+                if absValue < 1_000 { return (1, "") }
+                if absValue < 1_000_000 { return (1_000, "K") }
+                return (1_000_000, "M")
+            }()
+            
+            let formattedValue = formatter.string(from: NSNumber(value: absValue / divisor)) ?? ""
+            return "\(sign)\(formattedValue)\(suffix)"
+        } else {
+            return value
+        }
     }
 }
 
