@@ -27,7 +27,7 @@ class SellerCollectionViewCell: UICollectionViewCell {
     
     func configure(seller: UserEntity){
         if seller == UserEntity.loading {
-            self.showSkeleton(usingColor: Colors.surface_2!)
+            containerView.showSkeleton(usingColor: Colors.surface_2!)
             return
         }
         
