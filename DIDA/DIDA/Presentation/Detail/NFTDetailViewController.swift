@@ -26,8 +26,6 @@ class NFTDetailViewController: BaseViewController {
         bindEvent()
         bindViewModel()
         viewModel.input.refreshTrigger.accept((nftId ?? 0))
-        
-
     }
     
     override func bindEvent() {
@@ -45,6 +43,7 @@ class NFTDetailViewController: BaseViewController {
                 case .overview(let overviewItem):
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NFTOverviewCollectionViewCell.reuseIdentifier, for: IndexPath(row: row, section: 0)) as! NFTOverviewCollectionViewCell
                     cell.configure(with: overviewItem)
+                    cell.delegate = self
                     return cell
 
                 case .detailInfo(let detailInfoItem):
@@ -127,5 +126,13 @@ class NFTDetailViewController: BaseViewController {
         } else {
             return value
         }
+    }
+}
+
+extension NFTDetailViewController : NFTOverviewCollectionViewCellDelegate {
+    func didTapFollowButton(onCell cell: NFTOverviewCollectionViewCell) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        self.viewModel.input.followButtonTapped.accept(())
+        
     }
 }
