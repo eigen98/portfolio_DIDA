@@ -116,9 +116,11 @@ extension HotItemSectionCollectionViewCell: UICollectionViewDelegate, UICollecti
         if item.cardId == -1 {
             cell.showSkeleton(usingColor: Colors.surface_2!)
             self.showSkeleton(usingColor: Colors.surface_2!)
+            self.pageController.isHidden = true
         } else {
-            cell.hideSkeleton()
+            self.hideSkeleton()
             cell.configure(item: item)
+            self.pageController.isHidden = false
         }
         return cell
     }
