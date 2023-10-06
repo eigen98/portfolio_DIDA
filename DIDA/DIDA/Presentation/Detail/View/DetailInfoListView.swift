@@ -126,6 +126,7 @@ class DetailInfoRowView: UIView {
             
             titleLabel.leadingAnchor.constraint(equalTo: rowView.leadingAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: rowView.centerYAnchor),
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: backgroundView.leadingAnchor, constant: -8),
             
             backgroundView.trailingAnchor.constraint(equalTo: rowView.trailingAnchor),
             backgroundView.topAnchor.constraint(equalTo: rowView.topAnchor),
@@ -134,11 +135,14 @@ class DetailInfoRowView: UIView {
             dataLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             dataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -36),
             dataLabel.centerYAnchor.constraint(equalTo: rowView.centerYAnchor),
+            dataLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 0.5), 
             
             imageView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             imageView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 20),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            
+            
         ])
     }
 

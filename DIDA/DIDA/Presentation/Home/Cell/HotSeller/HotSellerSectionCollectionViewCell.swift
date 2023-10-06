@@ -10,7 +10,17 @@ import UIKit
 class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
     
-    var hotSellers = [UserEntity]()
+    var hotSellers = [UserEntity]() {
+        didSet {
+            if hotSellers.first == .loading{
+                self.emptyContainerView.isHidden = true
+                self.showSkeleton()
+            }else{
+                self.emptyContainerView.isHidden = false
+                self.hideSkeleton()
+            }
+        }
+    }
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var emptyContainerView: UIView!
@@ -35,6 +45,7 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
         collectionView.isScrollEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isSkeletonable = true
         
         return collectionView
     }()
@@ -48,27 +59,18 @@ class HotSellerSectionCollectionViewCell: UICollectionViewCell {
     
     private func layout() {
         containerView.addSubview(pageCollectionView)
-        
         pageCollectionView.snp.makeConstraints{
             $0.leading.equalTo(containerView.snp.leading).offset(16)
             $0.trailing.equalTo(containerView.snp.trailing).inset(16)
-            $0.top.equalTo(containerView.snp.top).offset(87)
-            $0.bottom.equalTo(containerView.snp.bottom).inset(42)
+            $0.top.equalTo(containerView.snp.top).offset(52)
+            $0.bottom.equalTo(containerView.snp.bottom).inset(0)
         }
-        
-        
     }
     
     private func attribute(){
         self.createNFTButton.shape = .round
         self.createNFTButton.style = .primary
         self.createNFTButton.buttonHeight = .h56
-        
-        if hotSellers.count == 0{
-            emptyContainerView.isHidden = false
-        }else{
-            emptyContainerView.isHidden = true
-        }
     }
 }
 
