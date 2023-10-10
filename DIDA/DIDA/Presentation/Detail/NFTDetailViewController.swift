@@ -17,6 +17,7 @@ class NFTDetailViewController: BaseViewController {
     @IBOutlet weak var purchaseButton: Buttons!
     @IBOutlet weak var priceContainerWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
+    private var likeButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,23 +66,31 @@ class NFTDetailViewController: BaseViewController {
                 self?.priceLabel.text = self?.roundedStringToTwoDecimalPlaces(value: price ?? "0.00")
             })
             .disposed(by: disposeBag)
+        
+        viewModel.output.likeStatusChanged
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] isLiked in
+                let imageName = isLiked ? "heart-fill-white" : "heart-unfill"
+                self?.likeButton.setImage(UIImage(named: imageName), for: .normal)
+            })
+            .disposed(by: disposeBag)
 
     }
     
     
     private func setupTitleBar() {
         self.setupBackButton()
-        let likeButton = UIButton()
-        likeButton.setImage(UIImage(named: "heart-unfill"), for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-        
+
         let menuButton = UIButton()
         menuButton.setImage(UIImage(named: "more_vertical"), for: .normal)
         customTitleBar.rightItems = [likeButton, menuButton]
     }
     
     @objc func likeButtonTapped() {
-        print("Right button in HomeViewController tapped.")
+        if let nftId = nftId{
+            self.viewModel.input.likeButtonTapped.accept(nftId)
+        }
     }
     
     private func initCollectionView() {
