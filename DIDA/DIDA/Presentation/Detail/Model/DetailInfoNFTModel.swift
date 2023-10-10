@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct DetailInfoNFTModel {
+    let price: String
+    let tokenId: String
+    let contractAddress: String
+}
