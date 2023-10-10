@@ -21,6 +21,7 @@ class OwnershipNFTViewController: BaseViewController {
         super.viewDidLoad()
         setupCollectionView()
         bindViewModel()
+        setupBackButton()
     }
     
     override func bindViewModel() {
