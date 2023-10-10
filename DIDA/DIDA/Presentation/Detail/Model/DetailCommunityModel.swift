@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct DetailCommunityModel {
+    let liked: Bool
+    let isMe: Bool
+}
