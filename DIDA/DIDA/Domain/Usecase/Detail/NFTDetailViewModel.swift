@@ -39,6 +39,7 @@ class NFTDetailViewModel: BaseViewModel {
     struct Input {
         let refreshTrigger: PublishRelay<Int>
         let followButtonTapped: PublishRelay<Void>
+        let likeButtonTapped: PublishRelay<Int>
     }
 
     
@@ -46,6 +47,7 @@ class NFTDetailViewModel: BaseViewModel {
         var nftDetailData: BehaviorSubject<[SectionItem]>
         var priceObservable: BehaviorSubject<String?>
         let followStatusChanged: BehaviorSubject<Bool>
+        let likeStatusChanged: BehaviorSubject<Bool>
     }
     
     init(marketRepository: MarketRepository = MarketRepositoryImpl(),
@@ -54,12 +56,15 @@ class NFTDetailViewModel: BaseViewModel {
         self.marketRepository = marketRepository
         self.socialInteractionRepository = socialInteractionRepository
         input = Input(refreshTrigger: PublishRelay<Int>(),
-                      followButtonTapped: PublishRelay<Void>())
+                      followButtonTapped: PublishRelay<Void>(),
+                      likeButtonTapped:  PublishRelay<Int>())
         output = Output(nftDetailData: BehaviorSubject<[SectionItem]>(value: [
             .community(nil),
             .detailInfo(nil),
             .overview(nil)]),
-                        priceObservable: BehaviorSubject<String?>(value: nil), followStatusChanged: BehaviorSubject<Bool>(value: false))
+                        priceObservable: BehaviorSubject<String?>(value: nil),
+                        followStatusChanged: BehaviorSubject<Bool>(value: false),
+                        likeStatusChanged:  BehaviorSubject<Bool>(value: false))
         disposeBag = DisposeBag()
         super.init()
         
@@ -71,6 +76,7 @@ class NFTDetailViewModel: BaseViewModel {
         bindRefreshTrigger()
         bindNFTDetailData()
         bindFollowButtonTapped()
+        bindLikeButtonTapped()
 
     }
     
@@ -100,6 +106,13 @@ class NFTDetailViewModel: BaseViewModel {
             }
             .bind(to: output.priceObservable)
             .disposed(by: disposeBag)
+        
+        output.nftDetailData
+            .map{ sectionItems in
+                sectionItems.compactMap { $0.overviewData?.liked }.first ?? false
+            }
+            .bind(to: output.likeStatusChanged)
+            .disposed(by: disposeBag)
     }
     
     private func bindFollowButtonTapped() {
@@ -107,6 +120,15 @@ class NFTDetailViewModel: BaseViewModel {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.followButtonAction()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func bindLikeButtonTapped() {
+        input.likeButtonTapped
+            .subscribe(onNext: { [weak self] id in
+                guard let self = self else { return }
+                self.likeNFTAction(nftId: id)
             })
             .disposed(by: disposeBag)
     }
@@ -129,6 +151,18 @@ class NFTDetailViewModel: BaseViewModel {
         }
     }
 
+    private func likeNFTAction(nftId : Int) {
+        socialInteractionRepository.likeNFT(nftId: nftId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let isLiked):
+                self.output.likeStatusChanged.onNext(isLiked)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     private func extractMemberId(from sectionItems: [SectionItem]) -> Int? {
         return sectionItems.compactMap { $0.overviewData?.memeberId }.first
     }
@@ -136,7 +170,8 @@ class NFTDetailViewModel: BaseViewModel {
     
     private func convertEntityToViewModel(entity: NFTDetailEntity) -> [SectionItem] {
         let overviewData = OverviewNFTModel(nftImageUrl: entity.nftImgUrl,
-                                        nftName: entity.nftName,
+                                            nftName: entity.nftName,
+                                            liked: entity.liked,
                                         description: entity.description,
                                         memeberId: entity.memberId,
                                         memberName: entity.memberName,
