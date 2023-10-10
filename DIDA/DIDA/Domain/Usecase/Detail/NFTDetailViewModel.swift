@@ -13,17 +13,33 @@ class NFTDetailViewModel: BaseViewModel {
     var input: Input
     var output: Output
     private let marketRepository: MarketRepository
+    private var socialInteractionRepository: SocialInteractionRepository
     
     enum SectionItem {
-        case overview(OverviewData?)
-        case detailInfo(DetailInfoData?)
-        case community(CommunityData?)
+        case overview(OverviewNFTModel?)
+        case detailInfo(DetailInfoNFTModel?)
+        case community(DetailCommunityModel?)
+        
+        var overviewData: OverviewNFTModel? {
+            if case let .overview(data) = self {
+                return data
+            }
+            return nil
+        }
+        
+        var detailInfoData: DetailInfoNFTModel? {
+            if case let .detailInfo(data) = self {
+                return data
+            }
+            return nil
+        }
     }
 
     
     struct Input {
         let refreshTrigger: PublishRelay<Int>
         let followButtonTapped: PublishRelay<Void>
+        let likeButtonTapped: PublishRelay<Int>
     }
 
     
@@ -31,16 +47,24 @@ class NFTDetailViewModel: BaseViewModel {
         var nftDetailData: BehaviorSubject<[SectionItem]>
         var priceObservable: BehaviorSubject<String?>
         let followStatusChanged: BehaviorSubject<Bool>
+        let likeStatusChanged: BehaviorSubject<Bool>
     }
     
-    init(marketRepository: MarketRepository = MarketRepositoryImpl()) {
+    init(marketRepository: MarketRepository = MarketRepositoryImpl(),
+         socialInteractionRepository : SocialInteractionRepository = SocialInteractionRepositoryImpl()
+    ) {
         self.marketRepository = marketRepository
-        input = Input(refreshTrigger: PublishRelay<Int>(), followButtonTapped: PublishRelay<Void>())
+        self.socialInteractionRepository = socialInteractionRepository
+        input = Input(refreshTrigger: PublishRelay<Int>(),
+                      followButtonTapped: PublishRelay<Void>(),
+                      likeButtonTapped:  PublishRelay<Int>())
         output = Output(nftDetailData: BehaviorSubject<[SectionItem]>(value: [
             .community(nil),
             .detailInfo(nil),
             .overview(nil)]),
-                        priceObservable: BehaviorSubject<String?>(value: nil), followStatusChanged: BehaviorSubject<Bool>(value: false))
+                        priceObservable: BehaviorSubject<String?>(value: nil),
+                        followStatusChanged: BehaviorSubject<Bool>(value: false),
+                        likeStatusChanged:  BehaviorSubject<Bool>(value: false))
         disposeBag = DisposeBag()
         super.init()
         
@@ -49,6 +73,14 @@ class NFTDetailViewModel: BaseViewModel {
     override func bind() {
         super.bind()
         
+        bindRefreshTrigger()
+        bindNFTDetailData()
+        bindFollowButtonTapped()
+        bindLikeButtonTapped()
+
+    }
+    
+    private func bindRefreshTrigger() {
         input.refreshTrigger
             .do(onNext: { [weak self] _ in
                 self?.showLoading.accept(true)
@@ -56,7 +88,6 @@ class NFTDetailViewModel: BaseViewModel {
             .flatMapLatest { [weak self] id -> Observable<NFTDetailEntity> in
                 guard let self = self else { return Observable.empty() }
                 return self.getNFTDetailData(nftId: id)
-                
             }
             .do(onNext: { [weak self] _ in
                 self?.showLoading.accept(false)
@@ -66,38 +97,93 @@ class NFTDetailViewModel: BaseViewModel {
             }
             .bind(to: output.nftDetailData)
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func bindNFTDetailData() {
         output.nftDetailData
             .map { sectionItems in
-                sectionItems.compactMap { item -> String? in
-                    if case let .detailInfo(detailInfoData) = item {
-                        return detailInfoData?.price
-                    }
-                    return nil
-                }.first
+                sectionItems.compactMap { $0.detailInfoData?.price }.first
             }
-            .subscribe(onNext: { [weak self] price in
-                self?.output.priceObservable.onNext(price)
-            })
+            .bind(to: output.priceObservable)
             .disposed(by: disposeBag)
         
-        input.followButtonTapped
-            .subscribe(onNext: { [weak self] in
-                print("ViewModel received button tap")
-                guard let self = self else { return }
-                
-                let currentIsFollowing = try? output.followStatusChanged.value()
-                output.followStatusChanged.onNext(!(currentIsFollowing ?? false))
-            })
+        output.nftDetailData
+            .map{ sectionItems in
+                sectionItems.compactMap { $0.overviewData?.liked }.first ?? false
+            }
+            .bind(to: output.likeStatusChanged)
             .disposed(by: disposeBag)
     }
     
-    private func convertEntityToViewModel(entity: NFTDetailEntity) -> [SectionItem] {
-        let overviewData = OverviewData(nftImageUrl: entity.nftImgUrl, nftName: entity.nftName, description: entity.description, memberName: entity.memberName, memberImageUrl: entity.profileImgUrl, followed: entity.followed)
+    private func bindFollowButtonTapped() {
+        input.followButtonTapped
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.followButtonAction()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func bindLikeButtonTapped() {
+        input.likeButtonTapped
+            .subscribe(onNext: { [weak self] id in
+                guard let self = self else { return }
+                self.likeNFTAction(nftId: id)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func followButtonAction() {
+        guard let sectionItems = try? output.nftDetailData.value(),
+              let memberId = extractMemberId(from: sectionItems)
+        else {
+            return
+        }
         
-        let detailInfoData = DetailInfoData(price: entity.price, tokenId: entity.tokenId, contractAddress: entity.contractAddress)
+        socialInteractionRepository.followUser(memberId: memberId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let isFollowing):
+                self.output.followStatusChanged.onNext(isFollowing)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func likeNFTAction(nftId : Int) {
+        socialInteractionRepository.likeNFT(nftId: nftId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let isLiked):
+                self.output.likeStatusChanged.onNext(isLiked)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func extractMemberId(from sectionItems: [SectionItem]) -> Int? {
+        return sectionItems.compactMap { $0.overviewData?.memeberId }.first
+    }
+
+    
+    private func convertEntityToViewModel(entity: NFTDetailEntity) -> [SectionItem] {
+        let overviewData = OverviewNFTModel(nftImageUrl: entity.nftImgUrl,
+                                            nftName: entity.nftName,
+                                            liked: entity.liked,
+                                        description: entity.description,
+                                        memeberId: entity.memberId,
+                                        memberName: entity.memberName,
+                                        memberImageUrl: entity.profileImgUrl,
+                                        followed: entity.followed)
+        
+        let detailInfoData = DetailInfoNFTModel(price: entity.price,
+                                            tokenId: entity.tokenId,
+                                            contractAddress: entity.contractAddress)
             
-        let communityData = CommunityData(liked: entity.liked, isMe: entity.isMe)
+        let communityData = DetailCommunityModel(liked: entity.liked,
+                                          isMe: entity.isMe)
             
         return [
             .overview(overviewData),
@@ -126,25 +212,4 @@ class NFTDetailViewModel: BaseViewModel {
             return Disposables.create()
         }
     }
-}
-
-
-struct OverviewData {
-    let nftImageUrl : String
-    let nftName: String
-    let description: String
-    let memberName: String
-    let memberImageUrl : String
-    let followed: Bool
-}
-
-struct DetailInfoData {
-    let price: String
-    let tokenId: String
-    let contractAddress: String
-}
-
-struct CommunityData {
-    let liked: Bool
-    let isMe: Bool
 }

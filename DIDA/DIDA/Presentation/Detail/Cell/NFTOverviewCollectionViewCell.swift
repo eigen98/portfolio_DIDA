@@ -63,7 +63,7 @@ class NFTOverviewCollectionViewCell: UICollectionViewCell {
         updateSeparatorFrame()
     }
     
-    func configure(with data: OverviewData?) {
+    func configure(with data: OverviewNFTModel?) {
         
         guard let data = data else {
             showSkeleton()

@@ -22,7 +22,7 @@ class NFTCommunityCollectionViewCell: UICollectionViewCell {
         setupButton()
     }
     
-    func configure(with data: CommunityData?) {
+    func configure(with data: DetailCommunityModel?) {
         guard let data = data else {
             showSkeleton()
             return

@@ -23,7 +23,7 @@ class NFTDetailInfoCollectionViewCell: UICollectionViewCell {
         hideSkeleton()
     }
 
-    func configure(with data: DetailInfoData?) {
+    func configure(with data: DetailInfoNFTModel?) {
         
         guard let data = data else {
             showSkeleton()
