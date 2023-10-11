@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PurchaseNFTRequestDTO: Encodable {
+    let payPwd: String
+    let marketId: Int
+}
