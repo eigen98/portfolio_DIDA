@@ -148,7 +148,7 @@ extension DidaAPI: TargetType {
         case .nftDetail:
             return .requestPlain
         case .purchaseNFT(let payPwd, let marketId):
-            let parameters = PurchaseNFTRequest(payPwd: payPwd, marketId: marketId)
+            let parameters = PurchaseNFTRequestDTO(payPwd: payPwd, marketId: marketId)
             return .requestJSONEncodable(parameters)
 
         /// MARK: NFT Interaction
@@ -158,9 +158,4 @@ extension DidaAPI: TargetType {
             return .requestPlain
         }
     }
-}
-
-struct PurchaseNFTRequest: Encodable {
-    let payPwd: String
-    let marketId: Int
 }
