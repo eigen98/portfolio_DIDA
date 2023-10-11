@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NFTDetailViewController" customModule="DIDA" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="DnB-qj-gI8" id="KHR-Yi-ln3"/>
+                <outlet property="priceContainerView" destination="qBr-Xh-nFB" id="rh4-pS-xUv"/>
                 <outlet property="priceContainerWidthConstraint" destination="zCQ-u1-Hg1" id="KSj-QG-kTj"/>
                 <outlet property="priceLabel" destination="IR2-v8-LIk" id="OQw-82-Dc8"/>
                 <outlet property="purchaseButton" destination="mSw-pz-ngn" id="U94-jE-ho2"/>
