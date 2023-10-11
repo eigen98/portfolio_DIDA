@@ -16,4 +16,5 @@ struct OverviewNFTModel {
     let memberName: String
     let memberImageUrl : String
     let followed: Bool
+    let isMe : Bool
 }
