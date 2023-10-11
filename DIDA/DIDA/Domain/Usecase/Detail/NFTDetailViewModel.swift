@@ -172,11 +172,12 @@ class NFTDetailViewModel: BaseViewModel {
         let overviewData = OverviewNFTModel(nftImageUrl: entity.nftImgUrl,
                                             nftName: entity.nftName,
                                             liked: entity.liked,
-                                        description: entity.description,
-                                        memeberId: entity.memberId,
-                                        memberName: entity.memberName,
-                                        memberImageUrl: entity.profileImgUrl,
-                                        followed: entity.followed)
+                                            description: entity.description,
+                                            memeberId: entity.memberId,
+                                            memberName: entity.memberName,
+                                            memberImageUrl: entity.profileImgUrl,
+                                            followed: entity.followed,
+                                            isMe: entity.isMe)
         
         let detailInfoData = DetailInfoNFTModel(price: entity.price,
                                             tokenId: entity.tokenId,
