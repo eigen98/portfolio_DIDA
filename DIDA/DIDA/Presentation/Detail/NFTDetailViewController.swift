@@ -34,9 +34,7 @@ class NFTDetailViewController: BaseViewController {
     
     override func bindEvent() {
         purchaseButton.rx.tap
-            .bind(onNext: {
-                
-            })
+            .bind(to: viewModel.input.transactionButtonTapped)
             .disposed(by: disposeBag)
     }
     
