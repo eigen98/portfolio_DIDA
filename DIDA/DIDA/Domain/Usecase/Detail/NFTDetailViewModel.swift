@@ -40,6 +40,7 @@ class NFTDetailViewModel: BaseViewModel {
         let refreshTrigger: PublishRelay<Int>
         let followButtonTapped: PublishRelay<Void>
         let likeButtonTapped: PublishRelay<Int>
+        let transactionButtonTapped: PublishRelay<Void>
     }
 
     
@@ -48,6 +49,7 @@ class NFTDetailViewModel: BaseViewModel {
         var priceObservable: BehaviorSubject<String?>
         let followStatusChanged: BehaviorSubject<Bool>
         let likeStatusChanged: BehaviorSubject<Bool>
+        let transactionResult: PublishSubject<Result<Void, Error>>
     }
     
     init(marketRepository: MarketRepository = MarketRepositoryImpl(),
@@ -57,14 +59,17 @@ class NFTDetailViewModel: BaseViewModel {
         self.socialInteractionRepository = socialInteractionRepository
         input = Input(refreshTrigger: PublishRelay<Int>(),
                       followButtonTapped: PublishRelay<Void>(),
-                      likeButtonTapped:  PublishRelay<Int>())
+                      likeButtonTapped:  PublishRelay<Int>(),
+                      transactionButtonTapped: PublishRelay<Void>())
+
         output = Output(nftDetailData: BehaviorSubject<[SectionItem]>(value: [
             .community(nil),
             .detailInfo(nil),
             .overview(nil)]),
                         priceObservable: BehaviorSubject<String?>(value: nil),
                         followStatusChanged: BehaviorSubject<Bool>(value: false),
-                        likeStatusChanged:  BehaviorSubject<Bool>(value: false))
+                        likeStatusChanged:  BehaviorSubject<Bool>(value: false),
+                        transactionResult: PublishSubject<Result<Void, Error>>())
         disposeBag = DisposeBag()
         super.init()
         
@@ -77,6 +82,7 @@ class NFTDetailViewModel: BaseViewModel {
         bindNFTDetailData()
         bindFollowButtonTapped()
         bindLikeButtonTapped()
+        bindTransactionButtonTapped()
 
     }
     
@@ -130,6 +136,25 @@ class NFTDetailViewModel: BaseViewModel {
                 guard let self = self else { return }
                 self.likeNFTAction(nftId: id)
             })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindTransactionButtonTapped() {
+        input.transactionButtonTapped
+            .withLatestFrom(output.nftDetailData)
+            .flatMap { [weak self] sectionItems -> Observable<Result<Void, Error>> in
+                guard let self = self else { return .empty() }
+                guard let overviewData = sectionItems.compactMap({ $0.overviewData }).first else {
+                    return .just(.failure(PurchaseNFTErrors.didaCheckFailed))
+                }
+                
+                if overviewData.isMe {
+                    return self.performSellLogic()
+                } else {
+                    return self.performPurchaseLogic()
+                }
+            }
+            .bind(to: output.transactionResult)
             .disposed(by: disposeBag)
     }
 
@@ -213,4 +238,34 @@ class NFTDetailViewModel: BaseViewModel {
             return Disposables.create()
         }
     }
+    
+    private func performSellLogic() -> Observable<Result<Void, Error>> {
+        return Disposables.create() as! Observable<Result<Void, any Error>>
+    }
+
+    private func performPurchaseLogic() -> Observable<Result<Void, Error>> {
+        return Observable.create { [weak self] observer in
+            guard let self = self else {
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            
+            let payPwd = ""
+            let marketId = 2
+            
+            self.marketRepository.purchaseNFT(payPwd: payPwd, marketId: marketId) { result in
+                switch result {
+                case .success(let response):
+                    //MARK: 구매 성공 시
+                    observer.onNext(.success(()))
+                case .failure(let error):
+                    observer.onNext(.failure(error))
+                }
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
+
 }
