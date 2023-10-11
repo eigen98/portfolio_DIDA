@@ -30,6 +30,7 @@ enum DidaAPI {
     
     /// MARK: Market
     case nftDetail(nftId: Int)
+    case purchaseNFT(payPwd: String, marketId: Int)
     
     /// MARK: User Interaction
     case likeNFT(nftId: Int)
@@ -75,6 +76,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Market
         case .nftDetail(let nftId): return "/nft/\(nftId)"
+        case .purchaseNFT: return "/member/market/nft"
             
         /// MARK: User Interaction
         case .likeNFT: return "/common/nft/like"
@@ -104,6 +106,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Market
         case .nftDetail: return .get
+        case .purchaseNFT: return .post
 
         /// MARK: User Interaction
         case .likeNFT: return .post
@@ -144,7 +147,10 @@ extension DidaAPI: TargetType {
         /// MARK: Market
         case .nftDetail:
             return .requestPlain
-            
+        case .purchaseNFT(let payPwd, let marketId):
+            let parameters = PurchaseNFTRequest(payPwd: payPwd, marketId: marketId)
+            return .requestJSONEncodable(parameters)
+
         /// MARK: NFT Interaction
         case .likeNFT(let nftId):
             return .requestParameters(parameters: ["nftId": nftId], encoding: JSONEncoding.default)
@@ -152,4 +158,9 @@ extension DidaAPI: TargetType {
             return .requestPlain
         }
     }
+}
+
+struct PurchaseNFTRequest: Encodable {
+    let payPwd: String
+    let marketId: Int
 }
