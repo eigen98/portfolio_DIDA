@@ -27,6 +27,7 @@ enum DidaAPI {
     
     /// MARK: Member
     case fetchMyself
+    case validateWalletPresence
     
     /// MARK: Market
     case nftDetail(nftId: Int)
@@ -73,6 +74,7 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return "/common/profile"
+        case .validateWalletPresence: return "/common/wallet"
             
         /// MARK: Market
         case .nftDetail(let nftId): return "/nft/\(nftId)"
@@ -103,7 +105,8 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return .get
-            
+        case .validateWalletPresence: return .get
+
         /// MARK: Market
         case .nftDetail: return .get
         case .purchaseNFT: return .post
@@ -142,6 +145,8 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself:
+            return .requestPlain
+        case .validateWalletPresence:
             return .requestPlain
         
         /// MARK: Market
