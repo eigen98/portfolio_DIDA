@@ -43,6 +43,7 @@ class NFTDetailViewController: BaseViewController {
         bindPriceLabel()
         bindLikeButton()
         bindUIUpdatesBasedOnOwnership()
+        bindTransactionResult()
     }
 
     private func bindCollectionView(){
@@ -97,6 +98,33 @@ class NFTDetailViewController: BaseViewController {
                 self?.updateUIForOwnership(isOwner: isMe)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func bindTransactionResult() {
+        viewModel.output.transactionResult
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    if let purchaseError = error as? PurchaseNFTErrors,
+                        purchaseError == .walletNotExist {
+                        self?.showNoWalletAlert()
+                    } else {
+                        print(error.localizedDescription)
+                    }
+                case .success:
+                    print("구매하기 성공")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func showNoWalletAlert() {
+        let noWalletVC = NoWalletAlertViewController()
+        noWalletVC.modalPresentationStyle = .overCurrentContext
+        noWalletVC.modalTransitionStyle = .crossDissolve
+        self.present(noWalletVC, animated: true, completion: nil)
+       
     }
     
     private func updateUIForOwnership(isOwner: Bool) {
