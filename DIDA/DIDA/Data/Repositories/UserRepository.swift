@@ -17,4 +17,6 @@ protocol UserRepository {
     
     func fetchMyself() -> UserEntity?
     func fetchMyselfObservable() -> Observable<UserEntity?>
+    
+    func checkWalletExistence(completion: @escaping (Bool?, Error?) -> ())
 }
