@@ -23,6 +23,7 @@ enum PurchaseNFTErrors: Error {
     case forbidden
     case conflict
     case internalServerError
+    case walletNotExist
     case unknownError
     
     init(code: String) {
@@ -53,6 +54,7 @@ enum PurchaseNFTErrors: Error {
         case .conflict: return "충돌이 발생했습니다."
         case .internalServerError: return "서버 내부 오류입니다."
         case .unknownError: return "알 수 없는 오류가 발생했습니다."
+        case .walletNotExist: return "지갑이 존재하지 않습니다."
         }
     }
 }
