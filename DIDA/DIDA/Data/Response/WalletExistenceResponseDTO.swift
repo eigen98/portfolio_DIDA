@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct WalletExistenceResponseDTO: Codable {
+    let existed: Bool? 
+}
