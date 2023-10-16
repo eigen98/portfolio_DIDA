@@ -222,6 +222,11 @@
 		EEDA0E6A29C86A4A005D1946 /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA0E6929C86A4A005D1946 /* Reactive+Extension.swift */; };
 		EEDC36EC2AC9889500DC14B9 /* DIDATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDC36EB2AC9889500DC14B9 /* DIDATests.swift */; };
 		EEDC36F32AC98D7200DC14B9 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDC36F22AC98D7200DC14B9 /* HomeViewModelTests.swift */; };
+		EEDED4D52ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDED4D42ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift */; };
+		EEDFE42C2AD660E8003FDF80 /* NoWalletAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFE42A2AD660E8003FDF80 /* NoWalletAlertViewController.swift */; };
+		EEDFE42D2AD660E8003FDF80 /* NoWalletAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDFE42B2AD660E8003FDF80 /* NoWalletAlertViewController.xib */; };
+		EEDFE42F2AD670DD003FDF80 /* PurchaseNFTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFE42E2AD670DD003FDF80 /* PurchaseNFTResponse.swift */; };
+		EEDFE4312AD68807003FDF80 /* PurchaseNFTRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDFE4302AD68807003FDF80 /* PurchaseNFTRequestDTO.swift */; };
 		EEE101D32AC6755C005B8A2F /* MarketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE101D22AC6755C005B8A2F /* MarketRepository.swift */; };
 		EEE101D52AC67631005B8A2F /* MarketRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE101D42AC67631005B8A2F /* MarketRepositoryImpl.swift */; };
 		EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE3862329C810DC00A10E47 /* HomeRepository.swift */; };
@@ -241,6 +246,9 @@
 		EEE676812AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE6767F2AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib */; };
 		EEE676832AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676822AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift */; };
 		EEE676852AC7E4E300D58AA2 /* OwnershipSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE676842AC7E4E300D58AA2 /* OwnershipSectionHeader.swift */; };
+		EEE9CE642ADD075A004C740A /* WalletExistenceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9CE632ADD075A004C740A /* WalletExistenceResponseDTO.swift */; };
+		EEE9CE682ADD14DD004C740A /* PasswordConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9CE662ADD14DD004C740A /* PasswordConfigurationViewController.swift */; };
+		EEE9CE6C2ADD18A9004C740A /* PasswordConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9CE6B2ADD18A9004C740A /* PasswordConfigurationView.swift */; };
 		EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */; };
 		EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */; };
 		EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */; };
@@ -466,6 +474,11 @@
 		EEDC36E92AC9889500DC14B9 /* DIDATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIDATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDC36EB2AC9889500DC14B9 /* DIDATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIDATests.swift; sourceTree = "<group>"; };
 		EEDC36F22AC98D7200DC14B9 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		EEDED4D42ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfigurationViewModel.swift; sourceTree = "<group>"; };
+		EEDFE42A2AD660E8003FDF80 /* NoWalletAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoWalletAlertViewController.swift; sourceTree = "<group>"; };
+		EEDFE42B2AD660E8003FDF80 /* NoWalletAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoWalletAlertViewController.xib; sourceTree = "<group>"; };
+		EEDFE42E2AD670DD003FDF80 /* PurchaseNFTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTResponse.swift; sourceTree = "<group>"; };
+		EEDFE4302AD68807003FDF80 /* PurchaseNFTRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTRequestDTO.swift; sourceTree = "<group>"; };
 		EEE101D22AC6755C005B8A2F /* MarketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRepository.swift; sourceTree = "<group>"; };
 		EEE101D42AC67631005B8A2F /* MarketRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRepositoryImpl.swift; sourceTree = "<group>"; };
 		EEE3862329C810DC00A10E47 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
@@ -485,6 +498,9 @@
 		EEE6767F2AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOwnerCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEE676822AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnershipNFTViewModel.swift; sourceTree = "<group>"; };
 		EEE676842AC7E4E300D58AA2 /* OwnershipSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnershipSectionHeader.swift; sourceTree = "<group>"; };
+		EEE9CE632ADD075A004C740A /* WalletExistenceResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletExistenceResponseDTO.swift; sourceTree = "<group>"; };
+		EEE9CE662ADD14DD004C740A /* PasswordConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfigurationViewController.swift; sourceTree = "<group>"; };
+		EEE9CE6B2ADD18A9004C740A /* PasswordConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfigurationView.swift; sourceTree = "<group>"; };
 		EEE9DD0429C70BBE00056719 /* HotItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotItemResponse.swift; path = DIDA/Data/Response/HotItemResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0629C70BF600056719 /* HotSellerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotSellerResponse.swift; path = DIDA/Data/Response/HotSellerResponse.swift; sourceTree = SOURCE_ROOT; };
 		EEE9DD0A29C70C6000056719 /* HotUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotUserResponse.swift; path = DIDA/Data/Response/HotUserResponse.swift; sourceTree = SOURCE_ROOT; };
@@ -601,6 +617,7 @@
 		97BAE0F529ABCC890001F60A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				EEDED4D32ADD4F9800C18766 /* PasswordConfiguration */,
 				EEE676772AC7D15300D58AA2 /* Detail */,
 				EE6D138929F3A6CA00C748BE /* Home */,
 				C16AEC8729EA878B00A37C78 /* LoginHomeViewModel.swift */,
@@ -627,6 +644,7 @@
 				C16FDCF52A05572300FB5F53 /* SignupResponseDTO.swift */,
 				C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */,
 				C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */,
+				EEE9CE632ADD075A004C740A /* WalletExistenceResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -637,6 +655,7 @@
 				C16FDCF92A06496B00FB5F53 /* LoginRequestDTO.swift */,
 				C134D7252A06AEBE009EE0DB /* SignupRequestDTO.swift */,
 				C134D72B2A07A7BD009EE0DB /* DuplicatedNicknameRequestDTO.swift */,
+				EEDFE4302AD68807003FDF80 /* PurchaseNFTRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -667,6 +686,8 @@
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EEE9CE652ADD137C004C740A /* PasswordConfiguration */,
+				EEDFE4292AD65FB2003FDF80 /* Popup */,
 				EECF2C8A2AC527B70003237C /* Detail */,
 				C1A8D3CE29EA7E1F0023373E /* LoginHome */,
 				C16FDD032A0659A100FB5F53 /* Signup */,
@@ -1117,6 +1138,7 @@
 			isa = PBXGroup;
 			children = (
 				EE2455932AC65BD100F48FAA /* GetNFTDetailResponse.swift */,
+				EEDFE42E2AD670DD003FDF80 /* PurchaseNFTResponse.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -1348,6 +1370,23 @@
 			path = DIDATests;
 			sourceTree = "<group>";
 		};
+		EEDED4D32ADD4F9800C18766 /* PasswordConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				EEDED4D42ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift */,
+			);
+			path = PasswordConfiguration;
+			sourceTree = "<group>";
+		};
+		EEDFE4292AD65FB2003FDF80 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				EEDFE42A2AD660E8003FDF80 /* NoWalletAlertViewController.swift */,
+				EEDFE42B2AD660E8003FDF80 /* NoWalletAlertViewController.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		EEE3862729C8143D00A10E47 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1396,6 +1435,23 @@
 				EEE676842AC7E4E300D58AA2 /* OwnershipSectionHeader.swift */,
 			);
 			path = OwnershipCell;
+			sourceTree = "<group>";
+		};
+		EEE9CE652ADD137C004C740A /* PasswordConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				EEE9CE6A2ADD17FE004C740A /* View */,
+				EEE9CE662ADD14DD004C740A /* PasswordConfigurationViewController.swift */,
+			);
+			path = PasswordConfiguration;
+			sourceTree = "<group>";
+		};
+		EEE9CE6A2ADD17FE004C740A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEE9CE6B2ADD18A9004C740A /* PasswordConfigurationView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EEEAA5CE2AD520A4007FB14C /* Model */ = {
@@ -1595,6 +1651,7 @@
 				EECD7EF629B562C60067961B /* HotItemSectionCollectionViewCell.xib in Resources */,
 				EE0AB95829F79F7F0010F182 /* MoreActivityCollectionViewCell.xib in Resources */,
 				C10232BC2A62B5A700517F0C /* NftCardCollectionViewCell.xib in Resources */,
+				EEDFE42D2AD660E8003FDF80 /* NoWalletAlertViewController.xib in Resources */,
 				EE110545299A900B00C5D370 /* Main.storyboard in Resources */,
 				9784770029AB392F00950F40 /* NoisyTableViewCell.xib in Resources */,
 				EECF2C972AC531E50003237C /* NFTDetailInfoCollectionViewCell.xib in Resources */,
@@ -1794,6 +1851,7 @@
 				9784770829AB397B00950F40 /* PostTableViewCell.swift in Sources */,
 				EE2455992AC65CBE00F48FAA /* NFTDetailEntity.swift in Sources */,
 				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
+				EEE9CE6C2ADD18A9004C740A /* PasswordConfigurationView.swift in Sources */,
 				EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */,
 				EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */,
 				EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */,
@@ -1801,6 +1859,7 @@
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
+				EEDFE4312AD68807003FDF80 /* PurchaseNFTRequestDTO.swift in Sources */,
 				C16AECA529EAB96200A37C78 /* UIViewController+Extension.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				EE6D138229F3A30400C748BE /* MoreRecentNFTViewController.swift in Sources */,
@@ -1809,6 +1868,7 @@
 				EEE9DD0D29C70F8800056719 /* RecentCardResponse.swift in Sources */,
 				C16AECAB29EABDFA00A37C78 /* LoginNavigationController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
+				EEDFE42C2AD660E8003FDF80 /* NoWalletAlertViewController.swift in Sources */,
 				EE0E778129A0EE7400E3863C /* (null) in Sources */,
 				C1C8024129B48C1400221FB9 /* AppDelegate.swift in Sources */,
 				C1C8022C29B48BA100221FB9 /* MainNavigationController.swift in Sources */,
@@ -1827,9 +1887,11 @@
 				EE2455942AC65BD100F48FAA /* GetNFTDetailResponse.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
 				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
+				EEDFE42F2AD670DD003FDF80 /* PurchaseNFTResponse.swift in Sources */,
 				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
 				C1C8025029B48D0700221FB9 /* FullTextField.swift in Sources */,
 				EEE676752AC7D11200D58AA2 /* OwnershipNFTViewController.swift in Sources */,
+				EEDED4D52ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift in Sources */,
 				C1C8024529B48C1400221FB9 /* UIColor+Extension.swift in Sources */,
 				C1C8023D29B48C0400221FB9 /* BaseViewController.swift in Sources */,
 				C1C8022E29B48BB200221FB9 /* MainTabbarCollectionViewCell.swift in Sources */,
@@ -1883,6 +1945,7 @@
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
 				EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */,
+				EEE9CE682ADD14DD004C740A /* PasswordConfigurationViewController.swift in Sources */,
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
 				C1C8024B29B48C3400221FB9 /* TableViewCell.swift in Sources */,
 				EEE676852AC7E4E300D58AA2 /* OwnershipSectionHeader.swift in Sources */,
@@ -1901,6 +1964,7 @@
 				EEE3862629C8125400A10E47 /* HomeRepositoryImpl.swift in Sources */,
 				EE6D138729F3A59700C748BE /* MoreRecentNFTCollectionViewCell.swift in Sources */,
 				C1C8023629B48BEA00221FB9 /* HomeViewController.swift in Sources */,
+				EEE9CE642ADD075A004C740A /* WalletExistenceResponseDTO.swift in Sources */,
 				C1C8024229B48C1400221FB9 /* SceneDelegate.swift in Sources */,
 				C1C8023929B48BF300221FB9 /* SwapViewController.swift in Sources */,
 				EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */,

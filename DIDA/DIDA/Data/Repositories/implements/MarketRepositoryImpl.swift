@@ -21,4 +21,14 @@ class MarketRepositoryImpl: MarketRepository {
                 completion(.failure(error))
             }).disposed(by: disposeBag)
     }
+
+    func purchaseNFT(payPwd: String, marketId: Int, completion: @escaping (Result<PurchaseNFTResponse, Error>) -> ()) {
+           APIClient.request(.purchaseNFT(payPwd: payPwd, marketId: marketId))
+               .map(PurchaseNFTResponse.self)
+               .subscribe(onSuccess: { (response) in
+                   completion(.success(response))
+               }, onFailure: { (error) in
+                   completion(.failure(error))
+               }).disposed(by: disposeBag)
+       }
 }

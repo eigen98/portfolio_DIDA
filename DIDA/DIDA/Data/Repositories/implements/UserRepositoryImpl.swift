@@ -60,4 +60,22 @@ class UserRepositoryImpl: UserRepository {
             }.disposed(by: self.disposeBag)
         
     }
+    
+    func checkWalletExistence(completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.validateWalletPresence)
+            .asObservable()
+            .flatMap { response -> Single<WalletExistenceResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(WalletExistenceResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                completion(response.existed, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
 }

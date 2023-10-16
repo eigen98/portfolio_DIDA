@@ -16,6 +16,9 @@ class NFTDetailViewController: BaseViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var purchaseButton: Buttons!
     @IBOutlet weak var priceContainerWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var priceContainerView: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     private var likeButton: UIButton = UIButton()
     
@@ -31,13 +34,19 @@ class NFTDetailViewController: BaseViewController {
     
     override func bindEvent() {
         purchaseButton.rx.tap
-            .bind(onNext: {
-                
-            })
+            .bind(to: viewModel.input.transactionButtonTapped)
             .disposed(by: disposeBag)
     }
     
     override func bindViewModel() {
+        bindCollectionView()
+        bindPriceLabel()
+        bindLikeButton()
+        bindUIUpdatesBasedOnOwnership()
+        bindTransactionResult()
+    }
+
+    private func bindCollectionView(){
         viewModel.output.nftDetailData
             .bind(to: collectionView.rx.items) { collectionView, row, item in
                 switch item {
@@ -60,13 +69,17 @@ class NFTDetailViewController: BaseViewController {
                 }
             }
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func bindPriceLabel(){
         viewModel.output.priceObservable
             .subscribe(onNext: { [weak self] price in
                 self?.priceLabel.text = self?.roundedStringToTwoDecimalPlaces(value: price ?? "0.00")
             })
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func bindLikeButton(){
         viewModel.output.likeStatusChanged
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] isLiked in
@@ -74,9 +87,51 @@ class NFTDetailViewController: BaseViewController {
                 self?.likeButton.setImage(UIImage(named: imageName), for: .normal)
             })
             .disposed(by: disposeBag)
-
     }
     
+    private func bindUIUpdatesBasedOnOwnership(){
+        viewModel.output.nftDetailData
+            .map { sectionItems in
+                sectionItems.compactMap { $0.overviewData?.isMe }.first ?? false
+            }
+            .subscribe(onNext: { [weak self] isMe in
+                self?.updateUIForOwnership(isOwner: isMe)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindTransactionResult() {
+        viewModel.output.transactionResult
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    if let purchaseError = error as? PurchaseNFTErrors,
+                        purchaseError == .walletNotExist {
+                        self?.showNoWalletAlert()
+                    } else {
+                        print(error.localizedDescription)
+                    }
+                case .success:
+                    print("구매하기 성공")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func showNoWalletAlert() {
+        let noWalletVC = NoWalletAlertViewController()
+        noWalletVC.modalPresentationStyle = .overCurrentContext
+        noWalletVC.modalTransitionStyle = .crossDissolve
+        self.present(noWalletVC, animated: true, completion: nil)
+       
+    }
+    
+    private func updateUIForOwnership(isOwner: Bool) {
+        priceContainerWidthConstraint.constant = isOwner ? 0 : 148
+        priceContainerView.isHidden = isOwner
+        purchaseButton.setTitle(isOwner ? "판매하기" : "구매하기", for: .normal)
+    }
     
     private func setupTitleBar() {
         self.setupBackButton()
@@ -105,7 +160,6 @@ class NFTDetailViewController: BaseViewController {
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 
         self.collectionView.collectionViewLayout = layout
-        
     }
     
     private func setupButton() {

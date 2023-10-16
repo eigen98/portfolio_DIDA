@@ -27,9 +27,11 @@ enum DidaAPI {
     
     /// MARK: Member
     case fetchMyself
+    case validateWalletPresence
     
     /// MARK: Market
     case nftDetail(nftId: Int)
+    case purchaseNFT(payPwd: String, marketId: Int)
     
     /// MARK: User Interaction
     case likeNFT(nftId: Int)
@@ -72,9 +74,11 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return "/common/profile"
+        case .validateWalletPresence: return "/common/wallet"
             
         /// MARK: Market
         case .nftDetail(let nftId): return "/nft/\(nftId)"
+        case .purchaseNFT: return "/member/market/nft"
             
         /// MARK: User Interaction
         case .likeNFT: return "/common/nft/like"
@@ -101,9 +105,11 @@ extension DidaAPI: TargetType {
         
         /// MARK: Member
         case .fetchMyself: return .get
-            
+        case .validateWalletPresence: return .get
+
         /// MARK: Market
         case .nftDetail: return .get
+        case .purchaseNFT: return .post
 
         /// MARK: User Interaction
         case .likeNFT: return .post
@@ -140,11 +146,16 @@ extension DidaAPI: TargetType {
         /// MARK: Member
         case .fetchMyself:
             return .requestPlain
+        case .validateWalletPresence:
+            return .requestPlain
         
         /// MARK: Market
         case .nftDetail:
             return .requestPlain
-            
+        case .purchaseNFT(let payPwd, let marketId):
+            let parameters = PurchaseNFTRequestDTO(payPwd: payPwd, marketId: marketId)
+            return .requestJSONEncodable(parameters)
+
         /// MARK: NFT Interaction
         case .likeNFT(let nftId):
             return .requestParameters(parameters: ["nftId": nftId], encoding: JSONEncoding.default)
