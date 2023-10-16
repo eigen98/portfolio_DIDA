@@ -14,6 +14,7 @@ class NFTDetailViewModel: BaseViewModel {
     var output: Output
     private let marketRepository: MarketRepository
     private var socialInteractionRepository: SocialInteractionRepository
+    private let userRepository: UserRepository
     
     enum SectionItem {
         case overview(OverviewNFTModel?)
@@ -53,10 +54,13 @@ class NFTDetailViewModel: BaseViewModel {
     }
     
     init(marketRepository: MarketRepository = MarketRepositoryImpl(),
-         socialInteractionRepository : SocialInteractionRepository = SocialInteractionRepositoryImpl()
+         socialInteractionRepository : SocialInteractionRepository = SocialInteractionRepositoryImpl(),
+         userRepository: UserRepository = UserRepositoryImpl()
     ) {
         self.marketRepository = marketRepository
         self.socialInteractionRepository = socialInteractionRepository
+        self.userRepository = userRepository
+        
         input = Input(refreshTrigger: PublishRelay<Int>(),
                       followButtonTapped: PublishRelay<Void>(),
                       likeButtonTapped:  PublishRelay<Int>(),
@@ -151,7 +155,7 @@ class NFTDetailViewModel: BaseViewModel {
                 if overviewData.isMe {
                     return self.performSellLogic()
                 } else {
-                    return self.performPurchaseLogic()
+                    return self.checkWalletExistenceAndPerformPurchaseLogic()
                 }
             }
             .bind(to: output.transactionResult)
@@ -256,7 +260,6 @@ class NFTDetailViewModel: BaseViewModel {
             self.marketRepository.purchaseNFT(payPwd: payPwd, marketId: marketId) { result in
                 switch result {
                 case .success(let response):
-                    //MARK: 구매 성공 시
                     observer.onNext(.success(()))
                 case .failure(let error):
                     observer.onNext(.failure(error))
@@ -267,5 +270,34 @@ class NFTDetailViewModel: BaseViewModel {
             return Disposables.create()
         }
     }
-
+    
+    private func checkWalletExistenceAndPerformPurchaseLogic() -> Observable<Result<Void, Error>> {
+        return Observable.create { [weak self] observer in
+            guard let self = self else {
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            
+            self.userRepository.checkWalletExistence { (hasWallet, error) in
+                if let hasWallet = hasWallet {
+                    if hasWallet {
+                        self.performPurchaseLogic()
+                            .subscribe(onNext: { result in
+                                observer.onNext(result)
+                                observer.onCompleted()
+                            })
+                            .disposed(by: self.disposeBag)
+                    } else {
+                        observer.onNext(.failure(PurchaseNFTErrors.walletNotExist))
+                        observer.onCompleted()
+                    }
+                } else if let error = error {
+                    observer.onNext(.failure(error))
+                    observer.onCompleted()
+                }
+            }
+            
+            return Disposables.create()
+        }
+    }
 }
