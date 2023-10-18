@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NFTDetailViewController" customModule="DIDA" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="DnB-qj-gI8" id="KHR-Yi-ln3"/>
+                <outlet property="collectionView" destination="ojU-bP-Gd5" id="IYx-oa-kYn"/>
                 <outlet property="priceContainerView" destination="qBr-Xh-nFB" id="rh4-pS-xUv"/>
                 <outlet property="priceContainerWidthConstraint" destination="zCQ-u1-Hg1" id="KSj-QG-kTj"/>
                 <outlet property="priceLabel" destination="IR2-v8-LIk" id="OQw-82-Dc8"/>
@@ -29,19 +30,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DnB-qj-gI8">
-                    <rect key="frame" x="0.0" y="59" width="393" height="689"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="di2-SS-ygB">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzT-0A-D6u">
                     <rect key="frame" x="0.0" y="748" width="393" height="70"/>
                     <subviews>
@@ -97,17 +85,27 @@
                         <constraint firstAttribute="trailing" secondItem="mSw-pz-ngn" secondAttribute="trailing" constant="16" id="xZD-d1-xZq"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-bP-Gd5">
+                    <rect key="frame" x="0.0" y="59" width="393" height="689"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jng-hb-7yt">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="surface_1"/>
             <constraints>
                 <constraint firstItem="yzT-0A-D6u" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="253-hf-lRZ"/>
-                <constraint firstItem="DnB-qj-gI8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IVQ-lU-pKC"/>
-                <constraint firstItem="DnB-qj-gI8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KIk-ff-8qo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yzT-0A-D6u" secondAttribute="trailing" id="PDH-VR-leT"/>
-                <constraint firstItem="yzT-0A-D6u" firstAttribute="top" secondItem="DnB-qj-gI8" secondAttribute="bottom" id="TIL-10-897"/>
                 <constraint firstItem="yzT-0A-D6u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="asu-i2-omc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DnB-qj-gI8" secondAttribute="trailing" id="hE2-mZ-Bo0"/>
+                <constraint firstItem="ojU-bP-Gd5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d0Z-vQ-QIe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ojU-bP-Gd5" secondAttribute="trailing" id="sO1-ly-9sU"/>
+                <constraint firstItem="ojU-bP-Gd5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tvj-Q5-dce"/>
+                <constraint firstItem="yzT-0A-D6u" firstAttribute="top" secondItem="ojU-bP-Gd5" secondAttribute="bottom" id="yTN-f3-F00"/>
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -123,5 +121,8 @@
         <namedColor name="surface_1">
             <color red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
