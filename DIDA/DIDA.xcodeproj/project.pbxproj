@@ -258,6 +258,10 @@
 		EEEAA5D42AD521E9007FB14C /* DetailCommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAA5D32AD521E9007FB14C /* DetailCommunityModel.swift */; };
 		EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */; };
 		EEFDE2812A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */; };
+		EEFF01D92ADE618D00D37AA5 /* PurchaseNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */; };
+		EEFF01DA2ADE618D00D37AA5 /* PurchaseNFTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFF01D82ADE618D00D37AA5 /* PurchaseNFTViewController.xib */; };
+		EEFF01DD2ADE6CE200D37AA5 /* PurchaseNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */; };
+		EEFF01E02ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -511,6 +515,10 @@
 		EEFA9C8329A0CB5B0061D9D9 /* HotItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEFA9C8429A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEFDE2802A00CE0A00DFD0C1 /* SoldOutSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionViewModel.swift; sourceTree = "<group>"; };
+		EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewController.swift; sourceTree = "<group>"; };
+		EEFF01D82ADE618D00D37AA5 /* PurchaseNFTViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseNFTViewController.xib; sourceTree = "<group>"; };
+		EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTView.swift; sourceTree = "<group>"; };
+		EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -617,6 +625,7 @@
 		97BAE0F529ABCC890001F60A /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				EEFF01DE2ADE6D5600D37AA5 /* PurchaseNFT */,
 				EEDED4D32ADD4F9800C18766 /* PasswordConfiguration */,
 				EEE676772AC7D15300D58AA2 /* Detail */,
 				EE6D138929F3A6CA00C748BE /* Home */,
@@ -686,6 +695,7 @@
 		C13633FA29A0C59F0023DA68 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EEFF01D52ADE610600D37AA5 /* Purchase */,
 				EEE9CE652ADD137C004C740A /* PasswordConfiguration */,
 				EEDFE4292AD65FB2003FDF80 /* Popup */,
 				EECF2C8A2AC527B70003237C /* Detail */,
@@ -1477,6 +1487,32 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EEFF01D52ADE610600D37AA5 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				EEFF01DB2ADE6CD100D37AA5 /* View */,
+				EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */,
+				EEFF01D82ADE618D00D37AA5 /* PurchaseNFTViewController.xib */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		EEFF01DB2ADE6CD100D37AA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEFF01DE2ADE6D5600D37AA5 /* PurchaseNFT */ = {
+			isa = PBXGroup;
+			children = (
+				EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */,
+			);
+			path = PurchaseNFT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1610,6 +1646,7 @@
 				C136343629A0CD090023DA68 /* Pretendard-SemiBold.ttf in Resources */,
 				C10232C02A62B93F00517F0C /* NftOrderingCollectionReusableView.xib in Resources */,
 				EECF2CA12AC53A300003237C /* NFTCommunityCollectionViewCell.xib in Resources */,
+				EEFF01DA2ADE618D00D37AA5 /* PurchaseNFTViewController.xib in Resources */,
 				EE6D138829F3A59700C748BE /* MoreRecentNFTCollectionViewCell.xib in Resources */,
 				C10232B22A62AD2E00517F0C /* ProfileViewController.xib in Resources */,
 				EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */,
@@ -1858,6 +1895,7 @@
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
+				EEFF01D92ADE618D00D37AA5 /* PurchaseNFTViewController.swift in Sources */,
 				EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */,
 				EEDFE4312AD68807003FDF80 /* PurchaseNFTRequestDTO.swift in Sources */,
 				C16AECA529EAB96200A37C78 /* UIViewController+Extension.swift in Sources */,
@@ -1944,6 +1982,7 @@
 				C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */,
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
+				EEFF01DD2ADE6CE200D37AA5 /* PurchaseNFTView.swift in Sources */,
 				EEE9DD0729C70BF600056719 /* HotSellerResponse.swift in Sources */,
 				EEE9CE682ADD14DD004C740A /* PasswordConfigurationViewController.swift in Sources */,
 				C1C8023129B48BB200221FB9 /* MainTabbarPageCollectionViewCell.swift in Sources */,
@@ -1953,6 +1992,7 @@
 				EEEAA5D22AD5219B007FB14C /* DetailInfoNFTModel.swift in Sources */,
 				C1FB970B2A1A2D9900A4D8D6 /* ApplicationStorage.swift in Sources */,
 				EEEAA5D42AD521E9007FB14C /* DetailCommunityModel.swift in Sources */,
+				EEFF01E02ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift in Sources */,
 				EEE9DD0529C70BBE00056719 /* HotItemResponse.swift in Sources */,
 				EEE6767C2AC7D23500D58AA2 /* CurrentOwnerCollectionViewCell.swift in Sources */,
 				EECF2CA02AC53A300003237C /* NFTCommunityCollectionViewCell.swift in Sources */,
