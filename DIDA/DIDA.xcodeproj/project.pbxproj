@@ -199,6 +199,8 @@
 		EE9D486929FE1DC000E184DF /* dida_loading_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */; };
 		EE9D486D29FE24DA00E184DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */; };
 		EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */; };
+		EEB3546A2AE108E500BD2DD7 /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB354692AE108E500BD2DD7 /* EncryptionService.swift */; };
+		EEB3546C2AE1091F00BD2DD7 /* RSAEncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3546B2AE1091F00BD2DD7 /* RSAEncryptionService.swift */; };
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
 		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
 		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
@@ -450,6 +452,8 @@
 		EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dida_loading_lottie.json; sourceTree = "<group>"; };
 		EE9D486C29FE24DA00E184DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTEntity.swift; sourceTree = "<group>"; };
+		EEB354692AE108E500BD2DD7 /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
+		EEB3546B2AE1091F00BD2DD7 /* RSAEncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAEncryptionService.swift; sourceTree = "<group>"; };
 		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabbar.swift; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 		C13633FB29A0C5B70023DA68 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EEB354682AE108CF00BD2DD7 /* Service */,
 				97BAE0F529ABCC890001F60A /* Usecase */,
 				C16AEC9229EA933100A37C78 /* Entity */,
 			);
@@ -1287,6 +1292,15 @@
 				EE9D486829FE1DC000E184DF /* dida_loading_lottie.json */,
 			);
 			path = LottieFiles;
+			sourceTree = "<group>";
+		};
+		EEB354682AE108CF00BD2DD7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EEB354692AE108E500BD2DD7 /* EncryptionService.swift */,
+				EEB3546B2AE1091F00BD2DD7 /* RSAEncryptionService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		EEC91FA929A1DF36002AFB65 /* MainCustomTabbar */ = {
@@ -1953,6 +1967,7 @@
 				EEE676832AC7DBED00D58AA2 /* OwnershipNFTViewModel.swift in Sources */,
 				C1C8023029B48BB200221FB9 /* MainCustomTabbar.swift in Sources */,
 				EEE9DD0B29C70C6000056719 /* HotUserResponse.swift in Sources */,
+				EEB3546C2AE1091F00BD2DD7 /* RSAEncryptionService.swift in Sources */,
 				C1C8024E29B48D0000221FB9 /* (null) in Sources */,
 				C16AECAD29EAC91100A37C78 /* DidaAPI.swift in Sources */,
 				C1A8D3D029EA7E370023373E /* LoginHomeViewController.swift in Sources */,
@@ -1980,6 +1995,7 @@
 				C1C8024429B48C1400221FB9 /* String+Extension.swift in Sources */,
 				EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */,
 				C16FDCEC2A054C9100FB5F53 /* DidaAPI+Error.swift in Sources */,
+				EEB3546A2AE108E500BD2DD7 /* EncryptionService.swift in Sources */,
 				C16AECA329EAB5FC00A37C78 /* LoginProviderEntity.swift in Sources */,
 				EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */,
 				EEFF01DD2ADE6CE200D37AA5 /* PurchaseNFTView.swift in Sources */,
