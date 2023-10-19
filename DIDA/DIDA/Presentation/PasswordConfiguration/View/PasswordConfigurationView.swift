@@ -124,10 +124,11 @@ class PasswordConfigurationView: UIView {
         }
         
         numberButtons.enumerated().forEach { index, button in
+            let numberToSend = (index + 1) % 10
             button.rx.tap
                 .subscribe(onNext: { [weak self] in
                     self?.fillNextInputView()
-                    self?.numberButtonTapped.onNext(index + 1)
+                    self?.numberButtonTapped.onNext(numberToSend)
                 })
                 .disposed(by: disposeBag)
         }
@@ -156,6 +157,13 @@ class PasswordConfigurationView: UIView {
         passwordInputViews[currentInputIndex].backgroundColor = Colors.border_line
     }
     
+    func resetInputViews() {
+        for view in passwordInputViews {
+            view.backgroundColor = Colors.border_line
+        }
+        currentInputIndex = 0
+    }
+
     private func setupConstraints() {
         setupLabelConstraints()
         setupPasswordInputStackViewConstraints()
