@@ -201,6 +201,7 @@
 		EEA0A0112A2DF1EE00F26415 /* NFTEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */; };
 		EEB3546A2AE108E500BD2DD7 /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB354692AE108E500BD2DD7 /* EncryptionService.swift */; };
 		EEB3546C2AE1091F00BD2DD7 /* RSAEncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3546B2AE1091F00BD2DD7 /* RSAEncryptionService.swift */; };
+		EEB3546E2AE11E3700BD2DD7 /* PublicKeyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3546D2AE11E3700BD2DD7 /* PublicKeyResponseDTO.swift */; };
 		EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */; };
 		EEC91FB329A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB129A1E5ED002AFB65 /* MainTabbarPageCollectionViewCell.xib */; };
 		EEC91FB729A1F1ED002AFB65 /* SellerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC91FB529A1F1ED002AFB65 /* SellerCollectionViewCell.xib */; };
@@ -454,6 +455,7 @@
 		EEA0A0102A2DF1EE00F26415 /* NFTEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTEntity.swift; sourceTree = "<group>"; };
 		EEB354692AE108E500BD2DD7 /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
 		EEB3546B2AE1091F00BD2DD7 /* RSAEncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAEncryptionService.swift; sourceTree = "<group>"; };
+		EEB3546D2AE11E3700BD2DD7 /* PublicKeyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyResponseDTO.swift; sourceTree = "<group>"; };
 		EEC91FAA29A1DF87002AFB65 /* MainTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC91FAB29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabbarCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEC91FAE29A1E05D002AFB65 /* MainCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomTabbar.swift; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 				C134D7232A06AC86009EE0DB /* BaseErrorResponseDTO.swift */,
 				C134D72D2A07A933009EE0DB /* DuplicatedNicknameResponseDTO.swift */,
 				EEE9CE632ADD075A004C740A /* WalletExistenceResponseDTO.swift */,
+				EEB3546D2AE11E3700BD2DD7 /* PublicKeyResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1907,6 +1910,7 @@
 				EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */,
 				EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */,
 				97BAE0EE29AB94350001F60A /* CommentTableViewCell.swift in Sources */,
+				EEB3546E2AE11E3700BD2DD7 /* PublicKeyResponseDTO.swift in Sources */,
 				97BAE0FC29AC64FE0001F60A /* CommunityViewModel.swift in Sources */,
 				C1C8022529B1159900221FB9 /* TabBarButton.swift in Sources */,
 				EEFF01D92ADE618D00D37AA5 /* PurchaseNFTViewController.swift in Sources */,
