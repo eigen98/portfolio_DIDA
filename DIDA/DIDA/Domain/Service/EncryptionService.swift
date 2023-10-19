@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol EncryptionService {
+    func encryptWithPublicKey(message: String, publicKeyString: String) -> String?
+}
