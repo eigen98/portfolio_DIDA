@@ -25,11 +25,12 @@ class PasswordConfigurationViewController: BaseViewController {
         super.bindViewModel()
         
         passwordConfigurationView.numberButtonTapped
-            .bind(onNext: viewModel.numberButtonTapped)
+            .map{ "\($0)"}
+            .bind(to: viewModel.input.numberButtonTapped)
             .disposed(by: disposeBag)
-
+        
         passwordConfigurationView.deleteButtonTapped
-            .bind(onNext: viewModel.deleteButtonTapped)
+            .bind(to: viewModel.input.deleteButtonTapped)
             .disposed(by: disposeBag)
 
         viewModel.showError
@@ -38,19 +39,28 @@ class PasswordConfigurationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.passwordStep
+        viewModel.output.passwordStep
             .bind(onNext: { [weak self] step in
                 switch step {
                 case .setPassword:
                     self?.passwordConfigurationView.setTitle("지갑 비밀번호 설정")
                     self?.passwordConfigurationView.setSubtitle("NFT 거래 시 사용할 비밀번호를 설정해주세요.")
+                    self?.passwordConfigurationView.resetInputViews()
                 case .confirmSetPassword:
                     self?.passwordConfigurationView.setTitle("지갑 비밀번호 확인")
                     self?.passwordConfigurationView.setSubtitle("비밀번호를 다시 한번 입력해주세요.")
+                    self?.passwordConfigurationView.resetInputViews()
                 case .enterPassword:
                     self?.passwordConfigurationView.setTitle("지갑 비밀번호 입력")
                     self?.passwordConfigurationView.setSubtitle("내 지갑 비밀번호를 입력해주세요.")
+                    self?.passwordConfigurationView.resetInputViews()
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.walletIssuedSuccessfully
+            .bind(onNext: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }

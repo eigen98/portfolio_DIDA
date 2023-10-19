@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Moya
 
 class UserRepositoryImpl: UserRepository {
     
@@ -78,4 +79,39 @@ class UserRepositoryImpl: UserRepository {
                 completion(nil, error)
             }.disposed(by: self.disposeBag)
     }
+
+    func issueWallet(payPwd: String, checkPwd: String, completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.issueWallet(payPwd: payPwd, checkPwd: checkPwd))
+            .asObservable()
+            .flatMap { response -> Single<Response> in
+                if response.statusCode == 200 {
+                    return Single.just(response)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                completion(true, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
+
+    func fetchPublicKey(completion: @escaping (String?, Error?) -> ()) {
+           APIClient.request(.getPublicKey)
+               .asObservable()
+               .flatMap { response -> Single<PublicKeyResponseDTO> in
+                   if response.statusCode == 200 {
+                       let decode = try response.map(PublicKeyResponseDTO.self)
+                       return Single.just(decode)
+                   } else {
+                       let error = try response.map(BaseErrorResponseDTO.self)
+                       return .error(DidaError.apiError(error))
+                   }
+               }.subscribe { response in
+                   completion(response.publicKey, nil)
+               } onError: { error in
+                   completion(nil, error)
+               }.disposed(by: self.disposeBag)
+       }
 }
