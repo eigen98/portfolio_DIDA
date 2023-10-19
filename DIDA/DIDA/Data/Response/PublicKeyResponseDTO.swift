@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct PublicKeyResponseDTO: Codable {
+    let publicKey: String?
+}
