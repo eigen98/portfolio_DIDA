@@ -114,4 +114,27 @@ class UserRepositoryImpl: UserRepository {
                    completion(nil, error)
                }.disposed(by: self.disposeBag)
        }
+
+    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ()) {
+        APIClient.request(.checkPassword(payPwd: payPwd))
+            .asObservable()
+            .flatMap { response -> Single<PasswordCheckResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(PasswordCheckResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.map { responseDTO in
+                return PasswordCheckEntity(matched: responseDTO.matched ?? false,
+                                           wrongCount: responseDTO.wrongCnt ?? 0)
+            }.subscribe { entity in
+                completion(entity, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
+
+
 }
