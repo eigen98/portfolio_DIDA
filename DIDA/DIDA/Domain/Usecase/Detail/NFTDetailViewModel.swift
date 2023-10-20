@@ -281,12 +281,8 @@ class NFTDetailViewModel: BaseViewModel {
             self.userRepository.checkWalletExistence { (hasWallet, error) in
                 if let hasWallet = hasWallet {
                     if hasWallet {
-                        self.performPurchaseLogic()
-                            .subscribe(onNext: { result in
-                                observer.onNext(result)
-                                observer.onCompleted()
-                            })
-                            .disposed(by: self.disposeBag)
+                        observer.onNext(.success(()))
+                        observer.onCompleted()
                     } else {
                         observer.onNext(.failure(PurchaseNFTErrors.walletNotExist))
                         observer.onCompleted()
