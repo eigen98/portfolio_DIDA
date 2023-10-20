@@ -113,7 +113,7 @@ class NFTDetailViewController: BaseViewController {
                         print(error.localizedDescription)
                     }
                 case .success:
-                    print("구매하기 성공")
+                    self?.showPasswordConfigurationVC()
                 }
             })
             .disposed(by: disposeBag)
@@ -124,6 +124,14 @@ class NFTDetailViewController: BaseViewController {
         noWalletVC.modalPresentationStyle = .overCurrentContext
         noWalletVC.modalTransitionStyle = .crossDissolve
         self.present(noWalletVC, animated: true, completion: nil)
+       
+    }
+    
+    private func showPasswordConfigurationVC() {
+        let passwordConfigurationVC = PasswordConfigurationViewController(with: .enterPassword)
+        passwordConfigurationVC.modalPresentationStyle = .overCurrentContext
+        passwordConfigurationVC.modalTransitionStyle = .crossDissolve
+        self.present(passwordConfigurationVC, animated: true, completion: nil)
        
     }
     
