@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PasswordCheckResponseDTO: Codable {
+    let matched: Bool?
+    let wrongCnt: Int?
+}
