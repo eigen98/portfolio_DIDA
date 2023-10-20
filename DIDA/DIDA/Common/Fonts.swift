@@ -18,6 +18,8 @@ final class Fonts {
     static let extra_bold_32 = UIFont.init(name: "Pretendard-ExtraBold", size: 32)
     
     static let semi_bold_12 = UIFont.init(name: "Pretendard-SemiBold", size: 12)
+    static let semi_bold_14 = UIFont.init(name: "Pretendard-SemiBold", size: 14)
+    static let semi_bold_20 = UIFont.init(name: "Pretendard-SemiBold", size: 20)
     static let regular_18 = UIFont.init(name: "Pretendard-Regular", size: 18)
     static let regular_16 = UIFont.init(name: "Pretendard-Regular", size: 16)
     static let regular_15 = UIFont.init(name: "Pretendard-Regular", size: 15)
