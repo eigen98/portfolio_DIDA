@@ -21,4 +21,6 @@ protocol UserRepository {
     func checkWalletExistence(completion: @escaping (Bool?, Error?) -> ())
     func issueWallet(payPwd: String, checkPwd: String, completion: @escaping (Bool?, Error?) -> ())
     func fetchPublicKey(completion: @escaping (String?, Error?) -> ())
+    
+    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ()) 
 }
