@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PasswordCheckEntity {
+    let matched: Bool
+    let wrongCount: Int
+}
