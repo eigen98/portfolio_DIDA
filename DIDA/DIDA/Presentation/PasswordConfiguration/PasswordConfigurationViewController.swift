@@ -10,10 +10,20 @@ import RxSwift
 
 class PasswordConfigurationViewController: BaseViewController {
 
-    
-    private let viewModel = PasswordConfigurationViewModel()
+    private var viewModel = PasswordConfigurationViewModel()
     private let passwordConfigurationView = PasswordConfigurationView()
     private let disposeBag = DisposeBag()
+    
+    init(with step: PasswordStep) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = PasswordConfigurationViewModel(initialStep: step)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.viewModel = PasswordConfigurationViewModel(initialStep: .setPassword)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -61,6 +71,34 @@ class PasswordConfigurationViewController: BaseViewController {
         viewModel.output.walletIssuedSuccessfully
             .bind(onNext: { [weak self] in
                 self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.passwordCheckState
+            .bind(onNext: { [weak self] state in
+                switch state {
+                case .initial:
+                    self?.passwordConfigurationView.hideWrongCountLabel()
+                case .matched:
+                    self?.passwordConfigurationView.hideWrongCountLabel()
+                    
+                    guard let presentingVC = self?.presentingViewController else { return }
+                    let purchaseVC = NFTPurchaseViewController()
+                    self?.dismiss(animated: true, completion: { [weak presentingVC] in
+                        if let navController = presentingVC as? UINavigationController {
+                            navController.pushViewController(purchaseVC, animated: false)
+                        }
+                    })
+                    
+                case .mismatched(let count):
+                    self?.passwordConfigurationView.showWrongCountLabel(with: count)
+                    self?.passwordConfigurationView.setTitle("비밀번호가 일치하지 않아요")
+                    self?.passwordConfigurationView.setSubtitle("다시 눌러주세요")
+                case .error(let message):
+                    break
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
     }

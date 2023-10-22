@@ -31,6 +31,15 @@ class PasswordConfigurationView: UIView {
     var deleteButtonTapped: PublishSubject<Void> = PublishSubject()
     private let disposeBag = DisposeBag()
     
+    private let wrongCountLabel : UILabel = {
+        let label = UILabel()
+        label.text = "1/5"
+        label.textColor = Colors.text_notice_red
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호 설정"
@@ -86,7 +95,7 @@ class PasswordConfigurationView: UIView {
     }
     
     private func setupLabels() {
-        [titleLabel, subtitleLabel].forEach { addSubview($0) }
+        [titleLabel, subtitleLabel, wrongCountLabel].forEach { addSubview($0) }
     }
     
     func setTitle(_ title: String) {
@@ -163,6 +172,15 @@ class PasswordConfigurationView: UIView {
         }
         currentInputIndex = 0
     }
+    
+    func showWrongCountLabel(with count: Int) {
+        wrongCountLabel.text = "\(count)/5"
+        wrongCountLabel.isHidden = false
+    }
+
+    func hideWrongCountLabel() {
+        wrongCountLabel.isHidden = true
+    }
 
     private func setupConstraints() {
         setupLabelConstraints()
@@ -178,7 +196,10 @@ class PasswordConfigurationView: UIView {
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                                constant: Constants.subtitleLabelTopPadding),
-            subtitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            subtitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            wrongCountLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor , constant: -10),
+            wrongCountLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
 

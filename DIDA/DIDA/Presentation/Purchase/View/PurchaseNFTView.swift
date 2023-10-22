@@ -33,6 +33,15 @@ class PurchaseNFTView : UIView{
     let remainingBalanceAfterPaymentLabel = UILabel()
     let remainingBalanceAfterPaymentValueLabel = UILabel()
     
+    let buyButton : Buttons = {
+        let button = Buttons()
+        button.setTitle("구매하기", for: .normal)
+        button.buttonHeight = .h56
+        button.style = .primary
+        button.shape = .round
+        return button
+    }()
+    
     let ownershipHistoryView : UIView =  {
         let view = UIView()
         view.backgroundColor = Colors.surface_2
@@ -73,7 +82,7 @@ class PurchaseNFTView : UIView{
          feePriceValueLabel, feeQuestionButton,
          totalPriceLabel,totalPriceValueLabel,
          remainingBalanceAfterPaymentLabel, remainingBalanceAfterPaymentValueLabel,
-         ownershipHistoryView
+         ownershipHistoryView, buyButton
         ].forEach {
             addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -94,39 +103,57 @@ class PurchaseNFTView : UIView{
     
     private func setupLabels() {
         nftInfoTitleLabel.text = "NFT 정보"
-        nftNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        usernameLabel.font = UIFont.systemFont(ofSize: 18)
+        nftInfoTitleLabel.font = Fonts.bold_20
+        nftNameLabel.font = Fonts.regular_18
+        usernameLabel.font = Fonts.semi_bold_14
         nftSalePriceLabel.text = "00.0 dida"
+        nftSalePriceLabel.font = Fonts.semi_bold_12
         
         myDidaTitleLabel.text = "MyDida"
+        myDidaTitleLabel.font = Fonts.bold_20
         didaBalanceLabel.text = "보유"
+        didaBalanceLabel.font = Fonts.regular_18
         didaBalanceValueLabel.text = "5000 dida"
+        didaBalanceValueLabel.font = Fonts.regular_18
         
         paymentInfoTitleLabel.text = "결제 정보"
         paymentInfoTitleLabel.textColor = .white
+        paymentInfoTitleLabel.font = Fonts.bold_20
+        
         paymentInfoPriceLabel.text = "판매 가격"
         paymentInfoPriceLabel.textColor = .white
+        paymentInfoPriceLabel.font = Fonts.regular_18
+        
         paymentInfoPriceValueLabel.text = "324.91 dida"
+        paymentInfoPriceValueLabel.font = Fonts.regular_18
         
         feePriceLabel.text = "수수료"
+        feePriceLabel.font = Fonts.regular_18
         feePriceLabel.textColor = .white
         feePriceValueLabel.text = "123 dida"
+        feePriceValueLabel.font = Fonts.regular_18
         
         totalPriceLabel.text = "총액"
         totalPriceLabel.textColor = Colors.brand_lemon
+        totalPriceLabel.font = Fonts.regular_18
         totalPriceValueLabel.text = "447.91 dida"
+        totalPriceValueLabel.font = Fonts.regular_18
+
         
         remainingBalanceAfterPaymentLabel.text = "결제 후 잔액"
         remainingBalanceAfterPaymentLabel.textColor = .white
         remainingBalanceAfterPaymentValueLabel.text = "4552.09 dida"
         
         ownershipHistoryTitleLabel.text = "구매 완료시 소유권이 변동됩니다."
-        
+        ownershipHistoryTitleLabel.font = Fonts.bold_18
+
         nftSellerLabel.text = "user name 판매자"
         nftSellerLabel.textColor = Colors.surface_6
+        nftSellerLabel.font = Fonts.regular_18
         
         nftBuyerLabel.text = "user name 구매자"
         nftBuyerLabel.textColor = Colors.brand_lemon
+        nftBuyerLabel.font = Fonts.regular_18
         
     }
     
@@ -151,6 +178,8 @@ class PurchaseNFTView : UIView{
         setupTotalPriceAndBalanceConstraints()
         
         setupOwnershipHistoryConstraints()
+        
+        setupButtonConstraints()
     }
     
     private func setupNFTInfoConstraints() {
@@ -240,13 +269,12 @@ class PurchaseNFTView : UIView{
             ownershipHistoryView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             ownershipHistoryView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             ownershipHistoryView.heightAnchor.constraint(equalToConstant: 127),
-            ownershipHistoryView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -38),
             
             ownershipHistoryTitleLabel.topAnchor.constraint(equalTo: ownershipHistoryView.topAnchor, constant: 16),
             ownershipHistoryTitleLabel.leadingAnchor.constraint(equalTo: ownershipHistoryView.leadingAnchor, constant: 16),
             
             imageView.topAnchor.constraint(equalTo: ownershipHistoryTitleLabel.bottomAnchor, constant: 26),
-            imageView.leadingAnchor.constraint(equalTo: ownershipHistoryView.leadingAnchor, constant: 16),
+            imageView.leadingAnchor.constraint(equalTo: ownershipHistoryView.leadingAnchor, constant: 14),
             
             nftSellerLabel.topAnchor.constraint(equalTo: ownershipHistoryTitleLabel.bottomAnchor, constant: 14),
             nftSellerLabel.leadingAnchor.constraint(equalTo: ownershipHistoryView.leadingAnchor, constant: 28),
@@ -256,7 +284,14 @@ class PurchaseNFTView : UIView{
         ])
     }
 
-  
+    private func setupButtonConstraints(){
+        NSLayoutConstraint.activate ([
+                buyButton.topAnchor.constraint(equalTo: ownershipHistoryView.bottomAnchor, constant: 38),
+                buyButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+                buyButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+                buyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -31),
+        ])
+    }
 
     private func updateSeparatorFrames() {
         let separator1 = CALayer()

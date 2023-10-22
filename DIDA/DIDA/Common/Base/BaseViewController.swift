@@ -16,6 +16,12 @@ class BaseViewController: UIViewController {
         setBaseNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBaseNavigationBar()
+    }
+
+    
     func bindViewModel() { }
     func bindEvent() { }
     

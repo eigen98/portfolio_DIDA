@@ -27,6 +27,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
         let passwordStep: BehaviorRelay<PasswordStep>
         let encryptedPassword: BehaviorRelay<String?>
         let walletIssuedSuccessfully: PublishSubject<Void>
+        let passwordCheckState: BehaviorRelay<PasswordCheckState>
     }
     
     let input: Input = Input()
@@ -44,17 +45,32 @@ class PasswordConfigurationViewModel: BaseViewModel {
     private let passwordStepRelay = BehaviorRelay<PasswordStep>(value: .setPassword)
     private let encryptedPasswordRelay = BehaviorRelay<String?>(value: nil)
     private let walletIssuedSuccessfullySubject = PublishSubject<Void>()
+    private let passwordCheckStateRelay = BehaviorRelay<PasswordCheckState>(value: .initial)
 
     override init() {
         self.output = Output(
             showError: showErrorSubject.asObservable(),
             passwordStep: passwordStepRelay,
             encryptedPassword: encryptedPasswordRelay,
-            walletIssuedSuccessfully: walletIssuedSuccessfullySubject
+            walletIssuedSuccessfully: walletIssuedSuccessfullySubject,
+            passwordCheckState: passwordCheckStateRelay
         )
         super.init()
         
     }
+    
+    init(initialStep: PasswordStep = .setPassword) {
+        self.output = Output(
+            showError: showErrorSubject.asObservable(),
+            passwordStep: passwordStepRelay,
+            encryptedPassword: encryptedPasswordRelay,
+            walletIssuedSuccessfully: walletIssuedSuccessfullySubject,
+            passwordCheckState: passwordCheckStateRelay
+        )
+        super.init()
+        self.passwordStepRelay.accept(initialStep)
+    }
+
     
     override func bind() {
         bindNumberButtonTapped()
@@ -80,19 +96,22 @@ class PasswordConfigurationViewModel: BaseViewModel {
     }
     
     private func handleNumberInput(_ number: String) {
+        if password.count <= 5{
+            password.append(number)
+        }
+        
+        if password.count != 6{
+            return
+        }
+
         switch passwordStepRelay.value {
         case .setPassword:
-            password.append(number)
-            if password.count == 6 {
                 passwordStepRelay.accept(.confirmSetPassword)
-            }
         case .confirmSetPassword:
-            confirmPassword.append(number)
-            if confirmPassword.count == 6 {
                 verifyPasswordsAndEncrypt()
-            }
         case .enterPassword:
-            break
+                checkPassword()
+            
         }
     }
     
@@ -107,7 +126,9 @@ class PasswordConfigurationViewModel: BaseViewModel {
                 confirmPassword.removeLast()
             }
         case .enterPassword:
-            break
+            if !password.isEmpty {
+                password.removeLast()
+            }
         }
     }
     
@@ -170,6 +191,51 @@ class PasswordConfigurationViewModel: BaseViewModel {
         }
     }
     
+    private func checkPassword() {
+        fetchPublicKey { [weak self] (publicKey, error) in
+            guard let self = self else { return }
+            
+            if let publicKey = publicKey {
+                self.encryptAndVerifyPassword(with: publicKey)
+            } else if let error = error {
+                self.showErrorSubject.onNext("\(error)")
+            }
+        }
+    }
+
+    private func encryptAndVerifyPassword(with publicKey: String) {
+        guard let encryptedPwd = encryptPassword(with: publicKey) else {
+            showErrorSubject.onNext("Encryption failed.")
+            return
+        }
+        verifyEncryptedPassword(encryptedPwd)
+    }
+
+    private func encryptPassword(with publicKey: String) -> String? {
+        return encryptionService.encryptWithPublicKey(message: password, publicKeyString: publicKey)
+    }
+
+    private func verifyEncryptedPassword(_ encryptedPwd: String) {
+        userRepository.checkPassword(payPwd: encryptedPwd) { [weak self] (response, error) in
+            guard let self = self else { return }
+            
+            if let matched = response?.matched {
+                self.handlePasswordVerificationResult(matched: matched, wrongCount: response?.wrongCount)
+            } else if let error = error {
+                self.passwordCheckStateRelay.accept(.error(message: error.localizedDescription))
+            }
+        }
+    }
+
+    private func handlePasswordVerificationResult(matched: Bool, wrongCount: Int?) {
+        if matched {
+            passwordCheckStateRelay.accept(.matched)
+        } else {
+            passwordCheckStateRelay.accept(.mismatched(count: wrongCount ?? 0))
+            resetPasswords()
+        }
+    }
+
     private func resetPasswords() {
         password = ""
         confirmPassword = ""
@@ -180,4 +246,11 @@ class PasswordConfigurationViewModel: BaseViewModel {
 enum CustomError: Error {
     case passwordLimitExceeded
     case passwordMismatch
+}
+
+enum PasswordCheckState {
+    case initial
+    case matched
+    case mismatched(count: Int)
+    case error(message: String)
 }
