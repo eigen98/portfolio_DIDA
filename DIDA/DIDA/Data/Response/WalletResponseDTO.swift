@@ -6,3 +6,8 @@
 //
 
 import Foundation
+struct WalletResponseDTO: Decodable {
+    let address: String?
+    let klay: Double?
+    let dida: Double?
+}
