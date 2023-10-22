@@ -6,3 +6,8 @@
 //
 
 import Foundation
+struct WalletEntity {
+    let address: String
+    let klay: Double
+    let dida: Double
+}
