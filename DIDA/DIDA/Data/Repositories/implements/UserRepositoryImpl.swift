@@ -136,5 +136,26 @@ class UserRepositoryImpl: UserRepository {
             }.disposed(by: self.disposeBag)
     }
 
+    func fetchWallet(completion: @escaping (WalletEntity?, Error?) -> ()) {
+           APIClient.request(.fetchWallet)
+               .asObservable()
+               .flatMap { response -> Single<WalletResponseDTO> in
+                   if response.statusCode == 200 {
+                       let decode = try response.map(WalletResponseDTO.self)
+                       return Single.just(decode)
+                   } else {
+                       let error = try response.map(BaseErrorResponseDTO.self)
+                       return .error(DidaError.apiError(error))
+                   }
+               }.map { responseDTO in
+                   return WalletEntity(address: responseDTO.address ?? "",
+                                       klay: responseDTO.klay ?? 0.0,
+                                       dida: responseDTO.dida ?? 0.0)
+               }.subscribe { entity in
+                   completion(entity, nil)
+               } onError: { error in
+                   completion(nil, error)
+               }.disposed(by: self.disposeBag)
+       }
 
 }
