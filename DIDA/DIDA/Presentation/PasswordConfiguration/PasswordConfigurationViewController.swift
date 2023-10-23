@@ -64,6 +64,10 @@ class PasswordConfigurationViewController: BaseViewController {
                     self?.passwordConfigurationView.setTitle("지갑 비밀번호 입력")
                     self?.passwordConfigurationView.setSubtitle("내 지갑 비밀번호를 입력해주세요.")
                     self?.passwordConfigurationView.resetInputViews()
+                case .changePassword:
+                    self?.passwordConfigurationView.setTitle("새로운 비밀번호 입력")
+                    self?.passwordConfigurationView.setSubtitle("지갑 비밀번호 변경을 위해 입력해주세요")
+                    self?.passwordConfigurationView.resetInputViews()
                 }
             })
             .disposed(by: disposeBag)
@@ -94,6 +98,18 @@ class PasswordConfigurationViewController: BaseViewController {
                     self?.passwordConfigurationView.showWrongCountLabel(with: count)
                     self?.passwordConfigurationView.setTitle("비밀번호가 일치하지 않아요")
                     self?.passwordConfigurationView.setSubtitle("다시 눌러주세요")
+                    
+                case .exceededLimit:
+                    self?.passwordConfigurationView.hideWrongCountLabel()
+                    let alertVC = PasswordChangeAlertViewController()
+                    alertVC.modalPresentationStyle = .overFullScreen
+                    self?.present(alertVC, animated: false)
+                case .passwordChanged:
+                    guard let presentingVC = self?.presentingViewController else { return }
+                    self?.dismiss(animated: false,
+                                  completion: { [weak presentingVC] in
+                        presentingVC?.dismiss(animated: false)
+                    })
                 case .error(let message):
                     break
                 default:

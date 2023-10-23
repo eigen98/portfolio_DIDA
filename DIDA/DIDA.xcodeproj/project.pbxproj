@@ -170,6 +170,8 @@
 		EE110540299A900B00C5D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11053F299A900B00C5D370 /* SceneDelegate.swift */; };
 		EE110545299A900B00C5D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110543299A900B00C5D370 /* Main.storyboard */; };
 		EE11054A299A900C00C5D370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE110548299A900C00C5D370 /* LaunchScreen.storyboard */; };
+		EE1405232AE568E50080F11F /* PasswordChangeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1405212AE568E50080F11F /* PasswordChangeAlertViewController.swift */; };
+		EE1405242AE568E50080F11F /* PasswordChangeAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1405222AE568E50080F11F /* PasswordChangeAlertViewController.xib */; };
 		EE235A152AC91D4000ABB801 /* SocialInteractionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A142AC91D4000ABB801 /* SocialInteractionRepository.swift */; };
 		EE235A172AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A162AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift */; };
 		EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE235A182AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift */; };
@@ -271,6 +273,9 @@
 		EEFF01D92ADE618D00D37AA5 /* PurchaseNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */; };
 		EEFF01DD2ADE6CE200D37AA5 /* PurchaseNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */; };
 		EEFF01E02ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */; };
+		EEFFA1422AE6391D003BDC6C /* VerificationCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFFA1402AE6391D003BDC6C /* VerificationCodeInputViewController.swift */; };
+		EEFFA1432AE6391D003BDC6C /* VerificationCodeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFFA1412AE6391D003BDC6C /* VerificationCodeInputViewController.xib */; };
+		EEFFA1452AE64815003BDC6C /* VerificationCodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFFA1442AE64815003BDC6C /* VerificationCodeInputViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -430,6 +435,8 @@
 		EE110546299A900C00C5D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE110549299A900C00C5D370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE11054B299A900C00C5D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE1405212AE568E50080F11F /* PasswordChangeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeAlertViewController.swift; sourceTree = "<group>"; };
+		EE1405222AE568E50080F11F /* PasswordChangeAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordChangeAlertViewController.xib; sourceTree = "<group>"; };
 		EE235A142AC91D4000ABB801 /* SocialInteractionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInteractionRepository.swift; sourceTree = "<group>"; };
 		EE235A162AC91D7D00ABB801 /* SocialInteractionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInteractionRepositoryImpl.swift; sourceTree = "<group>"; };
 		EE235A182AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNFTSectionViewModel.swift; sourceTree = "<group>"; };
@@ -537,6 +544,9 @@
 		EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewController.swift; sourceTree = "<group>"; };
 		EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTView.swift; sourceTree = "<group>"; };
 		EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewModel.swift; sourceTree = "<group>"; };
+		EEFFA1402AE6391D003BDC6C /* VerificationCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeInputViewController.swift; sourceTree = "<group>"; };
+		EEFFA1412AE6391D003BDC6C /* VerificationCodeInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationCodeInputViewController.xib; sourceTree = "<group>"; };
+		EEFFA1442AE64815003BDC6C /* VerificationCodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeInputViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1171,6 +1181,15 @@
 			path = DIDA;
 			sourceTree = "<group>";
 		};
+		EE1405202AE5685B0080F11F /* PasswordChangePopup */ = {
+			isa = PBXGroup;
+			children = (
+				EE1405212AE568E50080F11F /* PasswordChangeAlertViewController.swift */,
+				EE1405222AE568E50080F11F /* PasswordChangeAlertViewController.xib */,
+			);
+			path = PasswordChangePopup;
+			sourceTree = "<group>";
+		};
 		EE2455922AC65BC000F48FAA /* Market */ = {
 			isa = PBXGroup;
 			children = (
@@ -1436,6 +1455,7 @@
 			isa = PBXGroup;
 			children = (
 				EEDED4D42ADD4FAF00C18766 /* PasswordConfigurationViewModel.swift */,
+				EEFFA1442AE64815003BDC6C /* VerificationCodeInputViewModel.swift */,
 			);
 			path = PasswordConfiguration;
 			sourceTree = "<group>";
@@ -1445,6 +1465,7 @@
 			children = (
 				EEDFE42A2AD660E8003FDF80 /* NoWalletAlertViewController.swift */,
 				EEDFE42B2AD660E8003FDF80 /* NoWalletAlertViewController.xib */,
+				EE1405202AE5685B0080F11F /* PasswordChangePopup */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -1504,6 +1525,8 @@
 			children = (
 				EEE9CE6A2ADD17FE004C740A /* View */,
 				EEE9CE662ADD14DD004C740A /* PasswordConfigurationViewController.swift */,
+				EEFFA1402AE6391D003BDC6C /* VerificationCodeInputViewController.swift */,
+				EEFFA1412AE6391D003BDC6C /* VerificationCodeInputViewController.xib */,
 			);
 			path = PasswordConfiguration;
 			sourceTree = "<group>";
@@ -1716,6 +1739,7 @@
 				EE0E778229A0EE7400E3863C /* (null) in Resources */,
 				EEE676812AC7D26F00D58AA2 /* PreviousOwnerCollectionViewCell.xib in Resources */,
 				EE0443F829CDCF9700B6A1AF /* TabbarCollectionReusableView.xib in Resources */,
+				EEFFA1432AE6391D003BDC6C /* VerificationCodeInputViewController.xib in Resources */,
 				EEC91FAD29A1DF87002AFB65 /* MainTabbarCollectionViewCell.xib in Resources */,
 				EECF2C8E2AC527E90003237C /* NFTDetailViewController.xib in Resources */,
 				EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */,
@@ -1730,6 +1754,7 @@
 				97BAE0EF29AB94350001F60A /* CommentTableViewCell.xib in Resources */,
 				EEFA9C8629A0CB5B0061D9D9 /* HotItemCollectionViewCell.xib in Resources */,
 				C136343929A0CD090023DA68 /* Pretendard-ExtraBold.ttf in Resources */,
+				EE1405242AE568E50080F11F /* PasswordChangeAlertViewController.xib in Resources */,
 				EE07EE9729F8EEB800285A9F /* MoreHotSellerCollectionViewCell.xib in Resources */,
 				C1956EB629ACD0F300018A93 /* Pretendard-Bold.otf in Resources */,
 				EE242AEA29B9B21D00690518 /* ActivitySectionCollectionViewCell.xib in Resources */,
@@ -1939,6 +1964,7 @@
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				EE78706E2AC1A0B5006BE503 /* MoreSoldoutViewController.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
+				EEFFA1422AE6391D003BDC6C /* VerificationCodeInputViewController.swift in Sources */,
 				C1956ED229B0FC2B00018A93 /* ScrollableTabBar.swift in Sources */,
 				C16AECA729EABA6A00A37C78 /* MainViewModel.swift in Sources */,
 				C1956EA829AC8E5800018A93 /* LineTabBar.swift in Sources */,
@@ -1948,6 +1974,7 @@
 				EE2455992AC65CBE00F48FAA /* NFTDetailEntity.swift in Sources */,
 				EE0AB95D29F7AFEE0010F182 /* GetMoreActivityResponse.swift in Sources */,
 				EEE9CE6C2ADD18A9004C740A /* PasswordConfigurationView.swift in Sources */,
+				EEFFA1452AE64815003BDC6C /* VerificationCodeInputViewModel.swift in Sources */,
 				EE07EE9629F8EEB800285A9F /* MoreHotSellerCollectionViewCell.swift in Sources */,
 				EECF2C922AC52EDE0003237C /* NFTOverviewCollectionViewCell.swift in Sources */,
 				EE235A192AC91FAF00ABB801 /* RecentNFTSectionViewModel.swift in Sources */,
@@ -2030,6 +2057,7 @@
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */,
 				EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */,
+				EE1405232AE568E50080F11F /* PasswordChangeAlertViewController.swift in Sources */,
 				EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */,
 				C1C8023A29B48BF900221FB9 /* MyPageViewController.swift in Sources */,
 				C16AEC8E29EA8F4200A37C78 /* UserRepository.swift in Sources */,

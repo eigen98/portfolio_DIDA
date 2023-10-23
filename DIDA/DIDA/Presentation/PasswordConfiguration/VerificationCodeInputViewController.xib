@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.ttf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.ttf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerificationCodeInputViewController" customModule="DIDA" customModuleProvider="target">
+            <connections>
+                <outlet property="buttomBottomConstraint" destination="A7q-Ha-9VN" id="ql6-YP-qyk"/>
+                <outlet property="codeTextField" destination="oTo-Hu-ddg" id="ipY-ZU-fud"/>
+                <outlet property="confirmButton" destination="NKZ-2W-8Du" id="VlI-d0-W8b"/>
+                <outlet property="emailSentStatusLabel" destination="Jqi-R9-gXm" id="0lu-iH-Xww"/>
+                <outlet property="retrySendButton" destination="Gyn-d1-ts2" id="ELD-Jy-sEq"/>
+                <outlet property="timeoutNoticeLabel" destination="eLa-PX-knj" id="Mte-ds-nne"/>
+                <outlet property="timerLabel" destination="p0S-qN-qVt" id="ZgA-St-0jj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="7RT-Gu-TKZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정을 위해 인증번호 6자리를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z4-Qv-SCc">
+                            <rect key="frame" x="16" y="107.99999999999999" width="265.33333333333331" height="50.333333333333329"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="21"/>
+                            <color key="textColor" name="text_white"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKZ-2W-8Du" customClass="Buttons" customModule="DIDA" customModuleProvider="target">
+                            <rect key="frame" x="16" y="784" width="361" height="34"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-Cd-pPr">
+                            <rect key="frame" x="16" y="171.33333333333334" width="0.0" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="PSj-QA-SQL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                            <color key="textColor" name="text_white"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0S-qN-qVt">
+                            <rect key="frame" x="340" y="175" width="37" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="R9n-hu-VUM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                            <color key="textColor" name="text_white"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTo-Hu-ddg" customClass="TextField" customModule="DIDA" customModuleProvider="target">
+                            <rect key="frame" x="16" y="199.33333333333334" width="361" height="51"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyn-d1-ts2">
+                                    <rect key="frame" x="263" y="9.6666666666666572" width="82" height="32"/>
+                                    <color key="backgroundColor" name="surface_2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="82" id="2DN-Yj-5gp"/>
+                                        <constraint firstAttribute="height" constant="32" id="76G-H1-kzp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="다시 전송하기">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="background_black"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Gyn-d1-ts2" secondAttribute="trailing" constant="16" id="nPW-Pg-89N"/>
+                                <constraint firstItem="Gyn-d1-ts2" firstAttribute="centerY" secondItem="oTo-Hu-ddg" secondAttribute="centerY" id="qNO-iG-9vM"/>
+                                <constraint firstAttribute="height" constant="51" id="yhs-BS-guG"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간이 만료되었습니다. 다시 시도해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-PX-knj">
+                            <rect key="frame" x="16" y="258.33333333333331" width="236" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="LQL-B1-bXj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                            <color key="textColor" name="text_notice_red"/>
+                            <color key="highlightedColor" name="text_white"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqi-R9-gXm">
+                            <rect key="frame" x="16" y="289.33333333333331" width="176.33333333333334" height="33.666666666666686"/>
+                            <string key="text">가입하신 이메일로 
+인증번호 전송이 완료되었습니다</string>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" name="text_white"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="dkH-em-8rD"/>
+                    <color key="backgroundColor" name="background_black"/>
+                    <constraints>
+                        <constraint firstItem="dkH-em-8rD" firstAttribute="trailing" secondItem="p0S-qN-qVt" secondAttribute="trailing" constant="16" id="6we-fw-pkG"/>
+                        <constraint firstItem="NKZ-2W-8Du" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="A6n-QE-zn3"/>
+                        <constraint firstItem="dkH-em-8rD" firstAttribute="bottom" secondItem="NKZ-2W-8Du" secondAttribute="bottom" id="A7q-Ha-9VN"/>
+                        <constraint firstItem="Jqi-R9-gXm" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="BvX-sp-m9S"/>
+                        <constraint firstItem="oTo-Hu-ddg" firstAttribute="top" secondItem="fco-Cd-pPr" secondAttribute="bottom" id="DnL-2A-3JD"/>
+                        <constraint firstItem="7z4-Qv-SCc" firstAttribute="top" secondItem="dkH-em-8rD" secondAttribute="top" constant="49" id="FLS-Zo-LFG"/>
+                        <constraint firstItem="dkH-em-8rD" firstAttribute="trailing" secondItem="NKZ-2W-8Du" secondAttribute="trailing" constant="16" id="GxM-uP-YSd"/>
+                        <constraint firstItem="p0S-qN-qVt" firstAttribute="centerY" secondItem="fco-Cd-pPr" secondAttribute="centerY" id="I80-Nv-mIW"/>
+                        <constraint firstItem="7z4-Qv-SCc" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="JfQ-D1-EJc"/>
+                        <constraint firstItem="oTo-Hu-ddg" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="Sua-97-5Sy"/>
+                        <constraint firstItem="fco-Cd-pPr" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="T8a-VD-YWd"/>
+                        <constraint firstItem="dkH-em-8rD" firstAttribute="trailing" secondItem="oTo-Hu-ddg" secondAttribute="trailing" constant="16" id="U7r-W6-Ckx"/>
+                        <constraint firstItem="fco-Cd-pPr" firstAttribute="top" secondItem="7z4-Qv-SCc" secondAttribute="bottom" constant="13" id="XLU-J6-pPF"/>
+                        <constraint firstItem="eLa-PX-knj" firstAttribute="top" secondItem="oTo-Hu-ddg" secondAttribute="bottom" constant="8" id="YdU-Ck-3HN"/>
+                        <constraint firstItem="Jqi-R9-gXm" firstAttribute="top" secondItem="eLa-PX-knj" secondAttribute="bottom" constant="10" id="c1F-GI-Rok"/>
+                        <constraint firstItem="eLa-PX-knj" firstAttribute="leading" secondItem="dkH-em-8rD" secondAttribute="leading" constant="16" id="lAw-gK-FHJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background_black">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="surface_2">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_notice_red">
+            <color red="0.90980392156862744" green="0.3843137254901961" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

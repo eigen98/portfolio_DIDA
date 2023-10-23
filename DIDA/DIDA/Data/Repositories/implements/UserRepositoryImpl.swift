@@ -79,7 +79,7 @@ class UserRepositoryImpl: UserRepository {
                 completion(nil, error)
             }.disposed(by: self.disposeBag)
     }
-
+    
     func issueWallet(payPwd: String, checkPwd: String, completion: @escaping (Bool?, Error?) -> ()) {
         APIClient.request(.issueWallet(payPwd: payPwd, checkPwd: checkPwd))
             .asObservable()
@@ -96,25 +96,25 @@ class UserRepositoryImpl: UserRepository {
                 completion(nil, error)
             }.disposed(by: self.disposeBag)
     }
-
+    
     func fetchPublicKey(completion: @escaping (String?, Error?) -> ()) {
-           APIClient.request(.getPublicKey)
-               .asObservable()
-               .flatMap { response -> Single<PublicKeyResponseDTO> in
-                   if response.statusCode == 200 {
-                       let decode = try response.map(PublicKeyResponseDTO.self)
-                       return Single.just(decode)
-                   } else {
-                       let error = try response.map(BaseErrorResponseDTO.self)
-                       return .error(DidaError.apiError(error))
-                   }
-               }.subscribe { response in
-                   completion(response.publicKey, nil)
-               } onError: { error in
-                   completion(nil, error)
-               }.disposed(by: self.disposeBag)
-       }
-
+        APIClient.request(.getPublicKey)
+            .asObservable()
+            .flatMap { response -> Single<PublicKeyResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(PublicKeyResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                completion(response.publicKey, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
+    
     func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ()) {
         APIClient.request(.checkPassword(payPwd: payPwd))
             .asObservable()
@@ -122,9 +122,16 @@ class UserRepositoryImpl: UserRepository {
                 if response.statusCode == 200 {
                     let decode = try response.map(PasswordCheckResponseDTO.self)
                     return Single.just(decode)
+                } else if response.statusCode == 403 {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    if error.code == "WALLET_006" {
+                        return .error(UserRepositoryError.passwordExceededLimit)
+                    } else {
+                        return .error(UserRepositoryError.apiError(error))
+                    }
                 } else {
                     let error = try response.map(BaseErrorResponseDTO.self)
-                    return .error(DidaError.apiError(error))
+                    return .error(UserRepositoryError.apiError(error))
                 }
             }.map { responseDTO in
                 return PasswordCheckEntity(matched: responseDTO.matched ?? false,
@@ -135,27 +142,65 @@ class UserRepositoryImpl: UserRepository {
                 completion(nil, error)
             }.disposed(by: self.disposeBag)
     }
-
+    
     func fetchWallet(completion: @escaping (WalletEntity?, Error?) -> ()) {
-           APIClient.request(.fetchWallet)
-               .asObservable()
-               .flatMap { response -> Single<WalletResponseDTO> in
-                   if response.statusCode == 200 {
-                       let decode = try response.map(WalletResponseDTO.self)
-                       return Single.just(decode)
-                   } else {
-                       let error = try response.map(BaseErrorResponseDTO.self)
-                       return .error(DidaError.apiError(error))
-                   }
-               }.map { responseDTO in
-                   return WalletEntity(address: responseDTO.address ?? "",
-                                       klay: responseDTO.klay ?? 0.0,
-                                       dida: responseDTO.dida ?? 0.0)
-               }.subscribe { entity in
-                   completion(entity, nil)
-               } onError: { error in
-                   completion(nil, error)
-               }.disposed(by: self.disposeBag)
-       }
+        APIClient.request(.fetchWallet)
+            .asObservable()
+            .flatMap { response -> Single<WalletResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(WalletResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.map { responseDTO in
+                return WalletEntity(address: responseDTO.address ?? "",
+                                    klay: responseDTO.klay ?? 0.0,
+                                    dida: responseDTO.dida ?? 0.0)
+            }.subscribe { entity in
+                completion(entity, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
+    
+    func sendAuthenticationEmail(completion: @escaping (String?, Error?) -> ()) {
+        APIClient.request(.sendVerificationEmail)
+            .asObservable()
+            .flatMap { response -> Single<VerificationEmailResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(VerificationEmailResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { responseDTO in
+                completion(responseDTO.random, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
 
+    
+    func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.modifyPassword(nowPwd: oldPassword, changePwd: newPassword))
+            .asObservable()
+            .flatMap { response -> Single<Response> in
+                if response.statusCode == 200 {
+                    return Single.just(response)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { response in
+                completion(true, nil)
+            } onError: { error in
+                completion(false, error)
+            }.disposed(by: self.disposeBag)
+    }
+}
+struct VerificationEmailResponseDTO: Decodable {
+    let random: String
 }

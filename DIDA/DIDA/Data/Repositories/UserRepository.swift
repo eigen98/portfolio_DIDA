@@ -8,6 +8,11 @@
 import Foundation
 import RxSwift
 
+enum UserRepositoryError: Error {
+    case apiError(BaseErrorResponseDTO)
+    case passwordExceededLimit
+}
+
 protocol UserRepository {
     func login(type: SocialType, completion: @escaping (LoginProviderEntity?, Error?) -> ())
     func signup(email: String, nickname: String, completion: @escaping (Error?) -> ())
@@ -23,5 +28,7 @@ protocol UserRepository {
     func fetchWallet(completion: @escaping (WalletEntity?, Error?) -> ())
     func fetchPublicKey(completion: @escaping (String?, Error?) -> ())
     
-    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ()) 
+    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ())
+    func sendAuthenticationEmail(completion: @escaping (String?, Error?) -> ())
+    func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Bool?, Error?) -> ())
 }
