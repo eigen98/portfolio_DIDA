@@ -6,24 +6,43 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class PasswordChangeAlertViewController: UIViewController {
+class PasswordChangeAlertViewController: BaseViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet weak var passwordResetButton: UIButton!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        bindEvent()
     }
+    
+    override func bindEvent() {
+        cancelButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        passwordResetButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let presentingVC = self?.presentingViewController else { return }
+                self?.dismiss(animated: true, completion: { [weak presentingVC] in
+                    let verificationCodeInputVC = VerificationCodeInputViewController()
+                    verificationCodeInputVC.modalPresentationStyle = .fullScreen
+                    presentingVC?.present(verificationCodeInputVC, animated: true, completion: nil)
+                })
+            })
+            .disposed(by: disposeBag)
     }
-    */
-
 }
