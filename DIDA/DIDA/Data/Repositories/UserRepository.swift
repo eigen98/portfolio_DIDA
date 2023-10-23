@@ -23,5 +23,6 @@ protocol UserRepository {
     func fetchWallet(completion: @escaping (WalletEntity?, Error?) -> ())
     func fetchPublicKey(completion: @escaping (String?, Error?) -> ())
     
-    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ()) 
+    func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ())
+    func sendAuthenticationEmail(completion: @escaping (Bool?, Error?) -> ())
 }
