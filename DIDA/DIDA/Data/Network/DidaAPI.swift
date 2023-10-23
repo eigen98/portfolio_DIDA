@@ -122,7 +122,7 @@ extension DidaAPI: TargetType {
         case .getPublicKey: return .get
         case .checkPassword: return .post
         case .fetchWallet: return .get
-        case .sendVerificationEmail: return .post
+        case .sendVerificationEmail: return .get
         case .modifyPassword: return .post
 
         /// MARK: Market
