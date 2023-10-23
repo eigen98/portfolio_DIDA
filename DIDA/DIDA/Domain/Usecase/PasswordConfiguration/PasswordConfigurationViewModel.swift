@@ -13,7 +13,17 @@ enum PasswordStep {
     case setPassword
     case confirmSetPassword
     case enterPassword
+    case changePassword
 }
+enum PasswordCheckState {
+    case initial
+    case matched
+    case mismatched(count: Int)
+    case exceededLimit
+    case passwordChanged
+    case error(message: String)
+}
+
 
 class PasswordConfigurationViewModel: BaseViewModel {
     
@@ -111,6 +121,9 @@ class PasswordConfigurationViewModel: BaseViewModel {
                 verifyPasswordsAndEncrypt()
         case .enterPassword:
                 checkPassword()
+        case .changePassword:
+            self.output.passwordCheckState.accept(.passwordChanged)
+               break
             
         }
     }
@@ -129,6 +142,8 @@ class PasswordConfigurationViewModel: BaseViewModel {
             if !password.isEmpty {
                 password.removeLast()
             }
+        case .changePassword:
+            break
         }
     }
     
@@ -221,8 +236,15 @@ class PasswordConfigurationViewModel: BaseViewModel {
             
             if let matched = response?.matched {
                 self.handlePasswordVerificationResult(matched: matched, wrongCount: response?.wrongCount)
-            } else if let error = error {
-                self.passwordCheckStateRelay.accept(.error(message: error.localizedDescription))
+            } else if let error = error as? UserRepositoryError {
+                switch error {
+                case .passwordExceededLimit:
+                    self.passwordCheckStateRelay.accept(.exceededLimit)
+                default:
+                    self.passwordCheckStateRelay.accept(.error(message: error.localizedDescription))
+                }
+            } else {
+                self.passwordCheckStateRelay.accept(.error(message: error?.localizedDescription ?? "Unknown error"))
             }
         }
     }
@@ -243,14 +265,3 @@ class PasswordConfigurationViewModel: BaseViewModel {
     }
 }
 
-enum CustomError: Error {
-    case passwordLimitExceeded
-    case passwordMismatch
-}
-
-enum PasswordCheckState {
-    case initial
-    case matched
-    case mismatched(count: Int)
-    case error(message: String)
-}
