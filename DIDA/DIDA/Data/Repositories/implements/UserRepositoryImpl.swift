@@ -122,9 +122,16 @@ class UserRepositoryImpl: UserRepository {
                 if response.statusCode == 200 {
                     let decode = try response.map(PasswordCheckResponseDTO.self)
                     return Single.just(decode)
+                } else if response.statusCode == 403 {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    if error.code == "WALLET_006" {
+                        return .error(UserRepositoryError.passwordExceededLimit)
+                    } else {
+                        return .error(UserRepositoryError.apiError(error))
+                    }
                 } else {
                     let error = try response.map(BaseErrorResponseDTO.self)
-                    return .error(DidaError.apiError(error))
+                    return .error(UserRepositoryError.apiError(error))
                 }
             }.map { responseDTO in
                 return PasswordCheckEntity(matched: responseDTO.matched ?? false,
@@ -158,8 +165,27 @@ class UserRepositoryImpl: UserRepository {
             }.disposed(by: self.disposeBag)
     }
     
-    func sendAuthenticationEmail(completion: @escaping (Bool?, Error?) -> ()) {
+    func sendAuthenticationEmail(completion: @escaping (String?, Error?) -> ()) {
         APIClient.request(.sendVerificationEmail)
+            .asObservable()
+            .flatMap { response -> Single<VerificationEmailResponseDTO> in
+                if response.statusCode == 200 {
+                    let decode = try response.map(VerificationEmailResponseDTO.self)
+                    return Single.just(decode)
+                } else {
+                    let error = try response.map(BaseErrorResponseDTO.self)
+                    return .error(DidaError.apiError(error))
+                }
+            }.subscribe { responseDTO in
+                completion(responseDTO.random, nil)
+            } onError: { error in
+                completion(nil, error)
+            }.disposed(by: self.disposeBag)
+    }
+
+    
+    func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.modifyPassword(nowPwd: oldPassword, changePwd: newPassword))
             .asObservable()
             .flatMap { response -> Single<Response> in
                 if response.statusCode == 200 {
@@ -171,7 +197,10 @@ class UserRepositoryImpl: UserRepository {
             }.subscribe { response in
                 completion(true, nil)
             } onError: { error in
-                completion(nil, error)
+                completion(false, error)
             }.disposed(by: self.disposeBag)
     }
+}
+struct VerificationEmailResponseDTO: Decodable {
+    let random: String
 }
