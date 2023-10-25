@@ -30,5 +30,5 @@ protocol UserRepository {
     
     func checkPassword(payPwd: String, completion: @escaping (PasswordCheckEntity?, Error?) -> ())
     func sendAuthenticationEmail(completion: @escaping (String?, Error?) -> ())
-    func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Bool?, Error?) -> ())
+    func changePassword(newPassword: String, completion: @escaping (Bool?, Error?) -> ())
 }

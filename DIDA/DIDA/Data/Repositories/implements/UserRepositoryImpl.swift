@@ -184,8 +184,8 @@ class UserRepositoryImpl: UserRepository {
     }
 
     
-    func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Bool?, Error?) -> ()) {
-        APIClient.request(.modifyPassword(nowPwd: oldPassword, changePwd: newPassword))
+    func changePassword(newPassword: String, completion: @escaping (Bool?, Error?) -> ()) {
+        APIClient.request(.modifyPassword(changePwd: newPassword))
             .asObservable()
             .flatMap { response -> Single<Response> in
                 if response.statusCode == 200 {
