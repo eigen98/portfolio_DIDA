@@ -33,7 +33,7 @@ enum DidaAPI {
     case checkPassword(payPwd: String)
     case fetchWallet
     case sendVerificationEmail
-    case modifyPassword(nowPwd: String, changePwd: String)
+    case modifyPassword(changePwd: String)
     
     /// MARK: Market
     case nftDetail(nftId: Int)
@@ -85,7 +85,7 @@ extension DidaAPI: TargetType {
         case .getPublicKey: return "/common/key"
         case .checkPassword: return "/member/password/check"
         case .fetchWallet: return "/member/wallet"
-        case .sendVerificationEmail: return "/visitor/auth"
+        case .sendVerificationEmail: return "/common/auth"
         case .modifyPassword: return "/member/password"
             
         /// MARK: Market
@@ -123,7 +123,7 @@ extension DidaAPI: TargetType {
         case .checkPassword: return .post
         case .fetchWallet: return .get
         case .sendVerificationEmail: return .get
-        case .modifyPassword: return .post
+        case .modifyPassword: return .patch
 
         /// MARK: Market
         case .nftDetail: return .get
@@ -177,8 +177,8 @@ extension DidaAPI: TargetType {
                     return .requestPlain
         case .sendVerificationEmail:
                    return .requestPlain
-        case .modifyPassword(let nowPwd, let changePwd):
-               return .requestParameters(parameters: ["nowPwd": nowPwd, "changePwd": changePwd], encoding: JSONEncoding.default)
+        case .modifyPassword(let changePwd):
+               return .requestParameters(parameters: ["changePwd": changePwd], encoding: JSONEncoding.default)
         
         /// MARK: Market
         case .nftDetail:
