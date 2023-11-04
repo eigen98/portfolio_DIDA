@@ -42,6 +42,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
     
     let input: Input = Input()
     let output: Output
+    var nftId : Int? = nil
     
     private let disposeBag = DisposeBag()
     private let encryptionService: EncryptionService = RSAEncryptionService()
@@ -69,7 +70,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
         
     }
     
-    init(initialStep: PasswordStep = .setPassword) {
+    init(initialStep: PasswordStep = .setPassword, nftId : Int? = nil) {
         self.output = Output(
             showError: showErrorSubject.asObservable(),
             passwordStep: passwordStepRelay,
@@ -77,6 +78,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
             walletIssuedSuccessfully: walletIssuedSuccessfullySubject,
             passwordCheckState: passwordCheckStateRelay
         )
+        self.nftId = nftId
         super.init()
         self.passwordStepRelay.accept(initialStep)
     }
