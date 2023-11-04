@@ -107,7 +107,8 @@ class PurchaseNFTView : UIView{
         nftNameLabel.font = Fonts.regular_18
         usernameLabel.font = Fonts.semi_bold_14
         nftSalePriceLabel.text = "00.0 dida"
-        nftSalePriceLabel.font = Fonts.semi_bold_12
+        nftSalePriceLabel.textColor = Colors.brand_lemon
+        nftSalePriceLabel.font = Fonts.semi_bold_20
         
         myDidaTitleLabel.text = "MyDida"
         myDidaTitleLabel.font = Fonts.bold_20
@@ -137,7 +138,8 @@ class PurchaseNFTView : UIView{
         totalPriceLabel.textColor = Colors.brand_lemon
         totalPriceLabel.font = Fonts.regular_18
         totalPriceValueLabel.text = "447.91 dida"
-        totalPriceValueLabel.font = Fonts.regular_18
+        totalPriceValueLabel.font = Fonts.bold_24
+        totalPriceValueLabel.textColor = Colors.brand_lemon
 
         
         remainingBalanceAfterPaymentLabel.text = "결제 후 잔액"
@@ -158,7 +160,7 @@ class PurchaseNFTView : UIView{
     }
     
     private func setupImageViews() {
-        nftImageView.contentMode = .scaleAspectFit
+        nftImageView.contentMode = .scaleAspectFill
         nftImageView.layer.cornerRadius = 8
         nftImageView.clipsToBounds = true
         nftImageView.backgroundColor = .gray
@@ -320,30 +322,48 @@ class PurchaseNFTView : UIView{
     }
 
     func bind(to viewModel: PurchaseNFTViewModel) {
-        viewModel.output.nftImage
-            .bind(to: nftImageView.rx.image)
+        viewModel.output.nftImageSubject
+            .bind(onNext: { imageUrl in
+                self.nftImageView.kf.setImage(with: URL(string: imageUrl))
+            })
             .disposed(by: disposeBag)
-        viewModel.output.nftName
+        viewModel.output.nftNameSubject
             .bind(to: nftNameLabel.rx.text)
             .disposed(by: disposeBag)
-        viewModel.output.username
+        viewModel.output.usernameSubject
             .bind(to: usernameLabel.rx.text)
             .disposed(by: disposeBag)
+        viewModel.output.paymentInfoPriceSubject
+            .bind(to: nftSalePriceLabel.rx.text)
+            .disposed(by: disposeBag)
         
-        viewModel.output.didaBalance
+        viewModel.output.didaBalanceSubject
             .bind(to: didaBalanceValueLabel.rx.text)
             .disposed(by: disposeBag)
-        viewModel.output.paymentInfoPrice
+        viewModel.output.paymentInfoPriceSubject
             .bind(to: paymentInfoPriceValueLabel.rx.text)
             .disposed(by: disposeBag)
-        viewModel.output.feePrice
+        viewModel.output.feePriceSubject
             .bind(to: feePriceValueLabel.rx.text)
             .disposed(by: disposeBag)
-        viewModel.output.totalPrice
+        viewModel.output.totalPriceSubject
             .bind(to: totalPriceValueLabel.rx.text)
             .disposed(by: disposeBag)
-        viewModel.output.remainingBalanceAfterPayment
-            .bind(to: remainingBalanceAfterPaymentValueLabel.rx.text)
+            
+        viewModel.output.remainingBalanceAfterPaymentSubject
+            .bind(to: self.remainingBalanceAfterPaymentValueLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel.output.buyerSubject
+                .bind(onNext: { [weak self] buyerName in
+                    self?.nftBuyerLabel.text = "\(buyerName) 구매자"
+                })
+                .disposed(by: disposeBag)
+            
+            viewModel.output.sellerSubject
+                .bind(onNext: { [weak self] sellerName in
+                    self?.nftSellerLabel.text = "\(sellerName) 판매자"
+                })
+                .disposed(by: disposeBag)
     }
 }
