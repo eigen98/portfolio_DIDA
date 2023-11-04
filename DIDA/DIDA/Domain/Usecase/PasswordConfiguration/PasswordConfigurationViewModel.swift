@@ -42,6 +42,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
     
     let input: Input = Input()
     let output: Output
+    var nftId : Int? = nil
     
     private let disposeBag = DisposeBag()
     private let encryptionService: EncryptionService = RSAEncryptionService()
@@ -69,7 +70,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
         
     }
     
-    init(initialStep: PasswordStep = .setPassword) {
+    init(initialStep: PasswordStep = .setPassword, nftId : Int? = nil) {
         self.output = Output(
             showError: showErrorSubject.asObservable(),
             passwordStep: passwordStepRelay,
@@ -77,6 +78,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
             walletIssuedSuccessfully: walletIssuedSuccessfullySubject,
             passwordCheckState: passwordCheckStateRelay
         )
+        self.nftId = nftId
         super.init()
         self.passwordStepRelay.accept(initialStep)
     }
@@ -116,15 +118,14 @@ class PasswordConfigurationViewModel: BaseViewModel {
 
         switch passwordStepRelay.value {
         case .setPassword:
-                passwordStepRelay.accept(.confirmSetPassword)
+            passwordStepRelay.accept(.confirmSetPassword)
         case .confirmSetPassword:
-                verifyPasswordsAndEncrypt()
+            verifyPasswordsAndEncrypt()
         case .enterPassword:
-                checkPassword()
+            checkPassword()
         case .changePassword:
-            self.output.passwordCheckState.accept(.passwordChanged)
-               break
-            
+            modifyPassword()
+            break
         }
     }
     
@@ -143,7 +144,9 @@ class PasswordConfigurationViewModel: BaseViewModel {
                 password.removeLast()
             }
         case .changePassword:
-            break
+            if !password.isEmpty {
+                password.removeLast()
+            }
         }
     }
     
@@ -176,6 +179,18 @@ class PasswordConfigurationViewModel: BaseViewModel {
             issueWallet(with: encryptedPwd)
         } else {
             showErrorSubject.onNext("Encryption failed.")
+        }
+    }
+    
+    private func modifyPassword(){
+        fetchPublicKey { [weak self] (publicKey, error) in
+            guard let self = self else { return }
+            
+            if let publicKey = publicKey {
+                self.encryptAndModifyPassword(with: publicKey)
+            } else if let error = error {
+                self.showErrorSubject.onNext("\(error)")
+            }
         }
     }
 
@@ -224,6 +239,27 @@ class PasswordConfigurationViewModel: BaseViewModel {
             return
         }
         verifyEncryptedPassword(encryptedPwd)
+    }
+    
+    private func encryptAndModifyPassword(with publicKey: String) {
+        guard let encryptedPwd = encryptPassword(with: publicKey) else {
+            showErrorSubject.onNext("Encryption failed.")
+            return
+        }
+        modifyEncryptedPassword(encryptedPwd)
+    }
+    
+    func modifyEncryptedPassword(_ encryptedPwd: String){
+        userRepository.changePassword(newPassword: encryptedPwd, completion: {[weak self] (response, error) in
+            guard let self = self else { return }
+            if let ressult = response{
+                self.output.passwordCheckState.accept(.passwordChanged)
+            }else if let error = error as? UserRepositoryError {
+                
+            }else {
+               
+            }
+        })
     }
 
     private func encryptPassword(with publicKey: String) -> String? {

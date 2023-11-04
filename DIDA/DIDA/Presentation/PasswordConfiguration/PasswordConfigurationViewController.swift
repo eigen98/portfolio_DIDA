@@ -14,9 +14,9 @@ class PasswordConfigurationViewController: BaseViewController {
     private let passwordConfigurationView = PasswordConfigurationView()
     private let disposeBag = DisposeBag()
     
-    init(with step: PasswordStep) {
+    init(with step: PasswordStep, nftId: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
-        self.viewModel = PasswordConfigurationViewModel(initialStep: step)
+        self.viewModel = PasswordConfigurationViewModel(initialStep: step, nftId: nftId)
     }
     
     required init?(coder: NSCoder) {
@@ -87,7 +87,8 @@ class PasswordConfigurationViewController: BaseViewController {
                     self?.passwordConfigurationView.hideWrongCountLabel()
                     
                     guard let presentingVC = self?.presentingViewController else { return }
-                    let purchaseVC = NFTPurchaseViewController()
+                    guard let nftId = self?.viewModel.nftId else { return }
+                    let purchaseVC = NFTPurchaseViewController(currentNFTID: nftId)
                     self?.dismiss(animated: true, completion: { [weak presentingVC] in
                         if let navController = presentingVC as? UINavigationController {
                             navController.pushViewController(purchaseVC, animated: false)

@@ -9,9 +9,18 @@ import RxSwift
 class NFTPurchaseViewController: BaseViewController {
     private let scrollView = UIScrollView()
     private let purchaseView = PurchaseNFTView()
-    private let viewModel = PurchaseNFTViewModel()
+    private var viewModel : PurchaseNFTViewModel
     
     private let disposeBag = DisposeBag()
+    
+    init(currentNFTID: Int) {
+        self.viewModel = PurchaseNFTViewModel(currentNFTID: currentNFTID)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
