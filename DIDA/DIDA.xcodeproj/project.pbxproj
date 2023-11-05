@@ -185,6 +185,8 @@
 		EE2F894F29C6E3E200D2A1BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */; };
 		EE2F895129C6F61C00D2A1BF /* GetMainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */; };
 		EE2F895329C6F79C00D2A1BF /* GetMainSoldoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */; };
+		EE36A93A2AF6A4F400A1BCF2 /* PaymentPasswordInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36A9392AF6A4F400A1BCF2 /* PaymentPasswordInterface.swift */; };
+		EE36A93C2AF6A52400A1BCF2 /* PaymentPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36A93B2AF6A52400A1BCF2 /* PaymentPasswordManager.swift */; };
 		EE3D48502A08BEE900760DC0 /* ActivitySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */; };
 		EE47EB4829B63130004879D9 /* SoldOutSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */; };
 		EE47EB4929B63130004879D9 /* SoldOutSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */; };
@@ -450,6 +452,8 @@
 		EE2F894E29C6E3E200D2A1BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE2F895029C6F61C00D2A1BF /* GetMainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainResponse.swift; path = DIDA/Data/Response/GetMainResponse.swift; sourceTree = SOURCE_ROOT; };
 		EE2F895229C6F79C00D2A1BF /* GetMainSoldoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMainSoldoutResponse.swift; path = DIDA/Data/Response/GetMainSoldoutResponse.swift; sourceTree = SOURCE_ROOT; };
+		EE36A9392AF6A4F400A1BCF2 /* PaymentPasswordInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPasswordInterface.swift; sourceTree = "<group>"; };
+		EE36A93B2AF6A52400A1BCF2 /* PaymentPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPasswordManager.swift; sourceTree = "<group>"; };
 		EE3D484F2A08BEE900760DC0 /* ActivitySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySectionViewModel.swift; sourceTree = "<group>"; };
 		EE47EB4629B63130004879D9 /* SoldOutSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldOutSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE47EB4729B63130004879D9 /* SoldOutSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoldOutSectionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1031,6 +1035,7 @@
 				C1FB97092A1A1AEC00A4D8D6 /* interfaces */,
 				C16AEC8329EA85EB00A37C78 /* UserSession.swift */,
 				C1FB97052A1A196000A4D8D6 /* Token.swift */,
+				EE36A93B2AF6A52400A1BCF2 /* PaymentPasswordManager.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -1040,6 +1045,7 @@
 			children = (
 				C16AEC8929EA8A0500A37C78 /* UserSessionInterface.swift */,
 				C1FB97072A1A1AE000A4D8D6 /* TokenInterface.swift */,
+				EE36A9392AF6A4F400A1BCF2 /* PaymentPasswordInterface.swift */,
 			);
 			path = interfaces;
 			sourceTree = "<group>";
@@ -2012,6 +2018,7 @@
 				C1C8023B29B48BFB00221FB9 /* CommunityViewController.swift in Sources */,
 				EE2455942AC65BD100F48FAA /* GetNFTDetailResponse.swift in Sources */,
 				C16AEC9E29EA93EA00A37C78 /* Array+Extension.swift in Sources */,
+				EE36A93C2AF6A52400A1BCF2 /* PaymentPasswordManager.swift in Sources */,
 				C134D7262A06AEBE009EE0DB /* SignupRequestDTO.swift in Sources */,
 				EEDFE42F2AD670DD003FDF80 /* PurchaseNFTResponse.swift in Sources */,
 				C16AEC8829EA878B00A37C78 /* LoginHomeViewModel.swift in Sources */,
@@ -2109,6 +2116,7 @@
 				C16AEC9C29EA938F00A37C78 /* HomeEntity.swift in Sources */,
 				EE07EE9229F8EC9300285A9F /* MoreHotSellerViewController.swift in Sources */,
 				EEED10572AE52E62000E842B /* WalletNFTSummaryViewController.swift in Sources */,
+				EE36A93A2AF6A4F400A1BCF2 /* PaymentPasswordInterface.swift in Sources */,
 				EEE616F92AC3E0AE002C3647 /* ImageGridView.swift in Sources */,
 				EEE3862429C810DC00A10E47 /* HomeRepository.swift in Sources */,
 				C10232B12A62AD2E00517F0C /* ProfileViewController.swift in Sources */,

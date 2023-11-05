@@ -355,15 +355,19 @@ class PurchaseNFTView : UIView{
             .disposed(by: disposeBag)
         
         viewModel.output.buyerSubject
-                .bind(onNext: { [weak self] buyerName in
-                    self?.nftBuyerLabel.text = "\(buyerName) 구매자"
-                })
-                .disposed(by: disposeBag)
-            
-            viewModel.output.sellerSubject
-                .bind(onNext: { [weak self] sellerName in
-                    self?.nftSellerLabel.text = "\(sellerName) 판매자"
-                })
-                .disposed(by: disposeBag)
+            .bind(onNext: { [weak self] buyerName in
+                self?.nftBuyerLabel.text = "\(buyerName) 구매자"
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.sellerSubject
+            .bind(onNext: { [weak self] sellerName in
+                self?.nftSellerLabel.text = "\(sellerName) 판매자"
+            })
+            .disposed(by: disposeBag)
+        
+        buyButton.rx.tap
+            .bind(to: viewModel.input.purchaseTrigger)
+            .disposed(by: disposeBag)
     }
 }
