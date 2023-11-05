@@ -68,13 +68,31 @@ class PurchaseNFTViewModel: BaseViewModel {
     }
     
     private func bindInputs() {
-        input.purchaseTrigger.subscribe(onNext: { [weak self] in
-            self?.showPurchaseSuccess.onNext(())
-        }).disposed(by: disposeBag)
+        input.purchaseTrigger
+            .subscribe(onNext: { [weak self] in
+                self?.attemptPurchase()
+                
+            })
+            .disposed(by: disposeBag)
         
         input.cancelTrigger.subscribe(onNext: { [weak self] in
             self?.showPurchaseCancel.onNext(())
         }).disposed(by: disposeBag)
+    }
+    
+    private func attemptPurchase() {
+        guard let paymentPassword = PaymentPasswordManager.shared.read()?.password else {
+            return
+        }
+        
+        marketRepository.purchaseNFT(payPwd: paymentPassword, marketId: currentNFTID) { [weak self] result in
+            switch result {
+            case .success:
+                self?.showPurchaseSuccess.onNext(())
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func bindUserDetails() {
