@@ -15,6 +15,8 @@ class SwapViewModel: BaseViewModel {
     
     struct Output {
         let walletKlayBalance: Observable<String>
+        let sendingCoin: Observable<CoinEntity>
+        let receivingCoin: Observable<CoinEntity>
         let error: Observable<Error>
     }
     
@@ -24,6 +26,9 @@ class SwapViewModel: BaseViewModel {
     private let disposeBag = DisposeBag()
     private let userRepository: UserRepository
     private let walletEntitySubject: BehaviorSubject<WalletEntity?> = BehaviorSubject(value: nil)
+    private let sendingCoinSubject = BehaviorSubject<CoinEntity>(value: CoinEntity(type: .klay, amount: 0))
+    private let receivingCoinSubject = BehaviorSubject<CoinEntity>(value: CoinEntity(type: .dida, amount: 0))
+
     private let errorSubject: PublishSubject<Error> = PublishSubject()
     
     init(userRepository: UserRepository = UserRepositoryImpl()) {
@@ -35,6 +40,8 @@ class SwapViewModel: BaseViewModel {
         
         self.output = Output(
             walletKlayBalance: walletKlayBalance,
+            sendingCoin: sendingCoinSubject.asObservable(),
+            receivingCoin: receivingCoinSubject.asObservable(),
             error: errorSubject.asObservable()
         )
         
@@ -71,8 +78,22 @@ class SwapViewModel: BaseViewModel {
                 self?.handleError(error)
                 return
             }
-            self?.walletEntitySubject.onNext(walletEntity)
+            
+            if let wallet = walletEntity {
+                self?.sendingCoinSubject.onNext(CoinEntity(type: .klay, amount: wallet.klay ))
+                self?.receivingCoinSubject.onNext(CoinEntity(type: .dida, amount: wallet.dida ))
+            }
         })
+    }
+    
+    func swapCoins() {
+        Observable.combineLatest(sendingCoinSubject, receivingCoinSubject)
+            .take(1)
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] sending, receiving in
+                self?.sendingCoinSubject.onNext(receiving)
+                self?.receivingCoinSubject.onNext(sending)
+            }).disposed(by: disposeBag)
     }
     
     private func handleError(_ error: Error) {
