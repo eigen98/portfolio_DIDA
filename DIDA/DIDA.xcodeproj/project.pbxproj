@@ -275,6 +275,7 @@
 		EEFF01D92ADE618D00D37AA5 /* PurchaseNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */; };
 		EEFF01DD2ADE6CE200D37AA5 /* PurchaseNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */; };
 		EEFF01E02ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */; };
+		EEFF9C962B0B5AB100FF4872 /* CoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFF9C952B0B5AB100FF4872 /* CoinEntity.swift */; };
 		EEFFA1422AE6391D003BDC6C /* VerificationCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFFA1402AE6391D003BDC6C /* VerificationCodeInputViewController.swift */; };
 		EEFFA1432AE6391D003BDC6C /* VerificationCodeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFFA1412AE6391D003BDC6C /* VerificationCodeInputViewController.xib */; };
 		EEFFA1452AE64815003BDC6C /* VerificationCodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFFA1442AE64815003BDC6C /* VerificationCodeInputViewModel.swift */; };
@@ -548,6 +549,7 @@
 		EEFF01D72ADE618D00D37AA5 /* PurchaseNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewController.swift; sourceTree = "<group>"; };
 		EEFF01DC2ADE6CE200D37AA5 /* PurchaseNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTView.swift; sourceTree = "<group>"; };
 		EEFF01DF2ADE6D6D00D37AA5 /* PurchaseNFTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewModel.swift; sourceTree = "<group>"; };
+		EEFF9C952B0B5AB100FF4872 /* CoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinEntity.swift; sourceTree = "<group>"; };
 		EEFFA1402AE6391D003BDC6C /* VerificationCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeInputViewController.swift; sourceTree = "<group>"; };
 		EEFFA1412AE6391D003BDC6C /* VerificationCodeInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationCodeInputViewController.xib; sourceTree = "<group>"; };
 		EEFFA1442AE64815003BDC6C /* VerificationCodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeInputViewModel.swift; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 				C16AECA829EABB3700A37C78 /* UserEntity.swift */,
 				EED08DE42AE24293001D6714 /* PasswordCheckEntity.swift */,
 				EE8509CB2AE3AE8500F2A4C0 /* WalletEntity.swift */,
+				EEFF9C952B0B5AB100FF4872 /* CoinEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2060,6 +2063,7 @@
 				C16FDCFC2A064E1900FB5F53 /* Encodable+Extension.swift in Sources */,
 				EECF2CA32AC550D20003237C /* NFTDetailViewModel.swift in Sources */,
 				C16FDD072A0659F700FB5F53 /* SignupViewModel.swift in Sources */,
+				EEFF9C962B0B5AB100FF4872 /* CoinEntity.swift in Sources */,
 				EE242AE529B9A87C00690518 /* RecentNFTSectionCollectionViewCell.swift in Sources */,
 				C1C8024D29B48D0000221FB9 /* (null) in Sources */,
 				C1FB97082A1A1AE000A4D8D6 /* TokenInterface.swift in Sources */,

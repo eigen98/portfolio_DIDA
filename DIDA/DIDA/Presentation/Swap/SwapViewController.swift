@@ -51,8 +51,7 @@ class SwapViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        let output = viewModel.output
-        swapView.bind(to: output)
+        swapView.bind(to: viewModel)
         viewModel.input.fetchWalletInfoTrigger.onNext(())
     }
 }
