@@ -223,13 +223,29 @@ class SwapView: UIView {
         setupUI()
     }
     
-    func bind(to viewModel: SwapViewModel.Output) {
+    func bind(to viewModel: SwapViewModel) {
         
-        viewModel.walletKlayBalance
+        viewModel.output.walletKlayBalance
             .bind(to: assetAmountLabel.rx.text)
             .disposed(by: disposeBag)
         
+        viewModel.output.sendingCoin
+            .subscribe(onNext: { [weak self] coin in
+                self?.updateSendingCoin(coin)
+            })
+            .disposed(by: disposeBag)
         
+        viewModel.output.receivingCoin
+            .subscribe(onNext: { [weak self] coin in
+                self?.updateReceivingCoin(coin)
+            })
+            .disposed(by: disposeBag)
+        
+        flipButton.rx.tap
+            .bind { _ in
+                viewModel.swapCoins()
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setupUI() {
@@ -368,4 +384,22 @@ class SwapView: UIView {
             separator.topAnchor.constraint(equalTo: receiveCoinContainerView.bottomAnchor, constant: 57)
         ])
     }
+    
+    private func updateSendingCoin(_ coin: CoinEntity) {
+           let imageName = coin.type == .dida ? "dida_img" : "klay_img"
+           sendCoinAmountLabel.text = "\(coin.amount)"
+           sendCoinNameLabel.text = coin.type.rawValue
+           sendCoinImageView.image = UIImage(named: imageName)
+           assetImageView.image = UIImage(named: imageName)
+           assetAmountLabel.text = "\(coin.amount)"
+           assetNameLabel.text = coin.type.rawValue
+       }
+
+       private func updateReceivingCoin(_ coin: CoinEntity) {
+           let imageName = coin.type == .dida ? "dida_img" : "klay_img"
+           receiveCoinAmountLabel.text = "\(coin.amount)"
+           receiveCoinNameLabel.text = coin.type.rawValue
+           receiveCoinImageView.image = UIImage(named: imageName)
+       }
+
 }

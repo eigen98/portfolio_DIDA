@@ -271,6 +271,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
             guard let self = self else { return }
             
             if let matched = response?.matched {
+                PaymentPasswordManager.shared.set(password: encryptedPwd)
                 self.handlePasswordVerificationResult(matched: matched, wrongCount: response?.wrongCount)
             } else if let error = error as? UserRepositoryError {
                 switch error {
