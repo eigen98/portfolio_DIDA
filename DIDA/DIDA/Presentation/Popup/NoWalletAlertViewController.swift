@@ -35,7 +35,7 @@ class NoWalletAlertViewController: BaseViewController {
             .subscribe(onNext: { [weak self] in
                 guard let presentingVC = self?.presentingViewController else { return }
                 self?.dismiss(animated: true, completion: { [weak presentingVC] in
-                    let passwordConfigurationVC = PasswordConfigurationViewController(with: .setPassword)
+                    let passwordConfigurationVC = PasswordConfigurationViewController(with: .setPassword, context: .initialSetup)
                     passwordConfigurationVC.modalPresentationStyle = .fullScreen
                     presentingVC?.present(passwordConfigurationVC, animated: true, completion: nil)
                 })
