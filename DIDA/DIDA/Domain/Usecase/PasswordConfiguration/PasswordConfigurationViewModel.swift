@@ -9,6 +9,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum PasswordConfigurationContext {
+    case nftPurchase(nftId: Int)
+    case coinSwap
+    case passwordChange
+    case initialSetup
+}
+
 enum PasswordStep {
     case setPassword
     case confirmSetPassword
@@ -43,6 +50,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
     let input: Input = Input()
     let output: Output
     var nftId : Int? = nil
+    let context: PasswordConfigurationContext
     
     private let disposeBag = DisposeBag()
     private let encryptionService: EncryptionService = RSAEncryptionService()
@@ -66,11 +74,12 @@ class PasswordConfigurationViewModel: BaseViewModel {
             walletIssuedSuccessfully: walletIssuedSuccessfullySubject,
             passwordCheckState: passwordCheckStateRelay
         )
+        context = .coinSwap
         super.init()
         
     }
     
-    init(initialStep: PasswordStep = .setPassword, nftId : Int? = nil) {
+    init(initialStep: PasswordStep = .setPassword, context: PasswordConfigurationContext, nftId : Int? = nil) {
         self.output = Output(
             showError: showErrorSubject.asObservable(),
             passwordStep: passwordStepRelay,
@@ -79,6 +88,7 @@ class PasswordConfigurationViewModel: BaseViewModel {
             passwordCheckState: passwordCheckStateRelay
         )
         self.nftId = nftId
+        self.context = context
         super.init()
         self.passwordStepRelay.accept(initialStep)
     }
