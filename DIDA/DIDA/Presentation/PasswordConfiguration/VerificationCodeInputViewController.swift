@@ -111,7 +111,7 @@ class VerificationCodeInputViewController: BaseViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let presentingVC = self?.presentingViewController else { return }
                 self?.dismiss(animated: true, completion: { [weak presentingVC] in
-                    let passwordConfigurationVC = PasswordConfigurationViewController(with: .changePassword)
+                    let passwordConfigurationVC = PasswordConfigurationViewController(with: .changePassword, context: .passwordChange)
                     passwordConfigurationVC.modalPresentationStyle = .fullScreen
                     presentingVC?.present(passwordConfigurationVC, animated: true, completion: nil)
                 })

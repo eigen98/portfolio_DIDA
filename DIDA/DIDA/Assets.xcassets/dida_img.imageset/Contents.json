@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "dida_img.svg",
-      "idiom" : "universal"
+      "filename" : "Group 2258.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Group 2258 (1).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Group 2258 (2).png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -86,7 +86,7 @@ class SwapViewModel: BaseViewModel {
         })
     }
     
-    func swapCoins() {
+    func flipCoins() {
         Observable.combineLatest(sendingCoinSubject, receivingCoinSubject)
             .take(1)
             .observe(on: MainScheduler.asyncInstance)

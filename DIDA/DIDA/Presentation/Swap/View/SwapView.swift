@@ -212,6 +212,8 @@ class SwapView: UIView {
         button.setTitle("스왑하기", for: .normal)
         return button
      }()
+    
+    let swapButtonTapped = PublishSubject<Void>()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -243,10 +245,15 @@ class SwapView: UIView {
         
         flipButton.rx.tap
             .bind { _ in
-                viewModel.swapCoins()
+                viewModel.flipCoins()
             }
             .disposed(by: disposeBag)
+        
+        swapButton.rx.tap
+            .bind(to: swapButtonTapped)
+            .disposed(by: disposeBag)
     }
+    
     
     private func setupUI() {
         backgroundColor = .black
@@ -386,20 +393,28 @@ class SwapView: UIView {
     }
     
     private func updateSendingCoin(_ coin: CoinEntity) {
-           let imageName = coin.type == .dida ? "dida_img" : "klay_img"
-           sendCoinAmountLabel.text = "\(coin.amount)"
-           sendCoinNameLabel.text = coin.type.rawValue
-           sendCoinImageView.image = UIImage(named: imageName)
-           assetImageView.image = UIImage(named: imageName)
-           assetAmountLabel.text = "\(coin.amount)"
-           assetNameLabel.text = coin.type.rawValue
-       }
-
-       private func updateReceivingCoin(_ coin: CoinEntity) {
-           let imageName = coin.type == .dida ? "dida_img" : "klay_img"
-           receiveCoinAmountLabel.text = "\(coin.amount)"
-           receiveCoinNameLabel.text = coin.type.rawValue
-           receiveCoinImageView.image = UIImage(named: imageName)
-       }
+        let imageName = coin.type == .dida ? "dida_img" : "klay_img"
+        sendCoinAmountLabel.text = "\(coin.amount)"
+        sendCoinNameLabel.text = coin.type.rawValue
+        sendCoinImageView.image = UIImage(named: imageName)
+        assetImageView.image = UIImage(named: imageName)
+        assetAmountLabel.text = "\(coin.amount)"
+        assetNameLabel.text = coin.type.rawValue
+        updateExchangePath()
+    }
+    
+    private func updateReceivingCoin(_ coin: CoinEntity) {
+        let imageName = coin.type == .dida ? "dida_img" : "klay_img"
+        receiveCoinAmountLabel.text = "\(coin.amount)"
+        receiveCoinNameLabel.text = coin.type.rawValue
+        receiveCoinImageView.image = UIImage(named: imageName)
+        updateExchangePath()
+    }
+    
+    private func updateExchangePath() {
+        let sendCoinType = sendCoinNameLabel.text ?? ""
+        let receiveCoinType = receiveCoinNameLabel.text ?? ""
+        exchangePathValueLabel.text = "\(sendCoinType) -> \(receiveCoinType)"
+    }
 
 }

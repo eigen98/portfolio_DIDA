@@ -128,7 +128,7 @@ class NFTDetailViewController: BaseViewController {
     }
     
     private func showPasswordConfigurationVC() {
-        let passwordConfigurationVC = PasswordConfigurationViewController(with: .enterPassword, nftId: nftId)
+        let passwordConfigurationVC = PasswordConfigurationViewController(with: .enterPassword, context: .nftPurchase(nftId: nftId ?? 0), nftId: nftId)
         passwordConfigurationVC.modalPresentationStyle = .overCurrentContext
         passwordConfigurationVC.modalTransitionStyle = .crossDissolve
         self.present(passwordConfigurationVC, animated: true, completion: nil)

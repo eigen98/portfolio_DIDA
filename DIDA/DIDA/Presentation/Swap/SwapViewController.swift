@@ -29,10 +29,23 @@ class SwapViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
+        bindEvent()
     }
     
     override func bindEvent() {
         super.bindEvent()
+        
+        swapView.swapButtonTapped
+            .subscribe(onNext: { [weak self] in
+                self?.handleSwapButtonTapped()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func handleSwapButtonTapped() {
+        let passwordConfigurationVC = PasswordConfigurationViewController(with: .enterPassword, context: .coinSwap)
+        passwordConfigurationVC.modalPresentationStyle = .fullScreen
+        self.present(passwordConfigurationVC, animated: true, completion: nil)
     }
     
     private func setupUI() {
