@@ -42,6 +42,9 @@ enum DidaAPI {
     /// MARK: User Interaction
     case likeNFT(nftId: Int)
     case followMember(memberId: Int)
+    
+    /// MARK: Coin Transactions
+    case swapKlayToDida(payPwd: String, coin: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -95,6 +98,9 @@ extension DidaAPI: TargetType {
         /// MARK: User Interaction
         case .likeNFT: return "/common/nft/like"
         case .followMember(let memberId): return "/common/follow/\(memberId)"
+            
+        /// MARK: Coin Transactions
+        case .swapKlayToDida: return "/member/klay"
         }
     }
     
@@ -132,6 +138,9 @@ extension DidaAPI: TargetType {
         /// MARK: User Interaction
         case .likeNFT: return .post
         case .followMember: return .patch
+            
+        /// MARK: Coin Transactions
+        case .swapKlayToDida: return .post
         }
     }
     
@@ -192,6 +201,11 @@ extension DidaAPI: TargetType {
             return .requestParameters(parameters: ["nftId": nftId], encoding: JSONEncoding.default)
         case .followMember:
             return .requestPlain
+            
+        /// MARK: Coin Transactions
+        case .swapKlayToDida(let payPwd, let coin):
+            return .requestParameters(parameters: ["payPwd": payPwd, "coin": coin], encoding: JSONEncoding.default)
+
         }
     }
 }
