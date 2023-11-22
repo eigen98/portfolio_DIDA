@@ -45,6 +45,7 @@ enum DidaAPI {
     
     /// MARK: Coin Transactions
     case swapKlayToDida(payPwd: String, coin: Int)
+    case swapDidaToKlay(payPwd: String, coin: Int)
 }
 
 extension DidaAPI: TargetType {
@@ -101,6 +102,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Coin Transactions
         case .swapKlayToDida: return "/member/klay"
+        case .swapDidaToKlay: return "/member/dida"
         }
     }
     
@@ -141,6 +143,7 @@ extension DidaAPI: TargetType {
             
         /// MARK: Coin Transactions
         case .swapKlayToDida: return .post
+        case .swapDidaToKlay: return .post
         }
     }
     
@@ -204,6 +207,8 @@ extension DidaAPI: TargetType {
             
         /// MARK: Coin Transactions
         case .swapKlayToDida(let payPwd, let coin):
+            return .requestParameters(parameters: ["payPwd": payPwd, "coin": coin], encoding: JSONEncoding.default)
+        case .swapDidaToKlay(let payPwd, let coin):
             return .requestParameters(parameters: ["payPwd": payPwd, "coin": coin], encoding: JSONEncoding.default)
 
         }
